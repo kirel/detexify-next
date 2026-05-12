@@ -77,6 +77,80 @@ New data rules:
 - Prefer explicit image files + manifest over CSS sprites for maintainability.
 - Add validation: every sample id must resolve to a symbol; every symbol image must exist.
 
+## New-symbol and sample pipeline
+
+To make Detexify grow again, adding a symbol must become a boring local workflow, not a one-off asset hunt.
+
+### Symbol source of truth
+
+Add a committed, reviewable source format, e.g. `packages/data/source/symbols.json` or split JSON/YAML files:
+
+```ts
+type SourceSymbol = {
+  id: string              // canonical stable id, e.g. "latex:amssymb:leqslant"
+  command: string         // "\\leqslant"
+  package?: string        // "amssymb"
+  mode: 'math' | 'text'
+  aliases?: string[]      // legacy ids / equivalent commands
+  tags?: string[]
+}
+```
+
+Generated files (`symbols.json`, web/mac manifests, asset paths) should be derived from this source plus legacy imports.
+
+### Asset rendering pipeline
+
+Prefer vector-first assets for new symbols:
+
+1. Generate a tiny standalone LaTeX document for each symbol.
+2. Compile with a reproducible toolchain (`tectonic` is a good default; fall back to local TeX Live/MacTeX if needed).
+3. Crop tightly.
+4. Emit SVG as canonical rendered asset; optionally emit PNG fallback for older imported symbols / comparison.
+5. Validate every symbol renders and every rendered asset is referenced by the manifest.
+
+Candidate commands:
+
+```bash
+npm --workspace @detexify/data run render:symbols
+npm --workspace @detexify/data run validate:data
+```
+
+The renderer should cache by content hash of command/package/mode/template so rerendering is fast and deterministic.
+
+### Sample collection tool
+
+Add a local-only lab UI for training samples. It can start as either `apps/lab` or a hidden mode in the web app, e.g. `npm run dev:lab`.
+
+Required flow:
+
+- Pick/search target symbol.
+- Show command + rendered symbol as reference.
+- Draw one or more examples.
+- Save raw strokes with metadata to committed JSONL/JSON files, e.g. `packages/data/source/samples/<symbol-id>.jsonl`.
+- Support undo, clear, keyboard shortcuts, and fast “save + next sample”.
+- Store raw strokes, canvas size, timestamp, tool version, and optional author/device metadata.
+- Rebuild normalized classifier data from source samples.
+
+Initial storage should be local-dev only: a tiny Node/Vite endpoint writes files into the repo. Static GitHub Pages should not try to save samples. Later, public contribution could use GitHub OAuth, PR generation, or GitHub Issues uploads.
+
+### Quality gate for new symbols/samples
+
+Every new data change should run:
+
+```bash
+npm run build:web:static
+npm --workspace @detexify/data run validate:data
+npm --workspace @detexify/data run evaluate:legacy
+```
+
+Longer term, add a CI job that fails if:
+
+- a symbol has no rendered asset,
+- a sample references an unknown symbol,
+- a LaTeX command cannot render,
+- duplicate/conflicting canonical IDs are introduced,
+- classifier accuracy/latency regresses beyond a threshold.
+
 ## Phases
 
 ### Phase 0 — repo foundation
@@ -120,14 +194,23 @@ Status: started.
 - `WKWebView` running shared web UI offline from bundled assets.
 - Native clipboard/autopaste bridge.
 
-### Phase 4 — ML experiments
+### Phase 4 — symbol growth tooling
+
+- Canonical committed symbol source format.
+- LaTeX-to-SVG/PNG renderer for new symbols.
+- Data validator for symbols/assets/samples.
+- Local sample collection UI.
+- JSONL/JSON source store for new raw stroke samples.
+- Rebuild normalized classifier artifacts from legacy + new samples.
+
+### Phase 5 — ML experiments
 
 - Rasterization pipeline.
 - Tiny CNN baseline.
 - Optional ONNX/CoreML/WASM deployment experiments.
 - Hybrid engine if beneficial.
 
-### Phase 5 — release polish
+### Phase 6 — release polish
 
 - CI builds.
 - Notarized macOS app.
