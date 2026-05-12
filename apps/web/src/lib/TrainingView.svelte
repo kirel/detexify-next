@@ -19,6 +19,8 @@
     symbolId: string
     source?: { kind?: string; createdAt?: string; legacyId?: string; index?: number }
     strokes: Strokes
+    rejected: boolean
+    rejection?: { reason: string; rejectedAt: string; rejectedBy?: string } | undefined
   }
 
   let symbols: TrainingSymbol[] = $state([])
@@ -28,6 +30,7 @@
   let filter = $state('')
   let status = $state('Loading training data…')
   let saving = $state(false)
+  let rejectReason = $state('scribble')
 
   const filteredSymbols = $derived.by(() => {
     const q = filter.trim().toLowerCase()
@@ -105,6 +108,24 @@
     strokes = strokes.slice(0, -1)
   }
 
+  async function reviewSample(sample: TrainingSample, action: 'reject' | 'restore') {
+    try {
+      const response = await fetch('/__detexify_lab__/sample-review', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ sampleId: sample.id, action, reason: rejectReason }),
+      })
+      if (!response.ok) throw new Error(await response.text())
+      const result = await response.json() as Pick<TrainingSample, 'rejected' | 'rejection'> & { sampleId: string }
+      samples = samples.map((candidate) => candidate.id === result.sampleId
+        ? { ...candidate, rejected: result.rejected, rejection: result.rejection }
+        : candidate)
+      status = action === 'reject' ? `Rejected ${sample.id}` : `Restored ${sample.id}`
+    } catch (error) {
+      status = error instanceof Error ? error.message : 'Could not update sample review'
+    }
+  }
+
   async function saveSample() {
     if (!selectedSymbol || strokes.length === 0 || saving) return
     saving = true
@@ -175,7 +196,7 @@
         <div>
           <h2>{selectedSymbol.command}</h2>
           <p>{selectedSymbol.package ?? 'latex2e'} · {mode(selectedSymbol)}{selectedSymbol.fontenc ? ` · ${selectedSymbol.fontenc}` : ''}</p>
-          <p>{samples.length} samples loaded</p>
+          <p>{samples.length} samples loaded · {samples.filter((sample) => sample.rejected).length} rejected</p>
         </div>
       </div>
 
@@ -191,12 +212,30 @@
   </section>
 
   <aside class="training-samples">
-    <h2>Existing samples</h2>
+    <div class="training-samples-header">
+      <h2>Existing samples</h2>
+      <label>
+        <span>Reject reason</span>
+        <select bind:value={rejectReason}>
+          <option value="scribble">scribble</option>
+          <option value="wrong-symbol">wrong symbol</option>
+          <option value="empty">empty</option>
+          <option value="duplicate">duplicate</option>
+          <option value="bad-normalization">bad normalization</option>
+          <option value="other">other</option>
+        </select>
+      </label>
+    </div>
     <ol>
       {#each samples as sample}
-        <li>
+        <li class:rejected={sample.rejected}>
           <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
-          <small>{sample.source?.kind ?? 'sample'}</small>
+          <small>{sample.rejected ? `rejected: ${sample.rejection?.reason ?? 'other'}` : sample.source?.kind ?? 'sample'}</small>
+          {#if sample.rejected}
+            <button type="button" onclick={() => reviewSample(sample, 'restore')}>Restore</button>
+          {:else}
+            <button type="button" onclick={() => reviewSample(sample, 'reject')}>Reject</button>
+          {/if}
         </li>
       {/each}
     </ol>

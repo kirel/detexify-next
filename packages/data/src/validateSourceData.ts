@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { assetPathForSymbol, parseJsonlSamples, readSamplesManifest, readSourceSymbols } from './sourceData.js'
+import { assetPathForSymbol, parseJsonlSamples, readRejectedSamples, readSamplesManifest, readSourceSymbols } from './sourceData.js'
 import { expandHome } from './legacyPaths.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
@@ -10,8 +10,10 @@ const requireAssets = hasFlag('require-assets')
 
 const symbolsFile = readSourceSymbols(join(sourceDir, 'symbols.json'))
 const manifest = readSamplesManifest(join(sourceDir, 'samples/manifest.json'))
+const rejectedSamples = readRejectedSamples(join(sourceDir, 'reviews/rejected-samples.json')).rejected
 const errors: string[] = []
 const symbolIds = new Set<string>()
+const sampleIds = new Set<string>()
 
 for (const symbol of symbolsFile.symbols) {
   if (symbolIds.has(symbol.id)) errors.push(`Duplicate symbol id: ${symbol.id}`)
@@ -37,9 +39,17 @@ for (const entry of manifest.samples) {
   countedSamples += samples.length
   if (samples.length !== entry.sampleCount) errors.push(`${entry.path}: manifest count ${entry.sampleCount}, actual ${samples.length}`)
   for (const [index, sample] of samples.entries()) {
+    if (sampleIds.has(sample.id)) errors.push(`Duplicate sample id: ${sample.id}`)
+    sampleIds.add(sample.id)
     if (sample.symbolId !== entry.symbolId) errors.push(`${entry.path}:${index + 1}: symbolId ${sample.symbolId} does not match ${entry.symbolId}`)
     validateStrokes(`${entry.path}:${index + 1}`, sample.strokes)
   }
+}
+
+for (const [sampleId, review] of Object.entries(rejectedSamples)) {
+  if (!sampleIds.has(sampleId)) errors.push(`Rejected sample references unknown sample id: ${sampleId}`)
+  if (!review.reason) errors.push(`Rejected sample ${sampleId} is missing a reason`)
+  if (!review.rejectedAt) errors.push(`Rejected sample ${sampleId} is missing rejectedAt`)
 }
 
 for (const symbol of symbolsFile.symbols) {
@@ -60,6 +70,7 @@ console.log('Source data validation passed')
 console.log(`- symbols: ${symbolsFile.symbols.length}`)
 console.log(`- symbols with samples: ${manifest.samples.length}`)
 console.log(`- samples: ${countedSamples}`)
+console.log(`- rejected samples: ${Object.keys(rejectedSamples).length}`)
 console.log(`- assets required: ${requireAssets ? 'yes' : 'no'}`)
 
 function validateStrokes(path: string, strokes: unknown): void {

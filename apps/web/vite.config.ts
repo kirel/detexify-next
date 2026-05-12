@@ -30,6 +30,10 @@ function detexifyLabPlugin(): Plugin {
             const body = JSON.parse(await readBody(request)) as { symbolId?: unknown; strokes?: unknown }
             const sample = saveSample(body)
             sendJson(response, sample)
+          } else if (request.method === 'POST' && url.pathname === '/sample-review') {
+            const body = JSON.parse(await readBody(request)) as { sampleId?: unknown; action?: unknown; reason?: unknown }
+            const review = updateSampleReview(body)
+            sendJson(response, review)
           } else {
             throw httpError(404, 'Not found')
           }
@@ -60,8 +64,14 @@ function readSamples(symbolId: string): unknown[] {
   const samplePath = symbol.samples?.path ?? samplePathForSymbolId(symbolId)
   const absolutePath = join(sourceDir, samplePath)
   if (!existsSync(absolutePath)) return []
+  const rejected = readRejectedSamplesFile().rejected
   const text = readFileSync(absolutePath, 'utf8').trim()
-  return text ? text.split('\n').map((line) => JSON.parse(line) as unknown) : []
+  if (!text) return []
+  return text.split('\n').map((line) => {
+    const sample = JSON.parse(line) as { id?: unknown }
+    const review = typeof sample.id === 'string' ? rejected[sample.id] : undefined
+    return review ? { ...sample, rejected: true, rejection: review } : { ...sample, rejected: false }
+  })
 }
 
 function saveSample(body: { symbolId?: unknown; strokes?: unknown }): unknown {
@@ -99,7 +109,29 @@ function saveSample(body: { symbolId?: unknown; strokes?: unknown }): unknown {
   symbol.samples = { path: samplePath, count: (symbol.samples?.count ?? 0) + 1 }
   writeJson(join(sourceDir, 'symbols.json'), symbolsFile)
 
-  return sample
+  return { ...sample, rejected: false }
+}
+
+function updateSampleReview(body: { sampleId?: unknown; action?: unknown; reason?: unknown }): unknown {
+  if (typeof body.sampleId !== 'string') throw httpError(400, 'sampleId must be a string')
+  if (body.action !== 'reject' && body.action !== 'restore') throw httpError(400, 'action must be reject or restore')
+
+  const reviews = readRejectedSamplesFile()
+  if (body.action === 'restore') {
+    delete reviews.rejected[body.sampleId]
+    writeJson(rejectedSamplesPath(), reviews)
+    return { sampleId: body.sampleId, rejected: false }
+  }
+
+  const reason = typeof body.reason === 'string' && body.reason.trim() ? body.reason.trim() : 'other'
+  const review = {
+    reason,
+    rejectedAt: new Date().toISOString(),
+    rejectedBy: 'kirel',
+  }
+  reviews.rejected[body.sampleId] = review
+  writeJson(rejectedSamplesPath(), reviews)
+  return { sampleId: body.sampleId, rejected: true, rejection: review }
 }
 
 function findSymbol(symbolId: string): SourceSymbol {
@@ -116,7 +148,18 @@ function readManifestFile(): SourceSamplesManifest {
   return JSON.parse(readFileSync(join(sourceDir, 'samples/manifest.json'), 'utf8')) as SourceSamplesManifest
 }
 
+function readRejectedSamplesFile(): RejectedSamplesFile {
+  const path = rejectedSamplesPath()
+  if (!existsSync(path)) return { version: 1, rejected: {} }
+  return JSON.parse(readFileSync(path, 'utf8')) as RejectedSamplesFile
+}
+
+function rejectedSamplesPath(): string {
+  return join(sourceDir, 'reviews/rejected-samples.json')
+}
+
 function writeJson(path: string, value: unknown): void {
+  mkdirSync(dirname(path), { recursive: true })
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`)
 }
 
@@ -204,6 +247,11 @@ type SourceSamplesManifest = {
   symbolCount: number
   sampleCount: number
   samples: { symbolId: string; path: string; sampleCount: number }[]
+}
+
+type RejectedSamplesFile = {
+  version: 1
+  rejected: Record<string, { reason: string; rejectedAt: string; rejectedBy?: string }>
 }
 
 type StrokesJson = { x: number; y: number }[][]

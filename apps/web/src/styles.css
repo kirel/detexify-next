@@ -670,17 +670,70 @@ h1 {
   font-size: 0.72rem;
 }
 
+.training-samples-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.training-samples-header label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.training-samples-header select {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 7px 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+
 .training-samples ol {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
-  max-height: 590px;
+  max-height: 530px;
   overflow: auto;
 }
 
 .training-samples li {
   display: grid;
   gap: 5px;
+}
+
+.training-samples li.rejected {
+  opacity: 0.45;
+}
+
+.training-samples li.rejected .stroke-thumbnail {
+  border-color: rgba(185, 28, 28, 0.45);
+  background: rgba(254, 242, 242, 0.72);
+}
+
+.training-samples li button {
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.training-samples li.rejected button {
+  border-color: rgba(15, 118, 110, 0.3);
+  color: var(--accent-strong);
 }
 
 .stroke-thumbnail {

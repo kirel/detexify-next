@@ -1,7 +1,7 @@
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { assetPathForSymbol, parseJsonlSamples, readSamplesManifest, readSourceSymbols } from './sourceData.js'
+import { assetPathForSymbol, parseJsonlSamples, readRejectedSamples, readSamplesManifest, readSourceSymbols } from './sourceData.js'
 import { expandHome } from './legacyPaths.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
@@ -10,11 +10,20 @@ const outDir = expandHome(getOption('out-dir') ?? join(repoRoot, 'apps/web/publi
 
 const symbolsFile = readSourceSymbols(join(sourceDir, 'symbols.json'))
 const manifest = readSamplesManifest(join(sourceDir, 'samples/manifest.json'))
+const rejectedSamples = readRejectedSamples(join(sourceDir, 'reviews/rejected-samples.json')).rejected
 const snapshot: Record<string, { strokes: readonly (readonly { x: number; y: number }[])[] }[]> = {}
+let includedSampleCount = 0
+let rejectedSampleCount = 0
 
 for (const entry of manifest.samples) {
   const samples = parseJsonlSamples(join(sourceDir, entry.path))
-  snapshot[entry.symbolId] = samples.map((sample) => ({ strokes: sample.strokes }))
+  const includedSamples = samples.filter((sample) => {
+    const rejected = sample.id in rejectedSamples
+    if (rejected) rejectedSampleCount += 1
+    return !rejected
+  })
+  includedSampleCount += includedSamples.length
+  snapshot[entry.symbolId] = includedSamples.map((sample) => ({ strokes: sample.strokes }))
 }
 
 rmSync(outDir, { recursive: true, force: true })
@@ -43,7 +52,8 @@ cpSync(assetsSourceDir, assetsOutDir, { recursive: true, force: true })
 console.log(`Prepared web data from source in ${outDir}`)
 console.log(`- symbols: ${webSymbols.length}`)
 console.log(`- symbols with samples: ${manifest.samples.length}`)
-console.log(`- samples: ${manifest.sampleCount}`)
+console.log(`- samples: ${includedSampleCount}`)
+console.log(`- rejected samples excluded: ${rejectedSampleCount}`)
 
 function getOption(name: string): string | undefined {
   const prefix = `--${name}=`

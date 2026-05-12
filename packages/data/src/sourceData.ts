@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 
 export type SourceSymbolsFile = {
   version: 1
@@ -45,6 +45,17 @@ export type SourceSampleManifestEntry = {
   sampleCount: number
 }
 
+export type RejectedSamplesFile = {
+  version: 1
+  rejected: Record<string, RejectedSampleReview>
+}
+
+export type RejectedSampleReview = {
+  reason: string
+  rejectedAt: string
+  rejectedBy?: string
+}
+
 export function readSourceSymbols(path: string): SourceSymbolsFile {
   const json = JSON.parse(readFileSync(path, 'utf8')) as unknown
   if (!isRecord(json) || json.version !== 1 || !Array.isArray(json.symbols)) throw new Error(`${path} must be a source symbols file`)
@@ -65,6 +76,13 @@ export function parseJsonlSamples(path: string): SourceSample[] {
     if (!isRecord(sample)) throw new Error(`${path}:${index + 1} must be an object`)
     return sample as SourceSample
   })
+}
+
+export function readRejectedSamples(path: string): RejectedSamplesFile {
+  if (!existsSync(path)) return { version: 1, rejected: {} }
+  const json = JSON.parse(readFileSync(path, 'utf8')) as unknown
+  if (!isRecord(json) || json.version !== 1 || !isRecord(json.rejected)) throw new Error(`${path} must be a rejected samples file`)
+  return json as RejectedSamplesFile
 }
 
 export function assetPathForSymbol(symbol: Pick<SourceSymbol, 'id'>, extension = 'svg'): string {
