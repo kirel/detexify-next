@@ -15,7 +15,7 @@
       },
       "samples": {
         "path": "samples/latex/amsmath/dotsb-qoi2ic.jsonl",
-        "count": 49
+        "count": 50
       }
     },
     {
@@ -4858,7 +4858,7 @@
       },
       "samples": {
         "path": "samples/latex/amssymb/varsupsetneqq-izhpl1.jsonl",
-        "count": 2
+        "count": 3
       }
     },
     {
@@ -9754,6 +9754,10 @@
         "command": "\\_",
         "fontenc": "OT1",
         "mode": "both"
+      },
+      "samples": {
+        "path": "samples/latex/latex2e/underscore-3wty5m.jsonl",
+        "count": 3
       }
     },
     {
@@ -10053,7 +10057,7 @@
       },
       "samples": {
         "path": "samples/latex/latex2e/xi-nsgx8x.jsonl",
-        "count": 50
+        "count": 51
       }
     },
     {

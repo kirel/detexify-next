@@ -1,4 +1,160 @@
 {
   "version": 1,
-  "rejected": {}
+  "rejected": {
+    "sample:legacy-detexify:1aezizd": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:40:59.977Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:1bixxr9": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:03.815Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:1b8yc2a": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:06.352Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:1bsxjg8": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:07.865Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:1eftxdl": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:11.371Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:1f9sqgi": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:13.344Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:g1ckgs": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:16.791Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:fhdd2u": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:18.202Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:gbc65r": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:21.345Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:i9cjij": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:23.736Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:hzcxtk": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:27.985Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:jxdb6c": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:31.226Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:iteweg": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:32.968Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:dqaiai": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:41:56.877Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:dge23i": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:01.085Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:dqdnsh": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:02.342Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:bsgfxo": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:03.841Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:cweupk": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:06.082Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:e0d9hg": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:09.053Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:eacv6f": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:09.992Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:dgh7lh": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:11.197Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:1a79gy6": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:16.484Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:te6aca": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:20.281Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:189c93d": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:21.465Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:pibumo": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:23.702Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:psbgbn": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:24.891Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:q2b20m": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:27.323Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:qcanpl": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:28.276Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:r69gsi": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:30.565Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:j8zd5f": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:39.443Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify:lhhbat": {
+      "reason": "scribble",
+      "rejectedAt": "2026-05-12T23:42:45.187Z",
+      "rejectedBy": "kirel"
+    }
+  }
 }

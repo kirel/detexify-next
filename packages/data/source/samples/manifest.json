@@ -2,13 +2,13 @@
   "version": 1,
   "encoding": "jsonl-per-symbol",
   "coordinateSystem": "normalized-0-1",
-  "symbolCount": 1072,
-  "sampleCount": 44002,
+  "symbolCount": 1073,
+  "sampleCount": 44008,
   "samples": [
     {
       "symbolId": "latex:amsmath:dotsb",
       "path": "samples/latex/amsmath/dotsb-qoi2ic.jsonl",
-      "sampleCount": 49
+      "sampleCount": 50
     },
     {
       "symbolId": "latex:amsmath:dotsc",
@@ -1333,7 +1333,7 @@
     {
       "symbolId": "latex:amssymb:varsupsetneqq",
       "path": "samples/latex/amssymb/varsupsetneqq-izhpl1.jsonl",
-      "sampleCount": 2
+      "sampleCount": 3
     },
     {
       "symbolId": "latex:amssymb:vartriangle",
@@ -2926,6 +2926,11 @@
       "sampleCount": 50
     },
     {
+      "symbolId": "latex:latex2e:underscore",
+      "path": "samples/latex/latex2e/underscore-3wty5m.jsonl",
+      "sampleCount": 3
+    },
+    {
       "symbolId": "latex:latex2e:uparrow",
       "path": "samples/latex/latex2e/uparrow-170jvko.jsonl",
       "sampleCount": 50
@@ -3023,7 +3028,7 @@
     {
       "symbolId": "latex:latex2e:xi",
       "path": "samples/latex/latex2e/xi-nsgx8x.jsonl",
-      "sampleCount": 50
+      "sampleCount": 51
     },
     {
       "symbolId": "latex:latex2e:Xi",
