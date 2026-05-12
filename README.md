@@ -54,6 +54,9 @@ npm --workspace @detexify/data run build:legacy-manifest
 # Run the web app locally
 npm run dev:web
 
+# Build the static web app from committed public data, e.g. for GitHub Pages
+npm run build:web:static
+
 # Bundle the web build into the Swift package resources
 npm run prepare:mac-web
 

@@ -9,8 +9,8 @@ apps/web/dist/
 packages/*/dist/
 
 # Generated/imported data artifacts can be large. Keep source references explicit.
+# apps/web/public/data is intentionally committed for static GitHub Pages deploys.
 artifacts/
-apps/web/public/data/
 apps/mac/Sources/DetexifyNextMac/Resources/WebApp/*
 !apps/mac/Sources/DetexifyNextMac/Resources/WebApp/.gitkeep
 
