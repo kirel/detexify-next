@@ -262,8 +262,11 @@ h1 {
 }
 
 .symbol-preview img {
-  max-width: 100px;
-  max-height: 100px;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
   image-rendering: auto;
 }
 
@@ -447,8 +450,11 @@ h1 {
 }
 
 .symbol-card-preview img {
-  max-width: 82px;
-  max-height: 82px;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
 }
 
 .symbol-grid li.missing .symbol-card-preview {
@@ -676,8 +682,11 @@ h1 {
 }
 
 .native .symbol-preview img {
-  max-width: 82px;
-  max-height: 82px;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
 }
 
 .native .command {
