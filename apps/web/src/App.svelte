@@ -3,6 +3,7 @@
   import DrawingCanvas from './lib/DrawingCanvas.svelte'
   import ResultsList from './lib/ResultsList.svelte'
   import SymbolGallery from './lib/SymbolGallery.svelte'
+  import TrainingView from './lib/TrainingView.svelte'
   import type { EnrichedResult, WorkerResponse, WorkerStatus } from './lib/types.js'
 
   let strokes: Strokes = $state([])
@@ -13,10 +14,11 @@
   let copied = $state('')
   let copyError = $state('')
   let copiedPulse = $state(0)
-  let route = $state(window.location.hash === '#/symbols' ? 'symbols' : 'draw')
+  let route = $state(window.location.hash === '#/symbols' ? 'symbols' : window.location.hash === '#/train' && import.meta.env.DEV && window.location.protocol !== 'detexify:' ? 'train' : 'draw')
   const hasInk = $derived(strokes.length > 0)
 
   const isNativeShell = window.location.protocol === 'detexify:'
+  const canTrain = import.meta.env.DEV && !isNativeShell
   if (isNativeShell) document.documentElement.classList.add('native-shell')
   const worker = new Worker(new URL('./workers/classifier.worker.ts', import.meta.url), { type: 'module' })
 
@@ -25,10 +27,11 @@
   })
 
   window.addEventListener('hashchange', () => {
-    route = window.location.hash === '#/symbols' ? 'symbols' : 'draw'
+    route = window.location.hash === '#/symbols' ? 'symbols' : window.location.hash === '#/train' && canTrain ? 'train' : 'draw'
   })
 
   window.addEventListener('keydown', (event: KeyboardEvent) => {
+    if (route !== 'draw') return
     if (event.key === 'Backspace' || event.key === 'Delete') {
       const target = event.target
       if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement || target instanceof HTMLElement && target.isContentEditable) return
@@ -112,11 +115,14 @@
       <nav class="hero-nav" aria-label="Sections">
         <a class:active={route === 'draw'} href="#/">Draw</a>
         <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
+        {#if canTrain}<a class:active={route === 'train'} href="#/train">Train</a>{/if}
       </nav>
     </div>
   </section>
 
-  {#if route === 'symbols' && !isNativeShell}
+  {#if route === 'train' && canTrain}
+    <TrainingView />
+  {:else if route === 'symbols' && !isNativeShell}
     <SymbolGallery />
   {:else}
   <section class="workspace">

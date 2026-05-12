@@ -67,6 +67,10 @@ npm run build:web:static
 npm run dev:web
 # then visit /#/symbols
 
+# Local-only training/sample capture view; appears only in Vite dev mode
+npm run dev:web
+# then visit /#/train
+
 # Bundle the web build into the Swift package resources
 npm run prepare:mac-web
 
