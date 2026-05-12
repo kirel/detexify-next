@@ -71,9 +71,9 @@
   <ol class="symbol-grid">
     {#each visibleSymbols as symbol}
       <li class:missing={!symbol.imagePath}>
-        <div class="symbol-card-preview">
+        <div class="symbol-card-preview" aria-hidden={!!symbol.imagePath}>
           {#if symbol.imagePath}
-            <img src={symbol.imagePath} alt={symbol.command} loading="lazy" />
+            <span class="symbol-image" style:background-image={`url(${symbol.imagePath})`}></span>
           {:else}
             <span>missing</span>
           {/if}

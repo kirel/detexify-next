@@ -42,7 +42,7 @@
         >
           <span class="symbol-preview" aria-hidden="true">
             {#if result.symbol?.imagePath}
-              <img src={result.symbol.imagePath} alt="" loading="lazy" />
+              <span class="symbol-image" style:background-image={`url(${result.symbol.imagePath})`}></span>
             {:else}
               <span>?</span>
             {/if}
