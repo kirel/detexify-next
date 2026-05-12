@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# JS/TS build outputs
+coverage/
+dist/
+*.tsbuildinfo
+apps/web/dist/
+packages/*/dist/
+
+# Generated/imported data artifacts can be large. Keep source references explicit.
+artifacts/
+apps/web/public/data/
+apps/mac/Sources/DetexifyNextMac/Resources/WebApp/*
+!apps/mac/Sources/DetexifyNextMac/Resources/WebApp/.gitkeep
+
+# SwiftPM/Xcode build outputs and local state
+.build/
+apps/mac/.build/
+.swiftpm/
+DerivedData/
+*.xcuserdata/
+*.xcuserstate
+
+# Local env/editor/OS noise
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log

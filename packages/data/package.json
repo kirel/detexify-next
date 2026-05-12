@@ -1,0 +1,20 @@
+{
+  "name": "@detexify/data",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "inspect:legacy": "node dist/inspectLegacy.js",
+    "inspect:symbols": "node dist/inspectLegacySymbols.js",
+    "evaluate:legacy": "node dist/evaluateLegacy.js",
+    "build:legacy-manifest": "node dist/buildLegacyManifest.js",
+    "compare:live-api": "node dist/compareLiveApi.js",
+    "prepare:web-data": "node dist/prepareWebData.js",
+    "prepare:mac-web": "node dist/prepareMacWeb.js"
+  },
+  "dependencies": {
+    "@detexify/core": "0.0.0"
+  }
+}

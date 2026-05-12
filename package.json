@@ -1,0 +1,29 @@
+{
+  "name": "detexify-next",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "tsc -b packages/core packages/data && npm run prepare:web-data && npm --workspace @detexify/web run build",
+    "build:packages": "tsc -b packages/core packages/data",
+    "dev:web": "npm run build:packages && npm run prepare:web-data && npm --workspace @detexify/web run dev",
+    "prepare:web-data": "npm --workspace @detexify/data run prepare:web-data",
+    "prepare:mac-web": "npm run build && npm --workspace @detexify/data run prepare:mac-web",
+    "build:mac": "npm run prepare:mac-web && cd apps/mac && swift build",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "tsc -b packages/core packages/data && npm --workspace @detexify/web run typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/stix-two-text": "^5.2.8"
+  }
+}
