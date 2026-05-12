@@ -2,6 +2,7 @@
   import type { Strokes } from '@detexify/core'
   import DrawingCanvas from './lib/DrawingCanvas.svelte'
   import ResultsList from './lib/ResultsList.svelte'
+  import SymbolGallery from './lib/SymbolGallery.svelte'
   import type { EnrichedResult, WorkerResponse, WorkerStatus } from './lib/types.js'
 
   let strokes: Strokes = $state([])
@@ -12,6 +13,7 @@
   let copied = $state('')
   let copyError = $state('')
   let copiedPulse = $state(0)
+  let route = $state(window.location.hash === '#/symbols' ? 'symbols' : 'draw')
   const hasInk = $derived(strokes.length > 0)
 
   const isNativeShell = window.location.protocol === 'detexify:'
@@ -20,6 +22,10 @@
 
   window.addEventListener('message', (event: MessageEvent) => {
     if (event.data?.type === 'clear') clear()
+  })
+
+  window.addEventListener('hashchange', () => {
+    route = window.location.hash === '#/symbols' ? 'symbols' : 'draw'
   })
 
   window.addEventListener('keydown', (event: KeyboardEvent) => {
@@ -100,10 +106,19 @@
 <main class="shell" class:web={!isNativeShell} class:native={isNativeShell}>
   <section class="hero">
     <p class="eyebrow">Detexify</p>
-    <h1>Draw. Find. Copy.</h1>
-    <p class="subtitle">Find the LaTeX command for a symbol you can draw but not name.</p>
+    <h1>{route === 'symbols' ? 'Symbol table.' : 'Draw. Find. Copy.'}</h1>
+    <div class="subtitle">
+      <p>{route === 'symbols' ? 'Inspect rendered symbols, packages, and commands.' : 'Find the LaTeX command for a symbol you can draw but not name.'}</p>
+      <nav class="hero-nav" aria-label="Sections">
+        <a class:active={route === 'draw'} href="#/">Draw</a>
+        <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
+      </nav>
+    </div>
   </section>
 
+  {#if route === 'symbols' && !isNativeShell}
+    <SymbolGallery />
+  {:else}
   <section class="workspace">
     <div class="panel draw-panel">
       <div class="panel-header">
@@ -129,6 +144,7 @@
       <ResultsList {results} copiedCommand={copied} native={isNativeShell} onCopy={copyResult} />
     </div>
   </section>
+  {/if}
   {#if copied || copyError}
     <div class:error={!!copyError} class="copy-toast" role="status" aria-live="polite">
       <span class="copy-mark">{copyError ? '!' : '✓'}</span>

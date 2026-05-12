@@ -12,7 +12,10 @@
     "build:legacy-manifest": "node dist/buildLegacyManifest.js",
     "compare:live-api": "node dist/compareLiveApi.js",
     "convert:legacy-source": "node dist/convertLegacySnapshotToSource.js",
-    "prepare:web-data": "node dist/prepareWebData.js",
+    "render:symbols": "node dist/renderSymbols.js",
+    "validate:source": "node dist/validateSourceData.js",
+    "prepare:web-data:legacy": "node dist/prepareWebData.js",
+    "prepare:web-data": "node dist/prepareWebDataFromSource.js",
     "prepare:mac-web": "node dist/prepareMacWeb.js"
   },
   "dependencies": {

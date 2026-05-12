@@ -13,6 +13,8 @@
     "build:packages": "tsc -b packages/core packages/data",
     "dev:web": "npm run build:packages && npm run prepare:web-data && npm --workspace @detexify/web run dev",
     "prepare:web-data": "npm --workspace @detexify/data run prepare:web-data",
+    "render:symbols": "npm run build:packages && npm --workspace @detexify/data run render:symbols",
+    "validate:data": "npm run build:packages && npm --workspace @detexify/data run validate:source",
     "prepare:mac-web": "npm run build && npm --workspace @detexify/data run prepare:mac-web",
     "build:mac": "npm run prepare:mac-web && cd apps/mac && swift build",
     "test": "npm run test --workspaces --if-present",

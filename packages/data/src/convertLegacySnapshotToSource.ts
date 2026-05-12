@@ -5,6 +5,7 @@ import type { SymbolMetadata } from '@detexify/core'
 import { symbolMode } from '@detexify/core'
 import { snapshotFromLegacyJson } from '@detexify/core/legacy'
 import { expandHome } from './legacyPaths.js'
+import { samplePathForSymbolId } from './sourceData.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
 const snapshotPath = expandHome(getOption('snapshot') ?? join(repoRoot, 'apps/web/public/data/snapshot.json'))
@@ -40,7 +41,7 @@ for (const legacyId of legacyIds) {
   const fontenc = legacySymbol?.fontenc ?? parsed.fontenc
   const mode = legacySymbol ? symbolMode(legacySymbol) : inferMode(command)
   const samples = snapshot.get(legacyId) ?? []
-  const samplePath = samples.length > 0 ? `${canonicalId.replaceAll(':', '/')}.jsonl` : undefined
+  const samplePath = samples.length > 0 ? samplePathForSymbolId(canonicalId).replace(/^samples\//, '') : undefined
 
   if (samplePath) {
     const outPath = join(samplesDir, samplePath)

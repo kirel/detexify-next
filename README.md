@@ -54,8 +54,18 @@ npm --workspace @detexify/data run build:legacy-manifest
 # Run the web app locally
 npm run dev:web
 
+# Validate source symbols/samples
+npm run validate:data
+
+# Render symbol SVGs from source metadata; cached by render input hash
+npm run render:symbols
+
 # Build the static web app from committed public data, e.g. for GitHub Pages
 npm run build:web:static
+
+# Open the symbol verification table in the web app
+npm run dev:web
+# then visit /#/symbols
 
 # Bundle the web build into the Swift package resources
 npm run prepare:mac-web
