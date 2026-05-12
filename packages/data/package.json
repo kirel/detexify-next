@@ -11,6 +11,7 @@
     "evaluate:legacy": "node dist/evaluateLegacy.js",
     "build:legacy-manifest": "node dist/buildLegacyManifest.js",
     "compare:live-api": "node dist/compareLiveApi.js",
+    "convert:legacy-source": "node dist/convertLegacySnapshotToSource.js",
     "prepare:web-data": "node dist/prepareWebData.js",
     "prepare:mac-web": "node dist/prepareMacWeb.js"
   },

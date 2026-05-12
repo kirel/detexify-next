@@ -1,0 +1,5369 @@
+{
+  "version": 1,
+  "encoding": "jsonl-per-symbol",
+  "coordinateSystem": "normalized-0-1",
+  "symbolCount": 1072,
+  "sampleCount": 44002,
+  "samples": [
+    {
+      "symbolId": "latex:amsmath:dotsb",
+      "path": "samples/latex/amsmath/dotsb.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amsmath:dotsc",
+      "path": "samples/latex/amsmath/dotsc.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amsmath:dotsi",
+      "path": "samples/latex/amsmath/dotsi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amsmath:dotsm",
+      "path": "samples/latex/amsmath/dotsm.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amsmath:dotso",
+      "path": "samples/latex/amsmath/dotso.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amsmath:idotsint",
+      "path": "samples/latex/amsmath/idotsint.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amsmath:iiiint",
+      "path": "samples/latex/amsmath/iiiint.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amsmath:iiint",
+      "path": "samples/latex/amsmath/iiint.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amsmath:iint",
+      "path": "samples/latex/amsmath/iint.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:angle",
+      "path": "samples/latex/amssymb/angle.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:approxeq",
+      "path": "samples/latex/amssymb/approxeq.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:backepsilon",
+      "path": "samples/latex/amssymb/backepsilon.jsonl",
+      "sampleCount": 42
+    },
+    {
+      "symbolId": "latex:amssymb:backprime",
+      "path": "samples/latex/amssymb/backprime.jsonl",
+      "sampleCount": 43
+    },
+    {
+      "symbolId": "latex:amssymb:backsim",
+      "path": "samples/latex/amssymb/backsim.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:backsimeq",
+      "path": "samples/latex/amssymb/backsimeq.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:barwedge",
+      "path": "samples/latex/amssymb/barwedge.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:Bbbk",
+      "path": "samples/latex/amssymb/Bbbk.jsonl",
+      "sampleCount": 45
+    },
+    {
+      "symbolId": "latex:amssymb:because",
+      "path": "samples/latex/amssymb/because.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:between",
+      "path": "samples/latex/amssymb/between.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:bigstar",
+      "path": "samples/latex/amssymb/bigstar.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:blacklozenge",
+      "path": "samples/latex/amssymb/blacklozenge.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:blacksquare",
+      "path": "samples/latex/amssymb/blacksquare.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:blacktriangle",
+      "path": "samples/latex/amssymb/blacktriangle.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:amssymb:blacktriangledown",
+      "path": "samples/latex/amssymb/blacktriangledown.jsonl",
+      "sampleCount": 45
+    },
+    {
+      "symbolId": "latex:amssymb:blacktriangleleft",
+      "path": "samples/latex/amssymb/blacktriangleleft.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:amssymb:blacktriangleright",
+      "path": "samples/latex/amssymb/blacktriangleright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:boxdot",
+      "path": "samples/latex/amssymb/boxdot.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:boxminus",
+      "path": "samples/latex/amssymb/boxminus.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:boxplus",
+      "path": "samples/latex/amssymb/boxplus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:boxtimes",
+      "path": "samples/latex/amssymb/boxtimes.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:bumpeq",
+      "path": "samples/latex/amssymb/bumpeq.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:Bumpeq",
+      "path": "samples/latex/amssymb/Bumpeq.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:Cap",
+      "path": "samples/latex/amssymb/Cap.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:centerdot",
+      "path": "samples/latex/amssymb/centerdot.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:checkmark",
+      "path": "samples/latex/amssymb/checkmark.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:circeq",
+      "path": "samples/latex/amssymb/circeq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:circlearrowleft",
+      "path": "samples/latex/amssymb/circlearrowleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:circlearrowright",
+      "path": "samples/latex/amssymb/circlearrowright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:circledast",
+      "path": "samples/latex/amssymb/circledast.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:circledcirc",
+      "path": "samples/latex/amssymb/circledcirc.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:circleddash",
+      "path": "samples/latex/amssymb/circleddash.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:circledR",
+      "path": "samples/latex/amssymb/circledR.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:circledS",
+      "path": "samples/latex/amssymb/circledS.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:complement",
+      "path": "samples/latex/amssymb/complement.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:Cup",
+      "path": "samples/latex/amssymb/Cup.jsonl",
+      "sampleCount": 40
+    },
+    {
+      "symbolId": "latex:amssymb:curlyeqprec",
+      "path": "samples/latex/amssymb/curlyeqprec.jsonl",
+      "sampleCount": 38
+    },
+    {
+      "symbolId": "latex:amssymb:curlyeqsucc",
+      "path": "samples/latex/amssymb/curlyeqsucc.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:amssymb:curlyvee",
+      "path": "samples/latex/amssymb/curlyvee.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:curlywedge",
+      "path": "samples/latex/amssymb/curlywedge.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:curvearrowleft",
+      "path": "samples/latex/amssymb/curvearrowleft.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:curvearrowright",
+      "path": "samples/latex/amssymb/curvearrowright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:dashleftarrow",
+      "path": "samples/latex/amssymb/dashleftarrow.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:amssymb:dashrightarrow",
+      "path": "samples/latex/amssymb/dashrightarrow.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:diagdown",
+      "path": "samples/latex/amssymb/diagdown.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:diagup",
+      "path": "samples/latex/amssymb/diagup.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:digamma",
+      "path": "samples/latex/amssymb/digamma.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:divideontimes",
+      "path": "samples/latex/amssymb/divideontimes.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:doteqdot",
+      "path": "samples/latex/amssymb/doteqdot.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:dotplus",
+      "path": "samples/latex/amssymb/dotplus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:doublebarwedge",
+      "path": "samples/latex/amssymb/doublebarwedge.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:amssymb:downdownarrows",
+      "path": "samples/latex/amssymb/downdownarrows.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:amssymb:downharpoonleft",
+      "path": "samples/latex/amssymb/downharpoonleft.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:amssymb:downharpoonright",
+      "path": "samples/latex/amssymb/downharpoonright.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:amssymb:eqcirc",
+      "path": "samples/latex/amssymb/eqcirc.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:eqslantgtr",
+      "path": "samples/latex/amssymb/eqslantgtr.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:amssymb:eqslantless",
+      "path": "samples/latex/amssymb/eqslantless.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:amssymb:eth",
+      "path": "samples/latex/amssymb/eth.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:fallingdotseq",
+      "path": "samples/latex/amssymb/fallingdotseq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:Finv",
+      "path": "samples/latex/amssymb/Finv.jsonl",
+      "sampleCount": 37
+    },
+    {
+      "symbolId": "latex:amssymb:Game",
+      "path": "samples/latex/amssymb/Game.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:geq",
+      "path": "samples/latex/amssymb/geq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:geqq",
+      "path": "samples/latex/amssymb/geqq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:geqslant",
+      "path": "samples/latex/amssymb/geqslant.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:gg",
+      "path": "samples/latex/amssymb/gg.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:ggg",
+      "path": "samples/latex/amssymb/ggg.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:gnapprox",
+      "path": "samples/latex/amssymb/gnapprox.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:amssymb:gneq",
+      "path": "samples/latex/amssymb/gneq.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:amssymb:gneqq",
+      "path": "samples/latex/amssymb/gneqq.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:amssymb:gnsim",
+      "path": "samples/latex/amssymb/gnsim.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:amssymb:gtrapprox",
+      "path": "samples/latex/amssymb/gtrapprox.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:gtrdot",
+      "path": "samples/latex/amssymb/gtrdot.jsonl",
+      "sampleCount": 31
+    },
+    {
+      "symbolId": "latex:amssymb:gtreqless",
+      "path": "samples/latex/amssymb/gtreqless.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:gtreqqless",
+      "path": "samples/latex/amssymb/gtreqqless.jsonl",
+      "sampleCount": 20
+    },
+    {
+      "symbolId": "latex:amssymb:gtrless",
+      "path": "samples/latex/amssymb/gtrless.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:gtrsim",
+      "path": "samples/latex/amssymb/gtrsim.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:gvertneqq",
+      "path": "samples/latex/amssymb/gvertneqq.jsonl",
+      "sampleCount": 2
+    },
+    {
+      "symbolId": "latex:amssymb:hbar",
+      "path": "samples/latex/amssymb/hbar.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:hslash",
+      "path": "samples/latex/amssymb/hslash.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:intercal",
+      "path": "samples/latex/amssymb/intercal.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:leftarrowtail",
+      "path": "samples/latex/amssymb/leftarrowtail.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:amssymb:leftleftarrows",
+      "path": "samples/latex/amssymb/leftleftarrows.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:amssymb:leftrightarrows",
+      "path": "samples/latex/amssymb/leftrightarrows.jsonl",
+      "sampleCount": 34
+    },
+    {
+      "symbolId": "latex:amssymb:leftrightharpoons",
+      "path": "samples/latex/amssymb/leftrightharpoons.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:leftrightsquigarrow",
+      "path": "samples/latex/amssymb/leftrightsquigarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:leftthreetimes",
+      "path": "samples/latex/amssymb/leftthreetimes.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:leq",
+      "path": "samples/latex/amssymb/leq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:leqq",
+      "path": "samples/latex/amssymb/leqq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:leqslant",
+      "path": "samples/latex/amssymb/leqslant.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:lessapprox",
+      "path": "samples/latex/amssymb/lessapprox.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:lessdot",
+      "path": "samples/latex/amssymb/lessdot.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:lesseqgtr",
+      "path": "samples/latex/amssymb/lesseqgtr.jsonl",
+      "sampleCount": 39
+    },
+    {
+      "symbolId": "latex:amssymb:lesseqqgtr",
+      "path": "samples/latex/amssymb/lesseqqgtr.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:amssymb:lessgtr",
+      "path": "samples/latex/amssymb/lessgtr.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:lesssim",
+      "path": "samples/latex/amssymb/lesssim.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:ll",
+      "path": "samples/latex/amssymb/ll.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Lleftarrow",
+      "path": "samples/latex/amssymb/Lleftarrow.jsonl",
+      "sampleCount": 2
+    },
+    {
+      "symbolId": "latex:amssymb:lll",
+      "path": "samples/latex/amssymb/lll.jsonl",
+      "sampleCount": 33
+    },
+    {
+      "symbolId": "latex:amssymb:lnapprox",
+      "path": "samples/latex/amssymb/lnapprox.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:amssymb:lneq",
+      "path": "samples/latex/amssymb/lneq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:lneqq",
+      "path": "samples/latex/amssymb/lneqq.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:amssymb:lnsim",
+      "path": "samples/latex/amssymb/lnsim.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:amssymb:looparrowleft",
+      "path": "samples/latex/amssymb/looparrowleft.jsonl",
+      "sampleCount": 32
+    },
+    {
+      "symbolId": "latex:amssymb:looparrowright",
+      "path": "samples/latex/amssymb/looparrowright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:lozenge",
+      "path": "samples/latex/amssymb/lozenge.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:Lsh",
+      "path": "samples/latex/amssymb/Lsh.jsonl",
+      "sampleCount": 27
+    },
+    {
+      "symbolId": "latex:amssymb:ltimes",
+      "path": "samples/latex/amssymb/ltimes.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:lvertneqq",
+      "path": "samples/latex/amssymb/lvertneqq.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:amssymb:maltese",
+      "path": "samples/latex/amssymb/maltese.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-A-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-A-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-B-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-B-rbrace.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-C-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-C-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-D-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-D-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-E-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-E-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-F-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-F-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-G-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-G-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-H-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-H-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-I-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-I-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-J-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-J-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-K-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-K-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-L-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-L-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-M-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-M-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-N-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-N-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-O-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-O-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-P-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-P-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-Q-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-Q-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-R-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-R-rbrace.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-S-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-S-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-T-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-T-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-U-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-U-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-V-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-V-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-W-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-W-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-X-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-X-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-Y-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-Y-rbrace.jsonl",
+      "sampleCount": 33
+    },
+    {
+      "symbolId": "latex:amssymb:mathcal-lbrace-Z-rbrace",
+      "path": "samples/latex/amssymb/mathcal-lbrace-Z-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-A-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-A-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-B-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-B-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-C-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-C-rbrace.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-D-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-D-rbrace.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-E-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-E-rbrace.jsonl",
+      "sampleCount": 7
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-F-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-F-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-G-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-G-rbrace.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-H-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-H-rbrace.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-I-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-I-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-J-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-J-rbrace.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-K-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-K-rbrace.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-L-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-L-rbrace.jsonl",
+      "sampleCount": 2
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-M-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-M-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-N-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-N-rbrace.jsonl",
+      "sampleCount": 38
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-O-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-O-rbrace.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-P-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-P-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-Q-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-Q-rbrace.jsonl",
+      "sampleCount": 23
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-R-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-R-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-S-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-S-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-T-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-T-rbrace.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-U-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-U-rbrace.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-V-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-V-rbrace.jsonl",
+      "sampleCount": 3
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-W-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-W-rbrace.jsonl",
+      "sampleCount": 20
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-X-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-X-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-Y-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-Y-rbrace.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:amssymb:mathfrak-lbrace-Z-rbrace",
+      "path": "samples/latex/amssymb/mathfrak-lbrace-Z-rbrace.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:amssymb:measuredangle",
+      "path": "samples/latex/amssymb/measuredangle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:mho",
+      "path": "samples/latex/amssymb/mho.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:multimap",
+      "path": "samples/latex/amssymb/multimap.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:ncong",
+      "path": "samples/latex/amssymb/ncong.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:neq",
+      "path": "samples/latex/amssymb/neq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nexists",
+      "path": "samples/latex/amssymb/nexists.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:ngeq",
+      "path": "samples/latex/amssymb/ngeq.jsonl",
+      "sampleCount": 40
+    },
+    {
+      "symbolId": "latex:amssymb:ngeqq",
+      "path": "samples/latex/amssymb/ngeqq.jsonl",
+      "sampleCount": 3
+    },
+    {
+      "symbolId": "latex:amssymb:ngeqslant",
+      "path": "samples/latex/amssymb/ngeqslant.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:amssymb:ngtr",
+      "path": "samples/latex/amssymb/ngtr.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nleftarrow",
+      "path": "samples/latex/amssymb/nleftarrow.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:amssymb:nLeftarrow",
+      "path": "samples/latex/amssymb/nLeftarrow.jsonl",
+      "sampleCount": 11
+    },
+    {
+      "symbolId": "latex:amssymb:nleftrightarrow",
+      "path": "samples/latex/amssymb/nleftrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nLeftrightarrow",
+      "path": "samples/latex/amssymb/nLeftrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nleq",
+      "path": "samples/latex/amssymb/nleq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nleqq",
+      "path": "samples/latex/amssymb/nleqq.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:amssymb:nleqslant",
+      "path": "samples/latex/amssymb/nleqslant.jsonl",
+      "sampleCount": 22
+    },
+    {
+      "symbolId": "latex:amssymb:nless",
+      "path": "samples/latex/amssymb/nless.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nmid",
+      "path": "samples/latex/amssymb/nmid.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nparallel",
+      "path": "samples/latex/amssymb/nparallel.jsonl",
+      "sampleCount": 43
+    },
+    {
+      "symbolId": "latex:amssymb:nprec",
+      "path": "samples/latex/amssymb/nprec.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:amssymb:npreceq",
+      "path": "samples/latex/amssymb/npreceq.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:amssymb:nrightarrow",
+      "path": "samples/latex/amssymb/nrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nRightarrow",
+      "path": "samples/latex/amssymb/nRightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nshortmid",
+      "path": "samples/latex/amssymb/nshortmid.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nshortparallel",
+      "path": "samples/latex/amssymb/nshortparallel.jsonl",
+      "sampleCount": 7
+    },
+    {
+      "symbolId": "latex:amssymb:nsim",
+      "path": "samples/latex/amssymb/nsim.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nsubseteq",
+      "path": "samples/latex/amssymb/nsubseteq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:nsucc",
+      "path": "samples/latex/amssymb/nsucc.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:amssymb:nsucceq",
+      "path": "samples/latex/amssymb/nsucceq.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:amssymb:nsupseteq",
+      "path": "samples/latex/amssymb/nsupseteq.jsonl",
+      "sampleCount": 40
+    },
+    {
+      "symbolId": "latex:amssymb:nsupseteqq",
+      "path": "samples/latex/amssymb/nsupseteqq.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:amssymb:ntriangleleft",
+      "path": "samples/latex/amssymb/ntriangleleft.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:amssymb:ntrianglelefteq",
+      "path": "samples/latex/amssymb/ntrianglelefteq.jsonl",
+      "sampleCount": 11
+    },
+    {
+      "symbolId": "latex:amssymb:ntriangleright",
+      "path": "samples/latex/amssymb/ntriangleright.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:amssymb:ntrianglerighteq",
+      "path": "samples/latex/amssymb/ntrianglerighteq.jsonl",
+      "sampleCount": 1
+    },
+    {
+      "symbolId": "latex:amssymb:nvdash",
+      "path": "samples/latex/amssymb/nvdash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nvDash",
+      "path": "samples/latex/amssymb/nvDash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:nVDash",
+      "path": "samples/latex/amssymb/nVDash.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:amssymb:pitchfork",
+      "path": "samples/latex/amssymb/pitchfork.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:precapprox",
+      "path": "samples/latex/amssymb/precapprox.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:amssymb:preccurlyeq",
+      "path": "samples/latex/amssymb/preccurlyeq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:precnapprox",
+      "path": "samples/latex/amssymb/precnapprox.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:amssymb:precnsim",
+      "path": "samples/latex/amssymb/precnsim.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:amssymb:precsim",
+      "path": "samples/latex/amssymb/precsim.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:amssymb:rightarrowtail",
+      "path": "samples/latex/amssymb/rightarrowtail.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:rightleftarrows",
+      "path": "samples/latex/amssymb/rightleftarrows.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:rightleftharpoons",
+      "path": "samples/latex/amssymb/rightleftharpoons.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:rightrightarrows",
+      "path": "samples/latex/amssymb/rightrightarrows.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:rightsquigarrow",
+      "path": "samples/latex/amssymb/rightsquigarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:rightthreetimes",
+      "path": "samples/latex/amssymb/rightthreetimes.jsonl",
+      "sampleCount": 41
+    },
+    {
+      "symbolId": "latex:amssymb:risingdotseq",
+      "path": "samples/latex/amssymb/risingdotseq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Rrightarrow",
+      "path": "samples/latex/amssymb/Rrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Rsh",
+      "path": "samples/latex/amssymb/Rsh.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:amssymb:rtimes",
+      "path": "samples/latex/amssymb/rtimes.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:shortmid",
+      "path": "samples/latex/amssymb/shortmid.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:shortparallel",
+      "path": "samples/latex/amssymb/shortparallel.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:smallfrown",
+      "path": "samples/latex/amssymb/smallfrown.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:smallsetminus",
+      "path": "samples/latex/amssymb/smallsetminus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:smallsmile",
+      "path": "samples/latex/amssymb/smallsmile.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:sphericalangle",
+      "path": "samples/latex/amssymb/sphericalangle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:sqsubset",
+      "path": "samples/latex/amssymb/sqsubset.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:sqsupset",
+      "path": "samples/latex/amssymb/sqsupset.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:square",
+      "path": "samples/latex/amssymb/square.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Subset",
+      "path": "samples/latex/amssymb/Subset.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:subseteqq",
+      "path": "samples/latex/amssymb/subseteqq.jsonl",
+      "sampleCount": 23
+    },
+    {
+      "symbolId": "latex:amssymb:subsetneq",
+      "path": "samples/latex/amssymb/subsetneq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:subsetneqq",
+      "path": "samples/latex/amssymb/subsetneqq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:succapprox",
+      "path": "samples/latex/amssymb/succapprox.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:amssymb:succcurlyeq",
+      "path": "samples/latex/amssymb/succcurlyeq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:succnapprox",
+      "path": "samples/latex/amssymb/succnapprox.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:amssymb:succnsim",
+      "path": "samples/latex/amssymb/succnsim.jsonl",
+      "sampleCount": 2
+    },
+    {
+      "symbolId": "latex:amssymb:succsim",
+      "path": "samples/latex/amssymb/succsim.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Supset",
+      "path": "samples/latex/amssymb/Supset.jsonl",
+      "sampleCount": 15
+    },
+    {
+      "symbolId": "latex:amssymb:supseteqq",
+      "path": "samples/latex/amssymb/supseteqq.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:amssymb:supsetneq",
+      "path": "samples/latex/amssymb/supsetneq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:supsetneqq",
+      "path": "samples/latex/amssymb/supsetneqq.jsonl",
+      "sampleCount": 11
+    },
+    {
+      "symbolId": "latex:amssymb:therefore",
+      "path": "samples/latex/amssymb/therefore.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:thickapprox",
+      "path": "samples/latex/amssymb/thickapprox.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:thicksim",
+      "path": "samples/latex/amssymb/thicksim.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:triangledown",
+      "path": "samples/latex/amssymb/triangledown.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:trianglelefteq",
+      "path": "samples/latex/amssymb/trianglelefteq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:triangleq",
+      "path": "samples/latex/amssymb/triangleq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:trianglerighteq",
+      "path": "samples/latex/amssymb/trianglerighteq.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:amssymb:twoheadleftarrow",
+      "path": "samples/latex/amssymb/twoheadleftarrow.jsonl",
+      "sampleCount": 33
+    },
+    {
+      "symbolId": "latex:amssymb:twoheadrightarrow",
+      "path": "samples/latex/amssymb/twoheadrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:upharpoonleft",
+      "path": "samples/latex/amssymb/upharpoonleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:upharpoonright",
+      "path": "samples/latex/amssymb/upharpoonright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:upuparrows",
+      "path": "samples/latex/amssymb/upuparrows.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:amssymb:varkappa",
+      "path": "samples/latex/amssymb/varkappa.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:varnothing",
+      "path": "samples/latex/amssymb/varnothing.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:varpropto",
+      "path": "samples/latex/amssymb/varpropto.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:varsubsetneq",
+      "path": "samples/latex/amssymb/varsubsetneq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:varsubsetneqq",
+      "path": "samples/latex/amssymb/varsubsetneqq.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:amssymb:varsupsetneq",
+      "path": "samples/latex/amssymb/varsupsetneq.jsonl",
+      "sampleCount": 15
+    },
+    {
+      "symbolId": "latex:amssymb:varsupsetneqq",
+      "path": "samples/latex/amssymb/varsupsetneqq.jsonl",
+      "sampleCount": 2
+    },
+    {
+      "symbolId": "latex:amssymb:vartriangle",
+      "path": "samples/latex/amssymb/vartriangle.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:amssymb:vartriangleleft",
+      "path": "samples/latex/amssymb/vartriangleleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:vartriangleright",
+      "path": "samples/latex/amssymb/vartriangleright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:vDash",
+      "path": "samples/latex/amssymb/vDash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Vdash",
+      "path": "samples/latex/amssymb/Vdash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:veebar",
+      "path": "samples/latex/amssymb/veebar.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Vvdash",
+      "path": "samples/latex/amssymb/Vvdash.jsonl",
+      "sampleCount": 42
+    },
+    {
+      "symbolId": "latex:bbold:mathbb-lbrace-1-rbrace",
+      "path": "samples/latex/bbold/mathbb-lbrace-1-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:cmll:parr",
+      "path": "samples/latex/cmll/parr.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:cmll:with",
+      "path": "samples/latex/cmll/with.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-1-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-1-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-A-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-A-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-B-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-B-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-C-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-C-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-D-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-D-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-E-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-E-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-F-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-F-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-G-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-G-rbrace.jsonl",
+      "sampleCount": 34
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-h-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-h-rbrace.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-H-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-H-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-I-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-I-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-J-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-J-rbrace.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-k-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-k-rbrace.jsonl",
+      "sampleCount": 1
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-K-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-K-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-L-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-L-rbrace.jsonl",
+      "sampleCount": 23
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-M-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-M-rbrace.jsonl",
+      "sampleCount": 35
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-N-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-N-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-O-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-O-rbrace.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-P-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-P-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-Q-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-Q-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-R-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-R-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-S-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-S-rbrace.jsonl",
+      "sampleCount": 33
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-T-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-T-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-U-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-U-rbrace.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-V-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-V-rbrace.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-W-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-W-rbrace.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-X-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-X-rbrace.jsonl",
+      "sampleCount": 31
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-Y-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-Y-rbrace.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:dsfont:mathds-lbrace-Z-rbrace",
+      "path": "samples/latex/dsfont/mathds-lbrace-Z-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:dotsint",
+      "path": "samples/latex/esint/dotsint.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:esint:fint",
+      "path": "samples/latex/esint/fint.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:iiiint",
+      "path": "samples/latex/esint/iiiint.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:iiint",
+      "path": "samples/latex/esint/iiint.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:iint",
+      "path": "samples/latex/esint/iint.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:esint:landdownint",
+      "path": "samples/latex/esint/landdownint.jsonl",
+      "sampleCount": 22
+    },
+    {
+      "symbolId": "latex:esint:landupint",
+      "path": "samples/latex/esint/landupint.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:esint:oiint",
+      "path": "samples/latex/esint/oiint.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:ointclockwise",
+      "path": "samples/latex/esint/ointclockwise.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:ointctrclockwise",
+      "path": "samples/latex/esint/ointctrclockwise.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:sqiint",
+      "path": "samples/latex/esint/sqiint.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:esint:sqint",
+      "path": "samples/latex/esint/sqint.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:esint:varoiint",
+      "path": "samples/latex/esint/varoiint.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:varointclockwise",
+      "path": "samples/latex/esint/varointclockwise.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:esint:varointctrclockwise",
+      "path": "samples/latex/esint/varointctrclockwise.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:gensymb:celsius",
+      "path": "samples/latex/gensymb/celsius.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:gensymb:degree",
+      "path": "samples/latex/gensymb/degree.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:gensymb:ohm",
+      "path": "samples/latex/gensymb/ohm.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:aa",
+      "path": "samples/latex/latex2e/aa.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:AA",
+      "path": "samples/latex/latex2e/AA.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:ae",
+      "path": "samples/latex/latex2e/ae.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:AE",
+      "path": "samples/latex/latex2e/AE.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:aleph",
+      "path": "samples/latex/latex2e/aleph.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:alpha",
+      "path": "samples/latex/latex2e/alpha.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:amalg",
+      "path": "samples/latex/latex2e/amalg.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ampersand",
+      "path": "samples/latex/latex2e/ampersand.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:angle",
+      "path": "samples/latex/latex2e/angle.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:latex2e:approx",
+      "path": "samples/latex/latex2e/approx.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ast",
+      "path": "samples/latex/latex2e/ast.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:asymp",
+      "path": "samples/latex/latex2e/asymp.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:backslash",
+      "path": "samples/latex/latex2e/backslash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:bar:16socis",
+      "path": "samples/latex/latex2e/bar/16socis.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:bar:1sa4fqg",
+      "path": "samples/latex/latex2e/bar/1sa4fqg.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:beta",
+      "path": "samples/latex/latex2e/beta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:bigcap",
+      "path": "samples/latex/latex2e/bigcap.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:bigcirc",
+      "path": "samples/latex/latex2e/bigcirc.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:bigcup",
+      "path": "samples/latex/latex2e/bigcup.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:bigodot",
+      "path": "samples/latex/latex2e/bigodot.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:bigoplus",
+      "path": "samples/latex/latex2e/bigoplus.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:bigotimes",
+      "path": "samples/latex/latex2e/bigotimes.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:bigsqcup",
+      "path": "samples/latex/latex2e/bigsqcup.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:bigtriangledown",
+      "path": "samples/latex/latex2e/bigtriangledown.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:bigtriangleup",
+      "path": "samples/latex/latex2e/bigtriangleup.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:biguplus",
+      "path": "samples/latex/latex2e/biguplus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:bigvee",
+      "path": "samples/latex/latex2e/bigvee.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:bigwedge",
+      "path": "samples/latex/latex2e/bigwedge.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:bot",
+      "path": "samples/latex/latex2e/bot.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:bowtie",
+      "path": "samples/latex/latex2e/bowtie.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:bullet",
+      "path": "samples/latex/latex2e/bullet.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:cap",
+      "path": "samples/latex/latex2e/cap.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:cdot",
+      "path": "samples/latex/latex2e/cdot.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:cdotp",
+      "path": "samples/latex/latex2e/cdotp.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:cdots",
+      "path": "samples/latex/latex2e/cdots.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:chi",
+      "path": "samples/latex/latex2e/chi.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:circ",
+      "path": "samples/latex/latex2e/circ.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:clubsuit",
+      "path": "samples/latex/latex2e/clubsuit.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:colon",
+      "path": "samples/latex/latex2e/colon.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:cong",
+      "path": "samples/latex/latex2e/cong.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:coprod",
+      "path": "samples/latex/latex2e/coprod.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:copyright",
+      "path": "samples/latex/latex2e/copyright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:cup",
+      "path": "samples/latex/latex2e/cup.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:dag",
+      "path": "samples/latex/latex2e/dag.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:dagger",
+      "path": "samples/latex/latex2e/dagger.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:dash-dash",
+      "path": "samples/latex/latex2e/dash-dash.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:latex2e:dash-dash-dash",
+      "path": "samples/latex/latex2e/dash-dash-dash.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:latex2e:dash-dash-dash-dash",
+      "path": "samples/latex/latex2e/dash-dash-dash-dash.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:dashv",
+      "path": "samples/latex/latex2e/dashv.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ddag",
+      "path": "samples/latex/latex2e/ddag.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ddagger",
+      "path": "samples/latex/latex2e/ddagger.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ddots",
+      "path": "samples/latex/latex2e/ddots.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:delta",
+      "path": "samples/latex/latex2e/delta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Delta",
+      "path": "samples/latex/latex2e/Delta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:dh",
+      "path": "samples/latex/latex2e/dh.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:DH",
+      "path": "samples/latex/latex2e/DH.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:diamond",
+      "path": "samples/latex/latex2e/diamond.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:diamondsuit",
+      "path": "samples/latex/latex2e/diamondsuit.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:div",
+      "path": "samples/latex/latex2e/div.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:dj",
+      "path": "samples/latex/latex2e/dj.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:DJ",
+      "path": "samples/latex/latex2e/DJ.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:dollar",
+      "path": "samples/latex/latex2e/dollar.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:doteq",
+      "path": "samples/latex/latex2e/doteq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:dots",
+      "path": "samples/latex/latex2e/dots.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:downarrow",
+      "path": "samples/latex/latex2e/downarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Downarrow",
+      "path": "samples/latex/latex2e/Downarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ell",
+      "path": "samples/latex/latex2e/ell.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:emptyset",
+      "path": "samples/latex/latex2e/emptyset.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:epsilon",
+      "path": "samples/latex/latex2e/epsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:equiv",
+      "path": "samples/latex/latex2e/equiv.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:eta",
+      "path": "samples/latex/latex2e/eta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:exclamation-grave",
+      "path": "samples/latex/latex2e/exclamation-grave.jsonl",
+      "sampleCount": 35
+    },
+    {
+      "symbolId": "latex:latex2e:exists",
+      "path": "samples/latex/latex2e/exists.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:flat",
+      "path": "samples/latex/latex2e/flat.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:forall",
+      "path": "samples/latex/latex2e/forall.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:frown",
+      "path": "samples/latex/latex2e/frown.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:gamma",
+      "path": "samples/latex/latex2e/gamma.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:Gamma",
+      "path": "samples/latex/latex2e/Gamma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:guillemotleft",
+      "path": "samples/latex/latex2e/guillemotleft.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:guillemotright",
+      "path": "samples/latex/latex2e/guillemotright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:guilsinglleft",
+      "path": "samples/latex/latex2e/guilsinglleft.jsonl",
+      "sampleCount": 26
+    },
+    {
+      "symbolId": "latex:latex2e:guilsinglright",
+      "path": "samples/latex/latex2e/guilsinglright.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:latex2e:hash",
+      "path": "samples/latex/latex2e/hash.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:hbar",
+      "path": "samples/latex/latex2e/hbar.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:heartsuit",
+      "path": "samples/latex/latex2e/heartsuit.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:hookleftarrow",
+      "path": "samples/latex/latex2e/hookleftarrow.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:hookrightarrow",
+      "path": "samples/latex/latex2e/hookrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Im",
+      "path": "samples/latex/latex2e/Im.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:imath",
+      "path": "samples/latex/latex2e/imath.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:in",
+      "path": "samples/latex/latex2e/in.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:infty",
+      "path": "samples/latex/latex2e/infty.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:int",
+      "path": "samples/latex/latex2e/int.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:iota",
+      "path": "samples/latex/latex2e/iota.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:jmath",
+      "path": "samples/latex/latex2e/jmath.jsonl",
+      "sampleCount": 35
+    },
+    {
+      "symbolId": "latex:latex2e:kappa",
+      "path": "samples/latex/latex2e/kappa.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:l",
+      "path": "samples/latex/latex2e/l.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:L",
+      "path": "samples/latex/latex2e/L.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:lambda",
+      "path": "samples/latex/latex2e/lambda.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:Lambda",
+      "path": "samples/latex/latex2e/Lambda.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:langle",
+      "path": "samples/latex/latex2e/langle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:lbrace",
+      "path": "samples/latex/latex2e/lbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:lbracket",
+      "path": "samples/latex/latex2e/lbracket.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:lceil",
+      "path": "samples/latex/latex2e/lceil.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ldotp",
+      "path": "samples/latex/latex2e/ldotp.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ldots",
+      "path": "samples/latex/latex2e/ldots.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:leftarrow",
+      "path": "samples/latex/latex2e/leftarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Leftarrow",
+      "path": "samples/latex/latex2e/Leftarrow.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:leftharpoondown",
+      "path": "samples/latex/latex2e/leftharpoondown.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:latex2e:leftharpoonup",
+      "path": "samples/latex/latex2e/leftharpoonup.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:latex2e:leftrightarrow",
+      "path": "samples/latex/latex2e/leftrightarrow.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:Leftrightarrow",
+      "path": "samples/latex/latex2e/Leftrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:lfloor",
+      "path": "samples/latex/latex2e/lfloor.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:longleftarrow",
+      "path": "samples/latex/latex2e/longleftarrow.jsonl",
+      "sampleCount": 24
+    },
+    {
+      "symbolId": "latex:latex2e:Longleftarrow",
+      "path": "samples/latex/latex2e/Longleftarrow.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:longleftrightarrow",
+      "path": "samples/latex/latex2e/longleftrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Longleftrightarrow",
+      "path": "samples/latex/latex2e/Longleftrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:longmapsto",
+      "path": "samples/latex/latex2e/longmapsto.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:longrightarrow",
+      "path": "samples/latex/latex2e/longrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Longrightarrow",
+      "path": "samples/latex/latex2e/Longrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:mapsto",
+      "path": "samples/latex/latex2e/mapsto.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:mathdollar",
+      "path": "samples/latex/latex2e/mathdollar.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:mathellipsis",
+      "path": "samples/latex/latex2e/mathellipsis.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:mathparagraph",
+      "path": "samples/latex/latex2e/mathparagraph.jsonl",
+      "sampleCount": 37
+    },
+    {
+      "symbolId": "latex:latex2e:mathsection",
+      "path": "samples/latex/latex2e/mathsection.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:mathsterling",
+      "path": "samples/latex/latex2e/mathsterling.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:mathunderscore",
+      "path": "samples/latex/latex2e/mathunderscore.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:mid",
+      "path": "samples/latex/latex2e/mid.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:models",
+      "path": "samples/latex/latex2e/models.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:mp",
+      "path": "samples/latex/latex2e/mp.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:mu",
+      "path": "samples/latex/latex2e/mu.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:nabla",
+      "path": "samples/latex/latex2e/nabla.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:natural",
+      "path": "samples/latex/latex2e/natural.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:nearrow",
+      "path": "samples/latex/latex2e/nearrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:neg",
+      "path": "samples/latex/latex2e/neg.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ng",
+      "path": "samples/latex/latex2e/ng.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:NG",
+      "path": "samples/latex/latex2e/NG.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:latex2e:ni",
+      "path": "samples/latex/latex2e/ni.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:not-approx",
+      "path": "samples/latex/latex2e/not-approx.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:not-equiv",
+      "path": "samples/latex/latex2e/not-equiv.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:not-sim",
+      "path": "samples/latex/latex2e/not-sim.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:latex2e:not-simeq",
+      "path": "samples/latex/latex2e/not-simeq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:notin",
+      "path": "samples/latex/latex2e/notin.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:nu",
+      "path": "samples/latex/latex2e/nu.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:nwarrow",
+      "path": "samples/latex/latex2e/nwarrow.jsonl",
+      "sampleCount": 39
+    },
+    {
+      "symbolId": "latex:latex2e:o",
+      "path": "samples/latex/latex2e/o.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:O",
+      "path": "samples/latex/latex2e/O.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:odot",
+      "path": "samples/latex/latex2e/odot.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:oe",
+      "path": "samples/latex/latex2e/oe.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:OE",
+      "path": "samples/latex/latex2e/OE.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:oint",
+      "path": "samples/latex/latex2e/oint.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:omega",
+      "path": "samples/latex/latex2e/omega.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Omega",
+      "path": "samples/latex/latex2e/Omega.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:ominus",
+      "path": "samples/latex/latex2e/ominus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:oplus",
+      "path": "samples/latex/latex2e/oplus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:oslash",
+      "path": "samples/latex/latex2e/oslash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:otimes",
+      "path": "samples/latex/latex2e/otimes.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:P",
+      "path": "samples/latex/latex2e/P.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:parallel",
+      "path": "samples/latex/latex2e/parallel.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:partial",
+      "path": "samples/latex/latex2e/partial.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:percent",
+      "path": "samples/latex/latex2e/percent.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:perp",
+      "path": "samples/latex/latex2e/perp.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:phi",
+      "path": "samples/latex/latex2e/phi.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:Phi",
+      "path": "samples/latex/latex2e/Phi.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:pi",
+      "path": "samples/latex/latex2e/pi.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:Pi",
+      "path": "samples/latex/latex2e/Pi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:pm",
+      "path": "samples/latex/latex2e/pm.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:pounds",
+      "path": "samples/latex/latex2e/pounds.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:prec",
+      "path": "samples/latex/latex2e/prec.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:preceq",
+      "path": "samples/latex/latex2e/preceq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:prime",
+      "path": "samples/latex/latex2e/prime.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:prod",
+      "path": "samples/latex/latex2e/prod.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:propto",
+      "path": "samples/latex/latex2e/propto.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:psi",
+      "path": "samples/latex/latex2e/psi.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:Psi",
+      "path": "samples/latex/latex2e/Psi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:quotedblbase",
+      "path": "samples/latex/latex2e/quotedblbase.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:quotesinglbase",
+      "path": "samples/latex/latex2e/quotesinglbase.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:rangle",
+      "path": "samples/latex/latex2e/rangle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:rbrace",
+      "path": "samples/latex/latex2e/rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:rbracket",
+      "path": "samples/latex/latex2e/rbracket.jsonl",
+      "sampleCount": 45
+    },
+    {
+      "symbolId": "latex:latex2e:rceil",
+      "path": "samples/latex/latex2e/rceil.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Re",
+      "path": "samples/latex/latex2e/Re.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:rfloor",
+      "path": "samples/latex/latex2e/rfloor.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:rho",
+      "path": "samples/latex/latex2e/rho.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:rightarrow",
+      "path": "samples/latex/latex2e/rightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Rightarrow",
+      "path": "samples/latex/latex2e/Rightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:rightharpoondown",
+      "path": "samples/latex/latex2e/rightharpoondown.jsonl",
+      "sampleCount": 42
+    },
+    {
+      "symbolId": "latex:latex2e:rightharpoonup",
+      "path": "samples/latex/latex2e/rightharpoonup.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:rightleftharpoons",
+      "path": "samples/latex/latex2e/rightleftharpoons.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:S",
+      "path": "samples/latex/latex2e/S.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:searrow",
+      "path": "samples/latex/latex2e/searrow.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:setminus",
+      "path": "samples/latex/latex2e/setminus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sharp",
+      "path": "samples/latex/latex2e/sharp.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sigma",
+      "path": "samples/latex/latex2e/sigma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Sigma",
+      "path": "samples/latex/latex2e/Sigma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sim",
+      "path": "samples/latex/latex2e/sim.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:simeq",
+      "path": "samples/latex/latex2e/simeq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:slash",
+      "path": "samples/latex/latex2e/slash.jsonl",
+      "sampleCount": 42
+    },
+    {
+      "symbolId": "latex:latex2e:smile",
+      "path": "samples/latex/latex2e/smile.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:spadesuit",
+      "path": "samples/latex/latex2e/spadesuit.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sqcap",
+      "path": "samples/latex/latex2e/sqcap.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sqcup",
+      "path": "samples/latex/latex2e/sqcup.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sqrt-lbrace-rbrace",
+      "path": "samples/latex/latex2e/sqrt-lbrace-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:sqsubseteq",
+      "path": "samples/latex/latex2e/sqsubseteq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sqsupseteq",
+      "path": "samples/latex/latex2e/sqsupseteq.jsonl",
+      "sampleCount": 36
+    },
+    {
+      "symbolId": "latex:latex2e:ss",
+      "path": "samples/latex/latex2e/ss.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:SS",
+      "path": "samples/latex/latex2e/SS.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:star",
+      "path": "samples/latex/latex2e/star.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:subset",
+      "path": "samples/latex/latex2e/subset.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:subseteq",
+      "path": "samples/latex/latex2e/subseteq.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:succ",
+      "path": "samples/latex/latex2e/succ.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:succeq",
+      "path": "samples/latex/latex2e/succeq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:sum",
+      "path": "samples/latex/latex2e/sum.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:supset",
+      "path": "samples/latex/latex2e/supset.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:supseteq",
+      "path": "samples/latex/latex2e/supseteq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:surd",
+      "path": "samples/latex/latex2e/surd.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:swarrow",
+      "path": "samples/latex/latex2e/swarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:symbol-epr69x",
+      "path": "samples/latex/latex2e/symbol-epr69x.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:tau",
+      "path": "samples/latex/latex2e/tau.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textasciicircum",
+      "path": "samples/latex/latex2e/textasciicircum.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textasciitilde",
+      "path": "samples/latex/latex2e/textasciitilde.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textasteriskcentered",
+      "path": "samples/latex/latex2e/textasteriskcentered.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textbackslash",
+      "path": "samples/latex/latex2e/textbackslash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textbar",
+      "path": "samples/latex/latex2e/textbar.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textbraceleft",
+      "path": "samples/latex/latex2e/textbraceleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textbraceright",
+      "path": "samples/latex/latex2e/textbraceright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textbullet",
+      "path": "samples/latex/latex2e/textbullet.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textcopyright",
+      "path": "samples/latex/latex2e/textcopyright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textdagger",
+      "path": "samples/latex/latex2e/textdagger.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textdaggerdbl",
+      "path": "samples/latex/latex2e/textdaggerdbl.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:latex2e:textdollar",
+      "path": "samples/latex/latex2e/textdollar.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textellipsis",
+      "path": "samples/latex/latex2e/textellipsis.jsonl",
+      "sampleCount": 45
+    },
+    {
+      "symbolId": "latex:latex2e:textemdash",
+      "path": "samples/latex/latex2e/textemdash.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:textendash",
+      "path": "samples/latex/latex2e/textendash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textexclamdown",
+      "path": "samples/latex/latex2e/textexclamdown.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textgreater",
+      "path": "samples/latex/latex2e/textgreater.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textless",
+      "path": "samples/latex/latex2e/textless.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textordfeminine",
+      "path": "samples/latex/latex2e/textordfeminine.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textordmasculine",
+      "path": "samples/latex/latex2e/textordmasculine.jsonl",
+      "sampleCount": 21
+    },
+    {
+      "symbolId": "latex:latex2e:textparagraph",
+      "path": "samples/latex/latex2e/textparagraph.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textperiodcentered",
+      "path": "samples/latex/latex2e/textperiodcentered.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textquestiondown",
+      "path": "samples/latex/latex2e/textquestiondown.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:textquotedbl",
+      "path": "samples/latex/latex2e/textquotedbl.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:latex2e:textquotedblleft",
+      "path": "samples/latex/latex2e/textquotedblleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textquotedblright",
+      "path": "samples/latex/latex2e/textquotedblright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textquoteleft",
+      "path": "samples/latex/latex2e/textquoteleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textquoteright",
+      "path": "samples/latex/latex2e/textquoteright.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:latex2e:textregistered",
+      "path": "samples/latex/latex2e/textregistered.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textsection",
+      "path": "samples/latex/latex2e/textsection.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textsterling",
+      "path": "samples/latex/latex2e/textsterling.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:texttrademark",
+      "path": "samples/latex/latex2e/texttrademark.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textunderscore",
+      "path": "samples/latex/latex2e/textunderscore.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:textvisiblespace",
+      "path": "samples/latex/latex2e/textvisiblespace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:th",
+      "path": "samples/latex/latex2e/th.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:TH",
+      "path": "samples/latex/latex2e/TH.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:theta",
+      "path": "samples/latex/latex2e/theta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Theta",
+      "path": "samples/latex/latex2e/Theta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:times",
+      "path": "samples/latex/latex2e/times.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:top",
+      "path": "samples/latex/latex2e/top.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:triangle",
+      "path": "samples/latex/latex2e/triangle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:triangleleft",
+      "path": "samples/latex/latex2e/triangleleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:triangleright",
+      "path": "samples/latex/latex2e/triangleright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:uparrow",
+      "path": "samples/latex/latex2e/uparrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Uparrow",
+      "path": "samples/latex/latex2e/Uparrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:updownarrow",
+      "path": "samples/latex/latex2e/updownarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Updownarrow",
+      "path": "samples/latex/latex2e/Updownarrow.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:uplus",
+      "path": "samples/latex/latex2e/uplus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:upsilon",
+      "path": "samples/latex/latex2e/upsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Upsilon",
+      "path": "samples/latex/latex2e/Upsilon.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:varepsilon",
+      "path": "samples/latex/latex2e/varepsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:varphi",
+      "path": "samples/latex/latex2e/varphi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:varpi",
+      "path": "samples/latex/latex2e/varpi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:varrho",
+      "path": "samples/latex/latex2e/varrho.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:varsigma",
+      "path": "samples/latex/latex2e/varsigma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:vartheta",
+      "path": "samples/latex/latex2e/vartheta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:vdash",
+      "path": "samples/latex/latex2e/vdash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:vdots",
+      "path": "samples/latex/latex2e/vdots.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:vee",
+      "path": "samples/latex/latex2e/vee.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latex2e:wedge",
+      "path": "samples/latex/latex2e/wedge.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:wp",
+      "path": "samples/latex/latex2e/wp.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:wr",
+      "path": "samples/latex/latex2e/wr.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:xi",
+      "path": "samples/latex/latex2e/xi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:Xi",
+      "path": "samples/latex/latex2e/Xi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:zeta",
+      "path": "samples/latex/latex2e/zeta.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:latexsym:leadsto",
+      "path": "samples/latex/latexsym/leadsto.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Ankh",
+      "path": "samples/latex/marvosym/Ankh.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:marvosym:Aquarius",
+      "path": "samples/latex/marvosym/Aquarius.jsonl",
+      "sampleCount": 45
+    },
+    {
+      "symbolId": "latex:marvosym:Aries",
+      "path": "samples/latex/marvosym/Aries.jsonl",
+      "sampleCount": 43
+    },
+    {
+      "symbolId": "latex:marvosym:Bat",
+      "path": "samples/latex/marvosym/Bat.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:Cancer",
+      "path": "samples/latex/marvosym/Cancer.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:marvosym:Capricorn",
+      "path": "samples/latex/marvosym/Capricorn.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:marvosym:Celtcross",
+      "path": "samples/latex/marvosym/Celtcross.jsonl",
+      "sampleCount": 43
+    },
+    {
+      "symbolId": "latex:marvosym:CircledA",
+      "path": "samples/latex/marvosym/CircledA.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:Cross",
+      "path": "samples/latex/marvosym/Cross.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Denarius",
+      "path": "samples/latex/marvosym/Denarius.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:Earth",
+      "path": "samples/latex/marvosym/Earth.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:Ecommerce",
+      "path": "samples/latex/marvosym/Ecommerce.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:marvosym:Email",
+      "path": "samples/latex/marvosym/Email.jsonl",
+      "sampleCount": 41
+    },
+    {
+      "symbolId": "latex:marvosym:Emailct",
+      "path": "samples/latex/marvosym/Emailct.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:marvosym:EUR",
+      "path": "samples/latex/marvosym/EUR.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:EURcr",
+      "path": "samples/latex/marvosym/EURcr.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:EURdig",
+      "path": "samples/latex/marvosym/EURdig.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:marvosym:EURhv",
+      "path": "samples/latex/marvosym/EURhv.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:EURtm",
+      "path": "samples/latex/marvosym/EURtm.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:EyesDollar",
+      "path": "samples/latex/marvosym/EyesDollar.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:marvosym:fax",
+      "path": "samples/latex/marvosym/fax.jsonl",
+      "sampleCount": 31
+    },
+    {
+      "symbolId": "latex:marvosym:FAX",
+      "path": "samples/latex/marvosym/FAX.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Faxmachine",
+      "path": "samples/latex/marvosym/Faxmachine.jsonl",
+      "sampleCount": 43
+    },
+    {
+      "symbolId": "latex:marvosym:Frowny",
+      "path": "samples/latex/marvosym/Frowny.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Gemini",
+      "path": "samples/latex/marvosym/Gemini.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Heart",
+      "path": "samples/latex/marvosym/Heart.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Jupiter",
+      "path": "samples/latex/marvosym/Jupiter.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:marvosym:Leo",
+      "path": "samples/latex/marvosym/Leo.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Letter",
+      "path": "samples/latex/marvosym/Letter.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:marvosym:Libra",
+      "path": "samples/latex/marvosym/Libra.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Lightning",
+      "path": "samples/latex/marvosym/Lightning.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Mars",
+      "path": "samples/latex/marvosym/Mars.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:marvosym:Mercury",
+      "path": "samples/latex/marvosym/Mercury.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:Mobilefone",
+      "path": "samples/latex/marvosym/Mobilefone.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Moon",
+      "path": "samples/latex/marvosym/Moon.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:marvosym:Mundus",
+      "path": "samples/latex/marvosym/Mundus.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:marvosym:MVAt",
+      "path": "samples/latex/marvosym/MVAt.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:MVRightarrow",
+      "path": "samples/latex/marvosym/MVRightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Neptune",
+      "path": "samples/latex/marvosym/Neptune.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:marvosym:Pfund",
+      "path": "samples/latex/marvosym/Pfund.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:marvosym:Pickup",
+      "path": "samples/latex/marvosym/Pickup.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:marvosym:Pisces",
+      "path": "samples/latex/marvosym/Pisces.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Pluto",
+      "path": "samples/latex/marvosym/Pluto.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:Sagittarius",
+      "path": "samples/latex/marvosym/Sagittarius.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:marvosym:Saturn",
+      "path": "samples/latex/marvosym/Saturn.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:marvosym:Scorpio",
+      "path": "samples/latex/marvosym/Scorpio.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Shilling",
+      "path": "samples/latex/marvosym/Shilling.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Smiley",
+      "path": "samples/latex/marvosym/Smiley.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Sun",
+      "path": "samples/latex/marvosym/Sun.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Taurus",
+      "path": "samples/latex/marvosym/Taurus.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:marvosym:Telefon",
+      "path": "samples/latex/marvosym/Telefon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Uranus",
+      "path": "samples/latex/marvosym/Uranus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Venus",
+      "path": "samples/latex/marvosym/Venus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:marvosym:Virgo",
+      "path": "samples/latex/marvosym/Virgo.jsonl",
+      "sampleCount": 24
+    },
+    {
+      "symbolId": "latex:marvosym:Yinyang",
+      "path": "samples/latex/marvosym/Yinyang.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:mathdots:iddots",
+      "path": "samples/latex/mathdots/iddots.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-A-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-A-rbrace.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-B-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-B-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-C-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-C-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-D-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-D-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-E-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-E-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-F-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-F-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-G-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-G-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-H-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-H-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-I-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-I-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-J-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-J-rbrace.jsonl",
+      "sampleCount": 31
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-K-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-K-rbrace.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-L-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-L-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-M-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-M-rbrace.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-N-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-N-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-O-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-O-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-P-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-P-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-Q-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-Q-rbrace.jsonl",
+      "sampleCount": 41
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-R-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-R-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-S-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-S-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-T-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-T-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-U-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-U-rbrace.jsonl",
+      "sampleCount": 21
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-V-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-V-rbrace.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-W-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-W-rbrace.jsonl",
+      "sampleCount": 22
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-X-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-X-rbrace.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-Y-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-Y-rbrace.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:mathrsfs:mathscr-lbrace-Z-rbrace",
+      "path": "samples/latex/mathrsfs/mathscr-lbrace-Z-rbrace.jsonl",
+      "sampleCount": 20
+    },
+    {
+      "symbolId": "latex:skull:skull",
+      "path": "samples/latex/skull/skull.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:inplus",
+      "path": "samples/latex/stmaryrd/inplus.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:stmaryrd:lbag",
+      "path": "samples/latex/stmaryrd/lbag.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:stmaryrd:Lbag",
+      "path": "samples/latex/stmaryrd/Lbag.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:stmaryrd:leftarrowtriangle",
+      "path": "samples/latex/stmaryrd/leftarrowtriangle.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:stmaryrd:leftrightarroweq",
+      "path": "samples/latex/stmaryrd/leftrightarroweq.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:leftrightarrowtriangle",
+      "path": "samples/latex/stmaryrd/leftrightarrowtriangle.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:stmaryrd:lightning",
+      "path": "samples/latex/stmaryrd/lightning.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:llbracket",
+      "path": "samples/latex/stmaryrd/llbracket.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:stmaryrd:llceil",
+      "path": "samples/latex/stmaryrd/llceil.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:stmaryrd:llfloor",
+      "path": "samples/latex/stmaryrd/llfloor.jsonl",
+      "sampleCount": 26
+    },
+    {
+      "symbolId": "latex:stmaryrd:llparenthesis",
+      "path": "samples/latex/stmaryrd/llparenthesis.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:longmapsfrom",
+      "path": "samples/latex/stmaryrd/longmapsfrom.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:stmaryrd:Longmapsfrom",
+      "path": "samples/latex/stmaryrd/Longmapsfrom.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:stmaryrd:Longmapsto",
+      "path": "samples/latex/stmaryrd/Longmapsto.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:stmaryrd:mapsfrom",
+      "path": "samples/latex/stmaryrd/mapsfrom.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:Mapsfrom",
+      "path": "samples/latex/stmaryrd/Mapsfrom.jsonl",
+      "sampleCount": 1
+    },
+    {
+      "symbolId": "latex:stmaryrd:Mapsto",
+      "path": "samples/latex/stmaryrd/Mapsto.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:stmaryrd:niplus",
+      "path": "samples/latex/stmaryrd/niplus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:nnearrow",
+      "path": "samples/latex/stmaryrd/nnearrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:nnwarrow",
+      "path": "samples/latex/stmaryrd/nnwarrow.jsonl",
+      "sampleCount": 1
+    },
+    {
+      "symbolId": "latex:stmaryrd:rbag",
+      "path": "samples/latex/stmaryrd/rbag.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:stmaryrd:Rbag",
+      "path": "samples/latex/stmaryrd/Rbag.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:stmaryrd:rightarrowtriangle",
+      "path": "samples/latex/stmaryrd/rightarrowtriangle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:rrbracket",
+      "path": "samples/latex/stmaryrd/rrbracket.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:rrceil",
+      "path": "samples/latex/stmaryrd/rrceil.jsonl",
+      "sampleCount": 7
+    },
+    {
+      "symbolId": "latex:stmaryrd:rrfloor",
+      "path": "samples/latex/stmaryrd/rrfloor.jsonl",
+      "sampleCount": 3
+    },
+    {
+      "symbolId": "latex:stmaryrd:rrparenthesis",
+      "path": "samples/latex/stmaryrd/rrparenthesis.jsonl",
+      "sampleCount": 34
+    },
+    {
+      "symbolId": "latex:stmaryrd:shortdownarrow",
+      "path": "samples/latex/stmaryrd/shortdownarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:shortleftarrow",
+      "path": "samples/latex/stmaryrd/shortleftarrow.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:stmaryrd:shortrightarrow",
+      "path": "samples/latex/stmaryrd/shortrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:shortuparrow",
+      "path": "samples/latex/stmaryrd/shortuparrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:ssearrow",
+      "path": "samples/latex/stmaryrd/ssearrow.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:stmaryrd:sswarrow",
+      "path": "samples/latex/stmaryrd/sswarrow.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:textcomp:textasteriskcentered",
+      "path": "samples/latex/textcomp/textasteriskcentered.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textbaht",
+      "path": "samples/latex/textcomp/textbaht.jsonl",
+      "sampleCount": 27
+    },
+    {
+      "symbolId": "latex:textcomp:textbardbl",
+      "path": "samples/latex/textcomp/textbardbl.jsonl",
+      "sampleCount": 39
+    },
+    {
+      "symbolId": "latex:textcomp:textbigcircle",
+      "path": "samples/latex/textcomp/textbigcircle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textblank",
+      "path": "samples/latex/textcomp/textblank.jsonl",
+      "sampleCount": 27
+    },
+    {
+      "symbolId": "latex:textcomp:textbrokenbar",
+      "path": "samples/latex/textcomp/textbrokenbar.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:textcomp:textbullet",
+      "path": "samples/latex/textcomp/textbullet.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textcent",
+      "path": "samples/latex/textcomp/textcent.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:textcomp:textcentoldstyle",
+      "path": "samples/latex/textcomp/textcentoldstyle.jsonl",
+      "sampleCount": 38
+    },
+    {
+      "symbolId": "latex:textcomp:textcircledP",
+      "path": "samples/latex/textcomp/textcircledP.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:textcomp:textcolonmonetary",
+      "path": "samples/latex/textcomp/textcolonmonetary.jsonl",
+      "sampleCount": 23
+    },
+    {
+      "symbolId": "latex:textcomp:textcopyleft",
+      "path": "samples/latex/textcomp/textcopyleft.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textcopyright",
+      "path": "samples/latex/textcomp/textcopyright.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textcurrency",
+      "path": "samples/latex/textcomp/textcurrency.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:textcomp:textdagger",
+      "path": "samples/latex/textcomp/textdagger.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textdaggerdbl",
+      "path": "samples/latex/textcomp/textdaggerdbl.jsonl",
+      "sampleCount": 11
+    },
+    {
+      "symbolId": "latex:textcomp:textdblhyphen",
+      "path": "samples/latex/textcomp/textdblhyphen.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textdblhyphenchar",
+      "path": "samples/latex/textcomp/textdblhyphenchar.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:textcomp:textdegree",
+      "path": "samples/latex/textcomp/textdegree.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textdiscount",
+      "path": "samples/latex/textcomp/textdiscount.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:textcomp:textdiv",
+      "path": "samples/latex/textcomp/textdiv.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textdollar",
+      "path": "samples/latex/textcomp/textdollar.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textdollaroldstyle",
+      "path": "samples/latex/textcomp/textdollaroldstyle.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:textcomp:textdong",
+      "path": "samples/latex/textcomp/textdong.jsonl",
+      "sampleCount": 7
+    },
+    {
+      "symbolId": "latex:textcomp:textdownarrow",
+      "path": "samples/latex/textcomp/textdownarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textestimated",
+      "path": "samples/latex/textcomp/textestimated.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:texteuro",
+      "path": "samples/latex/textcomp/texteuro.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:textcomp:textflorin",
+      "path": "samples/latex/textcomp/textflorin.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:textcomp:textfractionsolidus",
+      "path": "samples/latex/textcomp/textfractionsolidus.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:textcomp:textguarani",
+      "path": "samples/latex/textcomp/textguarani.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:textcomp:textinterrobang",
+      "path": "samples/latex/textcomp/textinterrobang.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textinterrobangdown",
+      "path": "samples/latex/textcomp/textinterrobangdown.jsonl",
+      "sampleCount": 33
+    },
+    {
+      "symbolId": "latex:textcomp:textlangle",
+      "path": "samples/latex/textcomp/textlangle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textlbrackdbl",
+      "path": "samples/latex/textcomp/textlbrackdbl.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textleftarrow",
+      "path": "samples/latex/textcomp/textleftarrow.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:textcomp:textlira",
+      "path": "samples/latex/textcomp/textlira.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textlnot",
+      "path": "samples/latex/textcomp/textlnot.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textlquill",
+      "path": "samples/latex/textcomp/textlquill.jsonl",
+      "sampleCount": 37
+    },
+    {
+      "symbolId": "latex:textcomp:textminus",
+      "path": "samples/latex/textcomp/textminus.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:textcomp:textmusicalnote",
+      "path": "samples/latex/textcomp/textmusicalnote.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textnaira",
+      "path": "samples/latex/textcomp/textnaira.jsonl",
+      "sampleCount": 15
+    },
+    {
+      "symbolId": "latex:textcomp:textnumero",
+      "path": "samples/latex/textcomp/textnumero.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textonehalf",
+      "path": "samples/latex/textcomp/textonehalf.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textonequarter",
+      "path": "samples/latex/textcomp/textonequarter.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textonesuperior",
+      "path": "samples/latex/textcomp/textonesuperior.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textopenbullet",
+      "path": "samples/latex/textcomp/textopenbullet.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textordfeminine",
+      "path": "samples/latex/textcomp/textordfeminine.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:textcomp:textordmasculine",
+      "path": "samples/latex/textcomp/textordmasculine.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:textcomp:textparagraph",
+      "path": "samples/latex/textcomp/textparagraph.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:textcomp:textperiodcentered",
+      "path": "samples/latex/textcomp/textperiodcentered.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textpertenthousand",
+      "path": "samples/latex/textcomp/textpertenthousand.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textperthousand",
+      "path": "samples/latex/textcomp/textperthousand.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textpeso",
+      "path": "samples/latex/textcomp/textpeso.jsonl",
+      "sampleCount": 20
+    },
+    {
+      "symbolId": "latex:textcomp:textpilcrow",
+      "path": "samples/latex/textcomp/textpilcrow.jsonl",
+      "sampleCount": 11
+    },
+    {
+      "symbolId": "latex:textcomp:textpm",
+      "path": "samples/latex/textcomp/textpm.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textquotesingle",
+      "path": "samples/latex/textcomp/textquotesingle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textquotestraightbase",
+      "path": "samples/latex/textcomp/textquotestraightbase.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:textcomp:textquotestraightdblbase",
+      "path": "samples/latex/textcomp/textquotestraightdblbase.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textrangle",
+      "path": "samples/latex/textcomp/textrangle.jsonl",
+      "sampleCount": 41
+    },
+    {
+      "symbolId": "latex:textcomp:textrbrackdbl",
+      "path": "samples/latex/textcomp/textrbrackdbl.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textrecipe",
+      "path": "samples/latex/textcomp/textrecipe.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textreferencemark",
+      "path": "samples/latex/textcomp/textreferencemark.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textregistered",
+      "path": "samples/latex/textcomp/textregistered.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textrightarrow",
+      "path": "samples/latex/textcomp/textrightarrow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textrquill",
+      "path": "samples/latex/textcomp/textrquill.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:textcomp:textsection",
+      "path": "samples/latex/textcomp/textsection.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textservicemark",
+      "path": "samples/latex/textcomp/textservicemark.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:textcomp:textsterling",
+      "path": "samples/latex/textcomp/textsterling.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textsurd",
+      "path": "samples/latex/textcomp/textsurd.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textthreequarters",
+      "path": "samples/latex/textcomp/textthreequarters.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textthreequartersemdash",
+      "path": "samples/latex/textcomp/textthreequartersemdash.jsonl",
+      "sampleCount": 37
+    },
+    {
+      "symbolId": "latex:textcomp:textthreesuperior",
+      "path": "samples/latex/textcomp/textthreesuperior.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:texttildelow",
+      "path": "samples/latex/textcomp/texttildelow.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:texttimes",
+      "path": "samples/latex/textcomp/texttimes.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:texttrademark",
+      "path": "samples/latex/textcomp/texttrademark.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:textcomp:texttwelveudash",
+      "path": "samples/latex/textcomp/texttwelveudash.jsonl",
+      "sampleCount": 22
+    },
+    {
+      "symbolId": "latex:textcomp:texttwosuperior",
+      "path": "samples/latex/textcomp/texttwosuperior.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:textcomp:textuparrow",
+      "path": "samples/latex/textcomp/textuparrow.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:textcomp:textwon",
+      "path": "samples/latex/textcomp/textwon.jsonl",
+      "sampleCount": 27
+    },
+    {
+      "symbolId": "latex:textcomp:textyen",
+      "path": "samples/latex/textcomp/textyen.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textbabygamma",
+      "path": "samples/latex/tipa/textbabygamma.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textbarb",
+      "path": "samples/latex/tipa/textbarb.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:tipa:textbarc",
+      "path": "samples/latex/tipa/textbarc.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:tipa:textbard",
+      "path": "samples/latex/tipa/textbard.jsonl",
+      "sampleCount": 3
+    },
+    {
+      "symbolId": "latex:tipa:textbardotlessj",
+      "path": "samples/latex/tipa/textbardotlessj.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:tipa:textbarg",
+      "path": "samples/latex/tipa/textbarg.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:tipa:textbarglotstop",
+      "path": "samples/latex/tipa/textbarglotstop.jsonl",
+      "sampleCount": 27
+    },
+    {
+      "symbolId": "latex:tipa:textbari",
+      "path": "samples/latex/tipa/textbari.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:tipa:textbarl",
+      "path": "samples/latex/tipa/textbarl.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:tipa:textbaro",
+      "path": "samples/latex/tipa/textbaro.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textbarrevglotstop",
+      "path": "samples/latex/tipa/textbarrevglotstop.jsonl",
+      "sampleCount": 22
+    },
+    {
+      "symbolId": "latex:tipa:textbaru",
+      "path": "samples/latex/tipa/textbaru.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:tipa:textbeltl",
+      "path": "samples/latex/tipa/textbeltl.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:tipa:textbeta",
+      "path": "samples/latex/tipa/textbeta.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textbullseye",
+      "path": "samples/latex/tipa/textbullseye.jsonl",
+      "sampleCount": 30
+    },
+    {
+      "symbolId": "latex:tipa:textceltpal",
+      "path": "samples/latex/tipa/textceltpal.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textchi",
+      "path": "samples/latex/tipa/textchi.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:tipa:textcloseepsilon",
+      "path": "samples/latex/tipa/textcloseepsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textcloseomega",
+      "path": "samples/latex/tipa/textcloseomega.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:tipa:textcloserevepsilon",
+      "path": "samples/latex/tipa/textcloserevepsilon.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:tipa:textcommatailz",
+      "path": "samples/latex/tipa/textcommatailz.jsonl",
+      "sampleCount": 24
+    },
+    {
+      "symbolId": "latex:tipa:textcorner",
+      "path": "samples/latex/tipa/textcorner.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textcrb",
+      "path": "samples/latex/tipa/textcrb.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:tipa:textcrd",
+      "path": "samples/latex/tipa/textcrd.jsonl",
+      "sampleCount": 23
+    },
+    {
+      "symbolId": "latex:tipa:textcrg",
+      "path": "samples/latex/tipa/textcrg.jsonl",
+      "sampleCount": 3
+    },
+    {
+      "symbolId": "latex:tipa:textcrh",
+      "path": "samples/latex/tipa/textcrh.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textcrinvglotstop",
+      "path": "samples/latex/tipa/textcrinvglotstop.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:tipa:textcrlambda",
+      "path": "samples/latex/tipa/textcrlambda.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textcrtwo",
+      "path": "samples/latex/tipa/textcrtwo.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:tipa:textctc",
+      "path": "samples/latex/tipa/textctc.jsonl",
+      "sampleCount": 23
+    },
+    {
+      "symbolId": "latex:tipa:textctd",
+      "path": "samples/latex/tipa/textctd.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:tipa:textctdctzlig",
+      "path": "samples/latex/tipa/textctdctzlig.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:tipa:textctesh",
+      "path": "samples/latex/tipa/textctesh.jsonl",
+      "sampleCount": 31
+    },
+    {
+      "symbolId": "latex:tipa:textctj",
+      "path": "samples/latex/tipa/textctj.jsonl",
+      "sampleCount": 43
+    },
+    {
+      "symbolId": "latex:tipa:textctn",
+      "path": "samples/latex/tipa/textctn.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:tipa:textctt",
+      "path": "samples/latex/tipa/textctt.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:tipa:textcttctclig",
+      "path": "samples/latex/tipa/textcttctclig.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:tipa:textctyogh",
+      "path": "samples/latex/tipa/textctyogh.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textctz",
+      "path": "samples/latex/tipa/textctz.jsonl",
+      "sampleCount": 27
+    },
+    {
+      "symbolId": "latex:tipa:textdctzlig",
+      "path": "samples/latex/tipa/textdctzlig.jsonl",
+      "sampleCount": 2
+    },
+    {
+      "symbolId": "latex:tipa:textdoublebaresh",
+      "path": "samples/latex/tipa/textdoublebaresh.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textdoublebarpipe",
+      "path": "samples/latex/tipa/textdoublebarpipe.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textdoublebarslash",
+      "path": "samples/latex/tipa/textdoublebarslash.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textdoublepipe",
+      "path": "samples/latex/tipa/textdoublepipe.jsonl",
+      "sampleCount": 15
+    },
+    {
+      "symbolId": "latex:tipa:textdoublevertline",
+      "path": "samples/latex/tipa/textdoublevertline.jsonl",
+      "sampleCount": 26
+    },
+    {
+      "symbolId": "latex:tipa:textdownstep",
+      "path": "samples/latex/tipa/textdownstep.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:tipa:textdyoghlig",
+      "path": "samples/latex/tipa/textdyoghlig.jsonl",
+      "sampleCount": 35
+    },
+    {
+      "symbolId": "latex:tipa:textdzlig",
+      "path": "samples/latex/tipa/textdzlig.jsonl",
+      "sampleCount": 20
+    },
+    {
+      "symbolId": "latex:tipa:textepsilon",
+      "path": "samples/latex/tipa/textepsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textesh",
+      "path": "samples/latex/tipa/textesh.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textfishhookr",
+      "path": "samples/latex/tipa/textfishhookr.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:tipa:textg",
+      "path": "samples/latex/tipa/textg.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:tipa:textgamma",
+      "path": "samples/latex/tipa/textgamma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textglobfall",
+      "path": "samples/latex/tipa/textglobfall.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textglobrise",
+      "path": "samples/latex/tipa/textglobrise.jsonl",
+      "sampleCount": 39
+    },
+    {
+      "symbolId": "latex:tipa:textglotstop",
+      "path": "samples/latex/tipa/textglotstop.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:texthalflength",
+      "path": "samples/latex/tipa/texthalflength.jsonl",
+      "sampleCount": 15
+    },
+    {
+      "symbolId": "latex:tipa:texthardsign",
+      "path": "samples/latex/tipa/texthardsign.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:tipa:texthooktop",
+      "path": "samples/latex/tipa/texthooktop.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:tipa:texthtb",
+      "path": "samples/latex/tipa/texthtb.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:tipa:texthtbardotlessj",
+      "path": "samples/latex/tipa/texthtbardotlessj.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:texthtc",
+      "path": "samples/latex/tipa/texthtc.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:tipa:texthtd",
+      "path": "samples/latex/tipa/texthtd.jsonl",
+      "sampleCount": 26
+    },
+    {
+      "symbolId": "latex:tipa:texthtg",
+      "path": "samples/latex/tipa/texthtg.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:tipa:texthth",
+      "path": "samples/latex/tipa/texthth.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:texththeng",
+      "path": "samples/latex/tipa/texththeng.jsonl",
+      "sampleCount": 19
+    },
+    {
+      "symbolId": "latex:tipa:texthtk",
+      "path": "samples/latex/tipa/texthtk.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:tipa:texthtp",
+      "path": "samples/latex/tipa/texthtp.jsonl",
+      "sampleCount": 15
+    },
+    {
+      "symbolId": "latex:tipa:texthtq",
+      "path": "samples/latex/tipa/texthtq.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:tipa:texthtrtaild",
+      "path": "samples/latex/tipa/texthtrtaild.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:tipa:texthtscg",
+      "path": "samples/latex/tipa/texthtscg.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:tipa:texthtt",
+      "path": "samples/latex/tipa/texthtt.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:tipa:texthvlig",
+      "path": "samples/latex/tipa/texthvlig.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:tipa:textinvglotstop",
+      "path": "samples/latex/tipa/textinvglotstop.jsonl",
+      "sampleCount": 34
+    },
+    {
+      "symbolId": "latex:tipa:textinvscr",
+      "path": "samples/latex/tipa/textinvscr.jsonl",
+      "sampleCount": 15
+    },
+    {
+      "symbolId": "latex:tipa:textiota",
+      "path": "samples/latex/tipa/textiota.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:tipa:textlambda",
+      "path": "samples/latex/tipa/textlambda.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textlengthmark",
+      "path": "samples/latex/tipa/textlengthmark.jsonl",
+      "sampleCount": 24
+    },
+    {
+      "symbolId": "latex:tipa:textlhookt",
+      "path": "samples/latex/tipa/textlhookt.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:tipa:textlhtlongi",
+      "path": "samples/latex/tipa/textlhtlongi.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:tipa:textlhtlongy",
+      "path": "samples/latex/tipa/textlhtlongy.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:tipa:textlonglegr",
+      "path": "samples/latex/tipa/textlonglegr.jsonl",
+      "sampleCount": 17
+    },
+    {
+      "symbolId": "latex:tipa:textlptr",
+      "path": "samples/latex/tipa/textlptr.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textltailm",
+      "path": "samples/latex/tipa/textltailm.jsonl",
+      "sampleCount": 30
+    },
+    {
+      "symbolId": "latex:tipa:textltailn",
+      "path": "samples/latex/tipa/textltailn.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:tipa:textltilde",
+      "path": "samples/latex/tipa/textltilde.jsonl",
+      "sampleCount": 7
+    },
+    {
+      "symbolId": "latex:tipa:textlyoghlig",
+      "path": "samples/latex/tipa/textlyoghlig.jsonl",
+      "sampleCount": 22
+    },
+    {
+      "symbolId": "latex:tipa:textObardotlessj",
+      "path": "samples/latex/tipa/textObardotlessj.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:tipa:textOlyoghlig",
+      "path": "samples/latex/tipa/textOlyoghlig.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:tipa:textomega",
+      "path": "samples/latex/tipa/textomega.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textopencorner",
+      "path": "samples/latex/tipa/textopencorner.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textopeno",
+      "path": "samples/latex/tipa/textopeno.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textpalhook",
+      "path": "samples/latex/tipa/textpalhook.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:tipa:textphi",
+      "path": "samples/latex/tipa/textphi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textpipe",
+      "path": "samples/latex/tipa/textpipe.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textprimstress",
+      "path": "samples/latex/tipa/textprimstress.jsonl",
+      "sampleCount": 7
+    },
+    {
+      "symbolId": "latex:tipa:textraiseglotstop",
+      "path": "samples/latex/tipa/textraiseglotstop.jsonl",
+      "sampleCount": 40
+    },
+    {
+      "symbolId": "latex:tipa:textraisevibyi",
+      "path": "samples/latex/tipa/textraisevibyi.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:tipa:textramshorns",
+      "path": "samples/latex/tipa/textramshorns.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textrevapostrophe",
+      "path": "samples/latex/tipa/textrevapostrophe.jsonl",
+      "sampleCount": 24
+    },
+    {
+      "symbolId": "latex:tipa:textreve",
+      "path": "samples/latex/tipa/textreve.jsonl",
+      "sampleCount": 33
+    },
+    {
+      "symbolId": "latex:tipa:textrevepsilon",
+      "path": "samples/latex/tipa/textrevepsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textrevglotstop",
+      "path": "samples/latex/tipa/textrevglotstop.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:tipa:textrevyogh",
+      "path": "samples/latex/tipa/textrevyogh.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:tipa:textrhookrevepsilon",
+      "path": "samples/latex/tipa/textrhookrevepsilon.jsonl",
+      "sampleCount": 30
+    },
+    {
+      "symbolId": "latex:tipa:textrhookschwa",
+      "path": "samples/latex/tipa/textrhookschwa.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textrhoticity",
+      "path": "samples/latex/tipa/textrhoticity.jsonl",
+      "sampleCount": 34
+    },
+    {
+      "symbolId": "latex:tipa:textrptr",
+      "path": "samples/latex/tipa/textrptr.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textrtaild",
+      "path": "samples/latex/tipa/textrtaild.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:tipa:textrtaill",
+      "path": "samples/latex/tipa/textrtaill.jsonl",
+      "sampleCount": 21
+    },
+    {
+      "symbolId": "latex:tipa:textrtailn",
+      "path": "samples/latex/tipa/textrtailn.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textrtailr",
+      "path": "samples/latex/tipa/textrtailr.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:tipa:textrtails",
+      "path": "samples/latex/tipa/textrtails.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textrtailt",
+      "path": "samples/latex/tipa/textrtailt.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:tipa:textrtailz",
+      "path": "samples/latex/tipa/textrtailz.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:tipa:textrthook",
+      "path": "samples/latex/tipa/textrthook.jsonl",
+      "sampleCount": 3
+    },
+    {
+      "symbolId": "latex:tipa:textsca",
+      "path": "samples/latex/tipa/textsca.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textscb",
+      "path": "samples/latex/tipa/textscb.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textsce",
+      "path": "samples/latex/tipa/textsce.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textscg",
+      "path": "samples/latex/tipa/textscg.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textsch",
+      "path": "samples/latex/tipa/textsch.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textschwa",
+      "path": "samples/latex/tipa/textschwa.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:tipa:textsci",
+      "path": "samples/latex/tipa/textsci.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textscj",
+      "path": "samples/latex/tipa/textscj.jsonl",
+      "sampleCount": 37
+    },
+    {
+      "symbolId": "latex:tipa:textscl",
+      "path": "samples/latex/tipa/textscl.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textscn",
+      "path": "samples/latex/tipa/textscn.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:tipa:textscoelig",
+      "path": "samples/latex/tipa/textscoelig.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:tipa:textscomega",
+      "path": "samples/latex/tipa/textscomega.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textscr",
+      "path": "samples/latex/tipa/textscr.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textscripta",
+      "path": "samples/latex/tipa/textscripta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textscriptg",
+      "path": "samples/latex/tipa/textscriptg.jsonl",
+      "sampleCount": 35
+    },
+    {
+      "symbolId": "latex:tipa:textscriptv",
+      "path": "samples/latex/tipa/textscriptv.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:tipa:textscu",
+      "path": "samples/latex/tipa/textscu.jsonl",
+      "sampleCount": 32
+    },
+    {
+      "symbolId": "latex:tipa:textscy",
+      "path": "samples/latex/tipa/textscy.jsonl",
+      "sampleCount": 32
+    },
+    {
+      "symbolId": "latex:tipa:textsecstress",
+      "path": "samples/latex/tipa/textsecstress.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:tipa:textsoftsign",
+      "path": "samples/latex/tipa/textsoftsign.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:tipa:textstretchc",
+      "path": "samples/latex/tipa/textstretchc.jsonl",
+      "sampleCount": 26
+    },
+    {
+      "symbolId": "latex:tipa:texttctclig",
+      "path": "samples/latex/tipa/texttctclig.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:tipa:textteshlig",
+      "path": "samples/latex/tipa/textteshlig.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:tipa:texttheta",
+      "path": "samples/latex/tipa/texttheta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textthorn",
+      "path": "samples/latex/tipa/textthorn.jsonl",
+      "sampleCount": 27
+    },
+    {
+      "symbolId": "latex:tipa:texttoneletterstem",
+      "path": "samples/latex/tipa/texttoneletterstem.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:tipa:texttslig",
+      "path": "samples/latex/tipa/texttslig.jsonl",
+      "sampleCount": 7
+    },
+    {
+      "symbolId": "latex:tipa:textturna",
+      "path": "samples/latex/tipa/textturna.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:tipa:textturncelig",
+      "path": "samples/latex/tipa/textturncelig.jsonl",
+      "sampleCount": 4
+    },
+    {
+      "symbolId": "latex:tipa:textturnh",
+      "path": "samples/latex/tipa/textturnh.jsonl",
+      "sampleCount": 37
+    },
+    {
+      "symbolId": "latex:tipa:textturnk",
+      "path": "samples/latex/tipa/textturnk.jsonl",
+      "sampleCount": 8
+    },
+    {
+      "symbolId": "latex:tipa:textturnlonglegr",
+      "path": "samples/latex/tipa/textturnlonglegr.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:tipa:textturnm",
+      "path": "samples/latex/tipa/textturnm.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:tipa:textturnmrleg",
+      "path": "samples/latex/tipa/textturnmrleg.jsonl",
+      "sampleCount": 33
+    },
+    {
+      "symbolId": "latex:tipa:textturnr",
+      "path": "samples/latex/tipa/textturnr.jsonl",
+      "sampleCount": 30
+    },
+    {
+      "symbolId": "latex:tipa:textturnrrtail",
+      "path": "samples/latex/tipa/textturnrrtail.jsonl",
+      "sampleCount": 9
+    },
+    {
+      "symbolId": "latex:tipa:textturnscripta",
+      "path": "samples/latex/tipa/textturnscripta.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:tipa:textturnt",
+      "path": "samples/latex/tipa/textturnt.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:tipa:textturnv",
+      "path": "samples/latex/tipa/textturnv.jsonl",
+      "sampleCount": 43
+    },
+    {
+      "symbolId": "latex:tipa:textturnw",
+      "path": "samples/latex/tipa/textturnw.jsonl",
+      "sampleCount": 29
+    },
+    {
+      "symbolId": "latex:tipa:textturny",
+      "path": "samples/latex/tipa/textturny.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textupsilon",
+      "path": "samples/latex/tipa/textupsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:tipa:textupstep",
+      "path": "samples/latex/tipa/textupstep.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:tipa:textvertline",
+      "path": "samples/latex/tipa/textvertline.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:tipa:textvibyi",
+      "path": "samples/latex/tipa/textvibyi.jsonl",
+      "sampleCount": 10
+    },
+    {
+      "symbolId": "latex:tipa:textvibyy",
+      "path": "samples/latex/tipa/textvibyy.jsonl",
+      "sampleCount": 2
+    },
+    {
+      "symbolId": "latex:tipa:textwynn",
+      "path": "samples/latex/tipa/textwynn.jsonl",
+      "sampleCount": 13
+    },
+    {
+      "symbolId": "latex:tipa:textyogh",
+      "path": "samples/latex/tipa/textyogh.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:upalpha",
+      "path": "samples/latex/upgreek/upalpha.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upbeta",
+      "path": "samples/latex/upgreek/upbeta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upchi",
+      "path": "samples/latex/upgreek/upchi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:updelta",
+      "path": "samples/latex/upgreek/updelta.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:Updelta",
+      "path": "samples/latex/upgreek/Updelta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upepsilon",
+      "path": "samples/latex/upgreek/upepsilon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upeta",
+      "path": "samples/latex/upgreek/upeta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upgamma",
+      "path": "samples/latex/upgreek/upgamma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Upgamma",
+      "path": "samples/latex/upgreek/Upgamma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upiota",
+      "path": "samples/latex/upgreek/upiota.jsonl",
+      "sampleCount": 25
+    },
+    {
+      "symbolId": "latex:upgreek:upkappa",
+      "path": "samples/latex/upgreek/upkappa.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:uplambda",
+      "path": "samples/latex/upgreek/uplambda.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:Uplambda",
+      "path": "samples/latex/upgreek/Uplambda.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upmu",
+      "path": "samples/latex/upgreek/upmu.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upnu",
+      "path": "samples/latex/upgreek/upnu.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upomega",
+      "path": "samples/latex/upgreek/upomega.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Upomega",
+      "path": "samples/latex/upgreek/Upomega.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:upphi",
+      "path": "samples/latex/upgreek/upphi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Upphi",
+      "path": "samples/latex/upgreek/Upphi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:uppi",
+      "path": "samples/latex/upgreek/uppi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Uppi",
+      "path": "samples/latex/upgreek/Uppi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:uppsi",
+      "path": "samples/latex/upgreek/uppsi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Uppsi",
+      "path": "samples/latex/upgreek/Uppsi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:uprho",
+      "path": "samples/latex/upgreek/uprho.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upsigma",
+      "path": "samples/latex/upgreek/upsigma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Upsigma",
+      "path": "samples/latex/upgreek/Upsigma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:uptau",
+      "path": "samples/latex/upgreek/uptau.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:uptheta",
+      "path": "samples/latex/upgreek/uptheta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Uptheta",
+      "path": "samples/latex/upgreek/Uptheta.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:upupsilon",
+      "path": "samples/latex/upgreek/upupsilon.jsonl",
+      "sampleCount": 40
+    },
+    {
+      "symbolId": "latex:upgreek:Upupsilon",
+      "path": "samples/latex/upgreek/Upupsilon.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:upgreek:upvarepsilon",
+      "path": "samples/latex/upgreek/upvarepsilon.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:upvarphi",
+      "path": "samples/latex/upgreek/upvarphi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upvarpi",
+      "path": "samples/latex/upgreek/upvarpi.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:upvarrho",
+      "path": "samples/latex/upgreek/upvarrho.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upvarsigma",
+      "path": "samples/latex/upgreek/upvarsigma.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upvartheta",
+      "path": "samples/latex/upgreek/upvartheta.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:upgreek:upxi",
+      "path": "samples/latex/upgreek/upxi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:Upxi",
+      "path": "samples/latex/upgreek/Upxi.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:upgreek:upzeta",
+      "path": "samples/latex/upgreek/upzeta.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:aquarius",
+      "path": "samples/latex/wasysym/aquarius.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:wasysym:aries",
+      "path": "samples/latex/wasysym/aries.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:wasysym:ascnode",
+      "path": "samples/latex/wasysym/ascnode.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:wasysym:astrosun",
+      "path": "samples/latex/wasysym/astrosun.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:ataribox",
+      "path": "samples/latex/wasysym/ataribox.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:wasysym:bell",
+      "path": "samples/latex/wasysym/bell.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:wasysym:blacksmiley",
+      "path": "samples/latex/wasysym/blacksmiley.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:Bowtie",
+      "path": "samples/latex/wasysym/Bowtie.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:wasysym:brokenvert",
+      "path": "samples/latex/wasysym/brokenvert.jsonl",
+      "sampleCount": 24
+    },
+    {
+      "symbolId": "latex:wasysym:cancer",
+      "path": "samples/latex/wasysym/cancer.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:capricornus",
+      "path": "samples/latex/wasysym/capricornus.jsonl",
+      "sampleCount": 47
+    },
+    {
+      "symbolId": "latex:wasysym:cent",
+      "path": "samples/latex/wasysym/cent.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:wasysym:checked",
+      "path": "samples/latex/wasysym/checked.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:clock",
+      "path": "samples/latex/wasysym/clock.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:conjunction",
+      "path": "samples/latex/wasysym/conjunction.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:wasysym:currency",
+      "path": "samples/latex/wasysym/currency.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:descnode",
+      "path": "samples/latex/wasysym/descnode.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:diameter",
+      "path": "samples/latex/wasysym/diameter.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:DOWNarrow",
+      "path": "samples/latex/wasysym/DOWNarrow.jsonl",
+      "sampleCount": 14
+    },
+    {
+      "symbolId": "latex:wasysym:earth",
+      "path": "samples/latex/wasysym/earth.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:female",
+      "path": "samples/latex/wasysym/female.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:frownie",
+      "path": "samples/latex/wasysym/frownie.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:fullmoon",
+      "path": "samples/latex/wasysym/fullmoon.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:gemini",
+      "path": "samples/latex/wasysym/gemini.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:invdiameter",
+      "path": "samples/latex/wasysym/invdiameter.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:wasysym:jupiter",
+      "path": "samples/latex/wasysym/jupiter.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:kreuz",
+      "path": "samples/latex/wasysym/kreuz.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:wasysym:LEFTarrow",
+      "path": "samples/latex/wasysym/LEFTarrow.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:wasysym:leftmoon",
+      "path": "samples/latex/wasysym/leftmoon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:leo",
+      "path": "samples/latex/wasysym/leo.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:wasysym:lhd",
+      "path": "samples/latex/wasysym/lhd.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:LHD",
+      "path": "samples/latex/wasysym/LHD.jsonl",
+      "sampleCount": 16
+    },
+    {
+      "symbolId": "latex:wasysym:libra",
+      "path": "samples/latex/wasysym/libra.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:lightning",
+      "path": "samples/latex/wasysym/lightning.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:male",
+      "path": "samples/latex/wasysym/male.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:mars",
+      "path": "samples/latex/wasysym/mars.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:mercury",
+      "path": "samples/latex/wasysym/mercury.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:neptune",
+      "path": "samples/latex/wasysym/neptune.jsonl",
+      "sampleCount": 44
+    },
+    {
+      "symbolId": "latex:wasysym:newmoon",
+      "path": "samples/latex/wasysym/newmoon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:ocircle",
+      "path": "samples/latex/wasysym/ocircle.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:opposition",
+      "path": "samples/latex/wasysym/opposition.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:permil",
+      "path": "samples/latex/wasysym/permil.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:phone",
+      "path": "samples/latex/wasysym/phone.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:pisces",
+      "path": "samples/latex/wasysym/pisces.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:pluto",
+      "path": "samples/latex/wasysym/pluto.jsonl",
+      "sampleCount": 46
+    },
+    {
+      "symbolId": "latex:wasysym:pointer",
+      "path": "samples/latex/wasysym/pointer.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:recorder",
+      "path": "samples/latex/wasysym/recorder.jsonl",
+      "sampleCount": 12
+    },
+    {
+      "symbolId": "latex:wasysym:rhd",
+      "path": "samples/latex/wasysym/rhd.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:RHD",
+      "path": "samples/latex/wasysym/RHD.jsonl",
+      "sampleCount": 35
+    },
+    {
+      "symbolId": "latex:wasysym:RIGHTarrow",
+      "path": "samples/latex/wasysym/RIGHTarrow.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:wasysym:rightmoon",
+      "path": "samples/latex/wasysym/rightmoon.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:sagittarius",
+      "path": "samples/latex/wasysym/sagittarius.jsonl",
+      "sampleCount": 35
+    },
+    {
+      "symbolId": "latex:wasysym:saturn",
+      "path": "samples/latex/wasysym/saturn.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:scorpio",
+      "path": "samples/latex/wasysym/scorpio.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:smiley",
+      "path": "samples/latex/wasysym/smiley.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:sun",
+      "path": "samples/latex/wasysym/sun.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:taurus",
+      "path": "samples/latex/wasysym/taurus.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:unlhd",
+      "path": "samples/latex/wasysym/unlhd.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:unrhd",
+      "path": "samples/latex/wasysym/unrhd.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:UParrow",
+      "path": "samples/latex/wasysym/UParrow.jsonl",
+      "sampleCount": 18
+    },
+    {
+      "symbolId": "latex:wasysym:uranus",
+      "path": "samples/latex/wasysym/uranus.jsonl",
+      "sampleCount": 48
+    },
+    {
+      "symbolId": "latex:wasysym:venus",
+      "path": "samples/latex/wasysym/venus.jsonl",
+      "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:vernal",
+      "path": "samples/latex/wasysym/vernal.jsonl",
+      "sampleCount": 28
+    },
+    {
+      "symbolId": "latex:wasysym:virgo",
+      "path": "samples/latex/wasysym/virgo.jsonl",
+      "sampleCount": 49
+    },
+    {
+      "symbolId": "latex:wasysym:wasylozenge",
+      "path": "samples/latex/wasysym/wasylozenge.jsonl",
+      "sampleCount": 50
+    }
+  ]
+}
