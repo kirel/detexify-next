@@ -429,26 +429,26 @@ h1 {
 }
 
 .symbol-grid li {
-  min-height: 128px;
+  min-height: 150px;
   display: grid;
-  grid-template-columns: 74px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 14px;
   align-items: center;
-  padding: 16px 14px;
+  padding: 18px 16px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .symbol-card-preview {
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: 88px;
   display: grid;
   place-items: center;
 }
 
 .symbol-card-preview img {
-  max-width: 58px;
-  max-height: 58px;
+  max-width: 82px;
+  max-height: 82px;
 }
 
 .symbol-grid li.missing .symbol-card-preview {
