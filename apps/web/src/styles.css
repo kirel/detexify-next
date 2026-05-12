@@ -216,7 +216,7 @@ h1 {
   content: '';
   position: absolute;
   top: 0;
-  left: 74px;
+  left: 128px;
   right: 0;
   height: 1px;
   background: var(--line);
@@ -225,14 +225,14 @@ h1 {
 .result {
   width: 100%;
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 12px;
+  grid-template-columns: 112px 1fr;
+  gap: 16px;
   align-items: center;
   text-align: left;
   border: 0;
   border-radius: 0;
   background: transparent;
-  padding: 14px 0;
+  padding: 18px 0;
   cursor: pointer;
 }
 
@@ -251,8 +251,8 @@ h1 {
 }
 
 .symbol-preview {
-  width: 58px;
-  height: 58px;
+  width: 108px;
+  height: 108px;
   display: grid;
   place-items: center;
   border-radius: 0;
@@ -262,8 +262,8 @@ h1 {
 }
 
 .symbol-preview img {
-  max-width: 48px;
-  max-height: 48px;
+  max-width: 100px;
+  max-height: 100px;
   image-rendering: auto;
 }
 
@@ -640,16 +640,16 @@ h1 {
   content: '';
   position: absolute;
   top: 0;
-  left: 64px;
+  left: 104px;
   right: 18px;
   height: 1px;
   background: rgba(17, 24, 39, 0.09);
 }
 
 .native .result {
-  grid-template-columns: 54px 1fr;
-  padding: 12px 10px;
-  gap: 9px;
+  grid-template-columns: 92px 1fr;
+  padding: 14px 10px;
+  gap: 10px;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -669,15 +669,15 @@ h1 {
 }
 
 .native .symbol-preview {
-  width: 50px;
-  height: 50px;
+  width: 88px;
+  height: 88px;
   border: 0;
   background: transparent;
 }
 
 .native .symbol-preview img {
-  max-width: 42px;
-  max-height: 42px;
+  max-width: 82px;
+  max-height: 82px;
 }
 
 .native .command {
@@ -747,6 +747,6 @@ h1 {
     margin-bottom: 6px;
   }
   .web .results li + li::before {
-    left: 74px;
+    left: 128px;
   }
 }
