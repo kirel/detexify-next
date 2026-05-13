@@ -95,7 +95,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add loading/progress UI for snapshot load.
 - [x] Add local result limiting/show-more.
 - [x] Add PWA/offline caching.
-- [ ] Benchmark classifier in Chrome/Safari.
+- [x] Benchmark classifier in Chrome/Safari.
 - [ ] Optimize data artifact if needed.
 
 ## Milestone 5 — Local training/sample curation UI
@@ -154,8 +154,8 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add small task-specific CNN training/evaluation script.
 - [x] Compare trained tiny CNN softmax/NN against DTW and frozen MobileNet.
 - [x] Document model roadmap in `models.md`.
-- [ ] Add robust multi-seed/multi-size benchmark runner.
-- [ ] Implement CNN candidate generator + DTW reranker.
+- [x] Add robust multi-seed/multi-size benchmark runner.
+- [x] Implement CNN candidate generator + DTW reranker.
 - [ ] Try metric-learning/prototype objectives for embeddings.
 - [ ] Try rendered SVG assets as augmented training examples rather than NN prototypes.
 - [ ] Export trained model/index artifacts and measure browser/WKWebView performance.
@@ -172,7 +172,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add `docs/adding-samples.md`.
 - [x] Add `docs/data-format.md`.
 - [x] Add `docs/reviewing-samples.md`.
-- [ ] Add CI quality gates for data PRs.
+- [x] Add CI quality gates for data PRs.
 
 ## Milestone 10 — Release path
 

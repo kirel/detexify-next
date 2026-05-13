@@ -304,7 +304,7 @@ Longer term, CI should fail if:
 - [x] Compare TS port against the live Haskell-backed Detexify API.
 - [x] Add generated source-data pipeline.
 - [x] Add data validation.
-- [ ] Benchmark browser/Safari worker latency.
+- [x] Benchmark browser/Safari worker latency.
 
 ### Phase 2 — web prototype
 
@@ -345,8 +345,8 @@ Longer term, CI should fail if:
 - [x] Rasterization pipeline.
 - [x] Frozen pretrained MobileNet baseline.
 - [x] Tiny trained CNN embedding benchmark.
-- [ ] Robust multi-seed/multi-size benchmark runner.
-- [ ] Hybrid CNN candidate + DTW reranker.
+- [x] Robust multi-seed/multi-size benchmark runner.
+- [x] Hybrid CNN candidate + DTW reranker.
 - [ ] Metric-learning/prototype-loss experiments.
 - [ ] Exported model/index artifact experiments.
 

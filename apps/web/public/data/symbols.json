@@ -6882,7 +6882,8 @@
     "package": "skull",
     "fontenc": "OT1",
     "mathmode": true,
-    "textmode": false
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/skull/skull-nl4swf.svg"
   },
   {
     "id": "latex:stmaryrd:inplus",

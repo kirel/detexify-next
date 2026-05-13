@@ -9,6 +9,7 @@
     "inspect:legacy": "node dist/inspectLegacy.js",
     "inspect:symbols": "node dist/inspectLegacySymbols.js",
     "evaluate:legacy": "node dist/evaluateLegacy.js",
+    "evaluate:all-engines": "node dist/evaluateAllEngines.js",
     "add-symbol": "node dist/addSymbol.js",
     "find-bad-samples": "node dist/findBadSamples.js",
     "preview-pr": "node dist/previewPrData.js",

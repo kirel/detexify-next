@@ -1092,3 +1092,71 @@ h1 {
     left: 128px;
   }
 }
+
+.benchmark-page {
+  display: grid;
+  gap: 20px;
+}
+
+.benchmark-card {
+  border: 1px solid var(--line);
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.benchmark-card h2 {
+  margin-bottom: 8px;
+}
+
+.benchmark-card label {
+  display: grid;
+  gap: 6px;
+  max-width: 220px;
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.benchmark-card input {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 8px 0;
+  color: var(--ink);
+  font: inherit;
+}
+
+.benchmark-card button {
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+}
+
+.benchmark-card button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.benchmark-table th,
+.benchmark-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 9px 8px;
+  text-align: right;
+}
+
+.benchmark-table th:first-child,
+.benchmark-table td:first-child {
+  text-align: left;
+}

@@ -23,6 +23,7 @@ type Args = {
   learningRate: number
   tfBackend: 'cpu' | 'wasm' | 'tensorflow'
   compareFrozen: boolean
+  hybridCandidates: number
 }
 
 type Holdout = { id: string; sample: StrokeSample }
@@ -97,6 +98,7 @@ const trainedIndex = await buildEmbeddingIndex(embeddingModel, train, args)
 const trainedIndexMs = performance.now() - beforeIndex
 const trainedSoftmaxEval = await evaluateAsync('trained-tiny-convnet-softmax', holdouts, async (strokes) => classifyWithSoftmax(model, labels, strokes, args))
 const trainedEval = await evaluateAsync('trained-tiny-convnet-nearest', holdouts, async (strokes) => classifyWithEmbeddingIndex(embeddingModel, trainedIndex, strokes, args))
+const hybridEval = await evaluateAsync(`trained-tiny-convnet-candidates-${args.hybridCandidates}-dtw-rerank`, holdouts, async (strokes) => classifyHybrid(model, labels, train, strokes, args))
 
 console.log(JSON.stringify({
   snapshotPath: args.snapshotPath,
@@ -120,13 +122,14 @@ console.log(JSON.stringify({
       labels: `${trainedIndex.labels.length} vectors × ${trainedIndex.embeddingSize} dims`,
       setupMs: trainedIndexMs,
     },
+    hybridCandidates: args.hybridCandidates,
   },
   frozenConvnet: frozenEval ? {
     featureGenerator: 'MobileNetV2 alpha=0.50 via @tensorflow-models/mobilenet infer(..., true)',
     training: 'none; pretrained ImageNet convnet is used only for embeddings',
     setupMs: frozenSetupMs,
   } : undefined,
-  evaluations: [legacyEval, ...(frozenEval ? [frozenEval] : []), trainedSoftmaxEval, trainedEval],
+  evaluations: [legacyEval, ...(frozenEval ? [frozenEval] : []), trainedSoftmaxEval, trainedEval, hybridEval],
 }, null, 2))
 
 function createTinyEmbeddingConvnet(rasterSize: number, classCount: number, embeddingSize: number, learningRate: number): tf.LayersModel {
@@ -232,16 +235,25 @@ async function buildEmbeddingIndex(model: tf.LayersModel, snapshot: Snapshot, ar
 }
 
 async function classifyWithSoftmax(model: tf.LayersModel, labels: readonly string[], strokes: Strokes, args: Args): Promise<Result[]> {
+  return (await softmaxRank(model, labels, strokes, args)).slice(0, args.limit)
+}
+
+async function classifyHybrid(model: tf.LayersModel, labels: readonly string[], train: Snapshot, strokes: Strokes, args: Args): Promise<Result[]> {
+  const candidates = (await softmaxRank(model, labels, strokes, args)).slice(0, args.hybridCandidates).map((result) => result.id)
+  const candidateSet = new Set(candidates)
+  const filtered: [string, readonly StrokeSample[]][] = []
+  for (const [id, samples] of train.entries()) if (candidateSet.has(id)) filtered.push([id, samples])
+  return new LegacyDtwClassifier(new Map(filtered)).classifySync(strokes, { limit: args.limit })
+}
+
+async function softmaxRank(model: tf.LayersModel, labels: readonly string[], strokes: Strokes, args: Args): Promise<Result[]> {
   const raster = rasterizeStrokes(strokes, { size: args.rasterSize })
   const input = tf.tensor4d(raster, [1, args.rasterSize, args.rasterSize, 1])
   const predicted = model.predict(input) as tf.Tensor
   const scores = new Float32Array(await predicted.data())
   input.dispose()
   predicted.dispose()
-  return labels
-    .map((id, index) => ({ id, score: -(scores[index] ?? 0) }))
-    .sort((a, b) => a.score - b.score)
-    .slice(0, args.limit)
+  return labels.map((id, index) => ({ id, score: -(scores[index] ?? 0) })).sort((a, b) => a.score - b.score)
 }
 
 async function classifyWithEmbeddingIndex(model: tf.LayersModel, index: EmbeddingIndex, strokes: Strokes, args: Args): Promise<Result[]> {
@@ -428,6 +440,7 @@ function parseArgs(argv: readonly string[]): Args {
     learningRate: parsePositiveFloat(options.get('learning-rate') ?? '0.001', '--learning-rate'),
     tfBackend: parseTfBackend(options.get('tf-backend') ?? 'tensorflow'),
     compareFrozen: parseBoolean(options.get('compare-frozen') ?? 'true'),
+    hybridCandidates: parsePositiveInt(options.get('hybrid-candidates') ?? '50', '--hybrid-candidates'),
   }
 }
 

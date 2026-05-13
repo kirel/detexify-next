@@ -4,6 +4,7 @@
   import ResultsList from './lib/ResultsList.svelte'
   import SymbolGallery from './lib/SymbolGallery.svelte'
   import TrainingView from './lib/TrainingView.svelte'
+  import BenchmarkView from './lib/BenchmarkView.svelte'
   import type { EnrichedResult, WorkerResponse, WorkerStatus } from './lib/types.js'
 
   let strokes: Strokes = $state([])
@@ -16,12 +17,13 @@
   let copiedPulse = $state(0)
   let resultLimit = $state(10)
   const isNativeShell = window.location.protocol === 'detexify:'
-  let route = $state(window.location.hash === '#/symbols' ? 'symbols' : window.location.hash === '#/train' && import.meta.env.DEV && window.location.protocol !== 'detexify:' ? 'train' : 'draw')
+  const canTrain = import.meta.env.DEV && !isNativeShell
+  const canBenchmark = import.meta.env.DEV && !isNativeShell
+  let route = $state(routeFromHash())
   const hasInk = $derived(strokes.length > 0)
   const visibleResults = $derived(results.slice(0, resultLimit))
   const canShowMore = $derived(!isNativeShell && results.length > visibleResults.length)
 
-  const canTrain = import.meta.env.DEV && !isNativeShell
   if (isNativeShell) document.documentElement.classList.add('native-shell')
   const worker = new Worker(new URL('./workers/classifier.worker.ts', import.meta.url), { type: 'module' })
 
@@ -30,7 +32,7 @@
   })
 
   window.addEventListener('hashchange', () => {
-    route = window.location.hash === '#/symbols' ? 'symbols' : window.location.hash === '#/train' && canTrain ? 'train' : 'draw'
+    route = routeFromHash()
   })
 
   window.addEventListener('keydown', (event: KeyboardEvent) => {
@@ -65,6 +67,13 @@
     snapshotUrl: new URL(`${appBase}data/snapshot.json`, window.location.href).href,
     symbolsUrl: new URL(`${appBase}data/symbols.json`, window.location.href).href,
   })
+
+  function routeFromHash() {
+    if (window.location.hash === '#/symbols') return 'symbols'
+    if (window.location.hash === '#/train' && canTrain) return 'train'
+    if (window.location.hash === '#/bench' && canBenchmark) return 'bench'
+    return 'draw'
+  }
 
   function onStrokeEnd(nextStrokes: Strokes) {
     strokes = nextStrokes
@@ -121,6 +130,7 @@
         <a class:active={route === 'draw'} href="#/">Draw</a>
         <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
         {#if canTrain}<a class:active={route === 'train'} href="#/train">Train</a>{/if}
+        {#if canBenchmark}<a class:active={route === 'bench'} href="#/bench">Bench</a>{/if}
       </nav>
     </div>
   </section>
@@ -129,6 +139,8 @@
     <TrainingView />
   {:else if route === 'symbols' && !isNativeShell}
     <SymbolGallery />
+  {:else if route === 'bench' && canBenchmark}
+    <BenchmarkView />
   {:else}
   <section class="workspace">
     <div class="panel draw-panel">

@@ -27,6 +27,7 @@ Routes:
 - `/#/` — draw/classify
 - `/#/symbols` — symbol gallery / render verification
 - `/#/train` — local dev-only training and sample review UI
+- `/#/bench` — local dev-only browser benchmark
 
 The training route is hidden in production and in the Mac shell.
 
@@ -61,6 +62,9 @@ The Mac shell loads bundled web resources through a custom `detexify://` URL sch
 ```bash
 # Legacy DTW holdout evaluation
 npm --workspace @detexify/data run evaluate:legacy -- --max-symbols 200
+
+# Deterministic multi-seed benchmark matrix
+npm run evaluate:all-engines -- --max-symbols 50,200 --seeds 12345,23456,34567
 
 # Frozen pretrained MobileNet feature extractor + nearest neighbor
 npm --workspace @detexify/data run benchmark:convnet-nearest -- \
