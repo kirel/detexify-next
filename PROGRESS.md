@@ -8,14 +8,17 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - Shared language: TypeScript.
 - Web app: Svelte + Vite.
 - Classifier runtime: Web Worker using shared `@detexify/core`.
-- Initial engine: TypeScript legacy DTW baseline.
-- Data packaging v1: generated JSON artifacts, optimized later.
+- Production engine for now: TypeScript legacy DTW baseline.
+- Model experiments stay pluggable and benchmarked before UI exposure.
+- Data packaging v1: generated JSON artifacts from `packages/data/source`.
+- Source of truth: canonical symbols, JSONL samples, rendered SVG assets, review metadata.
 - Result UI v1: command + package/mode metadata + rendered symbol images.
 - Mac app: native Swift/AppKit/SwiftUI shell embedding the web UI in `WKWebView`.
-- Mac hotkey: Swift Package dependency, preferably `KeyboardShortcuts`.
+- Mac hotkey: `KeyboardShortcuts` Swift package.
 - Licensing: none in v1.
-- Web deployment: static hosting.
+- Web deployment: static GitHub Pages.
 - Mac deployment: signed/notarized direct download later.
+- Contribution direction: safe CLIs, local lab UI, data validation, visual PR previews.
 
 ## Milestone 0 — Foundation
 
@@ -28,6 +31,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add TypeScript base config.
 - [x] Add `packages/core`.
 - [x] Add `packages/data`.
+- [x] Create public GitHub repository.
 
 ## Milestone 1 — Core classifier baseline
 
@@ -40,8 +44,9 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add basic tests.
 - [x] Speed up DTW by avoiding repeated array slicing.
 - [x] Pre-flatten samples in classifier constructor.
+- [x] Add rasterization utilities for model experiments.
 
-## Milestone 2 — Legacy data understanding
+## Milestone 2 — Legacy/source data pipeline
 
 - [x] Inspect legacy snapshot stats.
 - [x] Parse legacy Mac `symbols.json`.
@@ -49,11 +54,29 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Build initial legacy manifest.
 - [x] Evaluate TS legacy DTW with holdout samples.
 - [x] Compare TS output with live Haskell-backed Detexify API.
-- [ ] Decide canonical symbol ID format.
-- [ ] Generate final normalized data format.
-- [ ] Add data validation tests.
+- [x] Decide canonical symbol ID format.
+- [x] Convert legacy snapshot into `packages/data/source`.
+- [x] Add canonical `symbols.json` source file.
+- [x] Add JSONL-per-symbol source sample files.
+- [x] Add sample manifest.
+- [x] Add legacy import/provenance metadata.
+- [x] Add source data validator.
+- [x] Add generated web data from source data.
+- [x] Add rejected-sample review metadata.
+- [x] Exclude rejected samples from generated classifier/web data.
+- [x] Validate rejected sample IDs and metadata.
 
-## Milestone 3 — Web app prototype
+## Milestone 3 — Asset rendering and symbol inspection
+
+- [x] Implement LaTeX asset renderer: `tectonic -> PDF -> pdftocairo -svg -> SVG`.
+- [x] Add render cache.
+- [x] Render SVGs for 1098/1099 symbols.
+- [x] Add generated symbol image paths to web data.
+- [x] Add symbol gallery route `/#/symbols`.
+- [x] Fix rendered symbol sizing with contained background images.
+- [ ] Resolve or explicitly exclude/fallback `latex:skull:skull` rendering.
+
+## Milestone 4 — Web app prototype/polish
 
 - [x] Create `apps/web` Svelte + Vite app.
 - [x] Add drawing canvas component.
@@ -61,23 +84,39 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add generated data copying/build script.
 - [x] Load classifier data in worker.
 - [x] Display ranked result list.
+- [x] Show rendered symbol images in results.
 - [x] Copy command to clipboard.
 - [x] Clear/reclassify interactions.
-- [x] Basic responsive layout.
+- [x] Keyboard shortcuts: delete/backspace clears canvas outside editable fields.
+- [x] Responsive layout.
+- [x] Minimalist worksheet-style design.
+- [x] Separate web/native CSS scopes via `.web` and `.native`.
 - [x] Run production build.
-
-## Milestone 4 — Web app polish/offline
-
 - [ ] Add loading/progress UI for snapshot load.
-- [ ] Add result metadata display: package, font encoding, math/text mode.
 - [ ] Add local result limiting/show-more.
-- [x] Add keyboard shortcuts in web UI.
 - [ ] Add PWA/offline caching.
-- [x] Add symbol images via generated web data, no sprites.
 - [ ] Benchmark classifier in Chrome/Safari.
 - [ ] Optimize data artifact if needed.
 
-## Milestone 5 — Mac app prototype
+## Milestone 5 — Local training/sample curation UI
+
+- [x] Add dev-only training route `/#/train`.
+- [x] Hide training route in production and Mac shell.
+- [x] Add Vite dev-only lab API.
+- [x] Load symbols and existing samples in training UI.
+- [x] Draw and save new samples to source JSONL.
+- [x] Update manifest and symbol sample counts on save.
+- [x] Add sample thumbnails.
+- [x] Add undo/clear/save keyboard support.
+- [x] Add reject/restore workflow.
+- [x] Persist rejected samples to `rejected-samples.json`.
+- [x] Visually mark rejected samples.
+- [ ] Add review queue / next-sample workflow.
+- [ ] Add suspicious-sample mode.
+- [ ] Add keyboard shortcuts for reject/restore/next.
+- [ ] Add per-symbol sample coverage hints.
+
+## Milestone 6 — Mac app prototype
 
 - [x] Create `apps/mac` Swift package/project skeleton.
 - [x] Native menu-bar app.
@@ -93,11 +132,51 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Mac settings window with hotkey recorder.
 - [x] Clear canvas when Mac panel closes/hides.
 - [x] Native compact glass layout.
+- [ ] Fine-tune remaining glass/transparency/styling if desired.
 
-## Milestone 6 — Release path
+## Milestone 7 — Static web deployment
 
-- [ ] CI build/test.
-- [ ] Static web deployment recipe.
+- [x] Add GitHub Pages workflow.
+- [x] Add `build:web:static` path.
+- [x] Commit static public data required by Pages build.
+- [x] Configure custom domain `detexify-next.kirelabs.org`.
+- [x] Add `apps/web/public/CNAME`.
+- [ ] Expand CI to run tests/typecheck/validation on PRs.
+
+## Milestone 8 — Model experiments
+
+- [x] Add rasterization pipeline.
+- [x] Add frozen pretrained MobileNetV2 feature-generator + nearest-neighbor backend.
+- [x] Keep convnet backend behind separate `@detexify/core/convnet` export to avoid inflating normal web bundle.
+- [x] Add benchmark for frozen convnet vs DTW.
+- [x] Add optional rendered SVG prototypes for frozen convnet benchmark.
+- [x] Record benchmark results in `benchmarks.md`.
+- [x] Add small task-specific CNN training/evaluation script.
+- [x] Compare trained tiny CNN softmax/NN against DTW and frozen MobileNet.
+- [x] Document model roadmap in `models.md`.
+- [ ] Add robust multi-seed/multi-size benchmark runner.
+- [ ] Implement CNN candidate generator + DTW reranker.
+- [ ] Try metric-learning/prototype objectives for embeddings.
+- [ ] Try rendered SVG assets as augmented training examples rather than NN prototypes.
+- [ ] Export trained model/index artifacts and measure browser/WKWebView performance.
+
+## Milestone 9 — Open-source contribution tooling
+
+- [ ] Add `data:add-symbol` CLI.
+- [ ] Add `data:find-bad-samples` suspicious-sample report.
+- [ ] Add `data:preview-pr` local PR preview generator.
+- [ ] Generate visual contact sheets for added symbols/samples/rejections.
+- [ ] Add GitHub Action for data PR preview comments.
+- [ ] Add `CONTRIBUTING.md`.
+- [ ] Add `docs/adding-symbols.md`.
+- [ ] Add `docs/adding-samples.md`.
+- [ ] Add `docs/data-format.md`.
+- [ ] Add `docs/reviewing-samples.md`.
+- [ ] Add CI quality gates for data PRs.
+
+## Milestone 10 — Release path
+
+- [ ] CI build/test expansion.
 - [ ] macOS app bundle packaging.
 - [ ] Code signing docs.
 - [ ] Notarization docs.
@@ -105,8 +184,10 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 
 ## Current known issues/questions
 
-- Legacy live API and local TS are very close but not score-identical. Likely snapshot/data-generation differences.
-- Legacy IDs use backslash in local snapshot and underscore in web API; normalized aliases are needed.
-- One snapshot id lacks symbol metadata: `latex2e-OT1-\\`.
-- 27 symbols have metadata but no samples, mostly lowercase `\mathfrak{...}`.
-- Initial data artifact is large; optimize only after the worker/web prototype proves UX/performance.
+- `latex:skull:skull` asset does not currently render via Tectonic due missing/invalid `skull` font handling.
+- Existing local uncommitted source-data changes are user training/review changes and should not be mixed with tooling commits unless intentionally curated.
+- `tfjs-node` training currently needs Node 22; Node 26 triggers a runtime error during training.
+- Frozen ImageNet MobileNet is not competitive with DTW; keep only as baseline/reference.
+- Trained tiny CNN is promising for top1 but not yet better than DTW on top5/top10.
+- Next model work should prioritize robust evaluation and CNN-candidate + DTW-rerank hybrid.
+- Contribution tooling is now the main missing area before broader open-source use.

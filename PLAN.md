@@ -11,6 +11,7 @@ The old projects are reference material, not constraints. The sample data is the
 - Share classifier, preprocessing, result ranking, and most UI logic between web and Mac.
 - Keep engines pluggable so legacy DTW, neural models, and hybrids can coexist.
 - Fix legacy asset/data pain with generated manifests and stable canonical IDs.
+- Make symbol/sample contributions safe, visual, and reviewable for open source PRs.
 - Make build/deploy/release reproducible.
 
 ## Non-goals for the first iteration
@@ -19,21 +20,20 @@ The old projects are reference material, not constraints. The sample data is the
 - Preserve old Swift/AppKit implementation details.
 - Preserve license enforcement.
 - Preserve sprites as a required asset strategy.
-- Train a neural classifier before establishing a baseline.
+- Replace DTW with a neural classifier before robust evaluation proves a win.
+- Build full handwritten-formula OCR. Detexify Next remains a symbol classifier.
 
 ## Architecture
 
 ```text
 detexify-next/
   apps/
-    web/          # modern web/PWA app
+    web/          # modern web/PWA app + local dev lab views
     mac/          # native macOS shell around shared UI/classifier
   packages/
-    core/         # classifier interfaces, preprocessing, engines
-    data/         # data conversion/validation/build artifacts
-    symbols/      # symbol metadata and rendered assets, later
-    ui/           # shared drawing/result UI, later
-  tools/          # one-off import/evaluation scripts
+    core/         # classifier interfaces, preprocessing, engines, rasterization
+    data/         # data conversion/validation/render/build/evaluation tooling
+  docs/           # contributor/user documentation, later
 ```
 
 ## Classifier strategy
@@ -47,175 +47,317 @@ interface ClassifierEngine {
 }
 ```
 
-Initial engines:
+Engines and experiments:
 
 1. **legacy-dtw**
    - TypeScript port of the current Haskell classifier.
-   - Establishes correctness, offline behavior, and benchmark baseline.
+   - Current production baseline.
+   - Very competitive because it works directly on stroke geometry.
 
-2. **future neural engines**
-   - Raster CNN experiment.
-   - Stroke-sequence model experiment.
-   - Hybrid candidate-generation + DTW reranking.
+2. **frozen pretrained convnet + nearest neighbor**
+   - MobileNetV2 alpha `0.50` via `@tensorflow-models/mobilenet`.
+   - Used only as pretrained ImageNet feature generator.
+   - Benchmarked and currently not competitive with DTW.
+
+3. **trained tiny CNN embedding + nearest neighbor**
+   - Local task-specific CNN trained on Detexify stroke samples.
+   - Promising: competitive top1 on a 200-symbol benchmark.
+   - Still behind DTW on top5/top10 with the current softmax-trained embedding.
+
+4. **future hybrid candidate-generation + DTW reranking**
+   - Preferred next model direction.
+   - CNN retrieves top-N candidate symbols; DTW reranks samples for those candidates.
 
 LLMs are not planned as primary classifiers. They may later help with search/explanation/disambiguation.
 
+Detailed model notes live in `models.md`; benchmark history lives in `benchmarks.md`.
+
 ## Data plan
 
-Legacy data sources:
+Source of truth:
 
-- `detexify-hs-backend/snapshot.json`: training samples keyed by symbol id.
-- `DetexifyMac/Detexify Mac/symbols.json`: symbol metadata and image filenames.
-- `DetexifyMac/images/latex`: rendered PNG assets.
-- `detexify/lib/latex/symbols.yaml`: legacy symbol source list.
+- `packages/data/source/symbols.json`: canonical symbol metadata.
+- `packages/data/source/samples/manifest.json`: sample file manifest.
+- `packages/data/source/samples/**/*.jsonl`: raw source samples keyed by canonical symbol id.
+- `packages/data/source/reviews/rejected-samples.json`: explicit rejected sample metadata. Samples are approved by default unless listed here.
+- `packages/data/source/assets/symbols/**/*.svg`: rendered symbol assets.
 
-New data rules:
+Rules:
 
-- Introduce canonical symbol IDs independent of legacy encoding quirks.
-- Keep legacy IDs as aliases for import/backward compatibility.
-- Generate all metadata manifests from source data.
-- Prefer explicit image files + manifest over CSS sprites for maintainability.
-- Add validation: every sample id must resolve to a symbol; every symbol image must exist.
+- Canonical symbol IDs are independent of legacy encoding quirks, e.g. `latex:amssymb:leqslant`.
+- Legacy IDs are kept only as import/provenance metadata.
+- Generated web/Mac data is derived from source data.
+- Prefer explicit image files + manifest over CSS sprites.
+- Do not physically delete samples by default; use review metadata to exclude rejected samples.
+- Validate symbol/sample/review consistency before builds and in CI.
 
 ## New-symbol and sample pipeline
 
-To make Detexify grow again, adding a symbol must become a boring local workflow, not a one-off asset hunt.
+Adding a symbol should become a boring local workflow, not a one-off asset hunt.
 
 ### Symbol source of truth
 
-Add a committed, reviewable source format, e.g. `packages/data/source/symbols.json` or split JSON/YAML files:
+Current committed source format is JSON in `packages/data/source/symbols.json`:
 
 ```ts
 type SourceSymbol = {
-  id: string              // canonical stable id, e.g. "latex:amssymb:leqslant"
-  command: string         // "\\leqslant"
-  package?: string        // "amssymb"
-  mode: 'math' | 'text'
-  aliases?: string[]      // legacy ids / equivalent commands
-  tags?: string[]
+  id: string
+  command: string
+  package?: string
+  fontenc?: string
+  mode: 'math' | 'text' | 'both'
+  render: {
+    command: string
+    package?: string
+    fontenc?: string
+    mode: 'math' | 'text' | 'both'
+  }
+  samples?: {
+    path: string
+    count: number
+  }
 }
 ```
 
-Generated files (`symbols.json`, web/mac manifests, asset paths) should be derived from this source plus legacy imports.
+Needed next: a safe symbol-add CLI.
+
+Desired command:
+
+```bash
+npm run data:add-symbol -- \
+  --command "\\leqslant" \
+  --package amssymb \
+  --mode math
+```
+
+The CLI should:
+
+- generate a stable canonical id;
+- reject duplicate/conflicting commands;
+- update `symbols.json`;
+- create or update sample file/manifest entries;
+- render the symbol asset;
+- run validation;
+- print a reviewable summary.
 
 ### Asset rendering pipeline
 
-Prefer vector-first assets for new symbols:
+Current renderer:
 
-1. Generate a tiny standalone LaTeX document for each symbol.
-2. Compile with a reproducible toolchain (`tectonic` is a good default; fall back to local TeX Live/MacTeX if needed).
-3. Crop tightly.
-4. Emit SVG as canonical rendered asset; optionally emit PNG fallback for older imported symbols / comparison.
-5. Validate every symbol renders and every rendered asset is referenced by the manifest.
+1. Generate a tiny standalone LaTeX document.
+2. Compile via `tectonic`.
+3. Convert PDF to SVG via `pdftocairo -svg`.
+4. Cache by render inputs.
+5. Emit per-symbol SVG assets.
 
-Candidate commands:
+Commands:
 
 ```bash
-npm --workspace @detexify/data run render:symbols
-npm --workspace @detexify/data run validate:data
+npm run render:symbols
+npm run validate:data
 ```
 
-The renderer should cache by content hash of command/package/mode/template so rerendering is fast and deterministic.
+Known asset issue: `latex:skull:skull` currently does not render with the available Tectonic/font setup.
 
 ### Sample collection tool
 
-Add a local-only lab UI for training samples. It can start as either `apps/lab` or a hidden mode in the web app, e.g. `npm run dev:lab`.
+Current local/dev training UI:
 
-Required flow:
+- route: `/#/train`
+- dev-only and hidden from static GitHub Pages/Mac production UI
+- search/select target symbol
+- show rendered reference
+- draw/save raw stroke samples
+- undo/clear keyboard support
+- reject/restore sample reviews
+- writes into `packages/data/source` through Vite dev-only lab endpoints
 
-- Pick/search target symbol.
-- Show command + rendered symbol as reference.
-- Draw one or more examples.
-- Save raw strokes with metadata to committed JSONL/JSON files, e.g. `packages/data/source/samples/<symbol-id>.jsonl`.
-- Support undo, clear, keyboard shortcuts, and fast “save + next sample”.
-- Store raw strokes, canvas size, timestamp, tool version, and optional author/device metadata.
-- Rebuild normalized classifier data from source samples.
+Next improvements:
 
-Initial storage should be local-dev only: a tiny Node/Vite endpoint writes files into the repo. Static GitHub Pages should not try to save samples. Later, public contribution could use GitHub OAuth, PR generation, or GitHub Issues uploads.
+- keyboard shortcuts for reject/restore/next sample;
+- review queues;
+- suspicious-sample mode;
+- per-symbol progress and sample coverage hints;
+- safer bulk curation tools.
 
-### Quality gate for new symbols/samples
+## Bad-sample spotting and curation
 
-Every new data change should run:
+The default policy is safe and reversible:
+
+- Samples are usable unless explicitly rejected.
+- Rejected samples are listed in `packages/data/source/reviews/rejected-samples.json`.
+- Generated classifier/web data excludes rejected samples.
+- No physical deletion by default.
+
+Needed next: suspicious-sample tooling.
+
+Desired command:
 
 ```bash
-npm run build:web:static
-npm --workspace @detexify/data run validate:data
-npm --workspace @detexify/data run evaluate:legacy
+npm run data:find-bad-samples
 ```
 
-Longer term, add a CI job that fails if:
+It should produce review candidates, not mutate source data automatically.
 
-- a symbol has no rendered asset,
-- a sample references an unknown symbol,
-- a LaTeX command cannot render,
-- duplicate/conflicting canonical IDs are introduced,
-- classifier accuracy/latency regresses beyond a threshold.
+Candidate heuristics:
+
+- DTW outlier within the same symbol;
+- CNN embedding closer to another symbol than its own label;
+- empty/tiny sample;
+- extremely short point count;
+- degenerate bounding box;
+- near-duplicate sample;
+- classifier consistently predicts a different label.
+
+Output should be a reviewable JSON/Markdown report and integrate with the local training/review UI.
+
+## Open-source contribution workflow
+
+Detexify Next should be ready for external PRs that add symbols, samples, or curation decisions.
+
+Needed documentation:
+
+- `CONTRIBUTING.md`
+- `docs/adding-symbols.md`
+- `docs/adding-samples.md`
+- `docs/data-format.md`
+- `docs/reviewing-samples.md`
+- `docs/model-benchmarks.md` or links to `models.md` / `benchmarks.md`
+
+Contributor rules should be simple:
+
+- Add symbols through the CLI, not manual JSON edits when possible.
+- Add samples through the local training UI or approved import script.
+- Do not edit generated web data by hand.
+- Do not delete samples for cleanup; reject them via review metadata.
+- Run validation/build before opening a PR.
+
+### PR visualization
+
+Data PRs need visual review, not just JSON diffs.
+
+Desired workflow:
+
+```text
+.github/workflows/data-pr-preview.yml
+```
+
+For PRs touching `packages/data/source/**`:
+
+1. Install dependencies.
+2. Validate source data.
+3. Render changed/new symbols.
+4. Generate preview artifacts:
+   - added/changed symbol table;
+   - rendered symbol contact sheet;
+   - added sample contact sheet;
+   - rejected/restored sample contact sheet;
+   - validation summary.
+5. Upload artifacts.
+6. Post or update a PR comment with the summary and artifact links.
+
+Initial implementation can use GitHub Actions artifacts plus a Markdown comment. Later, inline images can be served through a Pages preview if useful.
+
+Desired local command backing the action:
+
+```bash
+npm run data:preview-pr
+```
+
+It should be usable locally and in CI.
+
+## Quality gates
+
+Every data change should run:
+
+```bash
+npm run validate:data
+npm run typecheck
+npm --workspace @detexify/web run build
+```
+
+Longer term, CI should fail if:
+
+- a source sample references an unknown symbol;
+- rejected sample IDs do not exist;
+- a new/changed symbol cannot render;
+- duplicate/conflicting canonical IDs are introduced;
+- generated web data is stale when committed artifacts are expected;
+- model/classifier accuracy or latency regresses beyond configured thresholds.
 
 ## Phases
 
 ### Phase 0 — repo foundation
 
-Status: started.
-
 - [x] Monorepo skeleton.
 - [x] Core package with classifier interfaces.
 - [x] Port legacy preprocessing + greedy DTW.
 - [x] Add legacy snapshot loader.
-- [x] Add legacy symbol metadata loader.
+- [x] Add initial data/evaluation scripts.
 
 ### Phase 1 — baseline evaluation
 
-Status: started.
-
 - [x] Inspect legacy snapshot.
 - [x] Inspect legacy symbol/image coverage.
-- [x] Build initial holdout evaluation harness:
-  - hold out samples by symbol
-  - top-1/top-5/top-10 accuracy
-  - latency in Node
-- [x] Generate initial legacy manifest from symbols/images/sample counts.
-- [ ] Import legacy snapshot and symbols into a generated normalized format.
+- [x] Build initial holdout evaluation harness.
+- [x] Generate initial legacy manifest.
 - [x] Compare TS port against the live Haskell-backed Detexify API.
-- [ ] Compare TS port against a locally built native Haskell backend, if needed.
+- [x] Add generated source-data pipeline.
+- [x] Add data validation.
 - [ ] Benchmark browser/Safari worker latency.
 
 ### Phase 2 — web prototype
 
-- Canvas/stroke capture.
-- Web Worker classifier.
-- Result list.
-- Offline cache/PWA path.
+- [x] Canvas/stroke capture.
+- [x] Web Worker classifier.
+- [x] Result list with rendered symbols.
+- [x] Symbol gallery.
+- [x] Dev-only training/review view.
+- [ ] Offline cache/PWA path.
 
 ### Phase 3 — macOS prototype
 
-- Swift/SwiftUI/AppKit menu-bar shell.
-- Global hotkey.
-- Floating panel.
-- `WKWebView` running shared web UI offline from bundled assets.
-- Native clipboard/autopaste bridge.
+- [x] Native menu-bar app.
+- [x] Global hotkey.
+- [x] Floating panel.
+- [x] `WKWebView` running shared web UI offline from bundled assets.
+- [x] Custom URL scheme for bundled assets.
+- [x] Native clipboard bridge.
+- [x] Settings window.
+- [x] Clear canvas when panel closes/hides.
 
-### Phase 4 — symbol growth tooling
+### Phase 4 — symbol growth and contribution tooling
 
-- Canonical committed symbol source format.
-- LaTeX-to-SVG/PNG renderer for new symbols.
-- Data validator for symbols/assets/samples.
-- Local sample collection UI.
-- JSONL/JSON source store for new raw stroke samples.
-- Rebuild normalized classifier artifacts from legacy + new samples.
+- [x] Canonical committed symbol source format.
+- [x] LaTeX-to-SVG renderer.
+- [x] Data validator for symbols/assets/samples/reviews.
+- [x] Local sample collection UI.
+- [x] Rebuild normalized classifier artifacts from source samples.
+- [ ] `data:add-symbol` CLI.
+- [ ] suspicious/bad-sample report generator.
+- [ ] better review queue in training UI.
+- [ ] PR preview generator.
+- [ ] GitHub Action that comments visual data preview on PRs.
+- [ ] Open-source contribution docs.
 
 ### Phase 5 — ML experiments
 
-- Rasterization pipeline.
-- Tiny CNN baseline.
-- Optional ONNX/CoreML/WASM deployment experiments.
-- Hybrid engine if beneficial.
+- [x] Rasterization pipeline.
+- [x] Frozen pretrained MobileNet baseline.
+- [x] Tiny trained CNN embedding benchmark.
+- [ ] Robust multi-seed/multi-size benchmark runner.
+- [ ] Hybrid CNN candidate + DTW reranker.
+- [ ] Metric-learning/prototype-loss experiments.
+- [ ] Exported model/index artifact experiments.
 
 ### Phase 6 — release polish
 
-- CI builds.
-- Notarized macOS app.
-- Static web deploy.
-- Migration/archive notes for old repos.
+- [x] Static GitHub Pages deploy.
+- [ ] CI build/test expansion.
+- [ ] macOS app bundle packaging.
+- [ ] Code signing docs.
+- [ ] Notarization docs.
+- [ ] Archive/retirement notes for old repos.
 
 ## Design principles
 
@@ -224,4 +366,5 @@ Status: started.
 - Offline-first for Mac.
 - Web-first sharing, native only where macOS integration matters.
 - Generated assets/data should be boring and inspectable.
+- Contributions need visual review.
 - Nothing from the old stack is sacred.
