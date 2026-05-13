@@ -45,6 +45,12 @@ npm --workspace @detexify/data run inspect:symbols
 # Evaluate the TypeScript legacy-DTW engine on holdout samples
 npm --workspace @detexify/data run evaluate:legacy -- --max-symbols 200
 
+# Benchmark pretrained MobileNet feature extraction + nearest neighbor against DTW
+npm --workspace @detexify/data run benchmark:convnet-nearest -- \
+  --max-symbols 50 \
+  --tf-backend wasm \
+  --include-rendered-assets true
+
 # Compare local TypeScript results to the live Detexify API
 npm --workspace @detexify/data run compare:live-api -- --count 50
 

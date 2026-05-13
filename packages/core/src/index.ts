@@ -1,5 +1,6 @@
 export type * from './types.js'
 export * from './dtw.js'
 export * from './preprocess.js'
+export * from './rasterize.js'
 export * from './engines/legacyDtw.js'
 export * from './symbols.js'

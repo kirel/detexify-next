@@ -10,6 +10,7 @@
     "inspect:symbols": "node dist/inspectLegacySymbols.js",
     "evaluate:legacy": "node dist/evaluateLegacy.js",
     "build:legacy-manifest": "node dist/buildLegacyManifest.js",
+    "benchmark:convnet-nearest": "node dist/benchmarkConvnetNearest.js",
     "compare:live-api": "node dist/compareLiveApi.js",
     "convert:legacy-source": "node dist/convertLegacySnapshotToSource.js",
     "render:symbols": "node dist/renderSymbols.js",
@@ -19,6 +20,8 @@
     "prepare:mac-web": "node dist/prepareMacWeb.js"
   },
   "dependencies": {
-    "@detexify/core": "0.0.0"
+    "@detexify/core": "0.0.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.22.0",
+    "sharp": "^0.34.5"
   }
 }
