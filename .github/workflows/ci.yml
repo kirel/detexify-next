@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate, test, and build
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate source data
+        run: npm run validate:data
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Test
+        run: npm test
+      - name: Build web app
+        run: npm --workspace @detexify/web run build
+      - name: Check generated web data is fresh
+        run: |
+          npm run prepare:web-data
+          git diff --exit-code -- apps/web/public/data

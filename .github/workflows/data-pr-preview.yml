@@ -1,0 +1,66 @@
+name: Data PR Preview
+
+on:
+  pull_request:
+    paths:
+      - 'packages/data/source/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+  actions: read
+
+jobs:
+  preview:
+    name: Generate data preview
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate data
+        run: npm run validate:data
+      - name: Generate preview artifacts
+        run: npm run data:preview-pr -- --base origin/${{ github.base_ref }} --out-dir artifacts/pr-preview
+      - name: Upload preview artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: detexify-data-pr-preview
+          path: artifacts/pr-preview
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const summary = fs.readFileSync('artifacts/pr-preview/summary.md', 'utf8')
+            const marker = '<!-- detexify-data-pr-preview -->'
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            const body = `${marker}\n${summary}\n\n[Download preview artifacts](${runUrl})`
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            })
+            const existing = comments.find((comment) => comment.user?.type === 'Bot' && comment.body?.includes(marker))
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              })
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              })
+            }

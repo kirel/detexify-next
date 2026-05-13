@@ -21,6 +21,9 @@
     "notarize:mac": "scripts/notarize-mac.sh",
     "release:github": "scripts/github-release.sh",
     "release:mac": "npm run package:mac && npm run notarize:mac && npm run release:github",
+    "data:add-symbol": "npm run build:packages && node packages/data/dist/addSymbol.js",
+    "data:find-bad-samples": "npm run build:packages && node packages/data/dist/findBadSamples.js",
+    "data:preview-pr": "npm run build:packages && node packages/data/dist/previewPrData.js",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "tsc -b packages/core packages/data && npm --workspace @detexify/web run typecheck"
   },

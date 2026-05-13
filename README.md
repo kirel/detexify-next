@@ -121,9 +121,8 @@ More details:
 
 ## Adding symbols
 
-A safe `data:add-symbol` CLI is planned but not implemented yet. Until then, new symbols should be added carefully through the source data files and renderer/validator.
+Use the symbol-add CLI:
 
-Planned flow:
 
 ```bash
 npm run data:add-symbol -- \
@@ -132,7 +131,7 @@ npm run data:add-symbol -- \
   --mode math
 ```
 
-Current maintainer flow is documented in [docs/adding-symbols.md](./docs/adding-symbols.md).
+Details and advanced options are documented in [docs/adding-symbols.md](./docs/adding-symbols.md).
 
 ## Model experiments
 

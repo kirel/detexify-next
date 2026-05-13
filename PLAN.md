@@ -333,11 +333,11 @@ Longer term, CI should fail if:
 - [x] Data validator for symbols/assets/samples/reviews.
 - [x] Local sample collection UI.
 - [x] Rebuild normalized classifier artifacts from source samples.
-- [ ] `data:add-symbol` CLI.
-- [ ] suspicious/bad-sample report generator.
+- [x] `data:add-symbol` CLI.
+- [x] suspicious/bad-sample report generator.
 - [ ] better review queue in training UI.
-- [ ] PR preview generator.
-- [ ] GitHub Action that comments visual data preview on PRs.
+- [x] PR preview generator.
+- [x] GitHub Action that comments visual data preview on PRs.
 - [x] Open-source contribution docs.
 
 ### Phase 5 — ML experiments
@@ -353,7 +353,7 @@ Longer term, CI should fail if:
 ### Phase 6 — release polish
 
 - [x] Static GitHub Pages deploy.
-- [ ] CI build/test expansion.
+- [x] CI build/test expansion.
 - [x] macOS app bundle packaging.
 - [x] Code signing docs.
 - [x] Notarization docs.

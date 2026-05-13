@@ -1,10 +1,10 @@
 # Adding Symbols
 
-A polished symbol-add CLI is planned but not implemented yet. Until it exists, adding symbols is a maintainer-level workflow because it touches canonical metadata, rendered assets, and sample manifests.
+Use the symbol-add CLI for new symbols. It updates canonical source metadata, optionally creates an empty sample file, renders the SVG asset, and runs validation.
 
-## Future intended workflow
+## Recommended workflow
 
-Planned command:
+Command:
 
 ```bash
 npm run data:add-symbol -- \
@@ -13,7 +13,7 @@ npm run data:add-symbol -- \
   --mode math
 ```
 
-The CLI should:
+The CLI:
 
 - generate a stable canonical symbol id;
 - reject duplicate/conflicting commands;
@@ -23,15 +23,40 @@ The CLI should:
 - run validation;
 - print a PR-friendly summary.
 
-Batch mode is also desirable later:
+Useful options:
+
+```bash
+# Explicit id if automatic slugging is not what you want.
+npm run data:add-symbol -- \
+  --id latex:amssymb:leqslant \
+  --command "\\leqslant" \
+  --package amssymb \
+  --mode math
+
+# Create an empty sample JSONL/manifest entry immediately.
+npm run data:add-symbol -- \
+  --command "\\leqslant" \
+  --package amssymb \
+  --mode math \
+  --with-sample-file
+
+# Add metadata without rendering, useful when debugging unsupported packages.
+npm run data:add-symbol -- \
+  --command "\\foo" \
+  --package somepkg \
+  --mode math \
+  --no-render
+```
+
+Batch mode is still desirable later:
 
 ```bash
 npm run data:add-symbols -- --from new-symbols.json
 ```
 
-## Current maintainer workflow
+## Manual maintainer fallback
 
-1. Add a `SourceSymbol` entry to:
+If the CLI cannot handle an unusual case, manually add a `SourceSymbol` entry to:
 
    ```text
    packages/data/source/symbols.json

@@ -2,7 +2,7 @@
 
 Visual review is essential for Detexify data changes. JSON diffs are not enough to review symbols and handwriting samples.
 
-This workflow is planned but not implemented yet.
+The first version is implemented with GitHub Actions artifacts and a PR comment. It intentionally links to downloadable artifacts instead of trying to host inline images.
 
 ## Goal
 
@@ -34,20 +34,20 @@ Steps:
 8. Upload artifacts.
 9. Create or update a PR comment.
 
-## Desired local command
+## Local command
 
-The Action should be backed by a local script so maintainers can debug it:
+The Action is backed by a local script so maintainers can debug it:
 
 ```bash
 npm run data:preview-pr
 ```
 
-Possible options:
+Options:
 
 ```bash
 npm run data:preview-pr -- \
   --base origin/main \
-  --out artifacts/pr-preview
+  --out-dir artifacts/pr-preview
 ```
 
 ## Preview artifacts
@@ -61,15 +61,14 @@ Generate contact sheets for:
 - restored samples;
 - suspicious samples, once that tooling exists.
 
-Suggested output:
+Current output:
 
 ```text
 artifacts/pr-preview/
   summary.md
   symbols.png
   added-samples.png
-  rejected-samples.png
-  restored-samples.png
+  samples.svg
   changed-files.json
 ```
 
@@ -96,7 +95,7 @@ Artifacts:
 - Rejected sample contact sheet
 ```
 
-GitHub Action artifact links are the simplest v1. Inline images can come later via a Pages preview or another hosted artifact mechanism.
+GitHub Action artifact links are the v1 implementation. Inline images can come later via a Pages preview or another hosted artifact mechanism.
 
 ## Implementation notes
 

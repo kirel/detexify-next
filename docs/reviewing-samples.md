@@ -67,15 +67,38 @@ Example entry:
 }
 ```
 
-## Planned suspicious-sample tooling
+## Suspicious-sample tooling
 
-A future command should help spot likely bad samples:
+Use this command to generate likely-bad sample candidates:
 
 ```bash
 npm run data:find-bad-samples
 ```
 
-It should not mutate source data automatically. It should produce a report or review queue using heuristics such as:
+Optional:
+
+```bash
+npm run data:find-bad-samples -- \
+  --max-per-reason 50 \
+  --out-dir artifacts/bad-samples
+```
+
+It does not mutate source data automatically. It writes:
+
+```text
+artifacts/bad-samples/suspicious-samples.json
+artifacts/bad-samples/suspicious-samples.md
+```
+
+Current heuristics include:
+
+- tiny/degenerate bounding boxes;
+- very few points;
+- very many points;
+- mostly single-point strokes;
+- near-duplicates within the same symbol.
+
+Planned future heuristics:
 
 - DTW outlier within its own symbol;
 - CNN embedding closer to another symbol;
@@ -85,7 +108,7 @@ It should not mutate source data automatically. It should produce a report or re
 - near-duplicates;
 - classifier consistently predicts a different symbol.
 
-The local training UI should eventually expose this as a “suspicious samples” queue with quick reject/restore shortcuts.
+The local training UI should eventually expose this report as a “suspicious samples” queue with quick reject/restore shortcuts.
 
 ## Future pruning
 

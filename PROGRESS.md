@@ -141,7 +141,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Commit static public data required by Pages build.
 - [x] Configure custom domain `detexify-next.kirelabs.org`.
 - [x] Add `apps/web/public/CNAME`.
-- [ ] Expand CI to run tests/typecheck/validation on PRs.
+- [x] Expand CI to run tests/typecheck/validation on PRs.
 
 ## Milestone 8 — Model experiments
 
@@ -162,11 +162,11 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 
 ## Milestone 9 — Open-source contribution tooling
 
-- [ ] Add `data:add-symbol` CLI.
-- [ ] Add `data:find-bad-samples` suspicious-sample report.
-- [ ] Add `data:preview-pr` local PR preview generator.
-- [ ] Generate visual contact sheets for added symbols/samples/rejections.
-- [ ] Add GitHub Action for data PR preview comments.
+- [x] Add `data:add-symbol` CLI.
+- [x] Add `data:find-bad-samples` suspicious-sample report.
+- [x] Add `data:preview-pr` local PR preview generator.
+- [x] Generate visual contact sheets for added symbols/samples/rejections.
+- [x] Add GitHub Action for data PR preview comments.
 - [x] Add `CONTRIBUTING.md`.
 - [x] Add `docs/adding-symbols.md`.
 - [x] Add `docs/adding-samples.md`.
@@ -176,7 +176,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 
 ## Milestone 10 — Release path
 
-- [ ] CI build/test expansion.
+- [x] CI build/test expansion.
 - [x] macOS app bundle packaging.
 - [x] Code signing docs.
 - [x] Notarization docs.
