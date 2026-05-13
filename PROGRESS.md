@@ -17,7 +17,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - Mac hotkey: `KeyboardShortcuts` Swift package.
 - Licensing: none in v1.
 - Web deployment: static GitHub Pages.
-- Mac deployment: signed/notarized direct download later.
+- Mac deployment: signed/notarized direct download via GitHub Releases.
 - Contribution direction: safe CLIs, local lab UI, data validation, visual PR previews.
 
 ## Milestone 0 — Foundation
@@ -167,25 +167,26 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [ ] Add `data:preview-pr` local PR preview generator.
 - [ ] Generate visual contact sheets for added symbols/samples/rejections.
 - [ ] Add GitHub Action for data PR preview comments.
-- [ ] Add `CONTRIBUTING.md`.
-- [ ] Add `docs/adding-symbols.md`.
-- [ ] Add `docs/adding-samples.md`.
-- [ ] Add `docs/data-format.md`.
-- [ ] Add `docs/reviewing-samples.md`.
+- [x] Add `CONTRIBUTING.md`.
+- [x] Add `docs/adding-symbols.md`.
+- [x] Add `docs/adding-samples.md`.
+- [x] Add `docs/data-format.md`.
+- [x] Add `docs/reviewing-samples.md`.
 - [ ] Add CI quality gates for data PRs.
 
 ## Milestone 10 — Release path
 
 - [ ] CI build/test expansion.
-- [ ] macOS app bundle packaging.
-- [ ] Code signing docs.
-- [ ] Notarization docs.
+- [x] macOS app bundle packaging.
+- [x] Code signing docs.
+- [x] Notarization docs.
+- [x] GitHub release script.
+- [x] Publish initial `v0.1.0` macOS release.
 - [ ] Archive/retirement notes for old Mac app.
 
 ## Current known issues/questions
 
 - `latex:skull:skull` asset does not currently render via Tectonic due missing/invalid `skull` font handling.
-- Existing local uncommitted source-data changes are user training/review changes and should not be mixed with tooling commits unless intentionally curated.
 - `tfjs-node` training currently needs Node 22; Node 26 triggers a runtime error during training.
 - Frozen ImageNet MobileNet is not competitive with DTW; keep only as baseline/reference.
 - Trained tiny CNN is promising for top1 but not yet better than DTW on top5/top10.

@@ -338,7 +338,7 @@ Longer term, CI should fail if:
 - [ ] better review queue in training UI.
 - [ ] PR preview generator.
 - [ ] GitHub Action that comments visual data preview on PRs.
-- [ ] Open-source contribution docs.
+- [x] Open-source contribution docs.
 
 ### Phase 5 — ML experiments
 
@@ -354,9 +354,11 @@ Longer term, CI should fail if:
 
 - [x] Static GitHub Pages deploy.
 - [ ] CI build/test expansion.
-- [ ] macOS app bundle packaging.
-- [ ] Code signing docs.
-- [ ] Notarization docs.
+- [x] macOS app bundle packaging.
+- [x] Code signing docs.
+- [x] Notarization docs.
+- [x] GitHub release script.
+- [x] Publish initial `v0.1.0` macOS release.
 - [ ] Archive/retirement notes for old repos.
 
 ## Design principles
