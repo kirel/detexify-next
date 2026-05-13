@@ -51,6 +51,16 @@ npm --workspace @detexify/data run benchmark:convnet-nearest -- \
   --tf-backend wasm \
   --include-rendered-assets true
 
+# Train/evaluate a small task-specific CNN embedding backend.
+# Use Node 22 for tfjs-node training; Node 26 currently hits a tfjs-node runtime bug.
+npx -y node@22 packages/data/dist/trainConvnetEmbedding.js \
+  --max-symbols 200 \
+  --epochs 30 \
+  --augmentations 0 \
+  --embedding-size 128 \
+  --tf-backend tensorflow \
+  --compare-frozen false
+
 # Compare local TypeScript results to the live Detexify API
 npm --workspace @detexify/data run compare:live-api -- --count 50
 

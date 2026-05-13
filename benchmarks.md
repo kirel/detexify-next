@@ -305,3 +305,129 @@ npm --workspace @detexify/data run benchmark:convnet-nearest -- \
 | ConvNet NN, with rendered assets | 0.487 | 0.734 | 0.784 | 16.54ms | 17.06ms | 8065 × 1280, 49.58s |
 
 For this larger slice, generic ImageNet MobileNet features underperform legacy DTW. Rendered LaTeX prototypes again do not affect top-k accuracy in this setup; they only add a small index/setup/latency cost.
+
+## Trained tiny ConvNet embedding backend
+
+Date: 2026-05-13
+Machine: Apple M1 Max (`Darwin arm64`)
+Training runtime: `@tensorflow/tfjs-node` with `npx -y node@22`.
+
+Note: Node `v26.0.0` currently triggers a `tfjs-node` runtime error during training (`util.isNullOrUndefined` / Slice kernel path). Running the same script with Node 22 works. Browser-facing inference remains TFJS-compatible; this benchmark is local training/evaluation tooling.
+
+### Backend shape
+
+This is the first task-specific learned backend:
+
+- input: rasterized Detexify strokes, `32×32×1` grayscale;
+- model: small CNN trained locally on selected Detexify samples;
+- objective: supervised softmax over the selected symbol classes;
+- backend under test: use the trained CNN as feature generator via its `embedding` dense layer, then nearest-neighbor over training sample embeddings;
+- direct softmax classification is also reported as a diagnostic, but the intended comparable backend is `trained-tiny-convnet-nearest`.
+
+### Results: 200 symbols, 20 epochs, augmentation ×2, compared with DTW and frozen MobileNet
+
+Command:
+
+```bash
+npx -y node@22 packages/data/dist/trainConvnetEmbedding.js \
+  --max-symbols 200 \
+  --epochs 20 \
+  --augmentations 2 \
+  --index-augmentations 0 \
+  --batch-size 128 \
+  --embedding-size 64 \
+  --raster-size 32 \
+  --tf-backend tensorflow \
+  --compare-frozen true
+```
+
+Summary:
+
+| Engine | Top1 | Top5 | Top10 | Mean latency | Notes |
+| --- | ---: | ---: | ---: | ---: | --- |
+| legacy DTW | 0.510 | 0.785 | 0.835 | 1.91ms | baseline |
+| frozen MobileNetV2 NN | 0.480 | 0.710 | 0.770 | 23.63ms | ImageNet features only |
+| trained tiny CNN softmax | 0.530 | 0.765 | 0.820 | 1.05ms | diagnostic, not NN |
+| trained tiny CNN NN | 0.510 | 0.765 | 0.790 | 1.69ms | embedding + nearest neighbor |
+
+Training/index:
+
+```json
+{
+  "trainedConvnet": {
+    "tfBackend": "tensorflow",
+    "rasterSize": 32,
+    "embeddingSize": 64,
+    "epochs": 20,
+    "augmentationsPerSample": 2,
+    "indexAugmentationsPerSample": 0,
+    "trainingExamples": 22710,
+    "trainingMs": 129401.608917,
+    "nearestNeighborIndex": {
+      "labels": "7570 vectors × 64 dims",
+      "setupMs": 1593.0270000000019
+    }
+  },
+  "frozenConvnet": {
+    "featureGenerator": "MobileNetV2 alpha=0.50 via @tensorflow-models/mobilenet infer(..., true)",
+    "setupMs": 26237.997833
+  }
+}
+```
+
+Observation: task-specific training immediately beats frozen MobileNet and matches DTW top1 in NN mode, but still trails DTW on top5/top10. The softmax diagnostic slightly beats DTW top1, suggesting the learned visual features contain useful class signal, but the current embedding/NN objective is not yet good enough.
+
+### Results: 200 symbols, 30 epochs, no augmentation, embedding 128
+
+Command:
+
+```bash
+npx -y node@22 packages/data/dist/trainConvnetEmbedding.js \
+  --max-symbols 200 \
+  --epochs 30 \
+  --augmentations 0 \
+  --index-augmentations 0 \
+  --batch-size 128 \
+  --embedding-size 128 \
+  --raster-size 32 \
+  --tf-backend tensorflow \
+  --compare-frozen false
+```
+
+Summary:
+
+| Engine | Top1 | Top5 | Top10 | Mean latency | Notes |
+| --- | ---: | ---: | ---: | ---: | --- |
+| legacy DTW | 0.510 | 0.785 | 0.835 | 1.91ms | baseline |
+| trained tiny CNN softmax | 0.510 | 0.760 | 0.800 | 0.85ms | diagnostic |
+| trained tiny CNN NN | 0.535 | 0.755 | 0.810 | 1.87ms | best trained-NN top1 so far |
+
+Training/index:
+
+```json
+{
+  "trainedConvnet": {
+    "tfBackend": "tensorflow",
+    "rasterSize": 32,
+    "embeddingSize": 128,
+    "epochs": 30,
+    "augmentationsPerSample": 0,
+    "indexAugmentationsPerSample": 0,
+    "trainingExamples": 7570,
+    "trainingMs": 63017.419625,
+    "nearestNeighborIndex": {
+      "labels": "7570 vectors × 128 dims",
+      "setupMs": 1479.5225409999985
+    }
+  }
+}
+```
+
+Observation: this run beats DTW on top1 (`0.535` vs `0.510`) with similar latency, but still loses on top5/top10. This is promising but not sufficient to replace DTW outright.
+
+### Current conclusion for trained ConvNets
+
+- Frozen ImageNet ConvNet features are not competitive.
+- A small task-specific CNN is already competitive on top1 after basic supervised training.
+- The current softmax-trained embedding is not good enough for top5/top10 nearest-neighbor retrieval.
+- To beat DTW robustly, the next training step should use metric-learning/prototype objectives, e.g. supervised contrastive loss, ArcFace/CosFace, triplet mining, or a hybrid CNN-candidate + DTW-reranker.
