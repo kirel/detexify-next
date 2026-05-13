@@ -57,6 +57,13 @@ SIGN_IDENTITY='Developer ID Application: Your Name (TEAMID)' \
   npm run package:mac
 ```
 
+If you store `SIGN_IDENTITY`/`NOTARY_PROFILE` in `mise.toml`, make sure mise has loaded the env before running npm scripts. This is explicit and reliable:
+
+```bash
+mise exec -- npm run package:mac
+mise exec -- npm run notarize:mac
+```
+
 The script:
 
 1. builds the web app and copies it into Mac resources;

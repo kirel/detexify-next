@@ -37,7 +37,19 @@ if [[ ! -d "$APP_PATH" ]]; then
 fi
 
 echo "==> Submitting to Apple notarization service"
-xcrun notarytool submit "$ZIP_PATH" --keychain-profile "$NOTARY_PROFILE" --wait
+SUBMIT_JSON="$(xcrun notarytool submit "$ZIP_PATH" --keychain-profile "$NOTARY_PROFILE" --wait --output-format json)"
+echo "$SUBMIT_JSON"
+SUBMISSION_ID="$(printf '%s' "$SUBMIT_JSON" | /usr/bin/python3 -c 'import json, sys; print(json.load(sys.stdin).get("id", ""))')"
+STATUS="$(printf '%s' "$SUBMIT_JSON" | /usr/bin/python3 -c 'import json, sys; print(json.load(sys.stdin).get("status", ""))')"
+
+if [[ "$STATUS" != "Accepted" ]]; then
+  echo "Notarization failed with status: ${STATUS:-unknown}" >&2
+  if [[ -n "$SUBMISSION_ID" ]]; then
+    echo "==> Notarization log" >&2
+    xcrun notarytool log "$SUBMISSION_ID" --keychain-profile "$NOTARY_PROFILE" >&2 || true
+  fi
+  exit 1
+fi
 
 echo "==> Stapling notarization ticket"
 xcrun stapler staple "$APP_PATH"
