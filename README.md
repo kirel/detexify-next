@@ -1,26 +1,56 @@
 # Detexify Next
 
-A modern rebuild of Detexify: shared offline-capable symbol recognition for the web and a macOS menu-bar app.
+A modern rebuild of Detexify: draw a handwritten LaTeX symbol and get ranked commands immediately.
 
-This repo starts from the useful parts of the old Detexify ecosystem — primarily the training samples and symbol metadata — but does not preserve old implementation choices unless they still make sense.
+The project keeps the useful assets from the old Detexify ecosystem — symbols, handwriting samples, and classifier behavior — but rebuilds the implementation as a maintainable TypeScript/Svelte/macOS stack.
 
-## Intended shape
+## Status
 
-- `packages/core` — classifier interfaces, stroke preprocessing, DTW baseline engine.
-- `packages/data` — legacy data import/conversion/validation tooling.
-- `apps/web` — Svelte/Vite web frontend using the shared classifier in a Web Worker.
-- `apps/mac` — native macOS shell with menu-bar item, global hotkey, and offline bundled `WKWebView` UI.
+Working today:
 
-## First milestone
+- shared TypeScript core package with the legacy DTW classifier ported from Haskell;
+- Svelte/Vite web app with canvas input, Web Worker classification, symbol images, and symbol gallery;
+- macOS menu-bar shell with global hotkey, bundled offline web UI, settings, and native clipboard bridge;
+- canonical source data in `packages/data/source`;
+- LaTeX-to-SVG symbol rendering pipeline;
+- local dev-only training/sample curation UI at `/#/train`;
+- rejected-sample workflow that excludes bad samples without deleting them;
+- GitHub Pages deployment for the web app;
+- experimental model benchmarks for frozen MobileNet and a trained tiny CNN.
 
-Build a TypeScript port of the legacy Haskell classifier as the baseline engine:
+Not done yet:
 
-- load legacy `snapshot.json`
-- preprocess strokes like the Haskell backend
-- classify with greedy DTW
-- return ranked symbol IDs/scores
+- polished open-source contribution flow for symbols/samples;
+- visual PR previews/contact sheets;
+- suspicious/bad-sample detection tooling;
+- signed/notarized macOS app distribution;
+- final model decision beyond the DTW baseline.
 
-Once this baseline exists, neural engines can be evaluated behind the same classifier interface.
+See also:
+
+- [PLAN.md](./PLAN.md) — roadmap and architecture
+- [PROGRESS.md](./PROGRESS.md) — current checklist
+- [models.md](./models.md) — model strategy and next steps
+- [benchmarks.md](./benchmarks.md) — classifier benchmark history
+- [docs/](./docs/README.md) — contributor/developer docs
+
+## Repository layout
+
+```text
+apps/
+  web/          Svelte/Vite app and local dev lab UI
+  mac/          Swift/AppKit menu-bar wrapper around the web UI
+packages/
+  core/         classifier types, preprocessing, DTW, rasterization, experimental engines
+  data/         source data tooling, rendering, validation, benchmark/training scripts
+packages/data/source/
+  symbols.json                     canonical symbol source
+  samples/manifest.json            sample file manifest
+  samples/**/*.jsonl               raw stroke samples
+  reviews/rejected-samples.json    explicit rejected samples
+  assets/symbols/**/*.svg          rendered symbol assets
+docs/                              contribution/development docs
+```
 
 ## Development
 
@@ -28,31 +58,106 @@ This is an npm workspace monorepo.
 
 ```bash
 npm install
-npm run build
-npm test
 npm run typecheck
+npm test
+npm run build
 ```
 
-Useful bootstrap commands:
+Useful commands:
 
 ```bash
-# Inspect the legacy training snapshot
-npm --workspace @detexify/data run inspect:legacy
+# Run the web app locally
+npm run dev:web
 
-# Inspect legacy symbol metadata/image coverage
-npm --workspace @detexify/data run inspect:symbols
+# Draw/classify
+# visit /#/
 
-# Evaluate the TypeScript legacy-DTW engine on holdout samples
+# Symbol verification gallery
+# visit /#/symbols
+
+# Local-only sample training/review UI
+# visit /#/train
+
+# Validate canonical source data
+npm run validate:data
+
+# Render symbol SVGs from source metadata
+npm run render:symbols
+
+# Generate web classifier data from source data
+npm run prepare:web-data
+
+# Build static web app for GitHub Pages
+npm run build:web:static
+
+# Bundle web UI into the Mac app resources and build Swift package
+npm run build:mac
+```
+
+## Data and curation
+
+The source-of-truth is `packages/data/source`, not generated web artifacts.
+
+Samples are approved by default. Bad samples are not deleted; they are listed in:
+
+```text
+packages/data/source/reviews/rejected-samples.json
+```
+
+Generated classifier data excludes rejected samples.
+
+Local sample capture/review flow:
+
+```bash
+npm run dev:web
+# open http://localhost:5173/#/train
+```
+
+More details:
+
+- [docs/data-format.md](./docs/data-format.md)
+- [docs/adding-samples.md](./docs/adding-samples.md)
+- [docs/reviewing-samples.md](./docs/reviewing-samples.md)
+
+## Adding symbols
+
+A safe `data:add-symbol` CLI is planned but not implemented yet. Until then, new symbols should be added carefully through the source data files and renderer/validator.
+
+Planned flow:
+
+```bash
+npm run data:add-symbol -- \
+  --command "\\leqslant" \
+  --package amssymb \
+  --mode math
+```
+
+Current maintainer flow is documented in [docs/adding-symbols.md](./docs/adding-symbols.md).
+
+## Model experiments
+
+Current production/default classifier is still `legacy-dtw`.
+
+Experiments so far:
+
+- frozen MobileNetV2/ImageNet features + nearest neighbor: not competitive with DTW;
+- trained tiny CNN: promising top1, but not yet better than DTW on top5/top10;
+- recommended next model direction: CNN candidate retrieval + DTW reranking.
+
+Run benchmarks:
+
+```bash
+# Legacy DTW holdout evaluation
 npm --workspace @detexify/data run evaluate:legacy -- --max-symbols 200
 
-# Benchmark pretrained MobileNet feature extraction + nearest neighbor against DTW
+# Frozen MobileNet feature extractor + nearest neighbor
 npm --workspace @detexify/data run benchmark:convnet-nearest -- \
-  --max-symbols 50 \
-  --tf-backend wasm \
-  --include-rendered-assets true
+  --max-symbols 200 \
+  --tf-backend wasm
 
-# Train/evaluate a small task-specific CNN embedding backend.
+# Trained tiny CNN embedding evaluation.
 # Use Node 22 for tfjs-node training; Node 26 currently hits a tfjs-node runtime bug.
+npm run build:packages
 npx -y node@22 packages/data/dist/trainConvnetEmbedding.js \
   --max-symbols 200 \
   --epochs 30 \
@@ -60,45 +165,48 @@ npx -y node@22 packages/data/dist/trainConvnetEmbedding.js \
   --embedding-size 128 \
   --tf-backend tensorflow \
   --compare-frozen false
-
-# Compare local TypeScript results to the live Detexify API
-npm --workspace @detexify/data run compare:live-api -- --count 50
-
-# Build an ignored manifest from legacy metadata/assets
-npm --workspace @detexify/data run build:legacy-manifest
-
-# Run the web app locally
-npm run dev:web
-
-# Validate source symbols/samples
-npm run validate:data
-
-# Render symbol SVGs from source metadata; cached by render input hash
-npm run render:symbols
-
-# Build the static web app from committed public data, e.g. for GitHub Pages
-npm run build:web:static
-
-# Open the symbol verification table in the web app
-npm run dev:web
-# then visit /#/symbols
-
-# Local-only training/sample capture view; appears only in Vite dev mode
-npm run dev:web
-# then visit /#/train
-
-# Bundle the web build into the Swift package resources
-npm run prepare:mac-web
-
-# Build the macOS shell
-cd apps/mac && swift build
 ```
 
-At the moment the repo is in bootstrap mode; see [PLAN.md](./PLAN.md).
+See [models.md](./models.md) and [benchmarks.md](./benchmarks.md).
+
+## macOS app
+
+The macOS app is a lightweight native shell around the bundled web UI:
+
+- menu-bar item;
+- global hotkey;
+- floating panel;
+- `WKWebView` loading offline resources through a custom `detexify://` scheme;
+- native settings window;
+- native clipboard bridge;
+- auto-clear when the panel closes/hides.
+
+Build locally:
+
+```bash
+npm run build:mac
+```
+
+Swift package lives in `apps/mac`.
+
+## Open-source contribution direction
+
+The project is being prepared for external symbol/sample PRs. The intended flow is:
+
+1. add symbols through a safe CLI;
+2. add samples through the local training UI;
+3. validate source data;
+4. GitHub Actions generate visual PR previews/contact sheets;
+5. reviewers inspect rendered symbols and sample thumbnails before merge.
+
+These pieces are partially implemented. See:
+
+- [docs/contributing.md](./docs/contributing.md)
+- [docs/pr-previews.md](./docs/pr-previews.md)
 
 ## Legacy references
 
-Expected sibling repos during import/evaluation:
+Old sibling repos used for import/evaluation:
 
 - `~/code/detexify-hs-backend`
 - `~/code/DetexifyMac`
@@ -106,6 +214,8 @@ Expected sibling repos during import/evaluation:
 - `~/code/sketch-a-char`
 - `~/code/detexify-data`
 
+They are reference material only.
+
 ## License
 
-TBD. Legacy Detexify code was MIT; Detexify training data is documented separately in `detexify-data`.
+TBD. Legacy Detexify code was MIT; data/license details still need final cleanup before a formal open-source release.
