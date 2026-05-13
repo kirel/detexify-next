@@ -3,7 +3,7 @@
   "encoding": "jsonl-per-symbol",
   "coordinateSystem": "normalized-0-1",
   "symbolCount": 1073,
-  "sampleCount": 44008,
+  "sampleCount": 44009,
   "samples": [
     {
       "symbolId": "latex:amsmath:dotsb",
@@ -2123,7 +2123,7 @@
     {
       "symbolId": "latex:latex2e:lbrace",
       "path": "samples/latex/latex2e/lbrace-mdom9l.jsonl",
-      "sampleCount": 49
+      "sampleCount": 50
     },
     {
       "symbolId": "latex:latex2e:lbracket",
