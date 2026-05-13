@@ -117,13 +117,23 @@ spctl --assess --type execute --verbose 'artifacts/mac/Detexify Next.app'
 Create a release tag and upload the notarized zip:
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
-gh release create v0.1.0 \
-  'artifacts/mac/DetexifyNext-0.1.0-macOS-arm64.zip' \
-  --title 'Detexify Next 0.1.0' \
-  --notes 'Initial macOS preview release.'
+VERSION=0.1.0 npm run release:github
 ```
+
+Useful options:
+
+```bash
+# Create a draft release instead of publishing immediately.
+DRAFT=true VERSION=0.1.0 npm run release:github
+
+# Mark as prerelease.
+PRERELEASE=true VERSION=0.1.0 npm run release:github
+
+# Use custom release notes.
+NOTES_FILE=RELEASE_NOTES.md VERSION=0.1.0 npm run release:github
+```
+
+The script verifies the zip exists, requires a clean working tree, creates/pushes tag `v$VERSION`, computes SHA256, and creates the GitHub release with the zip attached.
 
 ## Homebrew Cask later
 

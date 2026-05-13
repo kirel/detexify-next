@@ -19,6 +19,7 @@
     "build:mac": "npm run prepare:mac-web && cd apps/mac && swift build",
     "package:mac": "scripts/package-mac.sh",
     "notarize:mac": "scripts/notarize-mac.sh",
+    "release:github": "scripts/github-release.sh",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "tsc -b packages/core packages/data && npm --workspace @detexify/web run typecheck"
   },
