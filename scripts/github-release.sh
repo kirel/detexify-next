@@ -2,8 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="${VERSION:-0.1.0}"
-TAG="${TAG:-v$VERSION}"
+VERSION="${VERSION:-$(node -p "require('$ROOT_DIR/package.json').version")}"TAG="${TAG:-v$VERSION}"
 TITLE="${TITLE:-Detexify Next $VERSION}"
 ARCH="${ARCH:-arm64}"
 ZIP_PATH="${ZIP_PATH:-$ROOT_DIR/artifacts/mac/DetexifyNext-$VERSION-macOS-$ARCH.zip}"

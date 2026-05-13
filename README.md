@@ -193,7 +193,13 @@ Create a distributable local `.app`/`.zip`:
 npm run package:mac
 ```
 
-For public distribution, sign and notarize. See [docs/mac-distribution.md](./docs/mac-distribution.md).
+With signing/notary env configured, create the signed, notarized GitHub release from the version in `package.json`:
+
+```bash
+mise exec -- npm run release:mac
+```
+
+For details, see [docs/mac-distribution.md](./docs/mac-distribution.md).
 
 Swift package lives in `apps/mac`.
 

@@ -32,6 +32,21 @@ xcrun notarytool store-credentials detexify-notary \
 
 You can also use App Store Connect API key credentials if preferred.
 
+## Version source
+
+Release/package scripts read the version from the root `package.json` by default.
+
+To prepare a new release, update the package version in git first:
+
+```bash
+npm version 0.1.1 --no-git-tag-version
+npm install --package-lock-only
+git add package.json package-lock.json
+git commit -m "Bump version to 0.1.1"
+```
+
+The release script creates the git tag later. You should not need to pass `VERSION=...` for the normal path.
+
 ## Local unsigned package
 
 For local testing only:
@@ -52,9 +67,7 @@ Unsigned builds are not suitable for public distribution.
 ## Signed package
 
 ```bash
-SIGN_IDENTITY='Developer ID Application: Your Name (TEAMID)' \
-  VERSION=0.1.0 \
-  npm run package:mac
+SIGN_IDENTITY='Developer ID Application: Your Name (TEAMID)' npm run package:mac
 ```
 
 If you store `SIGN_IDENTITY`/`NOTARY_PROFILE` in `mise.toml`, make sure mise has loaded the env before running npm scripts. This is explicit and reliable:
@@ -62,6 +75,12 @@ If you store `SIGN_IDENTITY`/`NOTARY_PROFILE` in `mise.toml`, make sure mise has
 ```bash
 mise exec -- npm run package:mac
 mise exec -- npm run notarize:mac
+```
+
+With both env vars available, the full signed/notarized GitHub release flow is:
+
+```bash
+mise exec -- npm run release:mac
 ```
 
 The script:
@@ -114,23 +133,23 @@ spctl --assess --type execute --verbose 'artifacts/mac/Detexify Next.app'
 
 ## GitHub Release
 
-Create a release tag and upload the notarized zip:
+Create a release tag and upload the notarized zip. The version is read from root `package.json`:
 
 ```bash
-VERSION=0.1.0 npm run release:github
+npm run release:github
 ```
 
 Useful options:
 
 ```bash
 # Create a draft release instead of publishing immediately.
-DRAFT=true VERSION=0.1.0 npm run release:github
+DRAFT=true npm run release:github
 
 # Mark as prerelease.
-PRERELEASE=true VERSION=0.1.0 npm run release:github
+PRERELEASE=true npm run release:github
 
 # Use custom release notes.
-NOTES_FILE=RELEASE_NOTES.md VERSION=0.1.0 npm run release:github
+NOTES_FILE=RELEASE_NOTES.md npm run release:github
 ```
 
 The script verifies the zip exists, requires a clean working tree, creates/pushes tag `v$VERSION`, computes SHA256, and creates the GitHub release with the zip attached.

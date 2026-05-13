@@ -1,7 +1,7 @@
 {
   "name": "detexify-next",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "workspaces": [
     "packages/*",
@@ -20,6 +20,7 @@
     "package:mac": "scripts/package-mac.sh",
     "notarize:mac": "scripts/notarize-mac.sh",
     "release:github": "scripts/github-release.sh",
+    "release:mac": "npm run package:mac && npm run notarize:mac && npm run release:github",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "tsc -b packages/core packages/data && npm --workspace @detexify/web run typecheck"
   },
