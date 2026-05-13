@@ -14,10 +14,13 @@
   let copied = $state('')
   let copyError = $state('')
   let copiedPulse = $state(0)
+  let resultLimit = $state(10)
+  const isNativeShell = window.location.protocol === 'detexify:'
   let route = $state(window.location.hash === '#/symbols' ? 'symbols' : window.location.hash === '#/train' && import.meta.env.DEV && window.location.protocol !== 'detexify:' ? 'train' : 'draw')
   const hasInk = $derived(strokes.length > 0)
+  const visibleResults = $derived(results.slice(0, resultLimit))
+  const canShowMore = $derived(!isNativeShell && results.length > visibleResults.length)
 
-  const isNativeShell = window.location.protocol === 'detexify:'
   const canTrain = import.meta.env.DEV && !isNativeShell
   if (isNativeShell) document.documentElement.classList.add('native-shell')
   const worker = new Worker(new URL('./workers/classifier.worker.ts', import.meta.url), { type: 'module' })
@@ -65,12 +68,13 @@
 
   function onStrokeEnd(nextStrokes: Strokes) {
     strokes = nextStrokes
+    resultLimit = 10
     classify()
   }
 
   function classify() {
     if (strokes.length === 0 || status === 'loading' || status === 'idle') return
-    worker.postMessage({ type: 'classify', strokes: cloneStrokes(strokes), limit: 10 })
+    worker.postMessage({ type: 'classify', strokes: cloneStrokes(strokes), limit: 50 })
   }
 
   function cloneStrokes(value: Strokes): Strokes {
@@ -81,6 +85,7 @@
     strokes = []
     results = []
     copied = ''
+    resultLimit = 10
   }
 
   async function copyResult(result: EnrichedResult) {
@@ -134,7 +139,15 @@
         </div>
         <button class:visible={hasInk} type="button" onclick={clear} disabled={!hasInk}>Clear</button>
       </div>
-      <DrawingCanvas {strokes} {onStrokeEnd} />
+      <div class="canvas-wrap">
+        <DrawingCanvas {strokes} {onStrokeEnd} />
+        {#if status === 'loading'}
+          <div class="loading-overlay" role="status" aria-live="polite">
+            <span></span>
+            <p>Loading classifier data…</p>
+          </div>
+        {/if}
+      </div>
       {#if !isNativeShell}
         <p class="hint">Draw with mouse, trackpad, Apple Pencil, or touch. Click a result to copy it.</p>
       {/if}
@@ -147,7 +160,10 @@
           <p>{copied ? `Copied ${copied}` : 'Best matches first'}</p>
         </div>
       </div>
-      <ResultsList {results} copiedCommand={copied} native={isNativeShell} onCopy={copyResult} />
+      <ResultsList results={visibleResults} copiedCommand={copied} native={isNativeShell} onCopy={copyResult} />
+      {#if canShowMore}
+        <button class="show-more" type="button" onclick={() => resultLimit += 10}>Show more</button>
+      {/if}
     </div>
   </section>
   {/if}

@@ -74,7 +74,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add generated symbol image paths to web data.
 - [x] Add symbol gallery route `/#/symbols`.
 - [x] Fix rendered symbol sizing with contained background images.
-- [ ] Resolve or explicitly exclude/fallback `latex:skull:skull` rendering.
+- [x] Resolve or explicitly exclude/fallback `latex:skull:skull` rendering.
 
 ## Milestone 4 — Web app prototype/polish
 
@@ -92,9 +92,9 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Minimalist worksheet-style design.
 - [x] Separate web/native CSS scopes via `.web` and `.native`.
 - [x] Run production build.
-- [ ] Add loading/progress UI for snapshot load.
-- [ ] Add local result limiting/show-more.
-- [ ] Add PWA/offline caching.
+- [x] Add loading/progress UI for snapshot load.
+- [x] Add local result limiting/show-more.
+- [x] Add PWA/offline caching.
 - [ ] Benchmark classifier in Chrome/Safari.
 - [ ] Optimize data artifact if needed.
 
@@ -111,10 +111,10 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add reject/restore workflow.
 - [x] Persist rejected samples to `rejected-samples.json`.
 - [x] Visually mark rejected samples.
-- [ ] Add review queue / next-sample workflow.
+- [x] Add review queue / next-sample workflow.
 - [ ] Add suspicious-sample mode.
-- [ ] Add keyboard shortcuts for reject/restore/next.
-- [ ] Add per-symbol sample coverage hints.
+- [x] Add keyboard shortcuts for reject/restore/next.
+- [x] Add per-symbol sample coverage hints.
 
 ## Milestone 6 — Mac app prototype
 

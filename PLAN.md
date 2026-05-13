@@ -313,7 +313,7 @@ Longer term, CI should fail if:
 - [x] Result list with rendered symbols.
 - [x] Symbol gallery.
 - [x] Dev-only training/review view.
-- [ ] Offline cache/PWA path.
+- [x] Offline cache/PWA path.
 
 ### Phase 3 — macOS prototype
 
@@ -335,7 +335,7 @@ Longer term, CI should fail if:
 - [x] Rebuild normalized classifier artifacts from source samples.
 - [x] `data:add-symbol` CLI.
 - [x] suspicious/bad-sample report generator.
-- [ ] better review queue in training UI.
+- [x] better review queue in training UI.
 - [x] PR preview generator.
 - [x] GitHub Action that comments visual data preview on PRs.
 - [x] Open-source contribution docs.

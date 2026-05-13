@@ -31,6 +31,8 @@
   let status = $state('Loading training data…')
   let saving = $state(false)
   let rejectReason = $state('scribble')
+  let sampleFilter = $state<'all' | 'active' | 'rejected'>('all')
+  let selectedSampleId = $state('')
 
   const filteredSymbols = $derived.by(() => {
     const q = filter.trim().toLowerCase()
@@ -42,6 +44,8 @@
 
   const selectedSymbol = $derived(symbols.find((symbol) => symbol.id === selectedId))
   const hasInk = $derived(strokes.length > 0)
+  const visibleSamples = $derived(samples.filter((sample) => sampleFilter === 'all' || (sampleFilter === 'rejected' ? sample.rejected : !sample.rejected)))
+  const selectedSample = $derived(samples.find((sample) => sample.id === selectedSampleId))
 
   loadSymbols()
 
@@ -62,6 +66,15 @@
       } else if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'z') {
         event.preventDefault()
         undo()
+      } else if (event.key.toLowerCase() === 'n') {
+        event.preventDefault()
+        selectNextSample()
+      } else if (event.key.toLowerCase() === 'r') {
+        event.preventDefault()
+        void reviewSelectedSample('reject')
+      } else if (event.key.toLowerCase() === 'u') {
+        event.preventDefault()
+        void reviewSelectedSample('restore')
       }
     }
     window.addEventListener('keydown', onKeyDown)
@@ -85,6 +98,7 @@
       const response = await fetch(`/__detexify_lab__/samples?symbolId=${encodeURIComponent(symbolId)}`)
       if (!response.ok) throw new Error(`Could not load samples: ${response.status}`)
       samples = await response.json() as TrainingSample[]
+      selectedSampleId = samples[0]?.id ?? ''
     } catch (error) {
       samples = []
       status = error instanceof Error ? error.message : 'Could not load samples'
@@ -93,6 +107,7 @@
 
   function selectSymbol(symbol: TrainingSymbol) {
     selectedId = symbol.id
+    selectedSampleId = ''
     strokes = []
   }
 
@@ -121,9 +136,21 @@
         ? { ...candidate, rejected: result.rejected, rejection: result.rejection }
         : candidate)
       status = action === 'reject' ? `Rejected ${sample.id}` : `Restored ${sample.id}`
+      selectNextSample()
     } catch (error) {
       status = error instanceof Error ? error.message : 'Could not update sample review'
     }
+  }
+
+  async function reviewSelectedSample(action: 'reject' | 'restore') {
+    if (!selectedSample) return
+    await reviewSample(selectedSample, action)
+  }
+
+  function selectNextSample() {
+    const current = visibleSamples.findIndex((sample) => sample.id === selectedSampleId)
+    const next = visibleSamples[current + 1] ?? visibleSamples[0]
+    selectedSampleId = next?.id ?? ''
   }
 
   async function saveSample() {
@@ -154,6 +181,14 @@
     return value.map((stroke) => stroke.map((point) => ({ x: point.x, y: point.y })))
   }
 
+  function coverageHint(symbol: TrainingSymbol): string {
+    const count = symbol.samples?.count ?? 0
+    if (count === 0) return 'no samples yet'
+    if (count < 5) return 'needs samples'
+    if (count < 20) return 'could use more'
+    return 'healthy coverage'
+  }
+
   function mode(symbol: TrainingSymbol): string {
     if (symbol.mode === 'both') return 'math & text'
     return symbol.mode
@@ -179,7 +214,7 @@
             </span>
             <span>
               <code>{symbol.command}</code>
-              <small>{symbol.package ?? 'latex2e'} · {symbol.samples?.count ?? 0}</small>
+              <small>{symbol.package ?? 'latex2e'} · {symbol.samples?.count ?? 0} · {coverageHint(symbol)}</small>
             </span>
           </button>
         </li>
@@ -215,6 +250,14 @@
     <div class="training-samples-header">
       <h2>Existing samples</h2>
       <label>
+        <span>Queue</span>
+        <select bind:value={sampleFilter}>
+          <option value="all">all</option>
+          <option value="active">active</option>
+          <option value="rejected">rejected</option>
+        </select>
+      </label>
+      <label>
         <span>Reject reason</span>
         <select bind:value={rejectReason}>
           <option value="scribble">scribble</option>
@@ -227,14 +270,15 @@
       </label>
     </div>
     <ol>
-      {#each samples as sample}
-        <li class:rejected={sample.rejected}>
+      {#each visibleSamples as sample}
+        <li class:rejected={sample.rejected} class:selected={sample.id === selectedSampleId}>
+          <button class="sample-select" type="button" onclick={() => selectedSampleId = sample.id}>Select</button>
           <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
           <small>{sample.rejected ? `rejected: ${sample.rejection?.reason ?? 'other'}` : sample.source?.kind ?? 'sample'}</small>
           {#if sample.rejected}
-            <button type="button" onclick={() => reviewSample(sample, 'restore')}>Restore</button>
+            <button type="button" onclick={() => reviewSample(sample, 'restore')}>Restore <kbd>U</kbd></button>
           {:else}
-            <button type="button" onclick={() => reviewSample(sample, 'reject')}>Reject</button>
+            <button type="button" onclick={() => reviewSample(sample, 'reject')}>Reject <kbd>R</kbd></button>
           {/if}
         </li>
       {/each}

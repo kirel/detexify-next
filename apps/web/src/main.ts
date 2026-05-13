@@ -13,3 +13,11 @@ const target = document.getElementById('app')
 if (!target) throw new Error('Missing #app')
 
 mount(App, { target })
+
+if ('serviceWorker' in navigator && import.meta.env.PROD && window.location.protocol !== 'detexify:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch((error: unknown) => {
+      console.warn('Service worker registration failed', error)
+    })
+  })
+}

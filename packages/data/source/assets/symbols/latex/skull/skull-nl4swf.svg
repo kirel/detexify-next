@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="\skull">
+  <path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M48 10c-20 0-34 15-34 34 0 11 5 20 13 26v12h42V70c8-6 13-15 13-26 0-19-14-34-34-34Z"/>
+  <circle cx="35" cy="43" r="9" fill="currentColor"/>
+  <circle cx="61" cy="43" r="9" fill="currentColor"/>
+  <path fill="currentColor" d="M48 52 41 66h14z"/>
+  <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M35 76v9M44 76v9M53 76v9M62 76v9"/>
+</svg>
