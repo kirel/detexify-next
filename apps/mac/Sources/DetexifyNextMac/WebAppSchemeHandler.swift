@@ -5,7 +5,7 @@ final class WebAppSchemeHandler: NSObject, WKURLSchemeHandler {
     private let rootURL: URL?
 
     override init() {
-        self.rootURL = Bundle.module.url(forResource: "WebApp", withExtension: nil, subdirectory: "Resources")
+        self.rootURL = WebAppSchemeHandler.findWebAppRoot()
         super.init()
     }
 
@@ -55,6 +55,19 @@ final class WebAppSchemeHandler: NSObject, WKURLSchemeHandler {
 
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
         // No streaming work to cancel.
+    }
+
+    private static func findWebAppRoot() -> URL? {
+        let candidates: [URL?] = [
+            // Packaged .app layout used by scripts/package-mac.sh.
+            Bundle.main.resourceURL?.appendingPathComponent("WebApp", isDirectory: true),
+            // SwiftPM resource bundle when copied into Contents/Resources.
+            Bundle.main.resourceURL?.appendingPathComponent("DetexifyNextMac_DetexifyNextMac.bundle/Resources/WebApp", isDirectory: true),
+            // SwiftPM development layout.
+            Bundle.module.url(forResource: "WebApp", withExtension: nil, subdirectory: "Resources"),
+        ]
+
+        return candidates.compactMap { $0 }.first { FileManager.default.fileExists(atPath: $0.appendingPathComponent("index.html").path) }
     }
 
     private func sanitizedPath(for url: URL) -> String {

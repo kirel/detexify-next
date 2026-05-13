@@ -11,6 +11,7 @@ These docs describe the current development/contribution workflow and the intend
 - [adding-samples.md](./adding-samples.md) — how training samples are captured
 - [reviewing-samples.md](./reviewing-samples.md) — rejecting/restoring bad samples
 - [pr-previews.md](./pr-previews.md) — planned visual GitHub PR previews
+- [mac-distribution.md](./mac-distribution.md) — signing, notarization, and release packaging
 
 ## Related root docs
 

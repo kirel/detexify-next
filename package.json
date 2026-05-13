@@ -17,6 +17,8 @@
     "validate:data": "npm run build:packages && npm --workspace @detexify/data run validate:source",
     "prepare:mac-web": "npm run build && npm --workspace @detexify/data run prepare:mac-web",
     "build:mac": "npm run prepare:mac-web && cd apps/mac && swift build",
+    "package:mac": "scripts/package-mac.sh",
+    "notarize:mac": "scripts/notarize-mac.sh",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "tsc -b packages/core packages/data && npm --workspace @detexify/web run typecheck"
   },

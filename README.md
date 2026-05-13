@@ -187,6 +187,14 @@ Build locally:
 npm run build:mac
 ```
 
+Create a distributable local `.app`/`.zip`:
+
+```bash
+npm run package:mac
+```
+
+For public distribution, sign and notarize. See [docs/mac-distribution.md](./docs/mac-distribution.md).
+
 Swift package lives in `apps/mac`.
 
 ## Open-source contribution direction
