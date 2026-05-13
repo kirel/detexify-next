@@ -347,8 +347,8 @@ Longer term, CI should fail if:
 - [x] Tiny trained CNN embedding benchmark.
 - [x] Robust multi-seed/multi-size benchmark runner.
 - [x] Hybrid CNN candidate + DTW reranker.
-- [ ] Metric-learning/prototype-loss experiments.
-- [ ] Exported model/index artifact experiments.
+- [x] Metric-learning/prototype-loss experiments.
+- [x] Exported model/index artifact experiments.
 
 ### Phase 6 — release polish
 
@@ -359,7 +359,7 @@ Longer term, CI should fail if:
 - [x] Notarization docs.
 - [x] GitHub release script.
 - [x] Publish initial `v0.1.0` macOS release.
-- [ ] Archive/retirement notes for old repos.
+- [x] Archive/retirement notes for old repos.
 
 ## Design principles
 

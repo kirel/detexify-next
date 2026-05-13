@@ -96,7 +96,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add local result limiting/show-more.
 - [x] Add PWA/offline caching.
 - [x] Benchmark classifier in Chrome/Safari.
-- [ ] Optimize data artifact if needed.
+- [x] Optimize data artifact if needed (no additional v1 optimization needed beyond generated source data; revisit if browser benchmarks require it).
 
 ## Milestone 5 — Local training/sample curation UI
 
@@ -112,7 +112,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Persist rejected samples to `rejected-samples.json`.
 - [x] Visually mark rejected samples.
 - [x] Add review queue / next-sample workflow.
-- [ ] Add suspicious-sample mode.
+- [x] Add suspicious-sample mode.
 - [x] Add keyboard shortcuts for reject/restore/next.
 - [x] Add per-symbol sample coverage hints.
 
@@ -132,7 +132,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Mac settings window with hotkey recorder.
 - [x] Clear canvas when Mac panel closes/hides.
 - [x] Native compact glass layout.
-- [ ] Fine-tune remaining glass/transparency/styling if desired.
+- [x] Fine-tune remaining glass/transparency/styling if desired (accepted for v1; revisit based on user feedback).
 
 ## Milestone 7 — Static web deployment
 
@@ -156,9 +156,9 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Document model roadmap in `models.md`.
 - [x] Add robust multi-seed/multi-size benchmark runner.
 - [x] Implement CNN candidate generator + DTW reranker.
-- [ ] Try metric-learning/prototype objectives for embeddings.
-- [ ] Try rendered SVG assets as augmented training examples rather than NN prototypes.
-- [ ] Export trained model/index artifacts and measure browser/WKWebView performance.
+- [x] Try metric-learning/prototype objectives for embeddings.
+- [x] Try rendered SVG assets as augmented training examples rather than NN prototypes.
+- [x] Export trained model/index artifacts and measure browser/WKWebView performance.
 
 ## Milestone 9 — Open-source contribution tooling
 
@@ -182,7 +182,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Notarization docs.
 - [x] GitHub release script.
 - [x] Publish initial `v0.1.0` macOS release.
-- [ ] Archive/retirement notes for old Mac app.
+- [x] Archive/retirement notes for old Mac app.
 
 ## Current known issues/questions
 

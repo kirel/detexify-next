@@ -1,12 +1,14 @@
 import { performance } from 'node:perf_hooks'
-import { readFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as tf from '@tensorflow/tfjs'
+import sharp from 'sharp'
 import { LegacyDtwClassifier, rasterizeStrokes, type Result, type Snapshot, type StrokeSample, type Strokes } from '@detexify/core'
 import { PretrainedConvnetNearestClassifier } from '@detexify/core/convnet'
 import { snapshotFromLegacyJson } from '@detexify/core/legacy'
 import { expandHome } from './legacyPaths.js'
+import { assetPathForSymbol, readSourceSymbols } from './sourceData.js'
 
 type Args = {
   snapshotPath: string
@@ -24,6 +26,9 @@ type Args = {
   tfBackend: 'cpu' | 'wasm' | 'tensorflow'
   compareFrozen: boolean
   hybridCandidates: number
+  exportDir: string | undefined
+  includeRenderedAssets: boolean
+  sourceDir: string
 }
 
 type Holdout = { id: string; sample: StrokeSample }
@@ -68,7 +73,7 @@ if (args.compareFrozen) {
 }
 
 const beforeExamples = performance.now()
-const examples = makeTrainingExamples(train, labelToIndex, args)
+const examples = await makeTrainingExamples(train, labelToIndex, args)
 const exampleBuildMs = performance.now() - beforeExamples
 const model = createTinyEmbeddingConvnet(args.rasterSize, labels.length, args.embeddingSize, args.learningRate)
 
@@ -96,8 +101,11 @@ const embeddingModel = tf.model({ inputs: model.inputs, outputs: model.getLayer(
 const beforeIndex = performance.now()
 const trainedIndex = await buildEmbeddingIndex(embeddingModel, train, args)
 const trainedIndexMs = performance.now() - beforeIndex
+const prototypeIndex = buildPrototypeIndex(trainedIndex)
+if (args.exportDir) await exportArtifacts(args.exportDir, model, trainedIndex, prototypeIndex, args, labels)
 const trainedSoftmaxEval = await evaluateAsync('trained-tiny-convnet-softmax', holdouts, async (strokes) => classifyWithSoftmax(model, labels, strokes, args))
 const trainedEval = await evaluateAsync('trained-tiny-convnet-nearest', holdouts, async (strokes) => classifyWithEmbeddingIndex(embeddingModel, trainedIndex, strokes, args))
+const prototypeEval = await evaluateAsync('trained-tiny-convnet-prototypes', holdouts, async (strokes) => classifyWithEmbeddingIndex(embeddingModel, prototypeIndex, strokes, args))
 const hybridEval = await evaluateAsync(`trained-tiny-convnet-candidates-${args.hybridCandidates}-dtw-rerank`, holdouts, async (strokes) => classifyHybrid(model, labels, train, strokes, args))
 
 console.log(JSON.stringify({
@@ -115,6 +123,7 @@ console.log(JSON.stringify({
     epochs: args.epochs,
     augmentationsPerSample: args.augmentations,
     indexAugmentationsPerSample: args.indexAugmentations,
+    renderedAssetTrainingExamples: args.includeRenderedAssets ? labels.length : 0,
     trainingExamples: examples.count,
     exampleBuildMs,
     trainingMs,
@@ -129,7 +138,7 @@ console.log(JSON.stringify({
     training: 'none; pretrained ImageNet convnet is used only for embeddings',
     setupMs: frozenSetupMs,
   } : undefined,
-  evaluations: [legacyEval, ...(frozenEval ? [frozenEval] : []), trainedSoftmaxEval, trainedEval, hybridEval],
+  evaluations: [legacyEval, ...(frozenEval ? [frozenEval] : []), trainedSoftmaxEval, trainedEval, prototypeEval, hybridEval],
 }, null, 2))
 
 function createTinyEmbeddingConvnet(rasterSize: number, classCount: number, embeddingSize: number, learningRate: number): tf.LayersModel {
@@ -156,14 +165,15 @@ function createTinyEmbeddingConvnet(rasterSize: number, classCount: number, embe
   return model
 }
 
-function makeTrainingExamples(train: Snapshot, labelToIndex: ReadonlyMap<string, number>, args: Args): { images: Float32Array; labels: Float32Array; count: number } {
+async function makeTrainingExamples(train: Snapshot, labelToIndex: ReadonlyMap<string, number>, args: Args): Promise<{ images: Float32Array; labels: Float32Array; count: number }> {
   const base: { id: string; sample: StrokeSample }[] = []
   for (const [id, samples] of train.entries()) {
     if (!labelToIndex.has(id)) continue
     for (const sample of samples) base.push({ id, sample })
   }
 
-  const count = base.length * (1 + args.augmentations)
+  const renderedExamples = args.includeRenderedAssets ? await loadRenderedExamples(labelToIndex, args) : []
+  const count = base.length * (1 + args.augmentations) + renderedExamples.length
   const pixelsPerImage = args.rasterSize * args.rasterSize
   const images = new Float32Array(count * pixelsPerImage)
   const labels = new Float32Array(count * labelToIndex.size)
@@ -181,7 +191,34 @@ function makeTrainingExamples(train: Snapshot, labelToIndex: ReadonlyMap<string,
     }
   }
 
+  for (const item of renderedExamples) {
+    const label = labelToIndex.get(item.symbolId)
+    if (label === undefined) continue
+    writeExample(images, labels, row, label, labelToIndex.size, item.raster)
+    row += 1
+  }
+
   return { images, labels, count: row }
+}
+
+async function loadRenderedExamples(labelToIndex: ReadonlyMap<string, number>, args: Args): Promise<{ symbolId: string; raster: Float32Array }[]> {
+  const symbols = readSourceSymbols(join(args.sourceDir, 'symbols.json')).symbols
+  const output: { symbolId: string; raster: Float32Array }[] = []
+  for (const symbol of symbols) {
+    if (!labelToIndex.has(symbol.id)) continue
+    const path = join(args.sourceDir, assetPathForSymbol(symbol))
+    if (!existsSync(path)) continue
+    const buffer = await sharp(path)
+      .resize({ width: args.rasterSize, height: args.rasterSize, fit: 'contain', background: '#fff' })
+      .flatten({ background: '#fff' })
+      .greyscale()
+      .raw()
+      .toBuffer()
+    const raster = new Float32Array(args.rasterSize * args.rasterSize)
+    for (let index = 0; index < raster.length; index += 1) raster[index] = 1 - (buffer[index] ?? 255) / 255
+    output.push({ symbolId: symbol.id, raster })
+  }
+  return output
 }
 
 function writeExample(images: Float32Array, labels: Float32Array, row: number, label: number, classCount: number, raster: Float32Array): void {
@@ -232,6 +269,54 @@ async function buildEmbeddingIndex(model: tf.LayersModel, snapshot: Snapshot, ar
     labels.push(...batch.map((entry) => entry.label))
   }
   return { labels, embeddings: concatFloat32(chunks), embeddingSize }
+}
+
+function buildPrototypeIndex(index: EmbeddingIndex): EmbeddingIndex {
+  const sums = new Map<string, Float32Array>()
+  const counts = new Map<string, number>()
+  for (let row = 0; row < index.labels.length; row += 1) {
+    const label = index.labels[row]!
+    const sum = sums.get(label) ?? new Float32Array(index.embeddingSize)
+    const base = row * index.embeddingSize
+    for (let col = 0; col < index.embeddingSize; col += 1) sum[col] = (sum[col] ?? 0) + index.embeddings[base + col]!
+    sums.set(label, sum)
+    counts.set(label, (counts.get(label) ?? 0) + 1)
+  }
+
+  const labels = [...sums.keys()].sort()
+  const embeddings = new Float32Array(labels.length * index.embeddingSize)
+  for (const [row, label] of labels.entries()) {
+    const sum = sums.get(label)!
+    const count = counts.get(label) ?? 1
+    let norm = 0
+    for (let col = 0; col < index.embeddingSize; col += 1) {
+      const value = sum[col]! / count
+      embeddings[row * index.embeddingSize + col] = value
+      norm += value * value
+    }
+    norm = Math.sqrt(norm) || 1
+    for (let col = 0; col < index.embeddingSize; col += 1) {
+      const offset = row * index.embeddingSize + col
+      embeddings[offset] = (embeddings[offset] ?? 0) / norm
+    }
+  }
+  return { labels, embeddings, embeddingSize: index.embeddingSize }
+}
+
+async function exportArtifacts(exportDir: string, model: tf.LayersModel, nearestIndex: EmbeddingIndex, prototypeIndex: EmbeddingIndex, args: Args, labels: readonly string[]): Promise<void> {
+  mkdirSync(exportDir, { recursive: true })
+  await model.save(`file://${join(exportDir, 'model')}`)
+  writeFileSync(join(exportDir, 'nearest-embeddings.bin'), Buffer.from(nearestIndex.embeddings.buffer))
+  writeFileSync(join(exportDir, 'prototype-embeddings.bin'), Buffer.from(prototypeIndex.embeddings.buffer))
+  writeFileSync(join(exportDir, 'metadata.json'), `${JSON.stringify({
+    version: 1,
+    labels,
+    nearestLabels: nearestIndex.labels,
+    prototypeLabels: prototypeIndex.labels,
+    embeddingSize: nearestIndex.embeddingSize,
+    rasterSize: args.rasterSize,
+    createdAt: new Date().toISOString(),
+  }, null, 2)}\n`)
 }
 
 async function classifyWithSoftmax(model: tf.LayersModel, labels: readonly string[], strokes: Strokes, args: Args): Promise<Result[]> {
@@ -441,6 +526,9 @@ function parseArgs(argv: readonly string[]): Args {
     tfBackend: parseTfBackend(options.get('tf-backend') ?? 'tensorflow'),
     compareFrozen: parseBoolean(options.get('compare-frozen') ?? 'true'),
     hybridCandidates: parsePositiveInt(options.get('hybrid-candidates') ?? '50', '--hybrid-candidates'),
+    exportDir: options.get('export-dir') ? expandHome(options.get('export-dir')!) : undefined,
+    includeRenderedAssets: parseBoolean(options.get('include-rendered-assets') ?? 'false'),
+    sourceDir: expandHome(options.get('source-dir') ?? join(repoRoot, 'packages/data/source')),
   }
 }
 

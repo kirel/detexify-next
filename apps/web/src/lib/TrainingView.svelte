@@ -31,8 +31,9 @@
   let status = $state('Loading training data…')
   let saving = $state(false)
   let rejectReason = $state('scribble')
-  let sampleFilter = $state<'all' | 'active' | 'rejected'>('all')
+  let sampleFilter = $state<'all' | 'active' | 'rejected' | 'suspicious'>('all')
   let selectedSampleId = $state('')
+  let suspicious = $state<Record<string, string[]>>({})
 
   const filteredSymbols = $derived.by(() => {
     const q = filter.trim().toLowerCase()
@@ -44,7 +45,12 @@
 
   const selectedSymbol = $derived(symbols.find((symbol) => symbol.id === selectedId))
   const hasInk = $derived(strokes.length > 0)
-  const visibleSamples = $derived(samples.filter((sample) => sampleFilter === 'all' || (sampleFilter === 'rejected' ? sample.rejected : !sample.rejected)))
+  const visibleSamples = $derived(samples.filter((sample) => {
+    if (sampleFilter === 'all') return true
+    if (sampleFilter === 'rejected') return sample.rejected
+    if (sampleFilter === 'suspicious') return !sample.rejected && sample.id in suspicious
+    return !sample.rejected
+  }))
   const selectedSample = $derived(samples.find((sample) => sample.id === selectedSampleId))
 
   loadSymbols()
@@ -98,10 +104,22 @@
       const response = await fetch(`/__detexify_lab__/samples?symbolId=${encodeURIComponent(symbolId)}`)
       if (!response.ok) throw new Error(`Could not load samples: ${response.status}`)
       samples = await response.json() as TrainingSample[]
+      await loadSuspicious(symbolId)
       selectedSampleId = samples[0]?.id ?? ''
     } catch (error) {
       samples = []
       status = error instanceof Error ? error.message : 'Could not load samples'
+    }
+  }
+
+  async function loadSuspicious(symbolId: string) {
+    try {
+      const response = await fetch(`/__detexify_lab__/suspicious-samples?symbolId=${encodeURIComponent(symbolId)}`)
+      if (!response.ok) throw new Error(await response.text())
+      const rows = await response.json() as { sampleId: string; reasons: string[] }[]
+      suspicious = Object.fromEntries(rows.map((row) => [row.sampleId, row.reasons]))
+    } catch {
+      suspicious = {}
     }
   }
 
@@ -255,6 +273,7 @@
           <option value="all">all</option>
           <option value="active">active</option>
           <option value="rejected">rejected</option>
+          <option value="suspicious">suspicious</option>
         </select>
       </label>
       <label>
@@ -274,7 +293,7 @@
         <li class:rejected={sample.rejected} class:selected={sample.id === selectedSampleId}>
           <button class="sample-select" type="button" onclick={() => selectedSampleId = sample.id}>Select</button>
           <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
-          <small>{sample.rejected ? `rejected: ${sample.rejection?.reason ?? 'other'}` : sample.source?.kind ?? 'sample'}</small>
+          <small>{sample.rejected ? `rejected: ${sample.rejection?.reason ?? 'other'}` : suspicious[sample.id]?.join(', ') ?? sample.source?.kind ?? 'sample'}</small>
           {#if sample.rejected}
             <button type="button" onclick={() => reviewSample(sample, 'restore')}>Restore <kbd>U</kbd></button>
           {:else}

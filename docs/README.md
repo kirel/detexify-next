@@ -12,6 +12,7 @@ These docs describe the current development/contribution workflow and the intend
 - [reviewing-samples.md](./reviewing-samples.md) — rejecting/restoring bad samples
 - [pr-previews.md](./pr-previews.md) — planned visual GitHub PR previews
 - [mac-distribution.md](./mac-distribution.md) — signing, notarization, and release packaging
+- [archive-retirement.md](./archive-retirement.md) — notes for retiring old Detexify repos
 
 ## Related root docs
 
