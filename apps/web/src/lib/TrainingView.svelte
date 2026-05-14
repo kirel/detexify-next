@@ -32,7 +32,7 @@
   let saving = $state(false)
   let rejectReason = $state('bad-sample')
   let sampleFilter = $state<'all' | 'active' | 'rejected' | 'suspicious'>('all')
-  let symbolSort = $state<'command' | 'suspicious'>('command')
+  let symbolSort = $state<'command' | 'samples' | 'suspicious'>('command')
   let selectedSampleId = $state('')
   let suspicious = $state<Record<string, string[]>>({})
   let suspiciousSummary = $state<Record<string, { suspiciousCount: number; highConfidenceCount: number; mediumConfidenceCount: number }>>({})
@@ -50,6 +50,11 @@
       if (symbolSort === 'suspicious') {
         return (suspiciousSummary[b.id]?.suspiciousCount ?? 0) - (suspiciousSummary[a.id]?.suspiciousCount ?? 0)
           || (suspiciousSummary[b.id]?.highConfidenceCount ?? 0) - (suspiciousSummary[a.id]?.highConfidenceCount ?? 0)
+          || (a.samples?.count ?? 0) - (b.samples?.count ?? 0)
+          || a.command.localeCompare(b.command)
+      }
+      if (symbolSort === 'samples') {
+        return (a.samples?.count ?? 0) - (b.samples?.count ?? 0)
           || a.command.localeCompare(b.command)
       }
       return a.command.localeCompare(b.command)
@@ -324,6 +329,7 @@
         <span>Sort symbols</span>
         <select bind:value={symbolSort}>
           <option value="command">Command</option>
+          <option value="samples">Fewest samples</option>
           <option value="suspicious" disabled={summaryState !== 'ready'}>Suspicious first</option>
         </select>
       </label>
