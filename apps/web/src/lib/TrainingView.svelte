@@ -189,16 +189,6 @@
     return 'active'
   }
 
-  function sampleReason(sample: TrainingSample): string {
-    if (sample.rejected) return reasonLabel(sample.rejection?.reason ?? 'other')
-    if (sample.id in suspicious) return suspicious[sample.id]?.map(reasonLabel).join(' · ') ?? 'review suggested'
-    return sample.source?.kind === 'legacy-detexify' ? 'legacy sample' : sample.source?.kind ?? 'training sample'
-  }
-
-  function reasonLabel(reason: string): string {
-    return reason.replaceAll('-', ' ')
-  }
-
   function shortSampleId(sample: TrainingSample): string {
     return sample.id.split(':').at(-1) ?? sample.id
   }
@@ -333,7 +323,6 @@
               <span class="sample-id">{shortSampleId(sample)}</span>
             </span>
             <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
-            <span class="sample-reason">{sampleReason(sample)}</span>
           </button>
           {#if sample.rejected}
             <button class="sample-action restore" type="button" onclick={() => reviewSample(sample, 'restore')}>Restore <kbd>U</kbd></button>
