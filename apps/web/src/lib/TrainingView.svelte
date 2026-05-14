@@ -32,8 +32,11 @@
   let saving = $state(false)
   let rejectReason = $state('bad-sample')
   let sampleFilter = $state<'all' | 'active' | 'rejected' | 'suspicious'>('all')
+  let symbolSort = $state<'command' | 'suspicious'>('command')
   let selectedSampleId = $state('')
   let suspicious = $state<Record<string, string[]>>({})
+  let suspiciousSummary = $state<Record<string, { suspiciousCount: number; highConfidenceCount: number; mediumConfidenceCount: number }>>({})
+  let summaryLoading = $state(false)
   let loadSamplesRequest = 0
 
   const filteredSymbols = $derived.by(() => {
@@ -41,7 +44,14 @@
     const filtered = q
       ? symbols.filter((symbol) => [symbol.command, symbol.package, symbol.fontenc, symbol.id].some((value) => value?.toLowerCase().includes(q)))
       : symbols
-    return [...filtered].sort((a, b) => a.command.localeCompare(b.command))
+    return [...filtered].sort((a, b) => {
+      if (symbolSort === 'suspicious') {
+        return (suspiciousSummary[b.id]?.suspiciousCount ?? 0) - (suspiciousSummary[a.id]?.suspiciousCount ?? 0)
+          || (suspiciousSummary[b.id]?.highConfidenceCount ?? 0) - (suspiciousSummary[a.id]?.highConfidenceCount ?? 0)
+          || a.command.localeCompare(b.command)
+      }
+      return a.command.localeCompare(b.command)
+    })
   })
 
   const selectedSymbol = $derived(symbols.find((symbol) => symbol.id === selectedId))
@@ -92,6 +102,7 @@
       const rememberedId = window.localStorage.getItem('detexify.train.selectedSymbolId')
       selectedId = symbols.find((symbol) => symbol.id === rememberedId)?.id ?? symbols.find((symbol) => symbol.samples?.count)?.id ?? symbols[0]?.id ?? ''
       status = `${symbols.length} symbols ready for training`
+      void loadSuspiciousSummary()
     } catch (error) {
       status = error instanceof Error ? error.message : 'Could not load training data'
     }
@@ -117,6 +128,24 @@
       if (request !== loadSamplesRequest) return
       samples = []
       status = error instanceof Error ? error.message : 'Could not load samples'
+    }
+  }
+
+  async function loadSuspiciousSummary() {
+    summaryLoading = true
+    try {
+      const response = await fetch('/__detexify_lab__/suspicious-summary')
+      if (!response.ok) throw new Error(await response.text())
+      const rows = await response.json() as { symbolId: string; suspiciousCount: number; highConfidenceCount: number; mediumConfidenceCount: number }[]
+      suspiciousSummary = Object.fromEntries(rows.map((row) => [row.symbolId, {
+        suspiciousCount: row.suspiciousCount,
+        highConfidenceCount: row.highConfidenceCount,
+        mediumConfidenceCount: row.mediumConfidenceCount,
+      }]))
+    } catch {
+      suspiciousSummary = {}
+    } finally {
+      summaryLoading = false
     }
   }
 
@@ -243,6 +272,10 @@
     return value.map((stroke) => stroke.map((point) => ({ x: point.x, y: point.y })))
   }
 
+  function symbolSuspiciousCount(symbol: TrainingSymbol): number {
+    return suspiciousSummary[symbol.id]?.suspiciousCount ?? 0
+  }
+
   function coverageHint(symbol: TrainingSymbol): string {
     const count = symbol.samples?.count ?? 0
     if (count === 0) return 'no samples yet'
@@ -265,6 +298,14 @@
         <input bind:value={filter} placeholder="\\infty, amssymb, arrow…" />
       </label>
       <p>{status}</p>
+      <label>
+        <span>Sort symbols</span>
+        <select bind:value={symbolSort}>
+          <option value="command">Command</option>
+          <option value="suspicious">Suspicious first</option>
+        </select>
+      </label>
+      <p>{summaryLoading ? 'Scanning suspicious samples…' : `${Object.keys(suspiciousSummary).length} symbols with suspicious samples`}</p>
     </div>
 
     <ol>
@@ -277,6 +318,7 @@
             <span>
               <code>{symbol.command}</code>
               <small>{symbol.package ?? 'latex2e'} · {symbol.samples?.count ?? 0} · {coverageHint(symbol)}</small>
+              {#if symbolSuspiciousCount(symbol) > 0}<small class="symbol-suspicious-count">{symbolSuspiciousCount(symbol)} suspicious</small>{/if}
             </span>
           </button>
         </li>

@@ -31,6 +31,8 @@ function detexifyLabPlugin(): Plugin {
             const symbolId = url.searchParams.get('symbolId')
             if (!symbolId) throw httpError(400, 'Missing symbolId')
             sendJson(response, suspiciousSamples(symbolId))
+          } else if (request.method === 'GET' && url.pathname === '/suspicious-summary') {
+            sendJson(response, suspiciousSummary())
           } else if (request.method === 'POST' && url.pathname === '/samples') {
             const body = JSON.parse(await readBody(request)) as { symbolId?: unknown; strokes?: unknown }
             const sample = saveSample(body)
@@ -80,17 +82,35 @@ function readSamples(symbolId: string): unknown[] {
 }
 
 function suspiciousSamples(symbolId: string): unknown[] {
+  return suspiciousHints(symbolId).map((hint) => ({
+    sampleId: hint.sampleId,
+    reasons: hint.reasons,
+    confidence: hint.confidence,
+  }))
+}
+
+function suspiciousSummary(): unknown[] {
+  const manifest = readManifestFile()
+  return manifest.samples.map((entry) => {
+    const hints = suspiciousHints(entry.symbolId)
+    return {
+      symbolId: entry.symbolId,
+      suspiciousCount: hints.length,
+      sampleCount: entry.sampleCount,
+      highConfidenceCount: hints.filter((hint) => hint.confidence === 'high').length,
+      mediumConfidenceCount: hints.filter((hint) => hint.confidence === 'medium').length,
+    }
+  }).filter((entry) => entry.suspiciousCount > 0)
+}
+
+function suspiciousHints(symbolId: string) {
   const symbol = findSymbol(symbolId)
   const samples = readSamples(symbolId).flatMap((sample) => {
     const candidate = sample as { id?: unknown; symbolId?: unknown; strokes?: unknown; rejected?: unknown }
     if (candidate.rejected || typeof candidate.id !== 'string' || typeof candidate.symbolId !== 'string' || !Array.isArray(candidate.strokes)) return []
     return [{ id: candidate.id, symbolId: candidate.symbolId, strokes: candidate.strokes as StrokesJson }]
   })
-  return filterReviewHints(analyzeSamplesForSymbol(symbol, { referenceSamples: samples, candidateSamples: samples }), 'medium').map((hint) => ({
-    sampleId: hint.sampleId,
-    reasons: hint.reasons,
-    confidence: hint.confidence,
-  }))
+  return filterReviewHints(analyzeSamplesForSymbol(symbol, { referenceSamples: samples, candidateSamples: samples }), 'medium')
 }
 
 function saveSample(body: { symbolId?: unknown; strokes?: unknown }): unknown {

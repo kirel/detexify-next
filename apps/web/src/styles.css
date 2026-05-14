@@ -574,7 +574,8 @@ h1 {
   text-transform: uppercase;
 }
 
-.training-search input {
+.training-search input,
+.training-search select {
   width: 100%;
   border: 0;
   border-bottom: 1px solid var(--line);
@@ -586,7 +587,8 @@ h1 {
   outline: none;
 }
 
-.training-search input:focus {
+.training-search input:focus,
+.training-search select:focus {
   border-bottom-color: var(--ink);
 }
 
@@ -657,6 +659,11 @@ h1 {
   display: block;
   color: var(--muted);
   font-size: 0.72rem;
+}
+
+.training-symbols .symbol-suspicious-count {
+  color: #92400e;
+  font-weight: 700;
 }
 
 .training-workbench {
