@@ -30,7 +30,7 @@
   let filter = $state('')
   let status = $state('Loading training data…')
   let saving = $state(false)
-  let rejectReason = $state('scribble')
+  let rejectReason = $state('bad-sample')
   let sampleFilter = $state<'all' | 'active' | 'rejected' | 'suspicious'>('all')
   let selectedSampleId = $state('')
   let suspicious = $state<Record<string, string[]>>({})
@@ -53,6 +53,9 @@
     return !sample.rejected
   }))
   const selectedSample = $derived(samples.find((sample) => sample.id === selectedSampleId))
+  const activeCount = $derived(samples.filter((sample) => !sample.rejected).length)
+  const rejectedCount = $derived(samples.filter((sample) => sample.rejected).length)
+  const suspiciousCount = $derived(samples.filter((sample) => !sample.rejected && sample.id in suspicious).length)
 
   loadSymbols()
 
@@ -180,6 +183,26 @@
     await reviewSample(selectedSample, action)
   }
 
+  function sampleState(sample: TrainingSample): 'rejected' | 'suspicious' | 'active' {
+    if (sample.rejected) return 'rejected'
+    if (sample.id in suspicious) return 'suspicious'
+    return 'active'
+  }
+
+  function sampleReason(sample: TrainingSample): string {
+    if (sample.rejected) return reasonLabel(sample.rejection?.reason ?? 'other')
+    if (sample.id in suspicious) return suspicious[sample.id]?.map(reasonLabel).join(' · ') ?? 'review suggested'
+    return sample.source?.kind === 'legacy-detexify' ? 'legacy sample' : sample.source?.kind ?? 'training sample'
+  }
+
+  function reasonLabel(reason: string): string {
+    return reason.replaceAll('-', ' ')
+  }
+
+  function shortSampleId(sample: TrainingSample): string {
+    return sample.id.split(':').at(-1) ?? sample.id
+  }
+
   function selectNextSample() {
     const current = visibleSamples.findIndex((sample) => sample.id === selectedSampleId)
     const next = visibleSamples[current + 1] ?? visibleSamples[0]
@@ -282,22 +305,20 @@
   <aside class="training-samples">
     <div class="training-samples-header">
       <h2>Existing samples</h2>
+      <p class="sample-counts"><span>{activeCount} active</span><span>{suspiciousCount} suspicious</span><span>{rejectedCount} rejected</span></p>
+      <div class="sample-queues" role="group" aria-label="Sample queue">
+        <button class:active={sampleFilter === 'all'} type="button" onclick={() => sampleFilter = 'all'}>All</button>
+        <button class:active={sampleFilter === 'active'} type="button" onclick={() => sampleFilter = 'active'}>Active</button>
+        <button class:active={sampleFilter === 'suspicious'} type="button" onclick={() => sampleFilter = 'suspicious'}>Suspicious</button>
+        <button class:active={sampleFilter === 'rejected'} type="button" onclick={() => sampleFilter = 'rejected'}>Rejected</button>
+      </div>
       <label>
-        <span>Queue</span>
-        <select bind:value={sampleFilter}>
-          <option value="all">all</option>
-          <option value="active">active</option>
-          <option value="rejected">rejected</option>
-          <option value="suspicious">suspicious</option>
-        </select>
-      </label>
-      <label>
-        <span>Reject reason</span>
+        <span>Reject as</span>
         <select bind:value={rejectReason}>
-          <option value="scribble">scribble</option>
+          <option value="bad-sample">bad sample</option>
           <option value="wrong-symbol">wrong symbol</option>
-          <option value="empty">empty</option>
           <option value="duplicate">duplicate</option>
+          <option value="empty">empty</option>
           <option value="bad-normalization">bad normalization</option>
           <option value="other">other</option>
         </select>
@@ -305,14 +326,19 @@
     </div>
     <ol>
       {#each visibleSamples as sample (sample.id)}
-        <li class:rejected={sample.rejected} class:selected={sample.id === selectedSampleId}>
-          <button class="sample-select" type="button" onclick={() => selectedSampleId = sample.id}>Select</button>
-          <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
-          <small>{sample.rejected ? `rejected: ${sample.rejection?.reason ?? 'other'}` : suspicious[sample.id]?.join(', ') ?? sample.source?.kind ?? 'sample'}</small>
+        <li class:rejected={sample.rejected} class:suspicious={!sample.rejected && sample.id in suspicious} class:selected={sample.id === selectedSampleId}>
+          <button class="sample-card" type="button" onclick={() => selectedSampleId = sample.id} aria-label={`Select ${sample.id}`}>
+            <span class="sample-card-topline">
+              <span class:active={sampleState(sample) === 'active'} class:rejected={sampleState(sample) === 'rejected'} class:suspicious={sampleState(sample) === 'suspicious'} class="sample-state">{sampleState(sample)}</span>
+              <span class="sample-id">{shortSampleId(sample)}</span>
+            </span>
+            <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
+            <span class="sample-reason">{sampleReason(sample)}</span>
+          </button>
           {#if sample.rejected}
-            <button type="button" onclick={() => reviewSample(sample, 'restore')}>Restore <kbd>U</kbd></button>
+            <button class="sample-action restore" type="button" onclick={() => reviewSample(sample, 'restore')}>Restore <kbd>U</kbd></button>
           {:else}
-            <button type="button" onclick={() => reviewSample(sample, 'reject')}>Reject <kbd>R</kbd></button>
+            <button class="sample-action reject" type="button" onclick={() => reviewSample(sample, 'reject')}>Reject <kbd>R</kbd></button>
           {/if}
         </li>
       {/each}
