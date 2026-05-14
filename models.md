@@ -1,67 +1,110 @@
 # Detexify Next Model Roadmap
 
+## Current production decision
+
+Keep **legacy DTW** as the app backend for now.
+
+The repaired raw source data makes CNN/hybrid approaches more promising, but the current evidence is still experimental: one 200-symbol split, fresh curation state, no browser/WKWebView packaging, and no multi-seed matrix yet. DTW is simple, deterministic, already integrated, offline-friendly, fast, and reliable enough for v1.
+
+## Data correction impact
+
+The original legacy backend snapshot was not a good source-of-truth for model work: it stored already-preprocessed samples where each stroke had been independently aspect-fitted. That destroyed relative stroke positions for multi-stroke symbols.
+
+The source dataset has now been rebuilt from the raw Google Drive `detexify.sql.gz` export:
+
+- source samples are raw/sample-wide-normalized drawings;
+- relative stroke positions are preserved;
+- generated DTW classifier artifacts may still apply legacy preprocessing;
+- ML/raster benchmarks should read from `packages/data/source`, not from historical snapshot artifacts.
+
+This invalidates the old CNN conclusions that were based on the broken snapshot-era stroke rasters.
+
 ## Current model conclusions
 
-### Legacy DTW remains a strong baseline
+### Legacy DTW remains the pragmatic baseline
 
-The TypeScript DTW port is still highly competitive for Detexify's data because it works directly on stroke geometry. It captures point order and shape alignment without needing a trained model.
+The TypeScript DTW port is still highly competitive. It works directly on stroke geometry, has tiny runtime cost, needs no model download, and is already integrated in web and macOS builds.
 
-### Frozen ImageNet ConvNets are useful as candidate generators, not replacements
+The legacy DTW preprocessing still normalizes per stroke. That is not ideal as a general representation, but it is part of the legacy feature space and remains acceptable for the current DTW backend. The important fix is that source samples are no longer stored in that lossy representation.
 
-MobileNetV2 alpha `0.50` via `@tensorflow-models/mobilenet` was tested as a frozen feature generator plus nearest neighbor. It is browser-friendly and easy to load, but it is pretrained on ImageNet, not sketches or symbols.
+### Frozen ImageNet ConvNets are candidate generators, not replacements
 
-After repairing the legacy source data to raw/sample-wide-normalized drawings, frozen MobileNet still underperformed DTW on top1 in a 200-symbol benchmark (`0.645` vs `0.730`). However, it beat DTW on top5/top10 (`0.945`/`0.970` vs `0.895`/`0.935`). This path is not a standalone replacement, but it is now interesting as a candidate generator for a hybrid reranker.
+MobileNetV2 alpha `0.50` via `@tensorflow-models/mobilenet` was re-tested as a frozen feature generator plus nearest neighbor on repaired raw source samples.
 
-### Task-specific ConvNets are promising
+On one 200-symbol split:
 
-After the raw source-data repair, a small locally trained CNN improved substantially. On one 200-symbol split, standalone trained CNN variants still did not cleanly replace DTW, but the hybrid `CNN candidates -> DTW rerank` path beat DTW on top1/top5/top10 (`0.750`/`0.950`/`0.970` with rendered asset training examples vs DTW `0.735`/`0.925`/`0.945`). This is now the strongest near-term model direction, pending multi-seed confirmation.
+```text
+legacy-dtw                    top1 .730  top5 .895  top10 .935
+frozen MobileNet NN           top1 .645  top5 .945  top10 .970
+```
+
+Interpretation: frozen MobileNet is not a top1 replacement for DTW, but it is interesting as a candidate generator because top5/top10 are strong.
+
+### Task-specific ConvNets are promising but not backend-ready
+
+A small locally trained CNN was re-tested on repaired raw source samples.
+
+Best observed hybrid result on one 200-symbol split, with rendered asset training examples:
+
+```text
+legacy-dtw                    top1 .735  top5 .925  top10 .945
+CNN candidates 50 + DTW rerank top1 .750  top5 .950  top10 .970
+```
+
+This is encouraging, but not enough to switch the app backend yet. The benchmark is still a single split, and the benchmark implementation is experimental rather than a production runtime engine.
+
+## Why not switch backend now?
+
+Missing before defaulting to CNN/hybrid:
+
+- multi-seed benchmark matrix;
+- shuffled per-symbol holdout policy;
+- `200`, `500`, and all-symbol evaluations;
+- candidate-count sweep, e.g. `10`, `20`, `50`, `100`;
+- post-clean-slate data curation pass;
+- exported TFJS model and embedding/index artifacts;
+- browser, Safari, and WKWebView latency/size testing;
+- production implementation that pre-indexes DTW samples instead of constructing candidate classifiers per query;
+- fallback behavior when model loading fails.
 
 ## Recommended next steps
 
-### 1. Make evaluation more robust
+### 1. Keep DTW as default
 
-Before optimizing model details, build a repeatable benchmark matrix.
+Do not block app progress on ML. Continue shipping with DTW while improving data quality and collecting benchmark evidence.
 
-Desired script:
+### 2. Make evaluation robust
 
-```bash
-npm --workspace @detexify/data run evaluate:all-engines
+Extend the benchmark runner to support:
+
+- fixed multi-seed evaluation;
+- symbol subset sizes: `200`, `500`, `all`;
+- shuffled holdouts per symbol;
+- raw source loading for raster engines;
+- legacy-preprocessed training copy for DTW;
+- frozen MobileNet;
+- trained tiny CNN;
+- CNN candidate + DTW rerank;
+- JSON output plus Markdown summary.
+
+### 3. Build hybrid as an experimental backend only
+
+Target architecture:
+
+```text
+strokes
+  -> rasterized image
+  -> CNN candidate retrieval
+  -> top-N candidate symbols
+  -> DTW rerank over candidate samples
+  -> top10 results
 ```
 
-It should support:
+This should be hidden behind a dev/localStorage flag first, not made default.
 
-- fixed multi-seed evaluation, e.g. 5 seeds;
-- symbol subset sizes: `200`, `500`, `all`;
-- identical holdout policy for all engines;
-- JSON output plus Markdown summary;
-- optional confusion/win-loss report: where CNN beats DTW and where DTW beats CNN.
+### 4. Improve trained embeddings
 
-Reason: the current benchmarks are useful, but a single 200-symbol split is too easy to overfit mentally.
-
-### 2. Build a hybrid: CNN candidate generator + DTW reranker
-
-This is the most likely v1 win.
-
-Pipeline:
-
-1. CNN embedding retrieves top-N candidate symbols quickly, e.g. top 50.
-2. DTW runs only on samples belonging to those candidates.
-3. Final result list is ranked by DTW.
-
-Why this should work:
-
-- CNN top-k retrieval is already competitive, especially top5/top10.
-- DTW is good at fine alignment once the candidate set is small.
-- The repaired raw source samples preserve layout for raster models while still allowing legacy DTW preprocessing for reranking.
-- The UI only needs a good top10, not a pure neural classifier.
-
-This also lets us keep DTW's reliability while using learned features for coarse retrieval.
-
-### 3. Train embeddings with metric-learning objectives
-
-The current trained CNN uses a softmax classification objective and then reuses an intermediate dense layer as an embedding. That is a weak proxy for nearest-neighbor retrieval.
-
-Better objectives to try:
+The current trained CNN uses a softmax objective and reuses an intermediate dense layer as an embedding. Better objectives to try later:
 
 - supervised contrastive loss;
 - triplet loss with hard negative mining;
@@ -69,60 +112,17 @@ Better objectives to try:
 - class prototype / center loss;
 - hybrid softmax + contrastive objective.
 
-Goal: train the embedding space directly so samples of the same symbol are close and confusing symbols are separated.
+### 5. Use rendered LaTeX assets carefully
 
-### 4. Use rendered LaTeX assets as training data, not just NN prototypes
-
-Adding rendered SVGs as extra nearest-neighbor prototypes did not improve the frozen MobileNet benchmark.
-
-Better use:
-
-- include rendered symbol images as positive training examples;
-- apply strong augmentation to make them handwriting-like:
-  - random affine transforms;
-  - stroke-width variation;
-  - blur / erosion / dilation;
-  - elastic distortion;
-  - jitter;
-  - partial thinning/thickening.
-
-Goal: pull clean rendered glyphs and hand-drawn samples into the same symbol embedding cluster.
-
-### 5. Scale only after the 200/500-symbol experiments work
-
-Do not jump straight to production model packaging until the training/evaluation loop proves itself.
-
-Scale-up checklist:
-
-- train on all sampled symbols;
-- export TFJS model;
-- build embedding/prototype index artifact;
-- measure model + index size;
-- benchmark browser, Safari, and WKWebView latency;
-- test offline Mac app loading behavior.
+Rendered assets helped the trained CNN hybrid in one run, but did not help frozen MobileNet. Keep them in the experiment pipeline, but validate across seeds before relying on them.
 
 ## Current preferred direction
 
-Do **not** replace DTW outright yet.
-
-Preferred architecture:
+Pragmatic v1:
 
 ```text
-strokes
-  -> rasterized image
-  -> trained tiny CNN embedding
-  -> top-N candidate symbols
-  -> DTW rerank over candidate samples
-  -> top10 results
+Default backend: legacy DTW
+Experimental backend: CNN candidates -> DTW rerank
 ```
 
-This should preserve DTW's fine-grained geometry matching while letting a learned model perform fast coarse retrieval.
-
-## Near-term implementation plan
-
-1. Add robust multi-engine benchmark runner.
-2. Implement CNN-candidate + DTW-reranker backend.
-3. Compare on `200`, `500`, and all symbols across multiple seeds.
-4. Add metric-learning training experiments.
-5. Re-test rendered LaTeX assets as augmented training examples.
-6. Only then decide whether a neural/hybrid backend should be exposed in the UI.
+DTW remains the reliable production path. Hybrid is the likely next backend candidate once the benchmark and runtime integration are mature.
