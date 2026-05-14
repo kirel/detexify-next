@@ -824,27 +824,7 @@ h1 {
   min-width: 0;
 }
 
-.sample-meta {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  min-width: 0;
-}
-
-.sample-reasons {
-  min-width: 0;
-  overflow: hidden;
-  color: var(--muted);
-  font-size: 0.62rem;
-  line-height: 1;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .sample-state {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
   padding: 0;
   color: var(--muted);
   font-size: 0.56rem;
@@ -854,12 +834,10 @@ h1 {
   text-transform: uppercase;
 }
 
-.sample-state::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
+.sample-note {
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.25;
 }
 
 .sample-state.active {

@@ -335,13 +335,11 @@
         <li class:rejected={sample.rejected} class:suspicious={!sample.rejected && sample.id in suspicious} class:selected={sample.id === selectedSampleId}>
           <button class="sample-card" type="button" onclick={() => selectedSampleId = sample.id} aria-label={`Select ${sample.id}`}>
             <span class="sample-card-topline">
-              <span class="sample-meta">
-                <span class:active={sampleState(sample) === 'active'} class:rejected={sampleState(sample) === 'rejected'} class:suspicious={sampleState(sample) === 'suspicious'} class="sample-state">{sampleState(sample)}</span>
-                {#if sampleReasons(sample)}<span class="sample-reasons">{sampleReasons(sample)}</span>{/if}
-              </span>
+              <span class:active={sampleState(sample) === 'active'} class:rejected={sampleState(sample) === 'rejected'} class:suspicious={sampleState(sample) === 'suspicious'} class="sample-state">{sampleState(sample)}</span>
               <span class="sample-id">{shortSampleId(sample)}</span>
             </span>
             <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
+            {#if sampleReasons(sample)}<span class="sample-note">{sampleReasons(sample)}</span>{/if}
           </button>
           {#if sample.rejected}
             <button class="sample-action restore" type="button" onclick={() => reviewSample(sample, 'restore')}>Restore</button>
