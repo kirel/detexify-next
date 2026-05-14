@@ -43,6 +43,10 @@ npm run render:symbols
 # Rebuild web data from canonical source data
 npm run prepare:web-data
 
+# Bootstrap/rebuild raw legacy source samples from the Google Drive SQL export.
+# Default is fidelity-first: no point cap. Use --max-points-per-stroke only as an explicit safety valve.
+npm run data:import-legacy-raw -- --sql-gz /path/to/detexify.sql.gz
+
 # Build static web app from committed public data
 npm run build:web:static
 ```

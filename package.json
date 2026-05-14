@@ -22,6 +22,7 @@
     "release:github": "scripts/github-release.sh",
     "release:mac": "npm run package:mac && npm run notarize:mac && npm run release:github",
     "evaluate:all-engines": "npm run build:packages && node packages/data/dist/evaluateAllEngines.js",
+    "data:import-legacy-raw": "npm run build:packages && node packages/data/dist/importLegacyRawSamples.js",
     "data:add-symbol": "npm run build:packages && node packages/data/dist/addSymbol.js",
     "data:find-bad-samples": "npm run build:packages && node packages/data/dist/findBadSamples.js",
     "data:preview-pr": "npm run build:packages && node packages/data/dist/previewPrData.js",

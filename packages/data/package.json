@@ -18,6 +18,7 @@
     "train:convnet-embedding": "node dist/trainConvnetEmbedding.js",
     "compare:live-api": "node dist/compareLiveApi.js",
     "convert:legacy-source": "node dist/convertLegacySnapshotToSource.js",
+    "import:legacy-raw": "node dist/importLegacyRawSamples.js",
     "render:symbols": "node dist/renderSymbols.js",
     "validate:source": "node dist/validateSourceData.js",
     "prepare:web-data:legacy": "node dist/prepareWebData.js",

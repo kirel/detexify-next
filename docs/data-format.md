@@ -72,6 +72,8 @@ Rules:
 
 - `symbolId` must reference a symbol in `symbols.json`.
 - Coordinates are normalized `0..1`.
+- Multi-stroke drawings are normalized as one sample, not per stroke, so relative stroke positions are preserved.
+- Source samples are fidelity-first: imports do not cap point counts by default. Extreme point-count caps are an explicit importer option, not the normal source format.
 - The ground-truth label is the canonical `symbolId`, not a legacy id.
 - Legacy details, author/device info, and imports belong in `source` metadata.
 
@@ -117,7 +119,7 @@ type RejectedSamplesFile = {
 }
 ```
 
-Generated classifier/web data excludes rejected samples.
+Generated classifier/web data excludes rejected samples. The committed review file may be empty; after the raw legacy re-import the curation state intentionally started from a clean slate.
 
 ## Rendered assets
 
@@ -134,6 +136,12 @@ tectonic -> PDF -> pdftocairo -svg -> SVG
 ```
 
 Known issue: `latex:skull:skull` currently fails to render with the available Tectonic/font setup.
+
+## Generated classifier data
+
+`apps/web/public/data/snapshot.json` is generated from source samples. It is a classifier artifact, not source of truth. The legacy DTW artifact applies the old DTW preprocessing during generation so the runtime classifier sees data in the expected shape; this does not mutate source samples.
+
+The old legacy backend `snapshot.json` is not used as source data because it stored already-preprocessed per-stroke-normalized samples.
 
 ## Validation
 

@@ -1,6 +1,7 @@
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { preprocessLegacy } from '@detexify/core'
 import { assetPathForSymbol, parseJsonlSamples, readRejectedSamples, readSamplesManifest, readSourceSymbols } from './sourceData.js'
 import { expandHome } from './legacyPaths.js'
 
@@ -23,7 +24,7 @@ for (const entry of manifest.samples) {
     return !rejected
   })
   includedSampleCount += includedSamples.length
-  snapshot[entry.symbolId] = includedSamples.map((sample) => ({ strokes: sample.strokes }))
+  snapshot[entry.symbolId] = includedSamples.map((sample) => ({ strokes: preprocessLegacy(sample.strokes) }))
 }
 
 rmSync(outDir, { recursive: true, force: true })
