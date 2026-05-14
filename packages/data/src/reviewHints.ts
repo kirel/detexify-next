@@ -70,10 +70,8 @@ export function analyzeSamplesForSymbol(symbol: Pick<SourceSymbol, 'id' | 'comma
     if (!traits.dotLike && medians.points > 0 && sampleStat.points <= Math.max(2, medians.points * 0.15)) add('few-points-relative-to-symbol', 'high')
     if (sampleStat.points >= Math.max(250, medians.points * 5)) add('very-many-points', 'medium')
 
-    if (!traits.dotLike && !traits.lineLike) {
-      if (sampleStat.width <= 0.015 || sampleStat.height <= 0.015) add('degenerate-bounds', 'medium')
-      if (sampleStat.area <= 0.0005) add('tiny-bounds', 'medium')
-      if (medians.area > 0 && sampleStat.area < medians.area * 0.12) add('tiny-relative-to-symbol', 'medium')
+    if (!traits.dotLike && !traits.lineLike && sampleStat.width <= 0.004 && sampleStat.height <= 0.004) {
+      add('collapsed-bounds', 'high')
     }
 
     if (!traits.dotLike && !traits.multiPart && sampleStat.strokeCountWithOnePoint >= Math.max(2, sampleStat.strokes * 0.75)) add('mostly-single-point-strokes', 'medium')
@@ -120,11 +118,11 @@ export function filterReviewHints(hints: readonly ReviewHint[], minimumConfidenc
 
 function traitsForSymbol(symbol: Pick<SourceSymbol, 'id' | 'command'>): Traits {
   const value = `${symbol.id} ${symbol.command}`.toLowerCase()
-  const dotLike = /(dots?[a-z]*|cdot|vdots|ddots|ldots|cdots|bullet|colon|period|punct|prime|therefore|because)/.test(value)
+  const dotLike = /(dots?[a-z]*|ellipsis|cdot|vdots|ddots|ldots|cdots|bullet|colon|period|punct|prime|therefore|because)/.test(value)
     || ['.', ':', '\\cdot', '\\bullet'].includes(symbol.command)
   const lineLike = /(minus|dash|bar|overline|underline|mid|vert|parallel|slash|backslash|setminus|lvert|rvert)/.test(value)
     || ['-', '\\mid', '|', '/', '\\backslash'].includes(symbol.command)
-  const multiPart = dotLike || /(iint|iiint|dots|colon|therefore|because|equiv|approx|simeq|cong|neq|leq|geq)/.test(value)
+  const multiPart = dotLike || /(iint|iiint|dots|ellipsis|colon|therefore|because|equiv|approx|simeq|cong|neq|leq|geq)/.test(value)
   return { dotLike, lineLike, multiPart }
 }
 
