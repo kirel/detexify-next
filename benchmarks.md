@@ -64,6 +64,53 @@ Same command with `--include-rendered-assets true` added 200 rendered LaTeX prot
 
 Interpretation: frozen ImageNet MobileNet is still not a top-1 replacement for DTW, but on repaired raw drawings it is now a strong candidate generator: top-5/top-10 beat DTW in this run. This supports the hybrid direction: ConvNet candidate retrieval followed by DTW or another symbol-aware reranker.
 
+## Trained tiny CNN re-benchmark after legacy-data repair
+
+Date: 2026-05-14
+Machine: Apple M1 Max (`Darwin arm64`)
+Node: `v22` via `npx -y node@22` for `tfjs-node`
+
+Command, no rendered asset training examples:
+
+```bash
+npx -y node@22 packages/data/dist/trainConvnetEmbedding.js \
+  --max-symbols 200 \
+  --seed 12345 \
+  --holdout-per-symbol 1 \
+  --limit 10 \
+  --epochs 12 \
+  --augmentations 1 \
+  --index-augmentations 0 \
+  --embedding-size 64 \
+  --raster-size 32 \
+  --batch-size 128 \
+  --tf-backend tensorflow \
+  --compare-frozen false \
+  --include-rendered-assets false
+```
+
+Results:
+
+| Engine | Top1 | Top5 | Top10 | Mean latency |
+| --- | ---: | ---: | ---: | ---: |
+| legacy-dtw | 0.735 | 0.925 | 0.945 | 1.87ms |
+| trained-tiny-convnet-softmax | 0.685 | 0.925 | 0.960 | 1.23ms |
+| trained-tiny-convnet-nearest | 0.655 | 0.940 | 0.975 | 1.73ms |
+| trained-tiny-convnet-prototypes | 0.675 | 0.915 | 0.965 | 1.18ms |
+| trained-tiny-convnet-candidates-50-dtw-rerank | 0.745 | 0.945 | 0.965 | 2.29ms |
+
+Same setup with `--include-rendered-assets true` added one rendered SVG raster per selected symbol to the supervised training examples:
+
+| Engine | Top1 | Top5 | Top10 | Mean latency |
+| --- | ---: | ---: | ---: | ---: |
+| legacy-dtw | 0.735 | 0.925 | 0.945 | 1.87ms |
+| trained-tiny-convnet-softmax | 0.670 | 0.945 | 0.980 | 1.19ms |
+| trained-tiny-convnet-nearest | 0.700 | 0.940 | 0.965 | 1.70ms |
+| trained-tiny-convnet-prototypes | 0.710 | 0.950 | 0.975 | 1.19ms |
+| trained-tiny-convnet-candidates-50-dtw-rerank | 0.750 | 0.950 | 0.970 | 2.19ms |
+
+Interpretation: the trained CNN is now meaningfully better than the stale snapshot-era benchmark. It still does not cleanly replace DTW as a standalone classifier on this split, but a CNN candidate stage plus DTW rerank beats DTW on top1/top5/top10. Rendered assets helped the prototype and hybrid variants in this run, but this still needs multi-seed confirmation.
+
 ### Benchmark command
 
 ```bash

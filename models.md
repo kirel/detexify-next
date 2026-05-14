@@ -14,7 +14,7 @@ After repairing the legacy source data to raw/sample-wide-normalized drawings, f
 
 ### Task-specific ConvNets are promising
 
-A small locally trained CNN embedding model already beat DTW on top1 in one 200-symbol run, but still lost on top5/top10. This suggests learned visual features are useful, but the current softmax-trained embedding is not yet the right retrieval objective.
+After the raw source-data repair, a small locally trained CNN improved substantially. On one 200-symbol split, standalone trained CNN variants still did not cleanly replace DTW, but the hybrid `CNN candidates -> DTW rerank` path beat DTW on top1/top5/top10 (`0.750`/`0.950`/`0.970` with rendered asset training examples vs DTW `0.735`/`0.925`/`0.945`). This is now the strongest near-term model direction, pending multi-seed confirmation.
 
 ## Recommended next steps
 
@@ -50,9 +50,9 @@ Pipeline:
 
 Why this should work:
 
-- CNN top1 is already competitive.
-- DTW top5/top10 is stronger.
+- CNN top-k retrieval is already competitive, especially top5/top10.
 - DTW is good at fine alignment once the candidate set is small.
+- The repaired raw source samples preserve layout for raster models while still allowing legacy DTW preprocessing for reranking.
 - The UI only needs a good top10, not a pure neural classifier.
 
 This also lets us keep DTW's reliability while using learned features for coarse retrieval.

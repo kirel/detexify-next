@@ -1,17 +1,16 @@
 import { performance } from 'node:perf_hooks'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as tf from '@tensorflow/tfjs'
 import sharp from 'sharp'
-import { LegacyDtwClassifier, rasterizeStrokes, type Result, type Snapshot, type StrokeSample, type Strokes } from '@detexify/core'
+import { LegacyDtwClassifier, preprocessLegacy, rasterizeStrokes, type Result, type Snapshot, type StrokeSample, type Strokes } from '@detexify/core'
 import { PretrainedConvnetNearestClassifier } from '@detexify/core/convnet'
-import { snapshotFromLegacyJson } from '@detexify/core/legacy'
 import { expandHome } from './legacyPaths.js'
-import { assetPathForSymbol, readSourceSymbols } from './sourceData.js'
+import { assetPathForSymbol, parseJsonlSamples, readRejectedSamples, readSamplesManifest, readSourceSymbols } from './sourceData.js'
 
 type Args = {
-  snapshotPath: string
+  sourceDir: string
   maxSymbols: number
   holdoutPerSymbol: number
   limit: number
@@ -28,7 +27,6 @@ type Args = {
   hybridCandidates: number
   exportDir: string | undefined
   includeRenderedAssets: boolean
-  sourceDir: string
 }
 
 type Holdout = { id: string; sample: StrokeSample }
@@ -51,23 +49,24 @@ const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
 const args = parseArgs(process.argv.slice(2))
 await configureTfBackend(args.tfBackend)
 
-const snapshot = snapshotFromLegacyJson(JSON.parse(readFileSync(args.snapshotPath, 'utf8')) as unknown)
-const selected = selectSymbols(snapshot, args.maxSymbols, args.seed)
-const { train, holdouts } = splitHoldouts(snapshot, selected, args.holdoutPerSymbol)
+const sourceSnapshot = loadSourceSnapshot(args.sourceDir)
+const selected = selectSymbols(sourceSnapshot, args.maxSymbols, args.seed)
+const { train, holdouts } = splitHoldouts(sourceSnapshot, selected, args.holdoutPerSymbol)
+const legacyTrain = preprocessSnapshotForLegacyDtw(train)
 const labels = [...train.keys()].sort()
 const labelToIndex = new Map(labels.map((label, index) => [label, index]))
 
 console.log(`Selected ${selected.length} symbols, ${holdouts.length} holdouts`)
 console.log(`Training tiny CNN embedding: ${labels.length} classes, ${args.epochs} epochs, ${args.augmentations} augmentations/sample`)
 
-const legacy = new LegacyDtwClassifier(train)
+const legacy = new LegacyDtwClassifier(legacyTrain)
 const legacyEval = evaluateSync(legacy.id, holdouts, (strokes) => legacy.classifySync(strokes, { limit: args.limit }))
 
 let frozenSetupMs: number | undefined
 let frozenEval: Evaluation | undefined
 if (args.compareFrozen) {
   const beforeFrozen = performance.now()
-  const frozen = await PretrainedConvnetNearestClassifier.create(train, { batchSize: args.batchSize })
+  const frozen = await PretrainedConvnetNearestClassifier.create(train, { batchSize: args.batchSize, rasterSize: args.rasterSize })
   frozenSetupMs = performance.now() - beforeFrozen
   frozenEval = await evaluateAsync(frozen.id, holdouts, (strokes) => frozen.classify(strokes, { limit: args.limit }))
 }
@@ -106,10 +105,11 @@ if (args.exportDir) await exportArtifacts(args.exportDir, model, trainedIndex, p
 const trainedSoftmaxEval = await evaluateAsync('trained-tiny-convnet-softmax', holdouts, async (strokes) => classifyWithSoftmax(model, labels, strokes, args))
 const trainedEval = await evaluateAsync('trained-tiny-convnet-nearest', holdouts, async (strokes) => classifyWithEmbeddingIndex(embeddingModel, trainedIndex, strokes, args))
 const prototypeEval = await evaluateAsync('trained-tiny-convnet-prototypes', holdouts, async (strokes) => classifyWithEmbeddingIndex(embeddingModel, prototypeIndex, strokes, args))
-const hybridEval = await evaluateAsync(`trained-tiny-convnet-candidates-${args.hybridCandidates}-dtw-rerank`, holdouts, async (strokes) => classifyHybrid(model, labels, train, strokes, args))
+const hybridEval = await evaluateAsync(`trained-tiny-convnet-candidates-${args.hybridCandidates}-dtw-rerank`, holdouts, async (strokes) => classifyHybrid(model, labels, legacyTrain, strokes, args))
 
 console.log(JSON.stringify({
-  snapshotPath: args.snapshotPath,
+  sourceDir: args.sourceDir,
+  sourceData: 'raw/sample-wide-normalized source samples; rejected samples excluded',
   selectedSymbols: selected.length,
   trainSymbols: train.size,
   holdouts: holdouts.length,
@@ -422,6 +422,23 @@ async function configureTfBackend(backend: Args['tfBackend']): Promise<void> {
   await tf.ready()
 }
 
+function loadSourceSnapshot(sourceDir: string): Snapshot {
+  const manifest = readSamplesManifest(join(sourceDir, 'samples/manifest.json'))
+  const rejected = readRejectedSamples(join(sourceDir, 'reviews/rejected-samples.json')).rejected
+  const entries: [string, StrokeSample[]][] = []
+  for (const entry of manifest.samples) {
+    const samples = parseJsonlSamples(join(sourceDir, entry.path))
+      .filter((sample) => !(sample.id in rejected))
+      .map((sample) => ({ strokes: sample.strokes }))
+    if (samples.length > 0) entries.push([entry.symbolId, samples])
+  }
+  return new Map(entries)
+}
+
+function preprocessSnapshotForLegacyDtw(snapshot: Snapshot): Snapshot {
+  return new Map([...snapshot.entries()].map(([id, samples]) => [id, samples.map((sample) => ({ strokes: preprocessLegacy(sample.strokes) }))]))
+}
+
 function splitHoldouts(snapshot: Snapshot, selectedIds: readonly string[], holdoutPerSymbol: number): { train: Snapshot; holdouts: Holdout[] } {
   const selected = new Set(selectedIds)
   const trainEntries: [string, readonly StrokeSample[]][] = []
@@ -511,7 +528,7 @@ function parseArgs(argv: readonly string[]): Args {
     options.set(key, value)
   }
   return {
-    snapshotPath: expandHome(options.get('snapshot') ?? join(repoRoot, 'apps/web/public/data/snapshot.json')),
+    sourceDir: expandHome(options.get('source-dir') ?? join(repoRoot, 'packages/data/source')),
     maxSymbols: parsePositiveInt(options.get('max-symbols') ?? '50', '--max-symbols'),
     holdoutPerSymbol: parsePositiveInt(options.get('holdout-per-symbol') ?? '1', '--holdout-per-symbol'),
     limit: parsePositiveInt(options.get('limit') ?? '10', '--limit'),
@@ -528,7 +545,6 @@ function parseArgs(argv: readonly string[]): Args {
     hybridCandidates: parsePositiveInt(options.get('hybrid-candidates') ?? '50', '--hybrid-candidates'),
     exportDir: options.get('export-dir') ? expandHome(options.get('export-dir')!) : undefined,
     includeRenderedAssets: parseBoolean(options.get('include-rendered-assets') ?? 'false'),
-    sourceDir: expandHome(options.get('source-dir') ?? join(repoRoot, 'packages/data/source')),
   }
 }
 
