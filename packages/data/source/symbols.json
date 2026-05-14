@@ -1787,6 +1787,23 @@
       }
     },
     {
+      "id": "latex:amssymb:llcorner",
+      "command": "\\llcorner",
+      "package": "amssymb",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\llcorner",
+        "package": "amssymb",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/amssymb/llcorner-fixhww.jsonl",
+        "count": 0
+      }
+    },
+    {
       "id": "latex:amssymb:Lleftarrow",
       "command": "\\Lleftarrow",
       "package": "amssymb",

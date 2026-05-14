@@ -2,7 +2,7 @@
   "version": 1,
   "encoding": "jsonl-per-symbol",
   "coordinateSystem": "normalized-0-1",
-  "symbolCount": 1099,
+  "symbolCount": 1100,
   "sampleCount": 39387,
   "samples": [
     {
@@ -529,6 +529,11 @@
       "symbolId": "latex:amssymb:ll",
       "path": "samples/latex/amssymb/ll-17llg11.jsonl",
       "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:llcorner",
+      "path": "samples/latex/amssymb/llcorner-fixhww.jsonl",
+      "sampleCount": 0
     },
     {
       "symbolId": "latex:amssymb:Lleftarrow",

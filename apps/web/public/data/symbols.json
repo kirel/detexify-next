@@ -1050,6 +1050,16 @@
     "imagePath": "data/assets/symbols/latex/amssymb/ll-17llg11.svg"
   },
   {
+    "id": "latex:amssymb:llcorner",
+    "legacyId": "latex:amssymb:llcorner",
+    "command": "\\llcorner",
+    "package": "amssymb",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/amssymb/llcorner-fixhww.svg"
+  },
+  {
     "id": "latex:amssymb:Lleftarrow",
     "legacyId": "latex:amssymb:Lleftarrow",
     "command": "\\Lleftarrow",
