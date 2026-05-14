@@ -338,7 +338,7 @@
               <span class:active={sampleState(sample) === 'active'} class:rejected={sampleState(sample) === 'rejected'} class:suspicious={sampleState(sample) === 'suspicious'} class="sample-state">{sampleState(sample)}</span>
               <span class="sample-id">{shortSampleId(sample)}</span>
             </span>
-            <StrokeThumbnail strokes={sample.strokes} label={sample.id} mode={sample.source?.kind === 'legacy-detexify' ? 'sequence' : 'composite'} />
+            <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
             {#if sampleReasons(sample)}<span class="sample-note">{sampleReasons(sample)}</span>{/if}
           </button>
           {#if sample.rejected}
