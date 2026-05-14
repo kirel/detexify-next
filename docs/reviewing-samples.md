@@ -91,7 +91,9 @@ artifacts/bad-samples/suspicious-samples.json
 artifacts/bad-samples/suspicious-samples.md
 ```
 
-Current heuristics are symbol-aware and intentionally conservative by default:
+Current heuristics are symbol-aware and intentionally conservative by default. Rejected samples are never used as the reference baseline for medians, duplicate checks, or outlier distances; even when a batch report includes rejected candidates, active samples remain the reference set.
+
+Current checks:
 
 - very few points, relative to the selected symbol;
 - very many points, relative to the selected symbol;

@@ -11,6 +11,13 @@ export type ReviewHint = {
   metrics: Record<string, number | string | boolean>
 }
 
+export type ReviewHintInput = Readonly<{
+  /** Clean/accepted samples used to compute per-symbol baselines and nearest-neighbor references. */
+  referenceSamples: readonly SourceSample[]
+  /** Samples to classify as suspicious. Usually same as referenceSamples; may include rejected samples for debug reports. */
+  candidateSamples?: readonly SourceSample[]
+}>
+
 type SampleStats = {
   strokes: number
   points: number
@@ -28,25 +35,29 @@ type Traits = {
 
 const confidenceRank: Record<ReviewHintConfidence, number> = { low: 0, medium: 1, high: 2 }
 
-export function analyzeSamplesForSymbol(symbol: Pick<SourceSymbol, 'id' | 'command'>, samples: readonly SourceSample[]): ReviewHint[] {
-  if (samples.length === 0) return []
+export function analyzeSamplesForSymbol(symbol: Pick<SourceSymbol, 'id' | 'command'>, input: readonly SourceSample[] | ReviewHintInput): ReviewHint[] {
+  const reviewInput: ReviewHintInput = isSampleArray(input) ? { referenceSamples: input } : input
+  const referenceSamples = reviewInput.referenceSamples
+  const candidateSamples = reviewInput.candidateSamples ?? reviewInput.referenceSamples
+  if (candidateSamples.length === 0) return []
 
+  const baselineSamples = referenceSamples.length > 0 ? referenceSamples : candidateSamples
   const traits = traitsForSymbol(symbol)
-  const stats = samples.map(sampleStats)
+  const baselineStats = baselineSamples.map(sampleStats)
   const medians = {
-    points: median(stats.map((value) => value.points)),
-    width: median(stats.map((value) => value.width)),
-    height: median(stats.map((value) => value.height)),
-    area: median(stats.map((value) => value.area)),
-    strokes: median(stats.map((value) => value.strokes)),
+    points: median(baselineStats.map((value) => value.points)),
+    width: median(baselineStats.map((value) => value.width)),
+    height: median(baselineStats.map((value) => value.height)),
+    area: median(baselineStats.map((value) => value.area)),
+    strokes: median(baselineStats.map((value) => value.strokes)),
   }
-  const duplicateIds = duplicateSampleIds(samples)
-  const outliers = intraClassOutlierScores(samples)
-  const nearestMedian = median(outliers.map((value) => value.nearestDistance).filter((value) => Number.isFinite(value)))
+  const duplicateIds = duplicateSampleIds(baselineSamples)
+  const nearestDistances = nearestReferenceDistances(candidateSamples, baselineSamples)
+  const nearestMedian = median(nearestReferenceDistances(baselineSamples, baselineSamples).filter((value) => Number.isFinite(value)))
   const hints: ReviewHint[] = []
 
-  for (const [index, sample] of samples.entries()) {
-    const sampleStat = stats[index]!
+  for (const [index, sample] of candidateSamples.entries()) {
+    const sampleStat = sampleStats(sample)
     const reasons: string[] = []
     let confidence: ReviewHintConfidence = 'low'
 
@@ -68,8 +79,8 @@ export function analyzeSamplesForSymbol(symbol: Pick<SourceSymbol, 'id' | 'comma
     if (!traits.dotLike && !traits.multiPart && sampleStat.strokeCountWithOnePoint >= Math.max(2, sampleStat.strokes * 0.75)) add('mostly-single-point-strokes', 'medium')
     if (duplicateIds.has(sample.id)) add('near-duplicate', 'low')
 
-    const outlier = outliers[index]
-    if (outlier && Number.isFinite(outlier.nearestDistance) && nearestMedian > 0 && outlier.nearestDistance > Math.max(0.035, nearestMedian * 4)) {
+    const nearestDistance = nearestDistances[index] ?? Number.POSITIVE_INFINITY
+    if (Number.isFinite(nearestDistance) && nearestMedian > 0 && nearestDistance > Math.max(0.035, nearestMedian * 4)) {
       add('intra-symbol-outlier', 'medium')
     }
 
@@ -81,9 +92,11 @@ export function analyzeSamplesForSymbol(symbol: Pick<SourceSymbol, 'id' | 'comma
         confidence,
         metrics: {
           ...sampleStat,
+          referenceSampleCount: referenceSamples.length,
+          candidateSampleCount: candidateSamples.length,
           medianPoints: medians.points,
           medianArea: medians.area,
-          nearestSameSymbolRasterDistance: outlier?.nearestDistance ?? 'n/a',
+          nearestSameSymbolRasterDistance: nearestDistance,
           medianNearestSameSymbolRasterDistance: nearestMedian || 'n/a',
           dotLike: traits.dotLike,
           lineLike: traits.lineLike,
@@ -94,6 +107,10 @@ export function analyzeSamplesForSymbol(symbol: Pick<SourceSymbol, 'id' | 'comma
   }
 
   return hints.sort((a, b) => confidenceRank[b.confidence] - confidenceRank[a.confidence] || a.sampleId.localeCompare(b.sampleId))
+}
+
+function isSampleArray(input: readonly SourceSample[] | ReviewHintInput): input is readonly SourceSample[] {
+  return Array.isArray(input)
 }
 
 export function filterReviewHints(hints: readonly ReviewHint[], minimumConfidence: ReviewHintConfidence): ReviewHint[] {
@@ -149,16 +166,17 @@ function sampleSignature(sample: SourceSample): string {
     .join('|')
 }
 
-function intraClassOutlierScores(samples: readonly SourceSample[]): { nearestDistance: number }[] {
-  if (samples.length <= 2) return samples.map(() => ({ nearestDistance: Number.POSITIVE_INFINITY }))
-  const rasters = samples.map((sample) => rasterizeStrokes(sample.strokes, { size: 24, strokeWidth: 0.07 }))
-  return rasters.map((raster, index) => {
+function nearestReferenceDistances(candidates: readonly SourceSample[], referenceSamples: readonly SourceSample[]): number[] {
+  if (referenceSamples.length <= 1) return candidates.map(() => Number.POSITIVE_INFINITY)
+  const referenceRasters = referenceSamples.map((sample) => ({ id: sample.id, raster: rasterizeStrokes(sample.strokes, { size: 24, strokeWidth: 0.07 }) }))
+  return candidates.map((candidate) => {
+    const candidateRaster = rasterizeStrokes(candidate.strokes, { size: 24, strokeWidth: 0.07 })
     let nearest = Number.POSITIVE_INFINITY
-    for (const [otherIndex, other] of rasters.entries()) {
-      if (otherIndex === index) continue
-      nearest = Math.min(nearest, rasterDistance(raster, other))
+    for (const reference of referenceRasters) {
+      if (reference.id === candidate.id) continue
+      nearest = Math.min(nearest, rasterDistance(candidateRaster, reference.raster))
     }
-    return { nearestDistance: nearest }
+    return nearest
   })
 }
 

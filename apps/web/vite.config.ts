@@ -86,7 +86,7 @@ function suspiciousSamples(symbolId: string): unknown[] {
     if (candidate.rejected || typeof candidate.id !== 'string' || typeof candidate.symbolId !== 'string' || !Array.isArray(candidate.strokes)) return []
     return [{ id: candidate.id, symbolId: candidate.symbolId, strokes: candidate.strokes as StrokesJson }]
   })
-  return filterReviewHints(analyzeSamplesForSymbol(symbol, samples), 'medium').map((hint) => ({
+  return filterReviewHints(analyzeSamplesForSymbol(symbol, { referenceSamples: samples, candidateSamples: samples }), 'medium').map((hint) => ({
     sampleId: hint.sampleId,
     reasons: hint.reasons,
     confidence: hint.confidence,

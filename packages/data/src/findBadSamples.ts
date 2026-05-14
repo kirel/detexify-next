@@ -22,8 +22,10 @@ const findings: Finding[] = []
 for (const entry of manifest.samples) {
   const symbol = symbolById.get(entry.symbolId)
   if (!symbol) continue
-  const samples = parseJsonlSamples(join(sourceDir, entry.path)).filter((sample) => includeRejected || !(sample.id in rejected))
-  const hints = filterReviewHints(analyzeSamplesForSymbol(symbol, samples), minimumConfidence).slice(0, maxPerSymbol)
+  const allSamples = parseJsonlSamples(join(sourceDir, entry.path))
+  const activeSamples = allSamples.filter((sample) => !(sample.id in rejected))
+  const candidateSamples = includeRejected ? allSamples : activeSamples
+  const hints = filterReviewHints(analyzeSamplesForSymbol(symbol, { referenceSamples: activeSamples, candidateSamples }), minimumConfidence).slice(0, maxPerSymbol)
   findings.push(...hints.map((hint) => ({ ...hint, path: entry.path })))
 }
 
