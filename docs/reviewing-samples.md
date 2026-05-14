@@ -79,7 +79,8 @@ Optional:
 
 ```bash
 npm run data:find-bad-samples -- \
-  --max-per-reason 50 \
+  --min-confidence medium \
+  --max-per-symbol 20 \
   --out-dir artifacts/bad-samples
 ```
 
@@ -90,25 +91,22 @@ artifacts/bad-samples/suspicious-samples.json
 artifacts/bad-samples/suspicious-samples.md
 ```
 
-Current heuristics include:
+Current heuristics are symbol-aware and intentionally conservative by default:
 
-- tiny/degenerate bounding boxes;
-- very few points;
-- very many points;
-- mostly single-point strokes;
-- near-duplicates within the same symbol.
+- very few points, relative to the selected symbol;
+- very many points, relative to the selected symbol;
+- tiny/degenerate bounds for symbols that are not dot-like or line-like;
+- mostly single-point strokes, except for dot-like/multipart symbols;
+- near-duplicates within the same symbol;
+- intra-symbol raster outliers relative to other samples of the same symbol.
+
+The training UI exposes these hints directly as the `suspicious` queue. That is the preferred review surface. The npm task is mostly useful for batch/CI artifacts.
 
 Planned future heuristics:
 
-- DTW outlier within its own symbol;
+- classifier own-label not in top-N;
 - CNN embedding closer to another symbol;
-- very few points;
-- empty or near-empty strokes;
-- degenerate bounding box;
-- near-duplicates;
-- classifier consistently predicts a different symbol.
-
-The local training UI should eventually expose this report as a “suspicious samples” queue with quick reject/restore shortcuts.
+- cross-symbol DTW confusion checks.
 
 ## Future pruning
 

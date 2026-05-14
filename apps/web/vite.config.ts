@@ -2,6 +2,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
+import { analyzeSamplesForSymbol, filterReviewHints } from '../../packages/data/src/reviewHints.js'
 
 const repoRoot = resolve(import.meta.dirname, '../..')
 const sourceDir = join(repoRoot, 'packages/data/source')
@@ -79,38 +80,17 @@ function readSamples(symbolId: string): unknown[] {
 }
 
 function suspiciousSamples(symbolId: string): unknown[] {
-  return readSamples(symbolId).flatMap((sample) => {
-    const candidate = sample as { id?: unknown; strokes?: unknown; rejected?: unknown }
-    if (candidate.rejected || typeof candidate.id !== 'string' || !Array.isArray(candidate.strokes)) return []
-    const metrics = sampleMetrics(candidate.strokes as StrokesJson)
-    const reasons: string[] = []
-    if (metrics.points <= 2) reasons.push('few-points')
-    if (metrics.width <= 0.015 || metrics.height <= 0.015) reasons.push('degenerate-bounds')
-    if (metrics.area <= 0.0005) reasons.push('tiny-bounds')
-    if (metrics.points >= 250) reasons.push('very-many-points')
-    if (metrics.strokeCountWithOnePoint >= Math.max(2, metrics.strokes * 0.75)) reasons.push('mostly-single-point-strokes')
-    return reasons.length > 0 ? [{ sampleId: candidate.id, reasons }] : []
+  const symbol = findSymbol(symbolId)
+  const samples = readSamples(symbolId).flatMap((sample) => {
+    const candidate = sample as { id?: unknown; symbolId?: unknown; strokes?: unknown; rejected?: unknown }
+    if (candidate.rejected || typeof candidate.id !== 'string' || typeof candidate.symbolId !== 'string' || !Array.isArray(candidate.strokes)) return []
+    return [{ id: candidate.id, symbolId: candidate.symbolId, strokes: candidate.strokes as StrokesJson }]
   })
-}
-
-function sampleMetrics(strokes: StrokesJson): { strokes: number; points: number; width: number; height: number; area: number; strokeCountWithOnePoint: number } {
-  const points = strokes.flat()
-  const xs = points.map((point) => point.x)
-  const ys = points.map((point) => point.y)
-  const minX = xs.length ? Math.min(...xs) : 0
-  const maxX = xs.length ? Math.max(...xs) : 0
-  const minY = ys.length ? Math.min(...ys) : 0
-  const maxY = ys.length ? Math.max(...ys) : 0
-  const width = maxX - minX
-  const height = maxY - minY
-  return {
-    strokes: strokes.length,
-    points: points.length,
-    width,
-    height,
-    area: width * height,
-    strokeCountWithOnePoint: strokes.filter((stroke) => stroke.length <= 1).length,
-  }
+  return filterReviewHints(analyzeSamplesForSymbol(symbol, samples), 'medium').map((hint) => ({
+    sampleId: hint.sampleId,
+    reasons: hint.reasons,
+    confidence: hint.confidence,
+  }))
 }
 
 function saveSample(body: { symbolId?: unknown; strokes?: unknown }): unknown {
