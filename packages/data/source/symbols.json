@@ -1800,7 +1800,7 @@
       },
       "samples": {
         "path": "samples/latex/amssymb/llcorner-fixhww.jsonl",
-        "count": 0
+        "count": 6
       }
     },
     {
@@ -3177,7 +3177,7 @@
       },
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-u-rbrace-r0nwvn.jsonl",
-        "count": 4
+        "count": 6
       }
     },
     {
@@ -3619,7 +3619,7 @@
       },
       "samples": {
         "path": "samples/latex/amssymb/nleqq-mam618.jsonl",
-        "count": 4
+        "count": 6
       }
     },
     {
@@ -3942,7 +3942,7 @@
       },
       "samples": {
         "path": "samples/latex/amssymb/ntriangleright-1d5tbs1.jsonl",
-        "count": 4
+        "count": 6
       }
     },
     {
@@ -4010,7 +4010,7 @@
       },
       "samples": {
         "path": "samples/latex/amssymb/nvdash-1eu2agl.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -4622,7 +4622,7 @@
       },
       "samples": {
         "path": "samples/latex/amssymb/supseteqq-ofvlli.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -5370,7 +5370,7 @@
       },
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-k-rbrace-10nd2g2.jsonl",
-        "count": 4
+        "count": 7
       }
     },
     {
@@ -5829,7 +5829,7 @@
       },
       "samples": {
         "path": "samples/latex/esint/sqiint-1ne6d5i.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -9878,7 +9878,7 @@
       },
       "samples": {
         "path": "samples/latex/latex2e/underscore-3wty5m.jsonl",
-        "count": 4
+        "count": 12
       }
     },
     {
@@ -11623,6 +11623,23 @@
       }
     },
     {
+      "id": "latex:mathtools:eqqcolon",
+      "command": "\\eqqcolon",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\eqqcolon",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/eqqcolon-98q9t6.jsonl",
+        "count": 5
+      }
+    },
+    {
       "id": "latex:skull:skull",
       "command": "\\skull",
       "package": "skull",
@@ -11789,7 +11806,7 @@
       },
       "samples": {
         "path": "samples/latex/stmaryrd/llceil-sxedks.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {

@@ -2,8 +2,8 @@
   "version": 1,
   "encoding": "jsonl-per-symbol",
   "coordinateSystem": "normalized-0-1",
-  "symbolCount": 1100,
-  "sampleCount": 39387,
+  "symbolCount": 1101,
+  "sampleCount": 39419,
   "samples": [
     {
       "symbolId": "latex:amsmath:dotsb",
@@ -533,7 +533,7 @@
     {
       "symbolId": "latex:amssymb:llcorner",
       "path": "samples/latex/amssymb/llcorner-fixhww.jsonl",
-      "sampleCount": 0
+      "sampleCount": 6
     },
     {
       "symbolId": "latex:amssymb:Lleftarrow",
@@ -938,7 +938,7 @@
     {
       "symbolId": "latex:amssymb:mathfrak-lbrace-U-rbrace",
       "path": "samples/latex/amssymb/mathfrak-lbrace-u-rbrace-r0nwvn.jsonl",
-      "sampleCount": 4
+      "sampleCount": 6
     },
     {
       "symbolId": "latex:amssymb:mathfrak-lbrace-v-rbrace",
@@ -1068,7 +1068,7 @@
     {
       "symbolId": "latex:amssymb:nleqq",
       "path": "samples/latex/amssymb/nleqq-mam618.jsonl",
-      "sampleCount": 4
+      "sampleCount": 6
     },
     {
       "symbolId": "latex:amssymb:nleqslant",
@@ -1163,7 +1163,7 @@
     {
       "symbolId": "latex:amssymb:ntriangleright",
       "path": "samples/latex/amssymb/ntriangleright-1d5tbs1.jsonl",
-      "sampleCount": 4
+      "sampleCount": 6
     },
     {
       "symbolId": "latex:amssymb:ntrianglerighteq",
@@ -1183,7 +1183,7 @@
     {
       "symbolId": "latex:amssymb:nVDash",
       "path": "samples/latex/amssymb/nvdash-1eu2agl.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:amssymb:pitchfork",
@@ -1363,7 +1363,7 @@
     {
       "symbolId": "latex:amssymb:supseteqq",
       "path": "samples/latex/amssymb/supseteqq-ofvlli.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:amssymb:supsetneq",
@@ -1583,7 +1583,7 @@
     {
       "symbolId": "latex:dsfont:mathds-lbrace-k-rbrace",
       "path": "samples/latex/dsfont/mathds-lbrace-k-rbrace-10nd2g2.jsonl",
-      "sampleCount": 4
+      "sampleCount": 7
     },
     {
       "symbolId": "latex:dsfont:mathds-lbrace-K-rbrace",
@@ -1718,7 +1718,7 @@
     {
       "symbolId": "latex:esint:sqiint",
       "path": "samples/latex/esint/sqiint-1ne6d5i.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:esint:sqint",
@@ -3063,7 +3063,7 @@
     {
       "symbolId": "latex:latex2e:underscore",
       "path": "samples/latex/latex2e/underscore-3wty5m.jsonl",
-      "sampleCount": 4
+      "sampleCount": 12
     },
     {
       "symbolId": "latex:latex2e:uparrow",
@@ -3591,6 +3591,11 @@
       "sampleCount": 13
     },
     {
+      "symbolId": "latex:mathtools:eqqcolon",
+      "path": "samples/latex/mathtools/eqqcolon-98q9t6.jsonl",
+      "sampleCount": 5
+    },
+    {
       "symbolId": "latex:skull:skull",
       "path": "samples/latex/skull/skull-nl4swf.jsonl",
       "sampleCount": 50
@@ -3638,7 +3643,7 @@
     {
       "symbolId": "latex:stmaryrd:llceil",
       "path": "samples/latex/stmaryrd/llceil-sxedks.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:stmaryrd:llfloor",

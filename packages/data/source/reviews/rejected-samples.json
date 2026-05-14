@@ -190,6 +190,16 @@
       "reason": "bad-sample",
       "rejectedAt": "2026-05-14T22:54:13.184Z",
       "rejectedBy": "kirel"
+    },
+    "sample:local:2026-05-14T23-12-10-699Z:10p4d87": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-14T23:12:27.550Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:321986": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-14T23:16:29.437Z",
+      "rejectedBy": "kirel"
     }
   }
 }
