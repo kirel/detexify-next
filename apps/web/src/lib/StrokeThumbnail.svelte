@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Strokes } from '@detexify/core'
+  import { onMount, tick } from 'svelte'
 
   type Props = {
     strokes: Strokes
@@ -8,11 +9,24 @@
 
   let { strokes, label = 'Training sample' }: Props = $props()
   let canvas: HTMLCanvasElement
+  let resizeObserver: ResizeObserver | undefined
 
   $effect(() => {
     strokes
-    draw()
+    void drawSoon()
   })
+
+  onMount(() => {
+    resizeObserver = new ResizeObserver(() => draw())
+    if (canvas) resizeObserver.observe(canvas)
+    void drawSoon()
+    return () => resizeObserver?.disconnect()
+  })
+
+  async function drawSoon() {
+    await tick()
+    draw()
+  }
 
   function draw() {
     if (!canvas) return

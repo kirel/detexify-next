@@ -34,6 +34,7 @@
   let sampleFilter = $state<'all' | 'active' | 'rejected' | 'suspicious'>('all')
   let selectedSampleId = $state('')
   let suspicious = $state<Record<string, string[]>>({})
+  let loadSamplesRequest = 0
 
   const filteredSymbols = $derived.by(() => {
     const q = filter.trim().toLowerCase()
@@ -92,7 +93,8 @@
       const response = await fetch('/__detexify_lab__/symbols')
       if (!response.ok) throw new Error(`Could not load symbols: ${response.status}`)
       symbols = await response.json() as TrainingSymbol[]
-      selectedId = symbols.find((symbol) => symbol.samples?.count)?.id ?? symbols[0]?.id ?? ''
+      const rememberedId = window.localStorage.getItem('detexify.train.selectedSymbolId')
+      selectedId = symbols.find((symbol) => symbol.id === rememberedId)?.id ?? symbols.find((symbol) => symbol.samples?.count)?.id ?? symbols[0]?.id ?? ''
       status = `${symbols.length} symbols ready for training`
     } catch (error) {
       status = error instanceof Error ? error.message : 'Could not load training data'
@@ -100,32 +102,45 @@
   }
 
   async function loadSamples(symbolId: string) {
+    const request = ++loadSamplesRequest
+    samples = []
+    suspicious = {}
+    selectedSampleId = ''
+    status = `Loading samples for ${symbolId}…`
     try {
       const response = await fetch(`/__detexify_lab__/samples?symbolId=${encodeURIComponent(symbolId)}`)
       if (!response.ok) throw new Error(`Could not load samples: ${response.status}`)
-      samples = await response.json() as TrainingSample[]
-      await loadSuspicious(symbolId)
-      selectedSampleId = samples[0]?.id ?? ''
+      const nextSamples = await response.json() as TrainingSample[]
+      const nextSuspicious = await fetchSuspicious(symbolId)
+      if (request !== loadSamplesRequest || symbolId !== selectedId) return
+      samples = nextSamples
+      suspicious = nextSuspicious
+      selectedSampleId = nextSamples[0]?.id ?? ''
+      status = `Loaded ${nextSamples.length} samples for ${selectedSymbol?.command ?? symbolId}`
     } catch (error) {
+      if (request !== loadSamplesRequest) return
       samples = []
       status = error instanceof Error ? error.message : 'Could not load samples'
     }
   }
 
-  async function loadSuspicious(symbolId: string) {
+  async function fetchSuspicious(symbolId: string): Promise<Record<string, string[]>> {
     try {
       const response = await fetch(`/__detexify_lab__/suspicious-samples?symbolId=${encodeURIComponent(symbolId)}`)
       if (!response.ok) throw new Error(await response.text())
       const rows = await response.json() as { sampleId: string; reasons: string[] }[]
-      suspicious = Object.fromEntries(rows.map((row) => [row.sampleId, row.reasons]))
+      return Object.fromEntries(rows.map((row) => [row.sampleId, row.reasons]))
     } catch {
-      suspicious = {}
+      return {}
     }
   }
 
   function selectSymbol(symbol: TrainingSymbol) {
     selectedId = symbol.id
+    window.localStorage.setItem('detexify.train.selectedSymbolId', symbol.id)
     selectedSampleId = ''
+    samples = []
+    suspicious = {}
     strokes = []
   }
 
@@ -289,7 +304,7 @@
       </label>
     </div>
     <ol>
-      {#each visibleSamples as sample}
+      {#each visibleSamples as sample (sample.id)}
         <li class:rejected={sample.rejected} class:selected={sample.id === selectedSampleId}>
           <button class="sample-select" type="button" onclick={() => selectedSampleId = sample.id}>Select</button>
           <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
