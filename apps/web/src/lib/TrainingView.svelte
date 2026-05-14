@@ -36,8 +36,10 @@
   let selectedSampleId = $state('')
   let suspicious = $state<Record<string, string[]>>({})
   let suspiciousSummary = $state<Record<string, { suspiciousCount: number; highConfidenceCount: number; mediumConfidenceCount: number }>>({})
-  let summaryLoading = $state(false)
+  let suspiciousLoading = $state(false)
+  let summaryState = $state<'idle' | 'queued' | 'loading' | 'ready' | 'failed'>('idle')
   let loadSamplesRequest = 0
+  let summaryTimer: number | undefined
 
   const filteredSymbols = $derived.by(() => {
     const q = filter.trim().toLowerCase()
@@ -91,7 +93,10 @@
       }
     }
     window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      window.clearTimeout(summaryTimer)
+    }
   })
 
   async function loadSymbols() {
@@ -102,7 +107,7 @@
       const rememberedId = window.localStorage.getItem('detexify.train.selectedSymbolId')
       selectedId = symbols.find((symbol) => symbol.id === rememberedId)?.id ?? symbols.find((symbol) => symbol.samples?.count)?.id ?? symbols[0]?.id ?? ''
       status = `${symbols.length} symbols ready for training`
-      void loadSuspiciousSummary()
+      scheduleSuspiciousSummary()
     } catch (error) {
       status = error instanceof Error ? error.message : 'Could not load training data'
     }
@@ -112,18 +117,18 @@
     const request = ++loadSamplesRequest
     samples = []
     suspicious = {}
+    suspiciousLoading = false
     selectedSampleId = ''
     status = `Loading samples for ${symbolId}…`
     try {
       const response = await fetch(`/__detexify_lab__/samples?symbolId=${encodeURIComponent(symbolId)}`)
       if (!response.ok) throw new Error(`Could not load samples: ${response.status}`)
       const nextSamples = await response.json() as TrainingSample[]
-      const nextSuspicious = await fetchSuspicious(symbolId)
       if (request !== loadSamplesRequest || symbolId !== selectedId) return
       samples = nextSamples
-      suspicious = nextSuspicious
       selectedSampleId = nextSamples[0]?.id ?? ''
       status = `Loaded ${nextSamples.length} samples for ${selectedSymbol?.command ?? symbolId}`
+      void loadSuspiciousForSymbol(symbolId, request)
     } catch (error) {
       if (request !== loadSamplesRequest) return
       samples = []
@@ -131,8 +136,27 @@
     }
   }
 
+  async function loadSuspiciousForSymbol(symbolId: string, request: number) {
+    suspiciousLoading = true
+    try {
+      const nextSuspicious = await fetchSuspicious(symbolId)
+      if (request !== loadSamplesRequest || symbolId !== selectedId) return
+      suspicious = nextSuspicious
+    } finally {
+      if (request === loadSamplesRequest && symbolId === selectedId) suspiciousLoading = false
+    }
+  }
+
+  function scheduleSuspiciousSummary() {
+    if (summaryState !== 'idle') return
+    summaryState = 'queued'
+    window.clearTimeout(summaryTimer)
+    summaryTimer = window.setTimeout(() => void loadSuspiciousSummary(), 700)
+  }
+
   async function loadSuspiciousSummary() {
-    summaryLoading = true
+    if (summaryState === 'loading' || summaryState === 'ready') return
+    summaryState = 'loading'
     try {
       const response = await fetch('/__detexify_lab__/suspicious-summary')
       if (!response.ok) throw new Error(await response.text())
@@ -142,10 +166,10 @@
         highConfidenceCount: row.highConfidenceCount,
         mediumConfidenceCount: row.mediumConfidenceCount,
       }]))
+      summaryState = 'ready'
     } catch {
       suspiciousSummary = {}
-    } finally {
-      summaryLoading = false
+      summaryState = 'failed'
     }
   }
 
@@ -302,10 +326,20 @@
         <span>Sort symbols</span>
         <select bind:value={symbolSort}>
           <option value="command">Command</option>
-          <option value="suspicious">Suspicious first</option>
+          <option value="suspicious" disabled={summaryState !== 'ready'}>Suspicious first</option>
         </select>
       </label>
-      <p>{summaryLoading ? 'Scanning suspicious samples…' : `${Object.keys(suspiciousSummary).length} symbols with suspicious samples`}</p>
+      <div class:loading={summaryState === 'loading' || summaryState === 'queued'} class="lab-load-line">
+        {#if summaryState === 'ready'}
+          <span>{Object.keys(suspiciousSummary).length} symbols with suspicious samples</span>
+        {:else if summaryState === 'failed'}
+          <span>Suspicious scan failed</span>
+          <button type="button" onclick={() => void loadSuspiciousSummary()}>Retry</button>
+        {:else}
+          <span class="mini-spinner" aria-hidden="true"></span>
+          <span>{summaryState === 'queued' ? 'Suspicious scan queued…' : 'Scanning suspicious samples in background…'}</span>
+        {/if}
+      </div>
     </div>
 
     <ol>
@@ -353,11 +387,12 @@
   <aside class="training-samples">
     <div class="training-samples-header">
       <h2>Existing samples</h2>
-      <p class="sample-counts"><span>{activeCount} active</span><span>{suspiciousCount} suspicious</span><span>{rejectedCount} rejected</span></p>
+      <p class="sample-counts"><span>{activeCount} active</span><span>{suspiciousLoading ? 'scanning…' : `${suspiciousCount} suspicious`}</span><span>{rejectedCount} rejected</span></p>
+      {#if suspiciousLoading}<p class="sample-scan-note"><span class="mini-spinner" aria-hidden="true"></span> sample review hints are loading in the background</p>{/if}
       <div class="sample-queues" role="group" aria-label="Sample queue">
         <button class:active={sampleFilter === 'all'} type="button" onclick={() => sampleFilter = 'all'}>All</button>
         <button class:active={sampleFilter === 'active'} type="button" onclick={() => sampleFilter = 'active'}>Active</button>
-        <button class:active={sampleFilter === 'suspicious'} type="button" onclick={() => sampleFilter = 'suspicious'}>Suspicious</button>
+        <button class:active={sampleFilter === 'suspicious'} type="button" disabled={suspiciousLoading} onclick={() => sampleFilter = 'suspicious'}>Suspicious</button>
         <button class:active={sampleFilter === 'rejected'} type="button" onclick={() => sampleFilter = 'rejected'}>Rejected</button>
       </div>
       <label>

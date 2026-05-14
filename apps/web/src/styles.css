@@ -600,6 +600,37 @@ h1 {
   font-size: 0.8rem;
 }
 
+.lab-load-line,
+.sample-scan-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
+.lab-load-line button {
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 0;
+  background: transparent;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font: inherit;
+}
+
+.mini-spinner {
+  inline-size: 9px;
+  block-size: 9px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-top-color: var(--accent-strong);
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
 .training-symbols ol,
 .training-samples ol {
   list-style: none;
@@ -772,6 +803,11 @@ h1 {
 .sample-queues button.active {
   border-bottom-color: var(--ink);
   color: var(--ink);
+}
+
+.sample-queues button:disabled {
+  cursor: wait;
+  opacity: 0.38;
 }
 
 .training-samples-header label {
