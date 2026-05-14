@@ -28,6 +28,42 @@ Why this model/library for the first backend:
 
 Caveat: MobileNet is ImageNet-pretrained, not symbol/sketch-pretrained. This is intentionally a baseline for "generic pretrained visual features + nearest neighbor", not a final ML model.
 
+## Raw source re-benchmark after legacy-data repair
+
+Date: 2026-05-14
+Machine: Apple M1 Max (`Darwin arm64`)
+Node: `v26.0.0`
+
+Important data note: this supersedes the older ConvNet numbers below. The old benchmark used `apps/web/public/data/snapshot.json`, which at the time was derived from legacy preprocessed samples with per-stroke normalization. The benchmark now loads raw/sample-wide-normalized source samples directly from `packages/data/source`; only the DTW baseline preprocesses its training copy into the legacy DTW feature space.
+
+Command:
+
+```bash
+npm --workspace @detexify/data run benchmark:convnet-nearest -- \
+  --max-symbols 200 \
+  --seed 12345 \
+  --holdout-per-symbol 1 \
+  --limit 10 \
+  --tf-backend wasm \
+  --include-rendered-assets false
+```
+
+Results, without rendered LaTeX assets:
+
+| Engine | Top1 | Top5 | Top10 | Mean latency |
+| --- | ---: | ---: | ---: | ---: |
+| legacy-dtw | 0.730 | 0.895 | 0.935 | 1.78ms |
+| pretrained-convnet-nearest | 0.645 | 0.945 | 0.970 | 15.34ms |
+
+Same command with `--include-rendered-assets true` added 200 rendered LaTeX prototypes to the ConvNet index and did not change accuracy on this slice:
+
+| Engine | Top1 | Top5 | Top10 | Mean latency |
+| --- | ---: | ---: | ---: | ---: |
+| legacy-dtw | 0.730 | 0.895 | 0.935 | 1.79ms |
+| pretrained-convnet-nearest | 0.645 | 0.945 | 0.970 | 16.66ms |
+
+Interpretation: frozen ImageNet MobileNet is still not a top-1 replacement for DTW, but on repaired raw drawings it is now a strong candidate generator: top-5/top-10 beat DTW in this run. This supports the hybrid direction: ConvNet candidate retrieval followed by DTW or another symbol-aware reranker.
+
 ### Benchmark command
 
 ```bash

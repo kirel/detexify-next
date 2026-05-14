@@ -6,11 +6,11 @@
 
 The TypeScript DTW port is still highly competitive for Detexify's data because it works directly on stroke geometry. It captures point order and shape alignment without needing a trained model.
 
-### Frozen ImageNet ConvNets are not enough
+### Frozen ImageNet ConvNets are useful as candidate generators, not replacements
 
 MobileNetV2 alpha `0.50` via `@tensorflow-models/mobilenet` was tested as a frozen feature generator plus nearest neighbor. It is browser-friendly and easy to load, but it is pretrained on ImageNet, not sketches or symbols.
 
-Result: frozen MobileNet underperformed DTW on the larger 200-symbol benchmark. This path should not receive much more tuning unless used only as a reference baseline.
+After repairing the legacy source data to raw/sample-wide-normalized drawings, frozen MobileNet still underperformed DTW on top1 in a 200-symbol benchmark (`0.645` vs `0.730`). However, it beat DTW on top5/top10 (`0.945`/`0.970` vs `0.895`/`0.935`). This path is not a standalone replacement, but it is now interesting as a candidate generator for a hybrid reranker.
 
 ### Task-specific ConvNets are promising
 

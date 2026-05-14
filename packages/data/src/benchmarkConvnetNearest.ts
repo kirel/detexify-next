@@ -1,16 +1,15 @@
 import { performance } from 'node:perf_hooks'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import sharp from 'sharp'
 import { fileURLToPath } from 'node:url'
-import { LegacyDtwClassifier, type Snapshot, type StrokeSample } from '@detexify/core'
+import { LegacyDtwClassifier, preprocessLegacy, type Snapshot, type StrokeSample } from '@detexify/core'
 import { PretrainedConvnetNearestClassifier, type ConvnetRasterExample } from '@detexify/core/convnet'
-import { snapshotFromLegacyJson } from '@detexify/core/legacy'
 import { expandHome } from './legacyPaths.js'
-import { assetPathForSymbol, readSourceSymbols } from './sourceData.js'
+import { assetPathForSymbol, parseJsonlSamples, readRejectedSamples, readSamplesManifest, readSourceSymbols } from './sourceData.js'
 
 type Args = {
-  snapshotPath: string
+  sourceDir: string
   maxSymbols: number
   holdoutPerSymbol: number
   limit: number
@@ -19,7 +18,6 @@ type Args = {
   rasterSize: number
   tfBackend: 'cpu' | 'wasm'
   includeRenderedAssets: boolean
-  sourceDir: string
 }
 
 type Holdout = { id: string; sample: StrokeSample }
@@ -34,16 +32,17 @@ type Evaluation = {
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..')
 const args = parseArgs(process.argv.slice(2))
-const snapshot = snapshotFromLegacyJson(JSON.parse(readFileSync(args.snapshotPath, 'utf8')) as unknown)
-const selected = selectSymbols(snapshot, args.maxSymbols, args.seed)
-const { train, holdouts } = splitHoldouts(snapshot, selected, args.holdoutPerSymbol)
+const sourceSnapshot = loadSourceSnapshot(args.sourceDir)
+const selected = selectSymbols(sourceSnapshot, args.maxSymbols, args.seed)
+const { train, holdouts } = splitHoldouts(sourceSnapshot, selected, args.holdoutPerSymbol)
+const legacyTrain = preprocessSnapshotForLegacyDtw(train)
 await configureTfBackend(args.tfBackend)
 const extraExamples = args.includeRenderedAssets ? await loadRenderedAssetExamples(args.sourceDir, selected, args.rasterSize) : []
 
 console.log(`Selected ${selected.length} symbols, ${holdouts.length} holdouts`)
 if (extraExamples.length > 0) console.log(`Using ${extraExamples.length} rendered LaTeX asset prototypes`)
 
-const legacy = new LegacyDtwClassifier(train)
+const legacy = new LegacyDtwClassifier(legacyTrain)
 const legacyEval = evaluateSync(legacy.id, holdouts, (strokes) => legacy.classifySync(strokes, { limit: args.limit }))
 
 const beforeLoad = performance.now()
@@ -52,7 +51,8 @@ const setupMs = performance.now() - beforeLoad
 const convnetEval = await evaluateAsync(convnet.id, holdouts, (strokes) => convnet.classify(strokes, { limit: args.limit }))
 
 console.log(JSON.stringify({
-  snapshotPath: args.snapshotPath,
+  sourceDir: args.sourceDir,
+  sourceData: 'raw/sample-wide-normalized source samples; rejected samples excluded',
   selectedSymbols: selected.length,
   trainSymbols: train.size,
   holdouts: holdouts.length,
@@ -154,6 +154,23 @@ function convnetIndexSize(classifier: PretrainedConvnetNearestClassifier): strin
   return `${value.index?.labels?.length ?? '?'} vectors × ${value.index?.embeddingSize ?? '?'} dims`
 }
 
+function loadSourceSnapshot(sourceDir: string): Snapshot {
+  const manifest = readSamplesManifest(join(sourceDir, 'samples/manifest.json'))
+  const rejected = readRejectedSamples(join(sourceDir, 'reviews/rejected-samples.json')).rejected
+  const entries: [string, StrokeSample[]][] = []
+  for (const entry of manifest.samples) {
+    const samples = parseJsonlSamples(join(sourceDir, entry.path))
+      .filter((sample) => !(sample.id in rejected))
+      .map((sample) => ({ strokes: sample.strokes }))
+    if (samples.length > 0) entries.push([entry.symbolId, samples])
+  }
+  return new Map(entries)
+}
+
+function preprocessSnapshotForLegacyDtw(snapshot: Snapshot): Snapshot {
+  return new Map([...snapshot.entries()].map(([id, samples]) => [id, samples.map((sample) => ({ strokes: preprocessLegacy(sample.strokes) }))]))
+}
+
 function splitHoldouts(snapshot: Snapshot, selectedIds: readonly string[], holdoutPerSymbol: number): { train: Snapshot; holdouts: Holdout[] } {
   const selected = new Set(selectedIds)
   const trainEntries: [string, readonly StrokeSample[]][] = []
@@ -214,7 +231,7 @@ function parseArgs(argv: readonly string[]): Args {
   }
 
   return {
-    snapshotPath: expandHome(options.get('snapshot') ?? join(repoRoot, 'apps/web/public/data/snapshot.json')),
+    sourceDir: expandHome(options.get('source-dir') ?? join(repoRoot, 'packages/data/source')),
     maxSymbols: parsePositiveInt(options.get('max-symbols') ?? '20', '--max-symbols'),
     holdoutPerSymbol: parsePositiveInt(options.get('holdout-per-symbol') ?? '1', '--holdout-per-symbol'),
     limit: parsePositiveInt(options.get('limit') ?? '10', '--limit'),
@@ -223,7 +240,6 @@ function parseArgs(argv: readonly string[]): Args {
     rasterSize: parsePositiveInt(options.get('raster-size') ?? '64', '--raster-size'),
     tfBackend: parseTfBackend(options.get('tf-backend') ?? 'wasm'),
     includeRenderedAssets: parseBoolean(options.get('include-rendered-assets') ?? 'false'),
-    sourceDir: expandHome(options.get('source-dir') ?? join(repoRoot, 'packages/data/source')),
   }
 }
 
