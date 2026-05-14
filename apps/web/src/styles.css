@@ -749,8 +749,9 @@ h1 {
 
 .sample-queues button {
   border: 0;
-  border-radius: 999px;
-  padding: 5px 8px;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 5px 2px 6px;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
@@ -762,8 +763,8 @@ h1 {
 }
 
 .sample-queues button.active {
-  background: var(--ink);
-  color: #fff;
+  border-bottom-color: var(--ink);
+  color: var(--ink);
 }
 
 .training-samples-header label {
@@ -823,9 +824,29 @@ h1 {
   min-width: 0;
 }
 
+.sample-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.sample-reasons {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.62rem;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .sample-state {
-  border-radius: 999px;
-  padding: 3px 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  color: var(--muted);
   font-size: 0.56rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -833,18 +854,23 @@ h1 {
   text-transform: uppercase;
 }
 
+.sample-state::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
 .sample-state.active {
-  background: rgba(15, 118, 110, 0.10);
   color: var(--accent-strong);
 }
 
 .sample-state.suspicious {
-  background: rgba(245, 158, 11, 0.16);
   color: #92400e;
 }
 
 .sample-state.rejected {
-  background: rgba(185, 28, 28, 0.12);
   color: #991b1b;
 }
 

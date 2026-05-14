@@ -52,7 +52,6 @@
     if (sampleFilter === 'suspicious') return !sample.rejected && sample.id in suspicious
     return !sample.rejected
   }))
-  const selectedSample = $derived(samples.find((sample) => sample.id === selectedSampleId))
   const activeCount = $derived(samples.filter((sample) => !sample.rejected).length)
   const rejectedCount = $derived(samples.filter((sample) => sample.rejected).length)
   const suspiciousCount = $derived(samples.filter((sample) => !sample.rejected && sample.id in suspicious).length)
@@ -79,12 +78,6 @@
       } else if (event.key.toLowerCase() === 'n') {
         event.preventDefault()
         selectNextSample()
-      } else if (event.key.toLowerCase() === 'r') {
-        event.preventDefault()
-        void reviewSelectedSample('reject')
-      } else if (event.key.toLowerCase() === 'u') {
-        event.preventDefault()
-        void reviewSelectedSample('restore')
       }
     }
     window.addEventListener('keydown', onKeyDown)
@@ -178,15 +171,38 @@
     }
   }
 
-  async function reviewSelectedSample(action: 'reject' | 'restore') {
-    if (!selectedSample) return
-    await reviewSample(selectedSample, action)
-  }
-
   function sampleState(sample: TrainingSample): 'rejected' | 'suspicious' | 'active' {
     if (sample.rejected) return 'rejected'
     if (sample.id in suspicious) return 'suspicious'
     return 'active'
+  }
+
+  function sampleReasons(sample: TrainingSample): string {
+    const reasons = sample.rejected
+      ? [sample.rejection?.reason ?? 'other']
+      : suspicious[sample.id] ?? []
+    if (reasons.length === 0) return ''
+    const labels = reasons.map(reasonLabel)
+    const shown = labels.slice(0, 2).join(' · ')
+    return labels.length > 2 ? `${shown} +${labels.length - 2}` : shown
+  }
+
+  function reasonLabel(reason: string): string {
+    const labels: Record<string, string> = {
+      'bad-sample': 'bad sample',
+      'wrong-symbol': 'wrong symbol',
+      'bad-normalization': 'normalization',
+      'few-points': 'few points',
+      'few-points-relative-to-symbol': 'few points',
+      'very-many-points': 'many points',
+      'degenerate-bounds': 'flat bounds',
+      'tiny-bounds': 'tiny',
+      'tiny-relative-to-symbol': 'tiny',
+      'mostly-single-point-strokes': 'point strokes',
+      'near-duplicate': 'duplicate',
+      'intra-symbol-outlier': 'outlier',
+    }
+    return labels[reason] ?? reason.replaceAll('-', ' ')
   }
 
   function shortSampleId(sample: TrainingSample): string {
@@ -319,15 +335,18 @@
         <li class:rejected={sample.rejected} class:suspicious={!sample.rejected && sample.id in suspicious} class:selected={sample.id === selectedSampleId}>
           <button class="sample-card" type="button" onclick={() => selectedSampleId = sample.id} aria-label={`Select ${sample.id}`}>
             <span class="sample-card-topline">
-              <span class:active={sampleState(sample) === 'active'} class:rejected={sampleState(sample) === 'rejected'} class:suspicious={sampleState(sample) === 'suspicious'} class="sample-state">{sampleState(sample)}</span>
+              <span class="sample-meta">
+                <span class:active={sampleState(sample) === 'active'} class:rejected={sampleState(sample) === 'rejected'} class:suspicious={sampleState(sample) === 'suspicious'} class="sample-state">{sampleState(sample)}</span>
+                {#if sampleReasons(sample)}<span class="sample-reasons">{sampleReasons(sample)}</span>{/if}
+              </span>
               <span class="sample-id">{shortSampleId(sample)}</span>
             </span>
             <StrokeThumbnail strokes={sample.strokes} label={sample.id} />
           </button>
           {#if sample.rejected}
-            <button class="sample-action restore" type="button" onclick={() => reviewSample(sample, 'restore')}>Restore <kbd>U</kbd></button>
+            <button class="sample-action restore" type="button" onclick={() => reviewSample(sample, 'restore')}>Restore</button>
           {:else}
-            <button class="sample-action reject" type="button" onclick={() => reviewSample(sample, 'reject')}>Reject <kbd>R</kbd></button>
+            <button class="sample-action reject" type="button" onclick={() => reviewSample(sample, 'reject')}>Reject</button>
           {/if}
         </li>
       {/each}
