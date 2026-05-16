@@ -6,7 +6,7 @@ on:
       - 'packages/data/source/**'
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
   actions: read
 
@@ -31,7 +31,31 @@ jobs:
           npm run data:preview-pr --
           --base origin/${{ github.base_ref }}
           --out-dir artifacts/pr-preview
-          --raw-base-url https://raw.githubusercontent.com/${{ github.repository }}/${{ github.event.pull_request.head.sha }}/
+          --preview-image-base-url https://raw.githubusercontent.com/${{ github.repository }}/detexify-pr-previews/pr-${{ github.event.pull_request.number }}/run-${{ github.run_id }}/
+      - name: Publish inline preview images
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          PREVIEW_BRANCH: detexify-pr-previews
+          PREVIEW_PATH: pr-${{ github.event.pull_request.number }}/run-${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          preview_dir="$(mktemp -d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin "$PREVIEW_BRANCH" >/dev/null 2>&1; then
+            git fetch origin "$PREVIEW_BRANCH"
+            git worktree add "$preview_dir" "origin/$PREVIEW_BRANCH"
+          else
+            git worktree add --detach "$preview_dir"
+            git -C "$preview_dir" switch --orphan "$PREVIEW_BRANCH"
+            git -C "$preview_dir" rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p "$preview_dir/$PREVIEW_PATH"
+          rsync -a --delete artifacts/pr-preview/ "$preview_dir/$PREVIEW_PATH/"
+          git -C "$preview_dir" add .
+          git -C "$preview_dir" commit -m "Update data preview for PR #${{ github.event.pull_request.number }}" || true
+          git -C "$preview_dir" push origin "HEAD:$PREVIEW_BRANCH"
+          git worktree remove "$preview_dir"
       - name: Upload preview artifacts
         uses: actions/upload-artifact@v4
         with:

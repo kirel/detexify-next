@@ -10,7 +10,7 @@ const sourceDir = expandHome(getOption('source-dir') ?? join(repoRoot, 'packages
 const outDir = expandHome(getOption('out-dir') ?? join(repoRoot, 'artifacts/pr-preview'))
 const base = getOption('base') ?? 'origin/main'
 const maxSamples = parseIntOption('max-samples', 80)
-const rawBaseUrl = normalizeBaseUrl(getOption('raw-base-url'))
+const previewImageBaseUrl = normalizeBaseUrl(getOption('preview-image-base-url'))
 
 mkdirSync(outDir, { recursive: true })
 
@@ -31,12 +31,15 @@ const sampleFiles = changes
 const reviewChanged = changes.some((change) => change.path === 'packages/data/source/reviews/rejected-samples.json')
 const samplePreviews = loadSamplePreviews(sampleFiles, maxSamples)
 
+const symbolsForPreview = [...addedSymbols, ...changedSymbols]
+const groupedPreviews = buildGroupedPreviews(symbolsForPreview, samplePreviews)
 const symbolSheet = join(outDir, 'symbols.svg')
 const sampleSheet = join(outDir, 'samples.svg')
-writeFileSync(symbolSheet, renderSymbolSheet([...addedSymbols, ...changedSymbols]))
+writeFileSync(symbolSheet, renderSymbolSheet(symbolsForPreview))
 writeFileSync(sampleSheet, renderSampleSheet(samplePreviews))
+writeGroupedPreviewSheets(groupedPreviews)
 
-const summary = renderSummary({ addedSymbols, changedSymbols, removedSymbols, samplePreviews, reviewChanged, changes, rawBaseUrl })
+const summary = renderSummary({ addedSymbols, changedSymbols, removedSymbols, samplePreviews, reviewChanged, changes, groupedPreviews, previewImageBaseUrl })
 writeFileSync(join(outDir, 'summary.md'), summary)
 writeFileSync(join(outDir, 'changed-files.json'), `${JSON.stringify({ base, changes }, null, 2)}\n`)
 
@@ -74,14 +77,24 @@ function loadSamplePreviews(files: readonly string[], max: number): { sample: So
   return output
 }
 
+type SamplePreview = { sample: SourceSample; path: string }
+
+type GroupedPreview = {
+  symbol: SourceSymbol
+  status: 'added' | 'changed' | 'samples-only'
+  samples: SamplePreview[]
+  fileName: string
+}
+
 function renderSummary(input: {
   addedSymbols: SourceSymbol[]
   changedSymbols: SourceSymbol[]
   removedSymbols: SourceSymbol[]
-  samplePreviews: { sample: SourceSample; path: string }[]
+  samplePreviews: SamplePreview[]
   reviewChanged: boolean
   changes: { status: string; path: string }[]
-  rawBaseUrl: string | undefined
+  groupedPreviews: GroupedPreview[]
+  previewImageBaseUrl: string | undefined
 }): string {
   const lines = [
     '## Detexify data preview',
@@ -95,87 +108,111 @@ function renderSummary(input: {
     `| Review metadata changed | ${input.reviewChanged ? 'yes' : 'no'} |`,
     `| Changed source files | ${input.changes.length} |`,
     '',
-    'Inline previews are embedded below so reviewers do not need to download artifacts. The uploaded `symbols.svg` and `samples.svg` contact sheets remain available for a larger view.',
+    'Inline previews are grouped by symbol below: each card shows the rendered LaTeX symbol next to the changed stroke samples, so reviewers can compare them without downloading artifacts.',
     '',
   ]
 
+  if (input.groupedPreviews.length > 0) {
+    lines.push('### Symbol/sample previews', '', renderGroupedPreviewList(input.groupedPreviews, input.previewImageBaseUrl), '')
+  }
+
   if (input.addedSymbols.length > 0) {
-    lines.push('### Added symbols', '', renderSymbolTable(input.addedSymbols, input.rawBaseUrl), '')
+    lines.push('### Added symbols', '', renderSymbolMetadataTable(input.addedSymbols), '')
   }
 
   if (input.changedSymbols.length > 0) {
-    lines.push('### Changed symbols', '', renderSymbolTable(input.changedSymbols, input.rawBaseUrl), '')
+    lines.push('### Changed symbols', '', renderSymbolMetadataTable(input.changedSymbols), '')
   }
 
   if (input.removedSymbols.length > 0) {
     lines.push('### Removed symbols', '', ...input.removedSymbols.map((symbol) => `- ${symbol.id}`), '')
   }
 
-  if (input.samplePreviews.length > 0) {
-    lines.push('### Sample stroke previews', '', renderSamplePreviewTable(input.samplePreviews), '')
-  }
-
-  lines.push('This preview is generated from source-data diffs.', '')
+  lines.push('The uploaded `symbols.svg` and `samples.svg` contact sheets remain available as fallback artifacts.', '')
   return `${lines.join('\n')}\n`
 }
 
-function renderSymbolTable(symbols: readonly SourceSymbol[], baseUrl: string | undefined): string {
-  const rows = symbols.map((symbol) => {
-    const preview = baseUrl ? `<img src="${html(rawUrl(baseUrl, `packages/data/source/${assetPathForSymbol(symbol)}`))}" width="96" height="64" alt="${html(symbol.command)} preview">` : 'see artifact'
-    return `<tr><td>${preview}</td><td><code>${html(symbol.id)}</code></td><td><code>${html(symbol.command)}</code></td><td>${html(symbol.package ?? '')}</td><td>${html(symbol.mode)}</td></tr>`
-  }).join('\n')
-  return `<table><tr><th>Preview</th><th>ID</th><th>Command</th><th>Package</th><th>Mode</th></tr>\n${rows}\n</table>`
+function renderGroupedPreviewList(groups: readonly GroupedPreview[], baseUrl: string | undefined): string {
+  if (!baseUrl) return groups.map((group) => `- \`${escapeMd(group.symbol.command)}\` (${group.samples.length} sample${group.samples.length === 1 ? '' : 's'}): \`groups/${group.fileName}\``).join('\n')
+  return groups.map((group) => [
+    `<details open><summary><code>${html(group.symbol.command)}</code> · ${html(group.symbol.package ?? 'latex2e')} · ${group.status} · ${group.samples.length} sample${group.samples.length === 1 ? '' : 's'}</summary>`,
+    `<img src="${html(rawUrl(baseUrl, `groups/${group.fileName}`))}" width="760" alt="${html(group.symbol.command)} rendered symbol and stroke sample previews">`,
+    '</details>',
+  ].join('\n')).join('\n\n')
 }
 
-function renderSamplePreviewTable(samples: readonly { sample: SourceSample; path: string }[]): string {
-  const rows = samples.map((entry) => `<tr><td><pre>${html(braillePreview(entry.sample))}</pre></td><td><code>${html(entry.sample.symbolId)}</code><br><sub>${html(entry.sample.id)}</sub></td><td><sub>${html(entry.path)}</sub></td></tr>`).join('\n')
-  return `<details open><summary>${samples.length} changed sample preview${samples.length === 1 ? '' : 's'}</summary>\n<table><tr><th>Preview</th><th>Sample</th><th>File</th></tr>\n${rows}\n</table>\n</details>`
+function renderSymbolMetadataTable(symbols: readonly SourceSymbol[]): string {
+  const rows = symbols.map((symbol) => `<tr><td><code>${html(symbol.id)}</code></td><td><code>${html(symbol.command)}</code></td><td>${html(symbol.package ?? '')}</td><td>${html(symbol.mode)}</td><td>${symbol.samples?.count ?? 0}</td></tr>`).join('\n')
+  return `<table><tr><th>ID</th><th>Command</th><th>Package</th><th>Mode</th><th>Samples</th></tr>\n${rows}\n</table>`
 }
 
-function braillePreview(sample: SourceSample, columns = 18, rows = 8): string {
-  const width = columns * 2
-  const height = rows * 4
-  const dots = Array.from({ length: height }, () => Array.from({ length: width }, () => false))
-  for (const stroke of sample.strokes) {
-    for (let i = 0; i < stroke.length; i += 1) {
-      const current = stroke[i]
-      if (!current) continue
-      const previous = stroke[Math.max(0, i - 1)] ?? current
-      const distance = Math.hypot(current.x - previous.x, current.y - previous.y)
-      const steps = Math.max(1, Math.ceil(distance * Math.max(width, height) * 2))
-      for (let step = 0; step <= steps; step += 1) {
-        const t = step / steps
-        const x = previous.x + (current.x - previous.x) * t
-        const y = previous.y + (current.y - previous.y) * t
-        const px = Math.min(width - 1, Math.max(0, Math.round(x * (width - 1))))
-        const py = Math.min(height - 1, Math.max(0, Math.round(y * (height - 1))))
-        const rowDots = dots[py]
-        if (rowDots) rowDots[px] = true
-      }
-    }
+function buildGroupedPreviews(symbolsForPreview: readonly SourceSymbol[], samples: readonly SamplePreview[]): GroupedPreview[] {
+  const addedIds = new Set(addedSymbols.map((symbol) => symbol.id))
+  const changedIds = new Set(changedSymbols.map((symbol) => symbol.id))
+  const bySymbol = new Map<string, SamplePreview[]>()
+  for (const sample of samples) {
+    const entries = bySymbol.get(sample.sample.symbolId) ?? []
+    entries.push(sample)
+    bySymbol.set(sample.sample.symbolId, entries)
   }
 
-  return Array.from({ length: rows }, (_, row) => Array.from({ length: columns }, (_, column) => {
-    let mask = 0
-    for (let dy = 0; dy < 4; dy += 1) {
-      for (let dx = 0; dx < 2; dx += 1) {
-        if (!dots[row * 4 + dy]?.[column * 2 + dx]) continue
-        mask |= brailleMask(dx, dy)
-      }
-    }
-    return String.fromCharCode(0x2800 + mask)
-  }).join('')).join('\n')
+  const ids = new Set([...symbolsForPreview.map((symbol) => symbol.id), ...bySymbol.keys()])
+  return [...ids].flatMap((id) => {
+    const symbol = currentById.get(id)
+    if (!symbol) return []
+    const status: GroupedPreview['status'] = addedIds.has(id) ? 'added' : changedIds.has(id) ? 'changed' : 'samples-only'
+    return [{
+      symbol,
+      status,
+      samples: bySymbol.get(id) ?? [],
+      fileName: `${slugPreviewFile(id)}.svg`,
+    }]
+  }).sort((a, b) => comparePreviewGroups(a, b))
 }
 
-function brailleMask(x: number, y: number): number {
-  if (x === 0 && y === 0) return 0x01
-  if (x === 0 && y === 1) return 0x02
-  if (x === 0 && y === 2) return 0x04
-  if (x === 0 && y === 3) return 0x40
-  if (x === 1 && y === 0) return 0x08
-  if (x === 1 && y === 1) return 0x10
-  if (x === 1 && y === 2) return 0x20
-  return 0x80
+function comparePreviewGroups(a: GroupedPreview, b: GroupedPreview): number {
+  const statusOrder = { added: 0, changed: 1, 'samples-only': 2 }
+  return statusOrder[a.status] - statusOrder[b.status] || a.symbol.id.localeCompare(b.symbol.id)
+}
+
+function writeGroupedPreviewSheets(groups: readonly GroupedPreview[]): void {
+  const groupDir = join(outDir, 'groups')
+  mkdirSync(groupDir, { recursive: true })
+  for (const group of groups) writeFileSync(join(groupDir, group.fileName), renderGroupedPreviewSheet(group))
+}
+
+function renderGroupedPreviewSheet(group: GroupedPreview): string {
+  const width = 980
+  const sampleWidth = 150
+  const sampleHeight = 132
+  const columns = 5
+  const headerHeight = 160
+  const sampleRows = Math.max(1, Math.ceil(group.samples.length / columns))
+  const height = headerHeight + sampleRows * sampleHeight + 24
+  const asset = join(sourceDir, assetPathForSymbol(group.symbol))
+  const image = existsSync(asset) ? `data:image/svg+xml;base64,${readFileSync(asset).toString('base64')}` : ''
+  const sampleCells = group.samples.map((entry, index) => {
+    const x = 210 + (index % columns) * sampleWidth
+    const y = headerHeight + Math.floor(index / columns) * sampleHeight
+    return `<g transform="translate(${x},${y})"><rect x="4" y="4" width="138" height="118" rx="10" fill="#fff" stroke="#d7dce5"/>${strokesSvg(entry.sample, 18, 16, 110, 78)}<text x="14" y="108" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="8" fill="#5b6472">${xml(shortSampleId(entry.sample.id))}</text></g>`
+  }).join('\n')
+  const emptySamples = group.samples.length === 0 ? '<text x="230" y="220" font-family="ui-sans-serif,system-ui" font-size="18" fill="#697386">No changed samples for this symbol.</text>' : ''
+  return svg(width, height, `<rect x="16" y="16" width="948" height="${height - 32}" rx="18" fill="#f8fafc" stroke="#d9e0ea"/>
+    <text x="40" y="52" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" font-weight="700" fill="#111827">${xml(group.symbol.command)}</text>
+    <text x="40" y="78" font-family="ui-sans-serif,system-ui" font-size="13" fill="#475569">${xml(group.symbol.id)} · ${xml(group.symbol.package ?? 'latex2e')} · ${xml(group.status)}</text>
+    <rect x="40" y="96" width="130" height="80" rx="12" fill="#fff" stroke="#d7dce5"/>
+    ${image ? `<image href="${image}" x="54" y="108" width="102" height="56" preserveAspectRatio="xMidYMid meet"/>` : `<text x="58" y="142" fill="#c00">missing asset</text>`}
+    <text x="210" y="126" font-family="ui-sans-serif,system-ui" font-size="15" font-weight="700" fill="#111827">Changed stroke samples</text>
+    <text x="210" y="150" font-family="ui-sans-serif,system-ui" font-size="12" fill="#697386">Rendered symbol on the left, handwritten samples on the right.</text>
+    ${sampleCells}${emptySamples}`)
+}
+
+function shortSampleId(id: string): string {
+  return id.replace(/^sample:/, '').slice(-28)
+}
+
+function slugPreviewFile(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'preview'
 }
 
 function rawUrl(baseUrl: string, path: string): string {
@@ -233,6 +270,10 @@ function xml(value: string): string {
 
 function html(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
+
+function escapeMd(value: string): string {
+  return value.replace(/`/g, '\\`')
 }
 
 function normalizeBaseUrl(value: string | undefined): string | undefined {
