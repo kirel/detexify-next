@@ -119,9 +119,8 @@ type SourceSymbol = {
 }
 ```
 
-Needed next: a safe symbol-add CLI.
+Current safe symbol-add CLI:
 
-Desired command:
 
 ```bash
 npm run data:add-symbol -- \
@@ -130,15 +129,15 @@ npm run data:add-symbol -- \
   --mode math
 ```
 
-The CLI should:
+The CLI:
 
-- generate a stable canonical id;
-- reject duplicate/conflicting commands;
-- update `symbols.json`;
-- create or update sample file/manifest entries;
-- render the symbol asset;
-- run validation;
-- print a reviewable summary.
+- generates a stable canonical id;
+- rejects duplicate/conflicting commands;
+- updates `symbols.json`;
+- can create or update sample file/manifest entries;
+- renders the symbol asset;
+- supports validation as part of the normal review flow;
+- prints a reviewable summary.
 
 ### Asset rendering pipeline
 
@@ -189,15 +188,14 @@ The default policy is safe and reversible:
 - Generated classifier/web data excludes rejected samples.
 - No physical deletion by default.
 
-Needed next: suspicious-sample tooling.
+Current suspicious-sample tooling:
 
-Desired command:
 
 ```bash
 npm run data:find-bad-samples
 ```
 
-It should produce review candidates, not mutate source data automatically.
+It produces review candidates and does not mutate source data automatically.
 
 Candidate heuristics:
 
@@ -209,7 +207,7 @@ Candidate heuristics:
 - near-duplicate sample;
 - classifier consistently predicts a different label.
 
-Output should be a reviewable JSON/Markdown report and integrate with the local training/review UI.
+Output is a reviewable report and suspicious hints are integrated into the local training/review UI. Heuristics are intentionally conservative to avoid noisy bounds/point-stroke flags.
 
 ## Open-source contribution workflow
 
@@ -236,7 +234,7 @@ Contributor rules should be simple:
 
 Data PRs need visual review, not just JSON diffs.
 
-Desired workflow:
+Current workflow:
 
 ```text
 .github/workflows/data-pr-preview.yml
@@ -248,15 +246,14 @@ For PRs touching `packages/data/source/**`:
 2. Validate source data.
 3. Render changed/new symbols.
 4. Generate preview artifacts:
-   - added/changed symbol table;
+   - added/changed symbol metadata;
    - rendered symbol contact sheet;
-   - added sample contact sheet;
-   - rejected/restored sample contact sheet;
+   - sample contact sheet;
+   - grouped per-symbol SVG previews with rendered symbol + changed strokes;
    - validation summary.
 5. Upload artifacts.
-6. Post or update a PR comment with the summary and artifact links.
-
-Initial implementation can use GitHub Actions artifacts plus a Markdown comment. Later, inline images can be served through a Pages preview if useful.
+6. Publish inline preview SVGs to the `detexify-pr-previews` branch.
+7. Post or update a PR comment that embeds the grouped previews directly, so reviewers do not need to download artifacts.
 
 Desired local command backing the action:
 
@@ -353,13 +350,72 @@ Longer term, CI should fail if:
 ### Phase 6 — release polish
 
 - [x] Static GitHub Pages deploy.
+- [x] Full offline/PWA precache for the static web app.
+- [x] App/favicon/macOS icon assets.
 - [x] CI build/test expansion.
 - [x] macOS app bundle packaging.
 - [x] Code signing docs.
 - [x] Notarization docs.
 - [x] GitHub release script.
 - [x] Publish initial `v0.1.0` macOS release.
+- [x] Publish signed/notarized `v0.2.2` macOS release with current data and app icon.
 - [x] Archive/retirement notes for old repos.
+
+### Phase 7 — official Detexify launch
+
+Goal: make Detexify Next the official Detexify at `detexify.kirelabs.org`, with a safe rollback path.
+
+Must happen before flipping the domain:
+
+- [ ] Decide public naming:
+  - user-facing product name should likely be **Detexify**;
+  - repository/internal package names can remain `detexify-next`.
+- [ ] Update web metadata/branding:
+  - document title;
+  - PWA manifest `name`/`short_name` if desired;
+  - Apple PWA title;
+  - README/docs canonical URL.
+- [ ] Change `apps/web/public/CNAME` from `detexify-next.kirelabs.org` to `detexify.kirelabs.org`.
+- [ ] Add compatibility entry points for legacy URLs:
+  - `/classify.html` → `/#/`;
+  - `/symbols.html` → `/#/symbols`.
+- [ ] Add basic launch SEO/static metadata:
+  - canonical URL;
+  - OpenGraph/Twitter card tags;
+  - `robots.txt`;
+  - optional `sitemap.xml`.
+- [ ] Add visible support/contribution links:
+  - missing symbol/report issue;
+  - add samples/contribute link;
+  - GitHub repo link.
+- [ ] Add a short privacy/offline note: classification runs locally, PWA works offline, no backend needed for normal use.
+- [ ] Run launch smoke tests:
+  - Safari macOS;
+  - Chrome macOS;
+  - Firefox macOS;
+  - Safari iOS;
+  - install/open as PWA;
+  - offline reload after first visit;
+  - draw immediately while worker is still loading;
+  - symbols gallery;
+  - current signed macOS release.
+- [ ] Prepare rollback:
+  - keep old Heroku Detexify app running temporarily;
+  - optionally move it to `legacy-detexify.kirelabs.org` before the DNS cutover.
+- [ ] DNS cutover:
+  - change `detexify.kirelabs.org` from Heroku DNS to GitHub Pages (`kirel.github.io`);
+  - wait for GitHub Pages certificate provisioning;
+  - enforce HTTPS.
+- [ ] Decide fate of `detexify-next.kirelabs.org`:
+  - retire it;
+  - or redirect it to `detexify.kirelabs.org` via DNS/provider redirect or a tiny separate redirect site.
+
+Non-blocking post-launch improvements:
+
+- [ ] Better error UI when static data fails to load.
+- [ ] Optional “What changed from old Detexify?” section.
+- [ ] Optional Mac auto-update mechanism.
+- [ ] Continue CNN/hybrid benchmarks, but keep DTW as default until replacement wins clearly.
 
 ## Design principles
 
