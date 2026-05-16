@@ -212,7 +212,17 @@ function shortSampleId(id: string): string {
 }
 
 function slugPreviewFile(value: string): string {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'preview'
+  const slug = value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'preview'
+  return `${slug}-${previewHash(value)}`
+}
+
+function previewHash(value: string): string {
+  let hash = 0x811c9dc5
+  for (let i = 0; i < value.length; i += 1) {
+    hash ^= value.charCodeAt(i)
+    hash = Math.imul(hash, 0x01000193)
+  }
+  return (hash >>> 0).toString(36).slice(0, 6)
 }
 
 function rawUrl(baseUrl: string, path: string): string {
