@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { spawnSync } from 'node:child_process'
+import { strokeDirectionMarkers, type Point } from '@detexify/core'
 import { assetPathForSymbol, parseJsonlSamples, readSourceSymbols, type SourceSample, type SourceSymbol } from './sourceData.js'
 import { expandHome } from './legacyPaths.js'
 
@@ -260,8 +261,51 @@ function renderSampleSheet(samples: readonly { sample: SourceSample; path: strin
 function strokesSvg(sample: SourceSample, x: number, y: number, width: number, height: number): string {
   return sample.strokes.map((stroke) => {
     const points = stroke.map((point) => `${x + point.x * width},${y + point.y * height}`).join(' ')
-    return `<polyline points="${points}" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`
+    return [
+      `<polyline points="${points}" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`,
+      strokeDirectionSvg(stroke, x, y, width, height),
+    ].join('')
   }).join('')
+}
+
+function strokeDirectionSvg(stroke: SourceSample['strokes'][number], x: number, y: number, width: number, height: number): string {
+  const first = stroke[0]
+  const last = stroke[stroke.length - 1]
+  if (!first || !last) return ''
+
+  return [
+    pointMarkerSvg(projectPoint(first, x, y, width, height), '#0f766e', 4.2),
+    pointMarkerSvg(projectPoint(last, x, y, width, height), '#b45309', 3.6),
+    ...strokeDirectionMarkers(stroke).map((marker) => arrowheadSvg(projectPoint(marker.point, x, y, width, height), marker.angle)),
+  ].join('')
+}
+
+function projectPoint(point: Point, x: number, y: number, width: number, height: number): Point {
+  return { x: x + point.x * width, y: y + point.y * height }
+}
+
+function pointMarkerSvg(point: Point, fill: string, radius: number): string {
+  return `<circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="${(radius * 1.45).toFixed(2)}" fill="#fffdf8"/><circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="${radius.toFixed(2)}" fill="${fill}"/>`
+}
+
+function arrowheadSvg(point: Point, angle: number): string {
+  const length = 12
+  const width = 8
+  const back = {
+    x: point.x - Math.cos(angle) * length,
+    y: point.y - Math.sin(angle) * length,
+  }
+  const normal = {
+    x: Math.cos(angle + Math.PI / 2) * width,
+    y: Math.sin(angle + Math.PI / 2) * width,
+  }
+  const points = [
+    point,
+    { x: back.x + normal.x, y: back.y + normal.y },
+    { x: back.x - normal.x, y: back.y - normal.y },
+  ].map((candidate) => `${candidate.x.toFixed(2)},${candidate.y.toFixed(2)}`).join(' ')
+
+  return `<polygon points="${points}" fill="#fffdf8" stroke="#fffdf8" stroke-width="3" stroke-linejoin="round"/><polygon points="${points}" fill="#0f766e" stroke="#0f766e" stroke-width="1" stroke-linejoin="round"/>`
 }
 
 function svg(width: number, height: number, body: string): string {
