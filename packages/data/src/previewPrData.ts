@@ -10,6 +10,7 @@ const sourceDir = expandHome(getOption('source-dir') ?? join(repoRoot, 'packages
 const outDir = expandHome(getOption('out-dir') ?? join(repoRoot, 'artifacts/pr-preview'))
 const base = getOption('base') ?? 'origin/main'
 const maxSamples = parseIntOption('max-samples', 80)
+const rawBaseUrl = normalizeBaseUrl(getOption('raw-base-url'))
 
 mkdirSync(outDir, { recursive: true })
 
@@ -35,7 +36,7 @@ const sampleSheet = join(outDir, 'samples.svg')
 writeFileSync(symbolSheet, renderSymbolSheet([...addedSymbols, ...changedSymbols]))
 writeFileSync(sampleSheet, renderSampleSheet(samplePreviews))
 
-const summary = renderSummary({ addedSymbols, changedSymbols, removedSymbols, samplePreviews, reviewChanged, changes })
+const summary = renderSummary({ addedSymbols, changedSymbols, removedSymbols, samplePreviews, reviewChanged, changes, rawBaseUrl })
 writeFileSync(join(outDir, 'summary.md'), summary)
 writeFileSync(join(outDir, 'changed-files.json'), `${JSON.stringify({ base, changes }, null, 2)}\n`)
 
@@ -80,6 +81,7 @@ function renderSummary(input: {
   samplePreviews: { sample: SourceSample; path: string }[]
   reviewChanged: boolean
   changes: { status: string; path: string }[]
+  rawBaseUrl: string | undefined
 }): string {
   const lines = [
     '## Detexify data preview',
@@ -93,31 +95,91 @@ function renderSummary(input: {
     `| Review metadata changed | ${input.reviewChanged ? 'yes' : 'no'} |`,
     `| Changed source files | ${input.changes.length} |`,
     '',
-    'Artifacts:',
-    '',
-    '- `summary.md`',
-    '- `symbols.svg`',
-    '- `samples.svg`',
-    '- `changed-files.json`',
+    'Inline previews are embedded below so reviewers do not need to download artifacts. The uploaded `symbols.svg` and `samples.svg` contact sheets remain available for a larger view.',
     '',
   ]
 
   if (input.addedSymbols.length > 0) {
-    lines.push('### Added symbols', '', '| ID | Command | Package | Mode |', '| --- | --- | --- | --- |')
-    for (const symbol of input.addedSymbols) lines.push(`| ${symbol.id} | \`${escapeMd(symbol.command)}\` | ${symbol.package ?? ''} | ${symbol.mode} |`)
-    lines.push('')
+    lines.push('### Added symbols', '', renderSymbolTable(input.addedSymbols, input.rawBaseUrl), '')
   }
 
   if (input.changedSymbols.length > 0) {
-    lines.push('### Changed symbols', '', ...input.changedSymbols.map((symbol) => `- ${symbol.id}`), '')
+    lines.push('### Changed symbols', '', renderSymbolTable(input.changedSymbols, input.rawBaseUrl), '')
   }
 
   if (input.removedSymbols.length > 0) {
     lines.push('### Removed symbols', '', ...input.removedSymbols.map((symbol) => `- ${symbol.id}`), '')
   }
 
-  lines.push('This preview is generated from source-data diffs. Inspect the uploaded SVG contact sheets for visual review.', '')
+  if (input.samplePreviews.length > 0) {
+    lines.push('### Sample stroke previews', '', renderSamplePreviewTable(input.samplePreviews), '')
+  }
+
+  lines.push('This preview is generated from source-data diffs.', '')
   return `${lines.join('\n')}\n`
+}
+
+function renderSymbolTable(symbols: readonly SourceSymbol[], baseUrl: string | undefined): string {
+  const rows = symbols.map((symbol) => {
+    const preview = baseUrl ? `<img src="${html(rawUrl(baseUrl, `packages/data/source/${assetPathForSymbol(symbol)}`))}" width="96" height="64" alt="${html(symbol.command)} preview">` : 'see artifact'
+    return `<tr><td>${preview}</td><td><code>${html(symbol.id)}</code></td><td><code>${html(symbol.command)}</code></td><td>${html(symbol.package ?? '')}</td><td>${html(symbol.mode)}</td></tr>`
+  }).join('\n')
+  return `<table><tr><th>Preview</th><th>ID</th><th>Command</th><th>Package</th><th>Mode</th></tr>\n${rows}\n</table>`
+}
+
+function renderSamplePreviewTable(samples: readonly { sample: SourceSample; path: string }[]): string {
+  const rows = samples.map((entry) => `<tr><td><pre>${html(braillePreview(entry.sample))}</pre></td><td><code>${html(entry.sample.symbolId)}</code><br><sub>${html(entry.sample.id)}</sub></td><td><sub>${html(entry.path)}</sub></td></tr>`).join('\n')
+  return `<details open><summary>${samples.length} changed sample preview${samples.length === 1 ? '' : 's'}</summary>\n<table><tr><th>Preview</th><th>Sample</th><th>File</th></tr>\n${rows}\n</table>\n</details>`
+}
+
+function braillePreview(sample: SourceSample, columns = 18, rows = 8): string {
+  const width = columns * 2
+  const height = rows * 4
+  const dots = Array.from({ length: height }, () => Array.from({ length: width }, () => false))
+  for (const stroke of sample.strokes) {
+    for (let i = 0; i < stroke.length; i += 1) {
+      const current = stroke[i]
+      if (!current) continue
+      const previous = stroke[Math.max(0, i - 1)] ?? current
+      const distance = Math.hypot(current.x - previous.x, current.y - previous.y)
+      const steps = Math.max(1, Math.ceil(distance * Math.max(width, height) * 2))
+      for (let step = 0; step <= steps; step += 1) {
+        const t = step / steps
+        const x = previous.x + (current.x - previous.x) * t
+        const y = previous.y + (current.y - previous.y) * t
+        const px = Math.min(width - 1, Math.max(0, Math.round(x * (width - 1))))
+        const py = Math.min(height - 1, Math.max(0, Math.round(y * (height - 1))))
+        const rowDots = dots[py]
+        if (rowDots) rowDots[px] = true
+      }
+    }
+  }
+
+  return Array.from({ length: rows }, (_, row) => Array.from({ length: columns }, (_, column) => {
+    let mask = 0
+    for (let dy = 0; dy < 4; dy += 1) {
+      for (let dx = 0; dx < 2; dx += 1) {
+        if (!dots[row * 4 + dy]?.[column * 2 + dx]) continue
+        mask |= brailleMask(dx, dy)
+      }
+    }
+    return String.fromCharCode(0x2800 + mask)
+  }).join('')).join('\n')
+}
+
+function brailleMask(x: number, y: number): number {
+  if (x === 0 && y === 0) return 0x01
+  if (x === 0 && y === 1) return 0x02
+  if (x === 0 && y === 2) return 0x04
+  if (x === 0 && y === 3) return 0x40
+  if (x === 1 && y === 0) return 0x08
+  if (x === 1 && y === 1) return 0x10
+  if (x === 1 && y === 2) return 0x20
+  return 0x80
+}
+
+function rawUrl(baseUrl: string, path: string): string {
+  return `${baseUrl}${path.split('/').map(encodeURIComponent).join('/')}`
 }
 
 function renderSymbolSheet(symbols: readonly SourceSymbol[]): string {
@@ -166,11 +228,16 @@ function runGit(args: string[]): string {
 }
 
 function xml(value: string): string {
+  return html(value)
+}
+
+function html(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
 
-function escapeMd(value: string): string {
-  return value.replace(/`/g, '\\`')
+function normalizeBaseUrl(value: string | undefined): string | undefined {
+  if (!value) return undefined
+  return value.endsWith('/') ? value : `${value}/`
 }
 
 function getOption(name: string): string | undefined {
