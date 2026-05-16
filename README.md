@@ -15,15 +15,18 @@ Working today:
 - LaTeX-to-SVG symbol rendering pipeline;
 - local dev-only training/sample curation UI at `/#/train`;
 - rejected-sample workflow that excludes bad samples without deleting them;
+- suspicious-sample report tooling plus review hints in the training UI;
+- data PR preview tooling with GitHub Action comments and visual contact sheets;
 - GitHub Pages deployment for the web app;
+- signed/notarized macOS packaging and GitHub release scripts;
 - experimental model benchmarks for frozen MobileNet and a trained tiny CNN.
 
 Not done yet:
 
-- polished open-source contribution flow for symbols/samples;
-- visual PR previews/contact sheets;
-- suspicious/bad-sample detection tooling;
-- signed/notarized macOS app distribution;
+- official Detexify launch at `detexify.kirelabs.org`;
+- public naming/domain/SEO cleanup for the launch;
+- Homebrew Cask or auto-update distribution for the Mac app;
+- final open-source license/data-license cleanup;
 - final model decision beyond the DTW baseline.
 
 See also:
@@ -204,7 +207,7 @@ Swift package lives in `apps/mac`.
 
 ## Open-source contribution direction
 
-The project is being prepared for external symbol/sample PRs. The intended flow is:
+The project has a repo-local workflow for symbol/sample PRs:
 
 1. add symbols through a safe CLI;
 2. add samples through the local training UI;
@@ -212,7 +215,9 @@ The project is being prepared for external symbol/sample PRs. The intended flow 
 4. GitHub Actions generate visual PR previews/contact sheets;
 5. reviewers inspect rendered symbols and sample thumbnails before merge.
 
-These pieces are partially implemented. See:
+These pieces exist for the current repo workflow. The remaining open-source work
+is mainly launch polish, license cleanup, and making the contributor path easier
+for people outside the project. See:
 
 - [docs/contributing.md](./docs/contributing.md)
 - [docs/pr-previews.md](./docs/pr-previews.md)

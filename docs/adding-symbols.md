@@ -120,7 +120,7 @@ If the CLI cannot handle an unusual case, manually add a `SourceSymbol` entry to
 
 ## PR expectations
 
-For future external symbol PRs:
+For symbol PRs:
 
 - include the source symbol metadata;
 - include rendered SVG asset produced by the renderer;
@@ -128,9 +128,10 @@ For future external symbol PRs:
 - do not edit generated web data by hand unless the project decides to keep it committed for that release path;
 - include notes if a symbol requires unusual LaTeX packages or does not render with Tectonic.
 
-## Visual review coming soon
+## Visual review
 
-Data PRs should eventually get an automatic GitHub comment with:
+Data PRs that touch `packages/data/source/**` get an automatic GitHub Action
+comment with:
 
 - added/changed symbols;
 - rendered glyph previews;

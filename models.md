@@ -53,6 +53,59 @@ CNN candidates 50 + DTW rerank top1 .750  top5 .950  top10 .970
 
 This is encouraging, but not enough to switch the app backend yet. The benchmark is still a single split, and the benchmark implementation is experimental rather than a production runtime engine.
 
+## External model lessons
+
+### Hand-TeX
+
+Hand-TeX is the most relevant external reference for a direct LaTeX symbol CNN.
+Its production recognizer is a compact PyTorch image classifier:
+
+- input: strokes rasterized to a 64x64 single-channel grayscale image;
+- architecture: five Conv2d + BatchNorm + ReLU + MaxPool blocks;
+- tuned channel sizes: `31 -> 52 -> 92 -> 122 -> 178`;
+- head: dropout around `0.33`, adaptive average pool to `1x1`, linear layer to
+  symbol classes;
+- objective: standard multiclass cross entropy;
+- output: direct softmax-ranked symbol classes;
+- released weights: `handtex.safetensors`, roughly 2.7 MB.
+
+This confirms that a small task-specific raster CNN can be a practical symbol
+recognizer. It also highlights a major design difference: Hand-TeX intentionally
+throws away stroke order and direction, while Detexify Next can still combine
+raster CNN retrieval with DTW reranking over stroke geometry.
+
+The next Detexify Next CNN experiments should include a Hand-TeX-style direct
+classifier baseline:
+
+- 64x64 raster input, not only 32x32;
+- direct softmax classification;
+- optional candidate-generation mode;
+- DTW reranking over top-N CNN candidates;
+- multi-seed and multi-size comparisons against legacy DTW.
+
+### Detypify
+
+Detypify is the most useful external reference for browser deployment and SDK
+shape. It trains in Python with PyTorch Lightning and `timm` MobileNetV4
+variants, then exports the model to ONNX for browser inference through
+ONNX Runtime Web.
+
+Important lessons:
+
+- ONNX Runtime Web is a serious alternative to TFJS for a trained browser
+  recognizer.
+- A recognizer package can be small enough for editor use; the published
+  `detypify-service` package is roughly 5 MB unpacked, including model and
+  metadata.
+- Target-specific metadata matters. Detypify returns Typst characters, names,
+  shorthand data, and Unicode escape information rather than generic classifier
+  labels.
+- The model/service split is clean: a reusable package exposes session creation
+  and stroke inference, while the UI is a separate consumer.
+
+Detexify Next should evaluate ONNX export and runtime size/latency before
+committing to TFJS for production neural backends.
+
 ## Why not switch backend now?
 
 Missing before defaulting to CNN/hybrid:
@@ -62,7 +115,7 @@ Missing before defaulting to CNN/hybrid:
 - `200`, `500`, and all-symbol evaluations;
 - candidate-count sweep, e.g. `10`, `20`, `50`, `100`;
 - post-clean-slate data curation pass;
-- exported TFJS model and embedding/index artifacts;
+- exported TFJS or ONNX model and embedding/index artifacts;
 - browser, Safari, and WKWebView latency/size testing;
 - production implementation that pre-indexes DTW samples instead of constructing candidate classifiers per query;
 - fallback behavior when model loading fails.

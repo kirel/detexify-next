@@ -113,7 +113,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Visually mark rejected samples.
 - [x] Add review queue / next-sample workflow.
 - [x] Add suspicious-sample mode.
-- [x] Add keyboard shortcuts for reject/restore/next.
+- [x] Add keyboard-assisted save/undo/clear and next-sample navigation.
 - [x] Add per-symbol sample coverage hints.
 
 ## Milestone 6 — Mac app prototype
@@ -191,4 +191,4 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - Frozen ImageNet MobileNet is not competitive with DTW; keep only as baseline/reference.
 - Trained tiny CNN is promising for top1 but not yet better than DTW on top5/top10.
 - Next model work should prioritize robust evaluation and CNN-candidate + DTW-rerank hybrid.
-- Contribution tooling is now the main missing area before broader open-source use.
+- Public launch polish, license cleanup, and external contributor onboarding are the main missing areas before broader open-source use.
