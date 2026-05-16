@@ -36,6 +36,7 @@ echo "==> Building Swift package ($CONFIGURATION, $ARCH)"
 BUILD_DIR="$ROOT_DIR/apps/mac/.build/${ARCH}-apple-macosx/$CONFIGURATION"
 BINARY_PATH="$BUILD_DIR/$EXECUTABLE_NAME"
 WEBAPP_SOURCE="$ROOT_DIR/apps/mac/Sources/DetexifyNextMac/Resources/WebApp"
+APP_ICON_SOURCE="$ROOT_DIR/apps/mac/Sources/DetexifyNextMac/Resources/AppIcon.icns"
 
 if [[ ! -x "$BINARY_PATH" ]]; then
   echo "Could not find built executable: $BINARY_PATH" >&2
@@ -53,6 +54,9 @@ mkdir -p "$APP_PATH/Contents/MacOS" "$APP_PATH/Contents/Resources"
 cp "$BINARY_PATH" "$APP_PATH/Contents/MacOS/$EXECUTABLE_NAME"
 chmod 755 "$APP_PATH/Contents/MacOS/$EXECUTABLE_NAME"
 rsync -a --delete "$WEBAPP_SOURCE/" "$APP_PATH/Contents/Resources/WebApp/"
+if [[ -f "$APP_ICON_SOURCE" ]]; then
+  cp "$APP_ICON_SOURCE" "$APP_PATH/Contents/Resources/AppIcon.icns"
+fi
 cat > "$APP_PATH/Contents/PkgInfo" <<'PKGINFO'
 APPL????
 PKGINFO
@@ -74,6 +78,8 @@ cat > "$APP_PATH/Contents/Info.plist" <<PLIST
   <string>$APP_NAME</string>
   <key>CFBundleDisplayName</key>
   <string>$APP_NAME</string>
+  <key>CFBundleIconFile</key>
+  <string>AppIcon</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>
