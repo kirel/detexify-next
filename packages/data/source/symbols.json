@@ -11623,6 +11623,23 @@
       }
     },
     {
+      "id": "latex:mathtools:coloneqq",
+      "command": "\\coloneqq",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\coloneqq",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/coloneqq-mt42o2.jsonl",
+        "count": 5
+      }
+    },
+    {
       "id": "latex:mathtools:eqqcolon",
       "command": "\\eqqcolon",
       "package": "mathtools",
@@ -12911,7 +12928,7 @@
       },
       "samples": {
         "path": "samples/latex/textcomp/textnaira-192jf9d.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -13880,7 +13897,7 @@
       },
       "samples": {
         "path": "samples/latex/tipa/textcloseepsilon-w6rk8m.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -14067,7 +14084,7 @@
       },
       "samples": {
         "path": "samples/latex/tipa/textcrtwo-m8o92t.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -15070,7 +15087,7 @@
       },
       "samples": {
         "path": "samples/latex/tipa/textobardotlessj-u6i8ea.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -15869,7 +15886,7 @@
       },
       "samples": {
         "path": "samples/latex/tipa/textsecstress-hbtznp.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -16005,7 +16022,7 @@
       },
       "samples": {
         "path": "samples/latex/tipa/texttslig-164spmj.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {
@@ -16022,7 +16039,7 @@
       },
       "samples": {
         "path": "samples/latex/tipa/textturna-1w7gve2.jsonl",
-        "count": 4
+        "count": 5
       }
     },
     {

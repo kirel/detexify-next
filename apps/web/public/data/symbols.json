@@ -6886,6 +6886,16 @@
     "imagePath": "data/assets/symbols/latex/mathrsfs/mathscr-lbrace-z-rbrace-nq4by6.svg"
   },
   {
+    "id": "latex:mathtools:coloneqq",
+    "legacyId": "latex:mathtools:coloneqq",
+    "command": "\\coloneqq",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/coloneqq-mt42o2.svg"
+  },
+  {
     "id": "latex:mathtools:eqqcolon",
     "legacyId": "latex:mathtools:eqqcolon",
     "command": "\\eqqcolon",
