@@ -2,8 +2,8 @@
   "version": 1,
   "encoding": "jsonl-per-symbol",
   "coordinateSystem": "normalized-0-1",
-  "symbolCount": 1101,
-  "sampleCount": 39419,
+  "symbolCount": 1123,
+  "sampleCount": 39554,
   "samples": [
     {
       "symbolId": "latex:amsmath:dotsb",
@@ -279,6 +279,11 @@
       "symbolId": "latex:amssymb:diagup",
       "path": "samples/latex/amssymb/diagup-1w2c8cj.jsonl",
       "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:Diamond",
+      "path": "samples/latex/amssymb/diamond-1fgyw07.jsonl",
+      "sampleCount": 6
     },
     {
       "symbolId": "latex:amssymb:digamma",
@@ -579,6 +584,11 @@
       "symbolId": "latex:amssymb:lozenge",
       "path": "samples/latex/amssymb/lozenge-qkzsud.jsonl",
       "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:amssymb:lrcorner",
+      "path": "samples/latex/amssymb/lrcorner-iwd9h6.jsonl",
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:amssymb:Lsh",
@@ -1421,6 +1431,11 @@
       "sampleCount": 50
     },
     {
+      "symbolId": "latex:amssymb:ulcorner",
+      "path": "samples/latex/amssymb/ulcorner-7700e1.jsonl",
+      "sampleCount": 6
+    },
+    {
       "symbolId": "latex:amssymb:upharpoonleft",
       "path": "samples/latex/amssymb/upharpoonleft-3slxy2.jsonl",
       "sampleCount": 49
@@ -1434,6 +1449,11 @@
       "symbolId": "latex:amssymb:upuparrows",
       "path": "samples/latex/amssymb/upuparrows-1pcv2br.jsonl",
       "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:amssymb:urcorner",
+      "path": "samples/latex/amssymb/urcorner-1mifa3z.jsonl",
+      "sampleCount": 7
     },
     {
       "symbolId": "latex:amssymb:varkappa",
@@ -1909,6 +1929,11 @@
       "symbolId": "latex:latex2e:bullet",
       "path": "samples/latex/latex2e/bullet-vaplw2.jsonl",
       "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:latex2e:c-lbrace-c-rbrace",
+      "path": "samples/latex/latex2e/c-lbrace-c-rbrace-11bikvd.jsonl",
+      "sampleCount": 7
     },
     {
       "symbolId": "latex:latex2e:cap",
@@ -3591,14 +3616,79 @@
       "sampleCount": 13
     },
     {
+      "symbolId": "latex:mathtools:colonapprox",
+      "path": "samples/latex/mathtools/colonapprox-1s1wkah.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:mathtools:Colonapprox",
+      "path": "samples/latex/mathtools/colonapprox-1szyrfd.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:mathtools:coloneq",
+      "path": "samples/latex/mathtools/coloneq-1mg4p1j.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:mathtools:coloneqq",
+      "path": "samples/latex/mathtools/coloneqq-mt42o2.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:mathtools:Coloneqq",
+      "path": "samples/latex/mathtools/coloneqq-l3cz36.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:mathtools:colonsim",
+      "path": "samples/latex/mathtools/colonsim-f6sgow.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:mathtools:Colonsim",
+      "path": "samples/latex/mathtools/colonsim-dh3kps.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:mathtools:dblcolon",
+      "path": "samples/latex/mathtools/dblcolon-16xwv73.jsonl",
+      "sampleCount": 5
+    },
+    {
+      "symbolId": "latex:mathtools:eqcolon",
+      "path": "samples/latex/mathtools/eqcolon-1jknpdz.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:mathtools:Eqcolon",
+      "path": "samples/latex/mathtools/eqcolon-124jvmv.jsonl",
+      "sampleCount": 5
+    },
+    {
       "symbolId": "latex:mathtools:eqqcolon",
       "path": "samples/latex/mathtools/eqqcolon-98q9t6.jsonl",
       "sampleCount": 5
     },
     {
+      "symbolId": "latex:mathtools:Eqqcolon",
+      "path": "samples/latex/mathtools/eqqcolon-w2g40a.jsonl",
+      "sampleCount": 7
+    },
+    {
       "symbolId": "latex:skull:skull",
       "path": "samples/latex/skull/skull-nl4swf.jsonl",
       "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:stmaryrd:bigsqcap",
+      "path": "samples/latex/stmaryrd/bigsqcap-1cpprlb.jsonl",
+      "sampleCount": 6
+    },
+    {
+      "symbolId": "latex:stmaryrd:boxbar",
+      "path": "samples/latex/stmaryrd/boxbar-lqpbzz.jsonl",
+      "sampleCount": 6
     },
     {
       "symbolId": "latex:stmaryrd:inplus",
@@ -3968,7 +4058,7 @@
     {
       "symbolId": "latex:textcomp:textnaira",
       "path": "samples/latex/textcomp/textnaira-192jf9d.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:textcomp:textnumero",
@@ -4253,7 +4343,7 @@
     {
       "symbolId": "latex:tipa:textcloseepsilon",
       "path": "samples/latex/tipa/textcloseepsilon-w6rk8m.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textcloseomega",
@@ -4308,7 +4398,7 @@
     {
       "symbolId": "latex:tipa:textcrtwo",
       "path": "samples/latex/tipa/textcrtwo-m8o92t.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textctc",
@@ -4603,7 +4693,7 @@
     {
       "symbolId": "latex:tipa:textObardotlessj",
       "path": "samples/latex/tipa/textobardotlessj-u6i8ea.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textOlyoghlig",
@@ -4838,7 +4928,7 @@
     {
       "symbolId": "latex:tipa:textsecstress",
       "path": "samples/latex/tipa/textsecstress-hbtznp.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textsoftsign",
@@ -4878,12 +4968,12 @@
     {
       "symbolId": "latex:tipa:texttslig",
       "path": "samples/latex/tipa/texttslig-164spmj.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textturna",
       "path": "samples/latex/tipa/textturna-1w7gve2.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textturncelig",
@@ -5226,6 +5316,11 @@
       "sampleCount": 50
     },
     {
+      "symbolId": "latex:wasysym:Box",
+      "path": "samples/latex/wasysym/box-hcmnqt.jsonl",
+      "sampleCount": 7
+    },
+    {
       "symbolId": "latex:wasysym:brokenvert",
       "path": "samples/latex/wasysym/brokenvert-efv1v2.jsonl",
       "sampleCount": 18
@@ -5249,6 +5344,11 @@
       "symbolId": "latex:wasysym:checked",
       "path": "samples/latex/wasysym/checked-pw0qrp.jsonl",
       "sampleCount": 50
+    },
+    {
+      "symbolId": "latex:wasysym:CheckedBox",
+      "path": "samples/latex/wasysym/checkedbox-1797c4y.jsonl",
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:wasysym:clock",
@@ -5461,6 +5561,11 @@
       "sampleCount": 50
     },
     {
+      "symbolId": "latex:wasysym:Square",
+      "path": "samples/latex/wasysym/square-lvungb.jsonl",
+      "sampleCount": 8
+    },
+    {
       "symbolId": "latex:wasysym:sun",
       "path": "samples/latex/wasysym/sun-jzf3xe.jsonl",
       "sampleCount": 50
@@ -5509,6 +5614,11 @@
       "symbolId": "latex:wasysym:wasylozenge",
       "path": "samples/latex/wasysym/wasylozenge-18wnq5u.jsonl",
       "sampleCount": 24
+    },
+    {
+      "symbolId": "latex:wasysym:XBox",
+      "path": "samples/latex/wasysym/xbox-1eqbyp1.jsonl",
+      "sampleCount": 6
     }
   ]
 }
