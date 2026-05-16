@@ -2,8 +2,8 @@
   "version": 1,
   "encoding": "jsonl-per-symbol",
   "coordinateSystem": "normalized-0-1",
-  "symbolCount": 1101,
-  "sampleCount": 39419,
+  "symbolCount": 1102,
+  "sampleCount": 39431,
   "samples": [
     {
       "symbolId": "latex:amsmath:dotsb",
@@ -3591,6 +3591,11 @@
       "sampleCount": 13
     },
     {
+      "symbolId": "latex:mathtools:coloneqq",
+      "path": "samples/latex/mathtools/coloneqq-mt42o2.jsonl",
+      "sampleCount": 5
+    },
+    {
       "symbolId": "latex:mathtools:eqqcolon",
       "path": "samples/latex/mathtools/eqqcolon-98q9t6.jsonl",
       "sampleCount": 5
@@ -3968,7 +3973,7 @@
     {
       "symbolId": "latex:textcomp:textnaira",
       "path": "samples/latex/textcomp/textnaira-192jf9d.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:textcomp:textnumero",
@@ -4253,7 +4258,7 @@
     {
       "symbolId": "latex:tipa:textcloseepsilon",
       "path": "samples/latex/tipa/textcloseepsilon-w6rk8m.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textcloseomega",
@@ -4308,7 +4313,7 @@
     {
       "symbolId": "latex:tipa:textcrtwo",
       "path": "samples/latex/tipa/textcrtwo-m8o92t.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textctc",
@@ -4603,7 +4608,7 @@
     {
       "symbolId": "latex:tipa:textObardotlessj",
       "path": "samples/latex/tipa/textobardotlessj-u6i8ea.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textOlyoghlig",
@@ -4838,7 +4843,7 @@
     {
       "symbolId": "latex:tipa:textsecstress",
       "path": "samples/latex/tipa/textsecstress-hbtznp.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textsoftsign",
@@ -4878,12 +4883,12 @@
     {
       "symbolId": "latex:tipa:texttslig",
       "path": "samples/latex/tipa/texttslig-164spmj.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textturna",
       "path": "samples/latex/tipa/textturna-1w7gve2.jsonl",
-      "sampleCount": 4
+      "sampleCount": 5
     },
     {
       "symbolId": "latex:tipa:textturncelig",
