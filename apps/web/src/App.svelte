@@ -51,7 +51,9 @@
       status = message.status
       statusMessage = message.message ?? message.status
     } else if (message.type === 'loaded') {
+      status = 'ready'
       stats = `${message.symbolCount} symbols, ${message.sampleCount} samples`
+      classify()
     } else if (message.type === 'results') {
       results = message.results
       statusMessage = `Classified in ${message.durationMs.toFixed(1)} ms`

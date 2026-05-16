@@ -12,7 +12,7 @@
 
   let symbols: WebSymbol[] = $state([])
   let filter = $state('')
-  let sort = $state<'command' | 'package' | 'samples'>('command')
+  let sort = $state<'command' | 'package'>('command')
   let status = $state('Loading symbols…')
 
   const appBase = import.meta.env.BASE_URL

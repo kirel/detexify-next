@@ -66,6 +66,7 @@ function detexifyLabPlugin(): Plugin {
     configureServer(server) {
       server.middlewares.use('/__detexify_lab__', async (request, response) => {
         try {
+          assertLabRequestAllowed(request)
           const url = new URL(request.url ?? '/', 'http://detexify.local')
           if (request.method === 'GET' && url.pathname === '/symbols') {
             sendJson(response, labSymbols())
@@ -252,6 +253,34 @@ function sendJson(response: { statusCode: number; setHeader: (name: string, valu
   response.statusCode = 200
   response.setHeader('content-type', 'application/json; charset=utf-8')
   response.end(JSON.stringify(value))
+}
+
+function assertLabRequestAllowed(request: NodeJS.ReadableStream & { headers?: { host?: unknown; origin?: unknown; referer?: unknown } }): void {
+  const host = headerValue(request.headers?.host)?.split(':')[0]
+  if (host && !isLoopbackHost(host)) throw httpError(403, 'Detexify lab API only accepts loopback hosts')
+
+  const origin = headerValue(request.headers?.origin)
+  if (origin && !isLoopbackUrl(origin)) throw httpError(403, 'Detexify lab API only accepts same-machine origins')
+
+  const referer = headerValue(request.headers?.referer)
+  if (referer && !isLoopbackUrl(referer)) throw httpError(403, 'Detexify lab API only accepts same-machine referers')
+}
+
+function headerValue(value: unknown): string | undefined {
+  return Array.isArray(value) ? value[0] : typeof value === 'string' ? value : undefined
+}
+
+function isLoopbackUrl(value: string): boolean {
+  try {
+    return isLoopbackHost(new URL(value).hostname)
+  } catch {
+    return false
+  }
+}
+
+function isLoopbackHost(host: string): boolean {
+  const normalized = host.toLowerCase().replace(/^\[|\]$/g, '')
+  return normalized === 'localhost' || normalized === '127.0.0.1' || normalized === '::1'
 }
 
 function readBody(request: NodeJS.ReadableStream): Promise<string> {
