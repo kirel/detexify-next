@@ -200,6 +200,101 @@
       "reason": "bad-sample",
       "rejectedAt": "2026-05-14T23:16:29.437Z",
       "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:319421": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:11.432Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:2428": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:23.288Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:54123": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:33.335Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:51361": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:34.404Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:79677": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:38.034Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:101666": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:41.169Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:191189": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:45.741Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:196544": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:46.970Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:236363": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:49.853Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:239252": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:50.952Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:244212": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:51.782Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:254333": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:37:54.637Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:250427": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:38:10.706Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:328345": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:38:18.181Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:219531": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:38:30.885Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:313116": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:38:43.543Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:237241": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:39:13.790Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:152875": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:41:02.932Z",
+      "rejectedBy": "kirel"
+    },
+    "sample:legacy-detexify-db:257710": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T07:41:44.199Z",
+      "rejectedBy": "kirel"
     }
   }
 }
