@@ -25,8 +25,8 @@
       <p>The bundled web UI and classifier data ship with the app, so recognition does not depend on a network tab.</p>
     </div>
     <div>
-      <h3>Ready to ship cleanly</h3>
-      <p>Signed, notarized release packaging is wired up in the repository; publish from the release scripts when the next build is ready.</p>
+      <h3>Open and easy to install</h3>
+      <p>The Mac app is built from the same open repository, with releases published where the source and changelog already live.</p>
     </div>
   </div>
 
