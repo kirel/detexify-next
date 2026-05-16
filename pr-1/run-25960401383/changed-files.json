@@ -1,0 +1,225 @@
+{
+  "base": "origin/main",
+  "changes": [
+    {
+      "status": "M",
+      "path": "packages/data/source/assets/symbols/.render-cache.json"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/amssymb/diamond-1fgyw07.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/amssymb/lrcorner-iwd9h6.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/amssymb/ulcorner-7700e1.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/amssymb/urcorner-1mifa3z.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/latex2e/c-lbrace-c-rbrace-11bikvd.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/colonapprox-1s1wkah.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/colonapprox-1szyrfd.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/coloneq-1mg4p1j.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/coloneqq-l3cz36.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/coloneqq-mt42o2.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/colonsim-dh3kps.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/colonsim-f6sgow.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/dblcolon-16xwv73.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/eqcolon-124jvmv.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/eqcolon-1jknpdz.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/mathtools/eqqcolon-w2g40a.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/stmaryrd/bigsqcap-1cpprlb.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/stmaryrd/boxbar-lqpbzz.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/wasysym/box-hcmnqt.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/wasysym/checkedbox-1797c4y.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/wasysym/square-lvungb.svg"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/assets/symbols/latex/wasysym/xbox-1eqbyp1.svg"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/reviews/rejected-samples.json"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/amssymb/diamond-1fgyw07.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/amssymb/lrcorner-iwd9h6.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/amssymb/ulcorner-7700e1.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/amssymb/urcorner-1mifa3z.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/latex2e/c-lbrace-c-rbrace-11bikvd.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/colonapprox-1s1wkah.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/colonapprox-1szyrfd.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/coloneq-1mg4p1j.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/coloneqq-l3cz36.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/coloneqq-mt42o2.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/colonsim-dh3kps.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/colonsim-f6sgow.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/dblcolon-16xwv73.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/eqcolon-124jvmv.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/eqcolon-1jknpdz.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/mathtools/eqqcolon-w2g40a.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/stmaryrd/bigsqcap-1cpprlb.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/stmaryrd/boxbar-lqpbzz.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/latex/textcomp/textnaira-192jf9d.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/latex/tipa/textcloseepsilon-w6rk8m.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/latex/tipa/textcrtwo-m8o92t.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/latex/tipa/textobardotlessj-u6i8ea.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/latex/tipa/textsecstress-hbtznp.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/latex/tipa/texttslig-164spmj.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/latex/tipa/textturna-1w7gve2.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/wasysym/box-hcmnqt.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/wasysym/checkedbox-1797c4y.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/wasysym/square-lvungb.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "packages/data/source/samples/latex/wasysym/xbox-1eqbyp1.jsonl"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/samples/manifest.json"
+    },
+    {
+      "status": "M",
+      "path": "packages/data/source/symbols.json"
+    }
+  ]
+}
