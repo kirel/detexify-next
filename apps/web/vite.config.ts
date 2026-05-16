@@ -1,6 +1,7 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { dirname, join, resolve } from 'node:path'
+import { createHash } from 'node:crypto'
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
+import { dirname, join, relative, resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import { analyzeSamplesForSymbol, filterReviewHints } from '../../packages/data/src/reviewHints.js'
 
@@ -11,8 +12,53 @@ export default defineConfig({
   // Relative asset paths are required when the built app is loaded from a
   // file:// URL inside the macOS WKWebView bundle.
   base: './',
-  plugins: [svelte(), detexifyLabPlugin()],
+  plugins: [svelte(), detexifyLabPlugin(), detexifyServiceWorkerPlugin()],
 })
+
+function detexifyServiceWorkerPlugin(): Plugin {
+  let outputDir = resolve(import.meta.dirname, 'dist')
+  return {
+    name: 'detexify-service-worker',
+    configResolved(config) {
+      outputDir = resolve(config.root, config.build.outDir)
+    },
+    writeBundle() {
+      const swPath = join(outputDir, 'sw.js')
+      if (!existsSync(swPath)) return
+      const assets = collectPrecacheAssets(outputDir)
+      const buildId = hashFiles(outputDir, assets)
+      const source = readFileSync(swPath, 'utf8')
+      writeFileSync(swPath, source
+        .replace('__BUILD_ID__', buildId)
+        .replace('__DETEXIFY_PRECACHE_ASSETS__', JSON.stringify(assets, null, 2)))
+    },
+  }
+}
+
+function collectPrecacheAssets(outputDir: string): string[] {
+  const files = walkFiles(outputDir)
+    .filter((path) => !path.endsWith('/.DS_Store'))
+    .map((path) => `./${relative(outputDir, path).split('/').join('/')}`)
+  return ['./', ...files].sort()
+}
+
+function walkFiles(dir: string): string[] {
+  return readdirSync(dir).flatMap((entry) => {
+    const path = join(dir, entry)
+    const stat = statSync(path)
+    return stat.isDirectory() ? walkFiles(path) : [path]
+  })
+}
+
+function hashFiles(outputDir: string, assets: readonly string[]): string {
+  const hash = createHash('sha256')
+  for (const asset of assets) {
+    if (asset === './') continue
+    hash.update(asset)
+    hash.update(readFileSync(join(outputDir, asset.replace(/^\.\//, ''))))
+  }
+  return hash.digest('hex').slice(0, 16)
+}
 
 function detexifyLabPlugin(): Plugin {
   return {
