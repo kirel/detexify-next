@@ -41,7 +41,7 @@ Saving from the training UI writes to:
 
 ## Contribution expectations
 
-For future external PRs:
+For sample PRs:
 
 - Add samples through the training UI or an approved import tool.
 - Do not hand-edit generated web data.
@@ -69,12 +69,15 @@ Avoid:
 - exact duplicates;
 - samples drawn to look like printed glyphs if that is not natural handwriting.
 
-## Coming soon
+## Current review helpers
 
-Planned improvements:
+The training UI now includes:
 
 - coverage hints per symbol;
-- faster “save + next” flows;
-- PR contact sheets for newly added samples;
-- suspicious-sample detection;
-- import helpers for curated external sample sets.
+- suspicious-first symbol sorting;
+- active/rejected/suspicious sample filters;
+- keyboard-assisted save/undo/clear drawing flow;
+- reject/restore review actions;
+- PR contact sheets for newly added samples.
+
+Batch import helpers for curated external sample sets are still future work.

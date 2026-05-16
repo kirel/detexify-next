@@ -1,8 +1,11 @@
 # Contributing
 
-Detexify Next is being prepared for open-source contributions, especially new symbols and training samples.
+Detexify Next supports repo-local open-source contributions, especially new symbols and training samples.
 
-The contribution tooling is not complete yet. This document describes the intended rules and the current safe workflow.
+The core contribution tooling exists: a symbol-add CLI, local training/review UI,
+source data validation, suspicious-sample reports, and visual data PR previews.
+The remaining public-launch work is mostly license cleanup and contributor
+polish.
 
 ## Good contributions
 
@@ -63,15 +66,16 @@ npm --workspace @detexify/web run build
 
 Inspect your diff carefully before committing. Training/review actions write real files into `packages/data/source`.
 
-## Planned PR workflow
+## Data PR workflow
 
-The intended future PR experience:
+For PRs that change `packages/data/source/**`:
 
-1. Contributor adds symbols/samples using local tools.
-2. CI validates data and renders changed symbols.
-3. CI generates contact sheets.
-4. CI posts a PR comment with visual previews and validation status.
-5. Reviewer checks images/samples before merging.
+1. Contributors add symbols/samples using local tools.
+2. CI validates source data.
+3. CI renders changed symbols and sample contact sheets.
+4. CI publishes inline preview SVGs to the `detexify-pr-previews` branch when the PR comes from this repo.
+5. CI posts or updates a PR comment with visual previews, validation status, and artifact links.
+6. Reviewers check the rendered glyphs and stroke samples before merging.
 
 See [pr-previews.md](./pr-previews.md).
 
