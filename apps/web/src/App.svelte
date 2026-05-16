@@ -3,6 +3,7 @@
   import DrawingCanvas from './lib/DrawingCanvas.svelte'
   import ResultsList from './lib/ResultsList.svelte'
   import SymbolGallery from './lib/SymbolGallery.svelte'
+  import AboutPage from './lib/AboutPage.svelte'
   import MacLanding from './lib/MacLanding.svelte'
   import LegalNotice from './lib/LegalNotice.svelte'
   import TrainingView from './lib/TrainingView.svelte'
@@ -74,6 +75,7 @@
 
   function routeFromHash() {
     if (window.location.hash === '#/symbols') return 'symbols'
+    if (window.location.hash === '#/about' && !isNativeShell) return 'about'
     if (window.location.hash === '#/mac' && !isNativeShell) return 'mac'
     if (window.location.hash === '#/impressum' && !isNativeShell) return 'impressum'
     if (window.location.hash === '#/train' && canTrain) return 'train'
@@ -129,12 +131,13 @@
 <main class="shell" class:web={!isNativeShell} class:native={isNativeShell}>
   <section class="hero">
     <p class="eyebrow">Detexify</p>
-    <h1>{route === 'symbols' ? 'Symbol table.' : route === 'mac' ? 'Detexify for Mac.' : route === 'impressum' ? 'Impressum.' : 'Draw. Find. Copy.'}</h1>
+    <h1>{route === 'symbols' ? 'Symbol table.' : route === 'about' ? 'About Detexify.' : route === 'mac' ? 'Detexify for Mac.' : route === 'impressum' ? 'Impressum.' : 'Draw. Find. Copy.'}</h1>
     <div class="subtitle">
-      <p>{route === 'symbols' ? 'Inspect rendered symbols, packages, and commands.' : route === 'mac' ? 'A quiet menu-bar companion for LaTeX symbols, built around the same offline recognizer.' : route === 'impressum' ? 'Legal information for the Detexify Next website.' : 'Find the LaTeX command for a symbol you can draw but not name.'}</p>
+      <p>{route === 'symbols' ? 'Inspect rendered symbols, packages, and commands.' : route === 'about' ? 'How a thesis project became a modern, AI-assisted rebuild.' : route === 'mac' ? 'A quiet menu-bar companion for LaTeX symbols, built around the same offline recognizer.' : route === 'impressum' ? 'Legal information for the Detexify Next website.' : 'Find the LaTeX command for a symbol you can draw but not name.'}</p>
       <nav class="hero-nav" aria-label="Sections">
         <a class:active={route === 'draw'} href="#/">Draw</a>
         <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
+        {#if !isNativeShell}<a class:active={route === 'about'} href="#/about">About</a>{/if}
         {#if !isNativeShell}<a class:active={route === 'mac'} href="#/mac">Mac</a>{/if}
         {#if !isNativeShell}<a class:active={route === 'impressum'} href="#/impressum">Impressum</a>{/if}
         {#if canTrain}<a class:active={route === 'train'} href="#/train">Train</a>{/if}
@@ -147,6 +150,8 @@
     <TrainingView />
   {:else if route === 'symbols' && !isNativeShell}
     <SymbolGallery />
+  {:else if route === 'about' && !isNativeShell}
+    <AboutPage />
   {:else if route === 'mac' && !isNativeShell}
     <MacLanding />
   {:else if route === 'impressum' && !isNativeShell}

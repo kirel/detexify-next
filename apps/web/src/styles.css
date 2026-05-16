@@ -93,6 +93,7 @@ h1 {
 
 .hero-nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 12px;
   font-size: 0.8rem;
@@ -639,6 +640,123 @@ h1 {
 .mac-actions a:hover,
 .mac-actions .mac-primary-link {
   color: var(--ink);
+}
+
+.about-page {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-lede {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+  grid-template-areas:
+    "kicker copy"
+    "title copy";
+  gap: 8px 28px;
+  align-items: end;
+  padding: 24px 0;
+}
+
+.about-kicker {
+  grid-area: kicker;
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-lede h2 {
+  grid-area: title;
+  max-width: 680px;
+  margin: 0;
+  font-family: "STIX Two Text", ui-serif, Georgia, serif;
+  font-size: clamp(2rem, 4.5vw, 4.8rem);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+}
+
+.about-lede p:last-child {
+  grid-area: copy;
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.about-story {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.about-story p {
+  min-height: 230px;
+  margin: 0;
+  padding: 22px 20px;
+  border-right: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.about-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.about-timeline div {
+  min-height: 140px;
+  padding: 18px;
+  border-right: 1px solid var(--line);
+}
+
+.about-timeline span {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--accent-strong);
+  font-family: "STIX Two Text", ui-serif, Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.about-timeline p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.about-details section {
+  min-height: 160px;
+  padding: 20px 18px;
+  border-right: 1px solid var(--line);
+}
+
+.about-details h3 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+
+.about-details p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .legal-page {
@@ -1470,6 +1588,27 @@ h1 {
   }
   .symbol-grid {
     grid-template-columns: 1fr;
+  }
+  .about-lede {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "kicker"
+      "title"
+      "copy";
+  }
+  .about-story,
+  .about-timeline,
+  .about-details {
+    grid-template-columns: 1fr;
+    border-left: 0;
+  }
+  .about-story p,
+  .about-timeline div,
+  .about-details section {
+    min-height: 0;
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
   .mac-intro,
   .mac-details {
