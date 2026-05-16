@@ -47,6 +47,21 @@
     </div>
   </div>
 
+  <div class="about-positioning">
+    <div>
+      <p class="about-kicker">Why this exists in 2026</p>
+      <h3>The problem survived the stack.</h3>
+    </div>
+    <p>
+      Modern AI can read screenshots, and projects like Hand-TeX show how far offline symbol
+      recognition has moved since the first Detexify. That does not make the original use case go
+      away, and it leaves room for a different product path: instant browser access, a Mac hotkey
+      workflow, reviewable contribution tooling, and a recognizer interface that can keep improving.
+      Sometimes you are writing, you see one unfamiliar glyph, and you just want the command without
+      uploading a document, opening a heavyweight OCR workflow, or browsing a symbol table.
+    </p>
+  </div>
+
   <div class="about-details">
     <section>
       <h3>Built to be contributed to</h3>
@@ -54,11 +69,11 @@
     </section>
     <section>
       <h3>Client-side by default</h3>
-      <p>The recognizer runs in the browser, so normal usage has essentially no server cost. Donations may come later, but the project no longer needs a backend just to classify a drawing.</p>
+      <p>The recognizer runs in the browser, so normal usage has essentially no server cost. The project no longer needs a backend just to classify a drawing.</p>
     </section>
     <section>
       <h3>Mac app included</h3>
-      <p>The new macOS menu-bar app is planned as a free companion: one hotkey, offline recognition, and direct clipboard integration for LaTeX commands.</p>
+      <p>The repository already includes a macOS menu-bar shell with a global hotkey, bundled offline web UI, settings, and native clipboard integration. The Mac page shows that workflow in more detail.</p>
     </section>
   </div>
 </section>

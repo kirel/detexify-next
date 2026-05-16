@@ -137,9 +137,7 @@
       <nav class="hero-nav" aria-label="Sections">
         <a class:active={route === 'draw'} href="#/">Draw</a>
         <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
-        {#if !isNativeShell}<a class:active={route === 'about'} href="#/about">About</a>{/if}
         {#if !isNativeShell}<a class:active={route === 'mac'} href="#/mac">Mac</a>{/if}
-        {#if !isNativeShell}<a class:active={route === 'impressum'} href="#/impressum">Impressum</a>{/if}
         {#if canTrain}<a class:active={route === 'train'} href="#/train">Train</a>{/if}
         {#if canBenchmark}<a class:active={route === 'bench'} href="#/bench">Bench</a>{/if}
       </nav>
@@ -202,5 +200,30 @@
       <span class="copy-label">{copyError ? 'Copy failed' : 'Copied'}</span>
       <code>{copyError || copied}</code>
     </div>
+  {/if}
+  {#if !isNativeShell}
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>Detexify Next</strong>
+        <span>Draw a symbol. Find the command. Keep writing.</span>
+      </div>
+      <nav aria-label="Footer">
+        <div>
+          <span>Product</span>
+          <a class:active={route === 'draw'} href="#/">Draw</a>
+          <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
+          <a class:active={route === 'mac'} href="#/mac">Mac</a>
+        </div>
+        <div>
+          <span>Project</span>
+          <a class:active={route === 'about'} href="#/about">About</a>
+          <a href="https://github.com/kirel/detexify-next">GitHub</a>
+        </div>
+        <div>
+          <span>Legal</span>
+          <a class:active={route === 'impressum'} href="#/impressum">Impressum</a>
+        </div>
+      </nav>
+    </footer>
   {/if}
 </main>

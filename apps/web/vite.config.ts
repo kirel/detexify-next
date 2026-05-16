@@ -1,6 +1,7 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
+import { isIP } from 'node:net'
 import { dirname, join, relative, resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import { analyzeSamplesForSymbol, filterReviewHints } from '../../packages/data/src/reviewHints.js'
@@ -257,30 +258,36 @@ function sendJson(response: { statusCode: number; setHeader: (name: string, valu
 
 function assertLabRequestAllowed(request: NodeJS.ReadableStream & { headers?: { host?: unknown; origin?: unknown; referer?: unknown } }): void {
   const host = headerValue(request.headers?.host)?.split(':')[0]
-  if (host && !isLoopbackHost(host)) throw httpError(403, 'Detexify lab API only accepts loopback hosts')
+  if (host && !isTrustedLabHost(host)) throw httpError(403, 'Detexify lab API only accepts loopback or Tailnet hosts')
 
   const origin = headerValue(request.headers?.origin)
-  if (origin && !isLoopbackUrl(origin)) throw httpError(403, 'Detexify lab API only accepts same-machine origins')
+  if (origin && !isTrustedLabUrl(origin)) throw httpError(403, 'Detexify lab API only accepts same-machine or Tailnet origins')
 
   const referer = headerValue(request.headers?.referer)
-  if (referer && !isLoopbackUrl(referer)) throw httpError(403, 'Detexify lab API only accepts same-machine referers')
+  if (referer && !isTrustedLabUrl(referer)) throw httpError(403, 'Detexify lab API only accepts same-machine or Tailnet referers')
 }
 
 function headerValue(value: unknown): string | undefined {
   return Array.isArray(value) ? value[0] : typeof value === 'string' ? value : undefined
 }
 
-function isLoopbackUrl(value: string): boolean {
+function isTrustedLabUrl(value: string): boolean {
   try {
-    return isLoopbackHost(new URL(value).hostname)
+    return isTrustedLabHost(new URL(value).hostname)
   } catch {
     return false
   }
 }
 
-function isLoopbackHost(host: string): boolean {
+function isTrustedLabHost(host: string): boolean {
   const normalized = host.toLowerCase().replace(/^\[|\]$/g, '')
-  return normalized === 'localhost' || normalized === '127.0.0.1' || normalized === '::1'
+  if (normalized === 'localhost' || normalized === '127.0.0.1' || normalized === '::1') return true
+  if (isIP(normalized) !== 4) return false
+
+  const octets = normalized.split('.').map((part) => Number(part))
+  if (octets.length !== 4 || octets.some((part) => !Number.isInteger(part) || part < 0 || part > 255)) return false
+  const [first, second] = octets as [number, number, number, number]
+  return first === 100 && second >= 64 && second <= 127
 }
 
 function readBody(request: NodeJS.ReadableStream): Promise<string> {

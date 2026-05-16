@@ -1,8 +1,12 @@
+<script lang="ts">
+  import macScreenshotUrl from './assets/mac-detexify-screenshot.png'
+</script>
+
 <section class="mac-page">
   <div class="mac-intro">
     <div>
       <p class="mac-kicker">macOS menu-bar app</p>
-      <h2>Detexify, one hotkey away.</h2>
+      <p class="mac-lede">One hotkey away.</p>
     </div>
     <p>The Mac build keeps the recognizer close to your editor: offline, compact, and ready to paste the command back into your document.</p>
   </div>
@@ -10,7 +14,7 @@
   <div class="mac-showcase" aria-label="Detexify for macOS preview">
     <img
       class="mac-screenshot"
-      src="./mac-detexify-screenshot.png"
+      src={macScreenshotUrl}
       alt="Detexify for macOS recognizing a handwritten alpha-like symbol and showing ranked LaTeX matches"
     />
   </div>
@@ -31,7 +35,6 @@
   </div>
 
   <div class="mac-actions">
-    <a class="mac-primary-link" href="https://github.com/kirel/detexify-next/releases">Releases</a>
-    <a href="https://github.com/kirel/detexify-next">GitHub</a>
+    <a class="mac-download-link" href="https://github.com/kirel/detexify-next/releases">Download for Mac</a>
   </div>
 </section>
