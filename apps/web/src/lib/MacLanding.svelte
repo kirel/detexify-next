@@ -25,8 +25,8 @@
       <p>The bundled web UI and classifier data ship with the app, so recognition does not depend on a network tab.</p>
     </div>
     <div>
-      <h3>Not quite public yet</h3>
-      <p>Signing and notarized distribution are still being prepared; the local build already exists in this repository.</p>
+      <h3>Ready to ship cleanly</h3>
+      <p>Signed, notarized release packaging is wired up in the repository; publish from the release scripts when the next build is ready.</p>
     </div>
   </div>
 
