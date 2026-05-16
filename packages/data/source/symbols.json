@@ -937,6 +937,23 @@
       }
     },
     {
+      "id": "latex:amssymb:Diamond",
+      "command": "\\Diamond",
+      "package": "amssymb",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Diamond",
+        "package": "amssymb",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/amssymb/diamond-1fgyw07.jsonl",
+        "count": 6
+      }
+    },
+    {
       "id": "latex:amssymb:digamma",
       "command": "\\digamma",
       "package": "amssymb",
@@ -1954,6 +1971,23 @@
       "samples": {
         "path": "samples/latex/amssymb/lozenge-qkzsud.jsonl",
         "count": 50
+      }
+    },
+    {
+      "id": "latex:amssymb:lrcorner",
+      "command": "\\lrcorner",
+      "package": "amssymb",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\lrcorner",
+        "package": "amssymb",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/amssymb/lrcorner-iwd9h6.jsonl",
+        "count": 5
       }
     },
     {
@@ -4813,6 +4847,23 @@
       }
     },
     {
+      "id": "latex:amssymb:ulcorner",
+      "command": "\\ulcorner",
+      "package": "amssymb",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\ulcorner",
+        "package": "amssymb",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/amssymb/ulcorner-7700e1.jsonl",
+        "count": 6
+      }
+    },
+    {
       "id": "latex:amssymb:upharpoonleft",
       "command": "\\upharpoonleft",
       "package": "amssymb",
@@ -4861,6 +4912,23 @@
       "samples": {
         "path": "samples/latex/amssymb/upuparrows-1pcv2br.jsonl",
         "count": 5
+      }
+    },
+    {
+      "id": "latex:amssymb:urcorner",
+      "command": "\\urcorner",
+      "package": "amssymb",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\urcorner",
+        "package": "amssymb",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/amssymb/urcorner-1mifa3z.jsonl",
+        "count": 7
       }
     },
     {
@@ -6414,6 +6482,23 @@
       "samples": {
         "path": "samples/latex/latex2e/bullet-vaplw2.jsonl",
         "count": 50
+      }
+    },
+    {
+      "id": "latex:latex2e:c-lbrace-c-rbrace",
+      "command": "\\c{c}",
+      "package": "latex2e",
+      "fontenc": "OT1",
+      "mode": "text",
+      "render": {
+        "command": "\\c{c}",
+        "package": "latex2e",
+        "fontenc": "OT1",
+        "mode": "text"
+      },
+      "samples": {
+        "path": "samples/latex/latex2e/c-lbrace-c-rbrace-11bikvd.jsonl",
+        "count": 7
       }
     },
     {
@@ -11623,6 +11708,57 @@
       }
     },
     {
+      "id": "latex:mathtools:colonapprox",
+      "command": "\\colonapprox",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\colonapprox",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/colonapprox-1s1wkah.jsonl",
+        "count": 5
+      }
+    },
+    {
+      "id": "latex:mathtools:Colonapprox",
+      "command": "\\Colonapprox",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Colonapprox",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/colonapprox-1szyrfd.jsonl",
+        "count": 6
+      }
+    },
+    {
+      "id": "latex:mathtools:coloneq",
+      "command": "\\coloneq",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\coloneq",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/coloneq-1mg4p1j.jsonl",
+        "count": 5
+      }
+    },
+    {
       "id": "latex:mathtools:coloneqq",
       "command": "\\coloneqq",
       "package": "mathtools",
@@ -11636,6 +11772,108 @@
       },
       "samples": {
         "path": "samples/latex/mathtools/coloneqq-mt42o2.jsonl",
+        "count": 5
+      }
+    },
+    {
+      "id": "latex:mathtools:Coloneqq",
+      "command": "\\Coloneqq",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Coloneqq",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/coloneqq-l3cz36.jsonl",
+        "count": 5
+      }
+    },
+    {
+      "id": "latex:mathtools:colonsim",
+      "command": "\\colonsim",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\colonsim",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/colonsim-f6sgow.jsonl",
+        "count": 5
+      }
+    },
+    {
+      "id": "latex:mathtools:Colonsim",
+      "command": "\\Colonsim",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Colonsim",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/colonsim-dh3kps.jsonl",
+        "count": 5
+      }
+    },
+    {
+      "id": "latex:mathtools:dblcolon",
+      "command": "\\dblcolon",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\dblcolon",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/dblcolon-16xwv73.jsonl",
+        "count": 5
+      }
+    },
+    {
+      "id": "latex:mathtools:eqcolon",
+      "command": "\\eqcolon",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\eqcolon",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/eqcolon-1jknpdz.jsonl",
+        "count": 6
+      }
+    },
+    {
+      "id": "latex:mathtools:Eqcolon",
+      "command": "\\Eqcolon",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Eqcolon",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/eqcolon-124jvmv.jsonl",
         "count": 5
       }
     },
@@ -11657,6 +11895,23 @@
       }
     },
     {
+      "id": "latex:mathtools:Eqqcolon",
+      "command": "\\Eqqcolon",
+      "package": "mathtools",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Eqqcolon",
+        "package": "mathtools",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/mathtools/eqqcolon-w2g40a.jsonl",
+        "count": 7
+      }
+    },
+    {
       "id": "latex:skull:skull",
       "command": "\\skull",
       "package": "skull",
@@ -11671,6 +11926,40 @@
       "samples": {
         "path": "samples/latex/skull/skull-nl4swf.jsonl",
         "count": 50
+      }
+    },
+    {
+      "id": "latex:stmaryrd:bigsqcap",
+      "command": "\\bigsqcap",
+      "package": "stmaryrd",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\bigsqcap",
+        "package": "stmaryrd",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/stmaryrd/bigsqcap-1cpprlb.jsonl",
+        "count": 6
+      }
+    },
+    {
+      "id": "latex:stmaryrd:boxbar",
+      "command": "\\boxbar",
+      "package": "stmaryrd",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\boxbar",
+        "package": "stmaryrd",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/stmaryrd/boxbar-lqpbzz.jsonl",
+        "count": 6
       }
     },
     {
@@ -17199,6 +17488,23 @@
       }
     },
     {
+      "id": "latex:wasysym:Box",
+      "command": "\\Box",
+      "package": "wasysym",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Box",
+        "package": "wasysym",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/wasysym/box-hcmnqt.jsonl",
+        "count": 7
+      }
+    },
+    {
       "id": "latex:wasysym:brokenvert",
       "command": "\\brokenvert",
       "package": "wasysym",
@@ -17281,6 +17587,23 @@
       "samples": {
         "path": "samples/latex/wasysym/checked-pw0qrp.jsonl",
         "count": 50
+      }
+    },
+    {
+      "id": "latex:wasysym:CheckedBox",
+      "command": "\\CheckedBox",
+      "package": "wasysym",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\CheckedBox",
+        "package": "wasysym",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/wasysym/checkedbox-1797c4y.jsonl",
+        "count": 5
       }
     },
     {
@@ -17998,6 +18321,23 @@
       }
     },
     {
+      "id": "latex:wasysym:Square",
+      "command": "\\Square",
+      "package": "wasysym",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\Square",
+        "package": "wasysym",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/wasysym/square-lvungb.jsonl",
+        "count": 8
+      }
+    },
+    {
       "id": "latex:wasysym:sun",
       "command": "\\sun",
       "package": "wasysym",
@@ -18165,6 +18505,23 @@
       "samples": {
         "path": "samples/latex/wasysym/wasylozenge-18wnq5u.jsonl",
         "count": 24
+      }
+    },
+    {
+      "id": "latex:wasysym:XBox",
+      "command": "\\XBox",
+      "package": "wasysym",
+      "fontenc": "OT1",
+      "mode": "math",
+      "render": {
+        "command": "\\XBox",
+        "package": "wasysym",
+        "fontenc": "OT1",
+        "mode": "math"
+      },
+      "samples": {
+        "path": "samples/latex/wasysym/xbox-1eqbyp1.jsonl",
+        "count": 6
       }
     }
   ]

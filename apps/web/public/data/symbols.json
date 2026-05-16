@@ -550,6 +550,16 @@
     "imagePath": "data/assets/symbols/latex/amssymb/diagup-1w2c8cj.svg"
   },
   {
+    "id": "latex:amssymb:Diamond",
+    "legacyId": "latex:amssymb:Diamond",
+    "command": "\\Diamond",
+    "package": "amssymb",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/amssymb/diamond-1fgyw07.svg"
+  },
+  {
     "id": "latex:amssymb:digamma",
     "legacyId": "latex:amssymb:digamma",
     "command": "\\digamma",
@@ -1148,6 +1158,16 @@
     "mathmode": true,
     "textmode": false,
     "imagePath": "data/assets/symbols/latex/amssymb/lozenge-qkzsud.svg"
+  },
+  {
+    "id": "latex:amssymb:lrcorner",
+    "legacyId": "latex:amssymb:lrcorner",
+    "command": "\\lrcorner",
+    "package": "amssymb",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/amssymb/lrcorner-iwd9h6.svg"
   },
   {
     "id": "latex:amssymb:Lsh",
@@ -2830,6 +2850,16 @@
     "imagePath": "data/assets/symbols/latex/amssymb/twoheadrightarrow-djm0oo.svg"
   },
   {
+    "id": "latex:amssymb:ulcorner",
+    "legacyId": "latex:amssymb:ulcorner",
+    "command": "\\ulcorner",
+    "package": "amssymb",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/amssymb/ulcorner-7700e1.svg"
+  },
+  {
     "id": "latex:amssymb:upharpoonleft",
     "legacyId": "latex:amssymb:upharpoonleft",
     "command": "\\upharpoonleft",
@@ -2858,6 +2888,16 @@
     "mathmode": true,
     "textmode": false,
     "imagePath": "data/assets/symbols/latex/amssymb/upuparrows-1pcv2br.svg"
+  },
+  {
+    "id": "latex:amssymb:urcorner",
+    "legacyId": "latex:amssymb:urcorner",
+    "command": "\\urcorner",
+    "package": "amssymb",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/amssymb/urcorner-1mifa3z.svg"
   },
   {
     "id": "latex:amssymb:varkappa",
@@ -3777,6 +3817,16 @@
     "mathmode": true,
     "textmode": false,
     "imagePath": "data/assets/symbols/latex/latex2e/bullet-vaplw2.svg"
+  },
+  {
+    "id": "latex:latex2e:c-lbrace-c-rbrace",
+    "legacyId": "latex:latex2e:c-lbrace-c-rbrace",
+    "command": "\\c{c}",
+    "package": "latex2e",
+    "fontenc": "OT1",
+    "mathmode": false,
+    "textmode": true,
+    "imagePath": "data/assets/symbols/latex/latex2e/c-lbrace-c-rbrace-11bikvd.svg"
   },
   {
     "id": "latex:latex2e:cap",
@@ -6886,6 +6936,36 @@
     "imagePath": "data/assets/symbols/latex/mathrsfs/mathscr-lbrace-z-rbrace-nq4by6.svg"
   },
   {
+    "id": "latex:mathtools:colonapprox",
+    "legacyId": "latex:mathtools:colonapprox",
+    "command": "\\colonapprox",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/colonapprox-1s1wkah.svg"
+  },
+  {
+    "id": "latex:mathtools:Colonapprox",
+    "legacyId": "latex:mathtools:Colonapprox",
+    "command": "\\Colonapprox",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/colonapprox-1szyrfd.svg"
+  },
+  {
+    "id": "latex:mathtools:coloneq",
+    "legacyId": "latex:mathtools:coloneq",
+    "command": "\\coloneq",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/coloneq-1mg4p1j.svg"
+  },
+  {
     "id": "latex:mathtools:coloneqq",
     "legacyId": "latex:mathtools:coloneqq",
     "command": "\\coloneqq",
@@ -6894,6 +6974,66 @@
     "mathmode": true,
     "textmode": false,
     "imagePath": "data/assets/symbols/latex/mathtools/coloneqq-mt42o2.svg"
+  },
+  {
+    "id": "latex:mathtools:Coloneqq",
+    "legacyId": "latex:mathtools:Coloneqq",
+    "command": "\\Coloneqq",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/coloneqq-l3cz36.svg"
+  },
+  {
+    "id": "latex:mathtools:colonsim",
+    "legacyId": "latex:mathtools:colonsim",
+    "command": "\\colonsim",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/colonsim-f6sgow.svg"
+  },
+  {
+    "id": "latex:mathtools:Colonsim",
+    "legacyId": "latex:mathtools:Colonsim",
+    "command": "\\Colonsim",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/colonsim-dh3kps.svg"
+  },
+  {
+    "id": "latex:mathtools:dblcolon",
+    "legacyId": "latex:mathtools:dblcolon",
+    "command": "\\dblcolon",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/dblcolon-16xwv73.svg"
+  },
+  {
+    "id": "latex:mathtools:eqcolon",
+    "legacyId": "latex:mathtools:eqcolon",
+    "command": "\\eqcolon",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/eqcolon-1jknpdz.svg"
+  },
+  {
+    "id": "latex:mathtools:Eqcolon",
+    "legacyId": "latex:mathtools:Eqcolon",
+    "command": "\\Eqcolon",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/eqcolon-124jvmv.svg"
   },
   {
     "id": "latex:mathtools:eqqcolon",
@@ -6906,6 +7046,16 @@
     "imagePath": "data/assets/symbols/latex/mathtools/eqqcolon-98q9t6.svg"
   },
   {
+    "id": "latex:mathtools:Eqqcolon",
+    "legacyId": "latex:mathtools:Eqqcolon",
+    "command": "\\Eqqcolon",
+    "package": "mathtools",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/mathtools/eqqcolon-w2g40a.svg"
+  },
+  {
     "id": "latex:skull:skull",
     "legacyId": "latex:skull:skull",
     "command": "\\skull",
@@ -6914,6 +7064,26 @@
     "mathmode": true,
     "textmode": false,
     "imagePath": "data/assets/symbols/latex/skull/skull-nl4swf.svg"
+  },
+  {
+    "id": "latex:stmaryrd:bigsqcap",
+    "legacyId": "latex:stmaryrd:bigsqcap",
+    "command": "\\bigsqcap",
+    "package": "stmaryrd",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/stmaryrd/bigsqcap-1cpprlb.svg"
+  },
+  {
+    "id": "latex:stmaryrd:boxbar",
+    "legacyId": "latex:stmaryrd:boxbar",
+    "command": "\\boxbar",
+    "package": "stmaryrd",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/stmaryrd/boxbar-lqpbzz.svg"
   },
   {
     "id": "latex:stmaryrd:inplus",
@@ -10166,6 +10336,16 @@
     "imagePath": "data/assets/symbols/latex/wasysym/bowtie-7rxz6u.svg"
   },
   {
+    "id": "latex:wasysym:Box",
+    "legacyId": "latex:wasysym:Box",
+    "command": "\\Box",
+    "package": "wasysym",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/wasysym/box-hcmnqt.svg"
+  },
+  {
     "id": "latex:wasysym:brokenvert",
     "legacyId": "latex:wasysym:brokenvert",
     "command": "\\brokenvert",
@@ -10214,6 +10394,16 @@
     "mathmode": true,
     "textmode": true,
     "imagePath": "data/assets/symbols/latex/wasysym/checked-pw0qrp.svg"
+  },
+  {
+    "id": "latex:wasysym:CheckedBox",
+    "legacyId": "latex:wasysym:CheckedBox",
+    "command": "\\CheckedBox",
+    "package": "wasysym",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/wasysym/checkedbox-1797c4y.svg"
   },
   {
     "id": "latex:wasysym:clock",
@@ -10636,6 +10826,16 @@
     "imagePath": "data/assets/symbols/latex/wasysym/smiley-ziizsb.svg"
   },
   {
+    "id": "latex:wasysym:Square",
+    "legacyId": "latex:wasysym:Square",
+    "command": "\\Square",
+    "package": "wasysym",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/wasysym/square-lvungb.svg"
+  },
+  {
     "id": "latex:wasysym:sun",
     "legacyId": "latex:wasysym:sun",
     "command": "\\sun",
@@ -10734,5 +10934,15 @@
     "mathmode": true,
     "textmode": true,
     "imagePath": "data/assets/symbols/latex/wasysym/wasylozenge-18wnq5u.svg"
+  },
+  {
+    "id": "latex:wasysym:XBox",
+    "legacyId": "latex:wasysym:XBox",
+    "command": "\\XBox",
+    "package": "wasysym",
+    "fontenc": "OT1",
+    "mathmode": true,
+    "textmode": false,
+    "imagePath": "data/assets/symbols/latex/wasysym/xbox-1eqbyp1.svg"
   }
 ]

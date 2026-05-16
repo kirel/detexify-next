@@ -295,6 +295,11 @@
       "reason": "bad-sample",
       "rejectedAt": "2026-05-16T07:41:44.199Z",
       "rejectedBy": "kirel"
+    },
+    "sample:local:2026-05-16T09-56-21-135Z:1dpsf2r": {
+      "reason": "bad-sample",
+      "rejectedAt": "2026-05-16T09:56:32.162Z",
+      "rejectedBy": "kirel"
     }
   }
 }
