@@ -4,6 +4,7 @@
   import ResultsList from './lib/ResultsList.svelte'
   import SymbolGallery from './lib/SymbolGallery.svelte'
   import MacLanding from './lib/MacLanding.svelte'
+  import LegalNotice from './lib/LegalNotice.svelte'
   import TrainingView from './lib/TrainingView.svelte'
   import BenchmarkView from './lib/BenchmarkView.svelte'
   import type { EnrichedResult, WorkerResponse, WorkerStatus } from './lib/types.js'
@@ -74,6 +75,7 @@
   function routeFromHash() {
     if (window.location.hash === '#/symbols') return 'symbols'
     if (window.location.hash === '#/mac' && !isNativeShell) return 'mac'
+    if (window.location.hash === '#/impressum' && !isNativeShell) return 'impressum'
     if (window.location.hash === '#/train' && canTrain) return 'train'
     if (window.location.hash === '#/bench' && canBenchmark) return 'bench'
     return 'draw'
@@ -127,13 +129,14 @@
 <main class="shell" class:web={!isNativeShell} class:native={isNativeShell}>
   <section class="hero">
     <p class="eyebrow">Detexify</p>
-    <h1>{route === 'symbols' ? 'Symbol table.' : route === 'mac' ? 'Detexify for Mac.' : 'Draw. Find. Copy.'}</h1>
+    <h1>{route === 'symbols' ? 'Symbol table.' : route === 'mac' ? 'Detexify for Mac.' : route === 'impressum' ? 'Impressum.' : 'Draw. Find. Copy.'}</h1>
     <div class="subtitle">
-      <p>{route === 'symbols' ? 'Inspect rendered symbols, packages, and commands.' : route === 'mac' ? 'A quiet menu-bar companion for LaTeX symbols, built around the same offline recognizer.' : 'Find the LaTeX command for a symbol you can draw but not name.'}</p>
+      <p>{route === 'symbols' ? 'Inspect rendered symbols, packages, and commands.' : route === 'mac' ? 'A quiet menu-bar companion for LaTeX symbols, built around the same offline recognizer.' : route === 'impressum' ? 'Legal information for the Detexify Next website.' : 'Find the LaTeX command for a symbol you can draw but not name.'}</p>
       <nav class="hero-nav" aria-label="Sections">
         <a class:active={route === 'draw'} href="#/">Draw</a>
         <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
         {#if !isNativeShell}<a class:active={route === 'mac'} href="#/mac">Mac</a>{/if}
+        {#if !isNativeShell}<a class:active={route === 'impressum'} href="#/impressum">Impressum</a>{/if}
         {#if canTrain}<a class:active={route === 'train'} href="#/train">Train</a>{/if}
         {#if canBenchmark}<a class:active={route === 'bench'} href="#/bench">Bench</a>{/if}
       </nav>
@@ -146,6 +149,8 @@
     <SymbolGallery />
   {:else if route === 'mac' && !isNativeShell}
     <MacLanding />
+  {:else if route === 'impressum' && !isNativeShell}
+    <LegalNotice />
   {:else if route === 'bench' && canBenchmark}
     <BenchmarkView />
   {:else}
