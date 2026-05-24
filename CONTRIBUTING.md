@@ -19,4 +19,4 @@ npm test
 npm --workspace @detexify/web run build
 ```
 
-The project is still preparing its full open-source data contribution workflow. Visual PR previews and safer symbol-add tooling are planned but not implemented yet.
+The core data contribution workflow now exists. Use `data:add-symbol` for new symbols, `/#/train` for samples/review, and the data PR preview workflow for visual review of source-data changes. The remaining public-launch work is license cleanup and contributor polish.

@@ -2,7 +2,9 @@
 
 Visual review is essential for Detexify data changes. JSON diffs are not enough to review symbols and handwriting samples.
 
-The first version is implemented with GitHub Actions artifacts and a PR comment. It intentionally links to downloadable artifacts instead of trying to host inline images.
+The current version is implemented with GitHub Actions artifacts and a PR
+comment. For same-repository PRs it also publishes grouped preview SVGs to the
+`detexify-pr-previews` branch and embeds them inline in the PR comment.
 
 ## Goal
 
@@ -12,9 +14,9 @@ For PRs touching:
 packages/data/source/**
 ```
 
-GitHub Actions should validate the data and post a PR comment with a visual summary.
+GitHub Actions validate the data and post or update a PR comment with a visual summary.
 
-## Desired workflow
+## Workflow
 
 Workflow file:
 
@@ -32,7 +34,9 @@ Steps:
 6. Render changed/new symbols.
 7. Generate preview artifacts.
 8. Upload artifacts.
-9. Create or update a PR comment.
+9. For same-repository PRs, publish grouped preview SVGs to the
+   `detexify-pr-previews` branch for inline embedding.
+10. Create or update a PR comment.
 
 ## Local command
 
@@ -59,16 +63,16 @@ Generate contact sheets for:
 - added samples;
 - rejected samples;
 - restored samples;
-- suspicious samples, once that tooling exists.
+- suspicious samples, when warning sections are added to the PR summary.
 
 Current output:
 
 ```text
 artifacts/pr-preview/
   summary.md
-  symbols.png
-  added-samples.png
+  symbols.svg
   samples.svg
+  groups/*.svg
   changed-files.json
 ```
 
@@ -88,30 +92,34 @@ Validation: ✅ passed
 | Rejected samples | 5 |
 | Restored samples | 1 |
 
-Artifacts:
-
-- Symbol preview contact sheet
-- Added sample contact sheet
-- Rejected sample contact sheet
+Inline previews are grouped by symbol below: each card shows the rendered LaTeX
+symbol next to the changed stroke samples, so reviewers can compare them without
+downloading artifacts.
 ```
 
-GitHub Action artifact links are the v1 implementation. Inline images can come later via a Pages preview or another hosted artifact mechanism.
+Artifact links remain available as a fallback. Forked PRs cannot push inline
+preview images to the repository branch, so those PRs still rely on uploaded
+artifacts plus the text summary.
 
 ## Implementation notes
 
-The script should derive changed items from git diff instead of scanning everything:
+The script derives changed items from git diff instead of scanning everything:
 
 ```bash
 git diff --name-status origin/main...HEAD -- packages/data/source
 ```
 
-For samples, render stroke thumbnails into contact sheets. Existing `StrokeThumbnail.svelte` is UI-only; the data package likely needs a Node-side renderer for CI image generation.
+For samples, the data package renders Node-side stroke thumbnails/contact sheets
+for CI image generation. Web UI thumbnails remain separate output code, but both
+paths share marker geometry from `@detexify/core`.
 
-For symbols, use existing rendered SVG assets and compose them into a PNG/SVG contact sheet.
+For symbols, the script uses existing rendered SVG assets and composes SVG
+contact sheets plus grouped symbol/sample previews.
 
 ## Future suspicious-sample preview
 
-Once `data:find-bad-samples` exists, PR preview can include warnings like:
+`data:find-bad-samples` exists as a local report generator. PR preview can add
+warning sections for:
 
 - newly added sample is a DTW outlier;
 - sample is closer to another symbol in embedding space;

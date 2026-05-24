@@ -113,7 +113,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Visually mark rejected samples.
 - [x] Add review queue / next-sample workflow.
 - [x] Add suspicious-sample mode.
-- [x] Add keyboard shortcuts for reject/restore/next.
+- [x] Add keyboard-assisted save/undo/clear and next-sample navigation.
 - [x] Add per-symbol sample coverage hints.
 
 ## Milestone 6 — Mac app prototype
@@ -139,7 +139,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Add GitHub Pages workflow.
 - [x] Add `build:web:static` path.
 - [x] Commit static public data required by Pages build.
-- [x] Configure custom domain `detexify-next.kirelabs.org`.
+- [x] Configure custom domain `detexify.kirelabs.org`.
 - [x] Add `apps/web/public/CNAME`.
 - [x] Expand CI to run tests/typecheck/validation on PRs.
 
@@ -182,6 +182,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - [x] Notarization docs.
 - [x] GitHub release script.
 - [x] Publish initial `v0.1.0` macOS release.
+- [x] Publish signed/notarized `v0.2.2` macOS release.
 - [x] Archive/retirement notes for old Mac app.
 
 ## Current known issues/questions
@@ -191,4 +192,4 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - Frozen ImageNet MobileNet is not competitive with DTW; keep only as baseline/reference.
 - Trained tiny CNN is promising for top1 but not yet better than DTW on top5/top10.
 - Next model work should prioritize robust evaluation and CNN-candidate + DTW-rerank hybrid.
-- Contribution tooling is now the main missing area before broader open-source use.
+- Domain cutover follow-up, license cleanup, and external contributor onboarding are the main missing areas before broader open-source use.

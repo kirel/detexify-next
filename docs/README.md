@@ -10,9 +10,10 @@ These docs describe the current development/contribution workflow and the intend
 - [adding-symbols.md](./adding-symbols.md) — how new symbols should be added
 - [adding-samples.md](./adding-samples.md) — how training samples are captured
 - [reviewing-samples.md](./reviewing-samples.md) — rejecting/restoring bad samples
-- [pr-previews.md](./pr-previews.md) — planned visual GitHub PR previews
+- [pr-previews.md](./pr-previews.md) — visual GitHub PR previews for data changes
 - [mac-distribution.md](./mac-distribution.md) — signing, notarization, and release packaging
 - [archive-retirement.md](./archive-retirement.md) — notes for retiring old Detexify repos
+- [related-work.md](./related-work.md) — Hand-TeX, Detypify, extexify, Overleaf, and product positioning
 
 ## Related root docs
 
@@ -23,10 +24,10 @@ These docs describe the current development/contribution workflow and the intend
 
 ## Current project priority
 
-The web/Mac prototype and source data pipeline exist. The main missing area before broad open-source contribution is safe, visual data contribution tooling:
+The web/Mac app, source data pipeline, and visual data contribution tooling now exist. The main missing area before broad public launch is product/license/distribution polish:
 
-1. `data:add-symbol` CLI;
-2. suspicious/bad-sample detection;
-3. visual contact sheets;
-4. GitHub Action PR comments for data changes;
-5. polished contribution docs.
+1. official Detexify domain/branding and launch metadata;
+2. final open-source code/data license cleanup;
+3. clearer public contributor onboarding;
+4. optional Homebrew Cask or auto-update path for the Mac app;
+5. continued model benchmarking before replacing DTW.
