@@ -133,7 +133,7 @@
     <p class="eyebrow">Detexify</p>
     <h1>{route === 'symbols' ? 'Symbol table.' : route === 'about' ? 'About Detexify.' : route === 'mac' ? 'Detexify for Mac.' : route === 'impressum' ? 'Impressum.' : 'Draw. Find. Copy.'}</h1>
     <div class="subtitle">
-      <p>{route === 'symbols' ? 'Inspect rendered symbols, packages, and commands.' : route === 'about' ? 'How a thesis project became a modern, AI-assisted rebuild.' : route === 'mac' ? 'A quiet menu-bar companion for LaTeX symbols, built around the same offline recognizer.' : route === 'impressum' ? 'Legal information for the Detexify Next website.' : 'Find the LaTeX command for a symbol you can draw but not name.'}</p>
+      <p>{route === 'symbols' ? 'Inspect rendered symbols, packages, and commands.' : route === 'about' ? 'How a thesis project became a modern, AI-assisted rebuild.' : route === 'mac' ? 'A quiet menu-bar companion for LaTeX symbols, built around the same offline recognizer.' : route === 'impressum' ? 'Legal information for the Detexify website.' : 'Find the LaTeX command for a symbol you can draw but not name.'}</p>
       <nav class="hero-nav" aria-label="Sections">
         <a class:active={route === 'draw'} href="#/">Draw</a>
         <a class:active={route === 'symbols'} href="#/symbols">Symbols</a>
@@ -204,7 +204,7 @@
   {#if !isNativeShell}
     <footer class="site-footer">
       <div class="footer-brand">
-        <strong>Detexify Next</strong>
+        <strong>Detexify</strong>
         <span>Draw a symbol. Find the command. Keep writing.</span>
       </div>
       <nav aria-label="Footer">

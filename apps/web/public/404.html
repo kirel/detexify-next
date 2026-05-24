@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detexify</title>
+    <script>
+      const routes = new Map([
+        ['/classify', '/#/'],
+        ['/classify.html', '/#/'],
+        ['/symbols', '/#/symbols'],
+        ['/symbols.html', '/#/symbols'],
+        ['/mac', '/#/mac'],
+        ['/about', '/#/about'],
+        ['/impressum', '/#/impressum'],
+      ])
+      const target = routes.get(window.location.pathname) || '/#/'
+      window.location.replace(target)
+    </script>
+  </head>
+  <body>
+    <p>Continue to <a href="/#/">Detexify</a>.</p>
+  </body>
+</html>

@@ -367,19 +367,19 @@ Goal: make Detexify Next the official Detexify at `detexify.kirelabs.org`, with 
 
 Must happen before flipping the domain:
 
-- [ ] Decide public naming:
+- [x] Decide public naming:
   - user-facing product name should likely be **Detexify**;
   - repository/internal package names can remain `detexify-next`.
-- [ ] Update web metadata/branding:
+- [x] Update web metadata/branding:
   - document title;
   - PWA manifest `name`/`short_name` if desired;
   - Apple PWA title;
   - README/docs canonical URL.
-- [ ] Change `apps/web/public/CNAME` from `detexify-next.kirelabs.org` to `detexify.kirelabs.org`.
-- [ ] Add compatibility entry points for legacy URLs:
+- [x] Change `apps/web/public/CNAME` from `detexify-next.kirelabs.org` to `detexify.kirelabs.org`.
+- [x] Add compatibility entry points for legacy URLs:
   - `/classify.html` → `/#/`;
   - `/symbols.html` → `/#/symbols`.
-- [ ] Add basic launch SEO/static metadata:
+- [x] Add basic launch SEO/static metadata:
   - canonical URL;
   - OpenGraph/Twitter card tags;
   - `robots.txt`;

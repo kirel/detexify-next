@@ -2,6 +2,8 @@
 
 A modern rebuild of Detexify: draw a handwritten LaTeX symbol and get ranked commands immediately.
 
+Website: https://detexify.kirelabs.org
+
 The project keeps the useful assets from the old Detexify ecosystem — symbols, handwriting samples, and classifier behavior — but rebuilds the implementation as a maintainable TypeScript/Svelte/macOS stack.
 
 ## Status
@@ -15,7 +17,7 @@ Working today:
 - LaTeX-to-SVG symbol rendering pipeline;
 - local dev-only training/sample curation UI at `/#/train`;
 - rejected-sample workflow that excludes bad samples without deleting them;
-- GitHub Pages deployment for the web app;
+- GitHub Pages deployment for the web app at `detexify.kirelabs.org`;
 - experimental model benchmarks for frozen MobileNet and a trained tiny CNN.
 
 Not done yet:
