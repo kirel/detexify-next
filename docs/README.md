@@ -24,9 +24,9 @@ These docs describe the current development/contribution workflow and the intend
 
 ## Current project priority
 
-The web/Mac app, source data pipeline, and visual data contribution tooling now exist. The main missing area before broad public launch is product/license/distribution polish:
+The web/Mac app, source data pipeline, visual data contribution tooling, and official GitHub Pages deployment now exist. The main remaining areas are post-launch polish:
 
-1. official Detexify domain/branding and launch metadata;
+1. retire or redirect the old preview hostname `detexify-next.kirelabs.org`;
 2. final open-source code/data license cleanup;
 3. clearer public contributor onboarding;
 4. optional Homebrew Cask or auto-update path for the Mac app;

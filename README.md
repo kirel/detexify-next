@@ -12,7 +12,7 @@ Working today:
 
 - shared TypeScript core package with the legacy DTW classifier ported from Haskell;
 - Svelte/Vite web app with canvas input, Web Worker classification, symbol images, symbol gallery, about/mac/impressum pages, and footer navigation;
-- static GitHub Pages deployment for the web app at `detexify.kirelabs.org`;
+- static GitHub Pages deployment for the web app at `detexify.kirelabs.org` after the completed Heroku-to-GitHub Pages DNS cutover;
 - offline-capable PWA build with a generated full precache service worker;
 - app/favicon/apple-touch/macOS icon assets;
 - macOS menu-bar shell with global hotkey, bundled offline web UI, settings, and native clipboard bridge;
@@ -28,7 +28,7 @@ Working today:
 
 Not done yet:
 
-- finish domain cutover follow-up such as `detexify-next.kirelabs.org` redirect/retirement and old Heroku rollback cleanup;
+- retire or redirect the old preview hostname `detexify-next.kirelabs.org`;
 - Homebrew Cask or auto-update distribution for the Mac app;
 - final open-source license/data-license cleanup;
 - better public contributor onboarding beyond the current repo-local workflow;
@@ -223,8 +223,8 @@ The project has a repo-local workflow for symbol/sample PRs:
 5. reviewers inspect rendered symbols and sample strokes before merge.
 
 These pieces exist for the current repo workflow. The remaining open-source work
-is mainly launch follow-up, license cleanup, and making the contributor path easier
-for people outside the project. See:
+is mainly license cleanup and making the contributor path easier for people outside
+the project. See:
 
 - [docs/contributing.md](./docs/contributing.md)
 - [docs/pr-previews.md](./docs/pr-previews.md)
@@ -239,7 +239,8 @@ Old sibling repos used for import/evaluation:
 - `~/code/sketch-a-char`
 - `~/code/detexify-data`
 
-They are reference material only.
+They are reference material only. The production website now runs on GitHub Pages;
+the old Heroku apps have been removed.
 
 ## License
 

@@ -401,16 +401,16 @@ Longer term, CI should fail if:
 
 ### Phase 7 — official Detexify launch
 
-Goal: make Detexify Next the official Detexify at `detexify.kirelabs.org`, with a safe rollback path.
+Goal: make Detexify Next the official Detexify at `detexify.kirelabs.org`.
 
-Must happen before flipping the domain:
+Launch state:
 
 - [x] Decide public naming:
-  - user-facing product name should likely be **Detexify**;
+  - user-facing product name is **Detexify**;
   - repository/internal package names can remain `detexify-next`.
 - [x] Update web metadata/branding:
   - document title;
-  - PWA manifest `name`/`short_name` if desired;
+  - PWA manifest `name`/`short_name`;
   - Apple PWA title;
   - README/docs canonical URL.
 - [x] Change `apps/web/public/CNAME` from `detexify-next.kirelabs.org` to `detexify.kirelabs.org`.
@@ -421,13 +421,18 @@ Must happen before flipping the domain:
   - canonical URL;
   - OpenGraph/Twitter card tags;
   - `robots.txt`;
-  - optional `sitemap.xml`.
-- [ ] Add visible support/contribution links:
-  - missing symbol/report issue;
-  - add samples/contribute link;
-  - GitHub repo link.
-- [ ] Add a short privacy/offline note: classification runs locally, PWA works offline, no backend needed for normal use.
-- [ ] Run launch smoke tests:
+  - `sitemap.xml`.
+- [x] Add visible project link to the GitHub repository.
+- [x] Add privacy/offline messaging: classification runs in the browser, the PWA works offline after first visit, and normal recognition does not need a backend.
+- [x] DNS cutover:
+  - `detexify.kirelabs.org` now points to GitHub Pages (`kirel.github.io`);
+  - HTTPS is live;
+  - old public resolver caches have expired in the sampled resolvers.
+- [x] Heroku rollback cleanup: old Heroku apps have been removed.
+
+Remaining launch follow-up:
+
+- [ ] Run/record a final manual smoke-test pass:
   - Safari macOS;
   - Chrome macOS;
   - Firefox macOS;
@@ -437,16 +442,12 @@ Must happen before flipping the domain:
   - draw immediately while worker is still loading;
   - symbols gallery;
   - current signed macOS release.
-- [ ] Prepare rollback:
-  - keep old Heroku Detexify app running temporarily;
-  - optionally move it to `legacy-detexify.kirelabs.org` before the DNS cutover.
-- [ ] DNS cutover:
-  - change `detexify.kirelabs.org` from Heroku DNS to GitHub Pages (`kirel.github.io`);
-  - wait for GitHub Pages certificate provisioning;
-  - enforce HTTPS.
 - [ ] Decide fate of `detexify-next.kirelabs.org`:
   - retire it;
   - or redirect it to `detexify.kirelabs.org` via DNS/provider redirect or a tiny separate redirect site.
+- [ ] Add more explicit support/contribution entry points if needed:
+  - missing symbol/report issue;
+  - add samples/contribute link.
 
 Non-blocking post-launch improvements:
 

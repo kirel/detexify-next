@@ -16,7 +16,7 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - Mac app: native Swift/AppKit/SwiftUI shell embedding the web UI in `WKWebView`.
 - Mac hotkey: `KeyboardShortcuts` Swift package.
 - Licensing: none in v1.
-- Web deployment: static GitHub Pages.
+- Web deployment: static GitHub Pages at `https://detexify.kirelabs.org/`.
 - Mac deployment: signed/notarized direct download via GitHub Releases.
 - Contribution direction: safe CLIs, local lab UI, data validation, visual PR previews.
 
@@ -192,4 +192,4 @@ This file is the working checklist for building Detexify Next. Keep it updated a
 - Frozen ImageNet MobileNet is not competitive with DTW; keep only as baseline/reference.
 - Trained tiny CNN is promising for top1 but not yet better than DTW on top5/top10.
 - Next model work should prioritize robust evaluation and CNN-candidate + DTW-rerank hybrid.
-- Domain cutover follow-up, license cleanup, and external contributor onboarding are the main missing areas before broader open-source use.
+- The official domain cutover is complete; remaining broader open-source work is license cleanup, external contributor onboarding, and retiring the old preview hostname.
