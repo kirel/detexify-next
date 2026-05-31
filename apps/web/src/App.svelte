@@ -10,6 +10,8 @@
   import BenchmarkView from './lib/BenchmarkView.svelte'
   import type { EnrichedResult, WorkerResponse, WorkerStatus } from './lib/types.js'
 
+  type Theme = 'modern' | 'annie'
+
   let strokes: Strokes = $state([])
   let results: EnrichedResult[] = $state([])
   let status: WorkerStatus = $state('idle')
@@ -23,11 +25,16 @@
   const canTrain = import.meta.env.DEV && !isNativeShell
   const canBenchmark = import.meta.env.DEV && !isNativeShell
   let route = $state(routeFromHash())
+  let theme: Theme = $state(initialTheme())
   const hasInk = $derived(strokes.length > 0)
   const visibleResults = $derived(results.slice(0, resultLimit))
   const canShowMore = $derived(!isNativeShell && results.length > visibleResults.length)
+  const annieTheme = $derived(!isNativeShell && theme === 'annie')
 
   if (isNativeShell) document.documentElement.classList.add('native-shell')
+  $effect(() => {
+    document.documentElement.classList.toggle('annie-theme', annieTheme)
+  })
   const worker = new Worker(new URL('./workers/classifier.worker.ts', import.meta.url), { type: 'module' })
 
   window.addEventListener('message', (event: MessageEvent) => {
@@ -83,6 +90,23 @@
     return 'draw'
   }
 
+  function initialTheme(): Theme {
+    if (isNativeShell) return 'modern'
+    const requestedTheme = new URLSearchParams(window.location.search).get('theme')
+    if (requestedTheme === 'annie' || requestedTheme === 'legacy') return 'annie'
+    if (requestedTheme === 'modern') return 'modern'
+    return window.localStorage.getItem('detexify.theme') === 'annie' ? 'annie' : 'modern'
+  }
+
+  function setTheme(nextTheme: Theme) {
+    theme = nextTheme
+    window.localStorage.setItem('detexify.theme', nextTheme)
+  }
+
+  function toggleTheme() {
+    setTheme(theme === 'annie' ? 'modern' : 'annie')
+  }
+
   function onStrokeEnd(nextStrokes: Strokes) {
     strokes = nextStrokes
     resultLimit = 10
@@ -128,7 +152,20 @@
   }
 </script>
 
-<main class="shell" class:web={!isNativeShell} class:native={isNativeShell}>
+<main class="shell" class:web={!isNativeShell} class:native={isNativeShell} class:annie={annieTheme} class:draw={route === 'draw'}>
+  {#if annieTheme && route === 'draw'}
+    <header class="legacy-header">
+      <div class="legacy-title-row">
+        <h1>Detexify<sup>2</sup> - LaTeX symbol classifier</h1>
+        <button class="theme-toggle" type="button" onclick={toggleTheme}>modern theme</button>
+      </div>
+      <nav class="legacy-nav" aria-label="Sections">
+        <a class:active={route === 'draw'} href="#/">classify</a>
+        <a href="#/symbols">symbols</a>
+        {#if !isNativeShell}<a href="#/about">blog</a>{/if}
+      </nav>
+    </header>
+  {:else}
   <section class="hero">
     <p class="eyebrow">Detexify</p>
     <h1>{route === 'symbols' ? 'Symbol table.' : route === 'about' ? 'About Detexify.' : route === 'mac' ? 'Detexify for Mac.' : route === 'impressum' ? 'Impressum.' : 'Draw. Find. Copy.'}</h1>
@@ -143,6 +180,7 @@
       </nav>
     </div>
   </section>
+  {/if}
 
   {#if route === 'train' && canTrain}
     <TrainingView />
@@ -168,6 +206,12 @@
       </div>
       <div class="canvas-wrap">
         <DrawingCanvas {strokes} {onStrokeEnd} />
+        {#if annieTheme}
+          <div class="legacy-draw-callout" aria-hidden="true">
+            <img class="legacy-draw-arrow" src={`${appBase}legacy/draw_here_arrow.png`} alt="" />
+            <img class="legacy-draw-text" src={`${appBase}legacy/draw_here.png`} alt="" />
+          </div>
+        {/if}
         {#if status === 'loading'}
           <div class="loading-overlay" role="status" aria-live="polite">
             <span></span>
@@ -218,6 +262,7 @@
           <span>Project</span>
           <a class:active={route === 'about'} href="#/about">About</a>
           <a href="https://github.com/kirel/detexify-next">GitHub</a>
+          <button class="footer-theme-toggle" type="button" onclick={toggleTheme}>Annie's theme</button>
         </div>
         <div>
           <span>Legal</span>
