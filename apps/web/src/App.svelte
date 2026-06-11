@@ -176,7 +176,7 @@
         {/if}
       </div>
       {#if !isNativeShell}
-        <p class="hint">Draw with mouse, trackpad, Apple Pencil, or touch. Click a result to copy it.</p>
+        <p class="hint">Draw with mouse, trackpad, Apple Pencil, or touch. Select result text freely, or use Copy for the command.</p>
       {/if}
     </div>
 

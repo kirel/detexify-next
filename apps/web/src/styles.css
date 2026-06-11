@@ -344,11 +344,35 @@ h1 {
   gap: 16px;
   align-items: center;
   text-align: left;
-  border: 0;
   border-radius: 0;
   background: transparent;
   padding: 18px 0;
+}
+
+.symbol-preview-button,
+.copy-command {
+  font: inherit;
+  border: 0;
+  background: transparent;
+  color: inherit;
   cursor: pointer;
+}
+
+.symbol-preview-button {
+  display: grid;
+  padding: 0;
+  text-align: inherit;
+}
+
+.copy-command {
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .web .result:hover {
@@ -407,6 +431,13 @@ h1 {
   align-items: baseline;
   justify-content: space-between;
   gap: 10px;
+}
+
+.result-meta {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
 }
 
 .command {
