@@ -2,6 +2,7 @@
   "name": "detexify-next",
   "private": true,
   "version": "0.2.3",
+  "license": "MIT",
   "type": "module",
   "workspaces": [
     "packages/*",
