@@ -166,7 +166,7 @@ cask "detexify-next" do
   url "https://github.com/kirel/detexify-next/releases/download/v#{version}/DetexifyNext-#{version}-macOS-arm64.zip"
   name "Detexify Next"
   desc "Menu-bar LaTeX symbol recognizer"
-  homepage "https://detexify-next.kirelabs.org"
+  homepage "https://detexify.kirelabs.org"
 
   app "Detexify Next.app"
 end
@@ -174,7 +174,6 @@ end
 
 ## Future improvements
 
-- Add a real app icon.
 - Add CI release workflow for tagged versions.
 - Add Sparkle for auto-update.
 - Consider universal builds only if Intel support becomes a goal. Current target is Apple Silicon `arm64`.

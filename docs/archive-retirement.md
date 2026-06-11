@@ -1,6 +1,6 @@
 # Old Detexify Project Retirement Notes
 
-Detexify Next replaces the old application stack but keeps the useful data and behavior as reference material.
+Detexify Next replaces the old application stack but keeps the useful data and behavior as reference material. The official site is now `https://detexify.kirelabs.org/` on GitHub Pages.
 
 ## Reference repositories
 
@@ -24,10 +24,11 @@ Detexify Next replaces the old application stack but keeps the useful data and b
 - Sprite-based symbol asset pipeline.
 - License enforcement code.
 - Native Haskell runtime dependency in the app.
+- Heroku-hosted production web/runtime infrastructure.
 
 ## Archive policy
 
-The old repositories should remain read-only references. New development should happen in `detexify-next`.
+The old repositories should remain read-only references. New development should happen in `detexify-next`. The old Heroku apps were removed after the DNS cutover completed.
 
 Recommended GitHub treatment for old repos:
 

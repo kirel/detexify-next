@@ -2,6 +2,8 @@
 
 A modern rebuild of Detexify: draw a handwritten LaTeX symbol and get ranked commands immediately.
 
+Website: https://detexify.kirelabs.org
+
 The project keeps the useful assets from the old Detexify ecosystem — symbols, handwriting samples, and classifier behavior — but rebuilds the implementation as a maintainable TypeScript/Svelte/macOS stack.
 
 ## Status
@@ -9,21 +11,27 @@ The project keeps the useful assets from the old Detexify ecosystem — symbols,
 Working today:
 
 - shared TypeScript core package with the legacy DTW classifier ported from Haskell;
-- Svelte/Vite web app with canvas input, Web Worker classification, symbol images, and symbol gallery;
+- Svelte/Vite web app with canvas input, Web Worker classification, symbol images, symbol gallery, about/mac/impressum pages, and footer navigation;
+- static GitHub Pages deployment for the web app at `detexify.kirelabs.org` after the completed Heroku-to-GitHub Pages DNS cutover;
+- offline-capable PWA build with a generated full precache service worker;
+- app/favicon/apple-touch/macOS icon assets;
 - macOS menu-bar shell with global hotkey, bundled offline web UI, settings, and native clipboard bridge;
+- signed/notarized macOS packaging, GitHub release scripts, and a current `v0.2.2` Apple Silicon release;
 - canonical source data in `packages/data/source`;
 - LaTeX-to-SVG symbol rendering pipeline;
 - local dev-only training/sample curation UI at `/#/train`;
 - rejected-sample workflow that excludes bad samples without deleting them;
-- GitHub Pages deployment for the web app;
-- experimental model benchmarks for frozen MobileNet and a trained tiny CNN.
+- suspicious-sample report tooling plus conservative review hints in the training UI;
+- safe symbol-add CLI and source-data validation;
+- data PR preview tooling with GitHub Action comments that embed grouped symbol/sample SVG previews;
+- experimental model benchmarks for frozen MobileNet, a trained tiny CNN, and hybrid CNN+DTW directions.
 
 Not done yet:
 
-- polished open-source contribution flow for symbols/samples;
-- visual PR previews/contact sheets;
-- suspicious/bad-sample detection tooling;
-- signed/notarized macOS app distribution;
+- retire or redirect the old preview hostname `detexify-next.kirelabs.org`;
+- Homebrew Cask or auto-update distribution for the Mac app;
+- final open-source license/data-license cleanup;
+- better public contributor onboarding beyond the current repo-local workflow;
 - final model decision beyond the DTW baseline.
 
 See also:
@@ -75,6 +83,9 @@ npm run dev:web
 # Symbol verification gallery
 # visit /#/symbols
 
+# About/Mac/legal pages
+# visit /#/about, /#/mac, /#/impressum
+
 # Local-only sample training/review UI
 # visit /#/train
 
@@ -123,7 +134,6 @@ More details:
 
 Use the symbol-add CLI:
 
-
 ```bash
 npm run data:add-symbol -- \
   --command "\\leqslant" \
@@ -141,7 +151,7 @@ Experiments so far:
 
 - frozen MobileNetV2/ImageNet features + nearest neighbor: not competitive with DTW;
 - trained tiny CNN: promising top1, but not yet better than DTW on top5/top10;
-- recommended next model direction: CNN candidate retrieval + DTW reranking.
+- hybrid CNN candidate retrieval + DTW reranking: promising direction, but not the default yet.
 
 Run benchmarks:
 
@@ -204,15 +214,17 @@ Swift package lives in `apps/mac`.
 
 ## Open-source contribution direction
 
-The project is being prepared for external symbol/sample PRs. The intended flow is:
+The project has a repo-local workflow for symbol/sample PRs:
 
 1. add symbols through a safe CLI;
 2. add samples through the local training UI;
 3. validate source data;
-4. GitHub Actions generate visual PR previews/contact sheets;
-5. reviewers inspect rendered symbols and sample thumbnails before merge.
+4. GitHub Actions generate visual PR previews and grouped inline SVG cards;
+5. reviewers inspect rendered symbols and sample strokes before merge.
 
-These pieces are partially implemented. See:
+These pieces exist for the current repo workflow. The remaining open-source work
+is mainly license cleanup and making the contributor path easier for people outside
+the project. See:
 
 - [docs/contributing.md](./docs/contributing.md)
 - [docs/pr-previews.md](./docs/pr-previews.md)
@@ -227,7 +239,8 @@ Old sibling repos used for import/evaluation:
 - `~/code/sketch-a-char`
 - `~/code/detexify-data`
 
-They are reference material only.
+They are reference material only. The production website now runs on GitHub Pages;
+the old Heroku apps have been removed.
 
 ## License
 

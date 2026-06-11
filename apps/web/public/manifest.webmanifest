@@ -1,7 +1,7 @@
 {
-  "name": "Detexify Next",
+  "name": "Detexify",
   "short_name": "Detexify",
-  "description": "Draw a LaTeX symbol and find its command.",
+  "description": "Draw a LaTeX symbol and find its command. Runs locally in your browser and works offline after the first visit.",
   "start_url": "./#/",
   "scope": "./",
   "display": "standalone",

@@ -33,30 +33,29 @@
   <ol class="results">
     {#each results as result}
       <li>
-        <button
-          class="result"
-          class:copied={copiedCommand === (result.symbol?.command ?? result.id)}
-          type="button"
-          onclick={() => onCopy(result)}
-          title="Copy command"
-        >
-          <span class="symbol-preview" aria-hidden="true">
-            {#if result.symbol?.imagePath}
-              <span class="symbol-image" style:background-image={`url(${result.symbol.imagePath})`}></span>
-            {:else}
-              <span>?</span>
-            {/if}
-          </span>
+        <div class="result" class:copied={copiedCommand === (result.symbol?.command ?? result.id)}>
+          <button class="symbol-preview-button" type="button" onclick={() => onCopy(result)} title="Copy command">
+            <span class="symbol-preview" aria-hidden="true">
+              {#if result.symbol?.imagePath}
+                <span class="symbol-image" style:background-image={`url(${result.symbol.imagePath})`}></span>
+              {:else}
+                <span>?</span>
+              {/if}
+            </span>
+          </button>
           <span class="result-info">
             <span class="result-topline">
               <span class="command">{result.symbol?.command ?? result.id}</span>
-              <span class="score">{copiedCommand === (result.symbol?.command ?? result.id) ? 'copied' : result.score.toFixed(4)}</span>
+              <span class="result-meta">
+                <span class="score">{copiedCommand === (result.symbol?.command ?? result.id) ? 'copied' : result.score.toFixed(4)}</span>
+                <button class="copy-command" type="button" onclick={() => onCopy(result)}>Copy</button>
+              </span>
             </span>
             <span class="mode">{mode(result)}</span>
             {#if packageLine(result)}<code>{packageLine(result)}</code>{/if}
             {#if fontencLine(result)}<code>{fontencLine(result)}</code>{/if}
           </span>
-        </button>
+        </div>
       </li>
     {/each}
   </ol>

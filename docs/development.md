@@ -31,6 +31,15 @@ Routes:
 
 The training route is hidden in production and in the Mac shell.
 
+## Production deployment
+
+The official website is deployed as a static GitHub Pages site at `https://detexify.kirelabs.org/`.
+
+- `apps/web/public/CNAME` is the source for the custom domain.
+- DNS for `detexify.kirelabs.org` points to `kirel.github.io`.
+- The old Heroku production path has been retired; normal classification runs client-side without a backend.
+- The previous preview hostname `detexify-next.kirelabs.org` still needs an explicit retire/redirect decision.
+
 ## Data commands
 
 ```bash
