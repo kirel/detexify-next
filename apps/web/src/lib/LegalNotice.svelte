@@ -4,15 +4,16 @@
     <h2>Verantwortlich fuer diese Website</h2>
     <address>
       <strong>Daniel Kirsch</strong>
-      <span class="legal-placeholder">Postanschrift vor Veroeffentlichung ergaenzen</span>
-      <a href="mailto:contact@kirelabs.org">contact@kirelabs.org</a>
+      <span>Emil-Nolde-Str. 9</span>
+      <span>67061 Ludwigshafen</span>
+      <a href="mailto:mail@danielkirs.ch">mail@danielkirs.ch</a>
     </address>
   </div>
 
   <div class="legal-grid">
     <section>
       <h3>Kontakt</h3>
-      <p>E-Mail: <a href="mailto:contact@kirelabs.org">contact@kirelabs.org</a></p>
+      <p>E-Mail: <a href="mailto:mail@danielkirs.ch">mail@danielkirs.ch</a></p>
     </section>
     <section>
       <h3>Haftung fuer Inhalte</h3>
