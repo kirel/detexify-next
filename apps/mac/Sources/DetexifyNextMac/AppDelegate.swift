@@ -43,6 +43,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc private func openHotkeySettings() {
+        if panelController.isVisible {
+            panelController.hide()
+        }
         HotkeySettingsWindowController.shared.showWindow(nil)
         NSApp.activate(ignoringOtherApps: true)
     }

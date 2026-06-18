@@ -6,6 +6,13 @@ final class DetexifyPanelController: NSObject, WKScriptMessageHandler, WKNavigat
     private var webView: WKWebView?
     private let schemeHandler = WebAppSchemeHandler()
     private var pendingAutoClose: DispatchWorkItem?
+    private var settingsShortcutMonitor: Any?
+
+    deinit {
+        if let settingsShortcutMonitor {
+            NSEvent.removeMonitor(settingsShortcutMonitor)
+        }
+    }
 
     var isVisible: Bool {
         panel?.isVisible ?? false
@@ -65,7 +72,31 @@ final class DetexifyPanelController: NSObject, WKScriptMessageHandler, WKNavigat
 
         self.panel = panel
         self.webView = webView
+        installSettingsShortcutMonitor()
         loadWebApp()
+    }
+
+    private func installSettingsShortcutMonitor() {
+        guard settingsShortcutMonitor == nil else { return }
+        settingsShortcutMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+            guard
+                let self,
+                event.window === self.panel,
+                self.isSettingsShortcut(event)
+            else {
+                return event
+            }
+
+            self.hide()
+            HotkeySettingsWindowController.shared.showWindow(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            return nil
+        }
+    }
+
+    private func isSettingsShortcut(_ event: NSEvent) -> Bool {
+        let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+        return modifiers == .command && event.charactersIgnoringModifiers == ","
     }
 
     private func loadWebApp() {
