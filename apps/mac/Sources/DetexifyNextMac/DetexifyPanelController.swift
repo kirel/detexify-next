@@ -6,6 +6,7 @@ final class DetexifyPanelController: NSObject, WKScriptMessageHandler, WKNavigat
     private var webView: WKWebView?
     private let schemeHandler = WebAppSchemeHandler()
     private var pendingAutoClose: DispatchWorkItem?
+    private var previouslyFocusedApplication: NSRunningApplication?
 
     var isVisible: Bool {
         panel?.isVisible ?? false
@@ -15,6 +16,9 @@ final class DetexifyPanelController: NSObject, WKScriptMessageHandler, WKNavigat
         pendingAutoClose?.cancel()
         if panel == nil { createPanel() }
         guard let panel else { return }
+        if !panel.isVisible {
+            captureFocusedApplication()
+        }
         center(panel)
         panel.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
@@ -24,6 +28,22 @@ final class DetexifyPanelController: NSObject, WKScriptMessageHandler, WKNavigat
         pendingAutoClose?.cancel()
         clearCanvas()
         panel?.orderOut(nil)
+        restoreFocusedApplication()
+    }
+
+    private func captureFocusedApplication() {
+        let frontmostApplication = NSWorkspace.shared.frontmostApplication
+        if frontmostApplication?.processIdentifier == NSRunningApplication.current.processIdentifier {
+            previouslyFocusedApplication = nil
+        } else {
+            previouslyFocusedApplication = frontmostApplication
+        }
+    }
+
+    private func restoreFocusedApplication() {
+        guard let application = previouslyFocusedApplication else { return }
+        previouslyFocusedApplication = nil
+        application.activate(options: [.activateIgnoringOtherApps])
     }
 
     private func createPanel() {
@@ -113,8 +133,7 @@ final class DetexifyPanelController: NSObject, WKScriptMessageHandler, WKNavigat
         if AppSettings.autoCloseOnCopy {
             pendingAutoClose?.cancel()
             let workItem = DispatchWorkItem { [weak self] in
-                self?.clearCanvas()
-                self?.panel?.orderOut(nil)
+                self?.hide()
             }
             pendingAutoClose = workItem
             // Let the in-panel copied pill be the confirmation. It matches the
@@ -137,6 +156,7 @@ final class DetexifyPanelController: NSObject, WKScriptMessageHandler, WKNavigat
 
     func windowWillClose(_ notification: Notification) {
         clearCanvas()
+        restoreFocusedApplication()
     }
 }
 
