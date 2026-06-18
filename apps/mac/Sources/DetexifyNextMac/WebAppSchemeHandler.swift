@@ -76,6 +76,10 @@ final class WebAppSchemeHandler: NSObject, WKURLSchemeHandler {
         // `Bundle.module`: its generated accessor may assert when the SwiftPM
         // resource bundle is absent from the packaged app.
 #if DEBUG
+        if let developmentRoot = firstExistingWebAppRoot(in: developmentCandidates()) {
+            return developmentRoot
+        }
+
         return firstExistingWebAppRoot(in: [
             Bundle.module.url(forResource: "WebApp", withExtension: nil, subdirectory: "Resources"),
         ])
@@ -83,6 +87,44 @@ final class WebAppSchemeHandler: NSObject, WKURLSchemeHandler {
         return nil
 #endif
     }
+
+#if DEBUG
+    private static func developmentCandidates() -> [URL?] {
+        var candidates: [URL?] = []
+
+        if let override = ProcessInfo.processInfo.environment["DETEXIFY_WEBAPP_ROOT"], !override.isEmpty {
+            candidates.append(URL(fileURLWithPath: override, isDirectory: true))
+        }
+
+        let startingPoints = [
+            URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true),
+            Bundle.main.executableURL,
+        ].compactMap { $0 }
+
+        for startingPoint in startingPoints {
+            guard let repoRoot = findRepoRoot(from: startingPoint) else { continue }
+            candidates.append(repoRoot.appendingPathComponent("apps/mac/Sources/DetexifyNextMac/Resources/WebApp", isDirectory: true))
+            candidates.append(repoRoot.appendingPathComponent("apps/web/dist", isDirectory: true))
+        }
+
+        return candidates
+    }
+
+    private static func findRepoRoot(from url: URL) -> URL? {
+        let fileManager = FileManager.default
+        var current = url.hasDirectoryPath ? url : url.deletingLastPathComponent()
+
+        while current.path != current.deletingLastPathComponent().path {
+            if fileManager.fileExists(atPath: current.appendingPathComponent("package.json").path),
+               fileManager.fileExists(atPath: current.appendingPathComponent("apps/mac/Package.swift").path) {
+                return current
+            }
+            current.deleteLastPathComponent()
+        }
+
+        return nil
+    }
+#endif
 
     private static func firstExistingWebAppRoot(in candidates: [URL?]) -> URL? {
         candidates
