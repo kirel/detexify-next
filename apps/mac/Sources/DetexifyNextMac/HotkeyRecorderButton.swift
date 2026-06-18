@@ -13,9 +13,9 @@ final class HotkeyRecorderButton: NSButton {
         super.init(frame: .zero)
 
         bezelStyle = .rounded
-        setButtonType(.momentaryPushIn)
+        setButtonType(.pushOnPushOff)
         target = self
-        action = #selector(startRecording)
+        action = #selector(toggleRecording)
         translatesAutoresizingMaskIntoConstraints = false
         focusRingType = .default
         refresh()
@@ -29,21 +29,33 @@ final class HotkeyRecorderButton: NSButton {
 
     func refresh() {
         titleResetWorkItem?.cancel()
+        state = .off
         title = formattedShortcut(KeyboardShortcuts.getShortcut(for: shortcutName))
     }
 
     func cancelRecording() {
         guard isRecording else { return }
         isRecording = false
+        state = .off
+        resignRecorderFocus()
         stopMonitoring()
         KeyboardShortcuts.enable(shortcutName)
         refresh()
     }
 
-    @objc private func startRecording() {
+    @objc private func toggleRecording() {
+        if isRecording {
+            cancelRecording()
+        } else {
+            startRecording()
+        }
+    }
+
+    private func startRecording() {
         titleResetWorkItem?.cancel()
         isRecording = true
-        title = "Press shortcut"
+        state = .on
+        title = "Recording..."
         window?.makeFirstResponder(self)
         KeyboardShortcuts.disable(shortcutName)
         startMonitoring()
@@ -96,9 +108,11 @@ final class HotkeyRecorderButton: NSButton {
 
         KeyboardShortcuts.setShortcut(shortcut, for: shortcutName)
         isRecording = false
+        state = .off
+        resignRecorderFocus()
         stopMonitoring()
         KeyboardShortcuts.enable(shortcutName)
-        refresh()
+        temporarilyConfirmSaved(shortcut)
         return nil
     }
 
@@ -114,10 +128,26 @@ final class HotkeyRecorderButton: NSButton {
         title = message
         let workItem = DispatchWorkItem { [weak self] in
             guard let self, isRecording else { return }
-            title = "Press shortcut"
+            title = "Recording..."
         }
         titleResetWorkItem = workItem
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: workItem)
+    }
+
+    private func temporarilyConfirmSaved(_ shortcut: KeyboardShortcuts.Shortcut) {
+        titleResetWorkItem?.cancel()
+        title = "Saved: \(formattedShortcut(shortcut))"
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.refresh()
+        }
+        titleResetWorkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: workItem)
+    }
+
+    private func resignRecorderFocus() {
+        if window?.firstResponder === self {
+            window?.makeFirstResponder(nil)
+        }
     }
 
     required init?(coder: NSCoder) {
