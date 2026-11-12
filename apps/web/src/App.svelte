@@ -18,6 +18,7 @@
   let statusMessage = $state('Starting…')
   let stats = $state('')
   let copied = $state('')
+  let copiedId = $state('')
   let copyError = $state('')
   let copiedPulse = $state(0)
   let resultLimit = $state(10)
@@ -126,24 +127,30 @@
     strokes = []
     results = []
     copied = ''
+    copiedId = ''
     resultLimit = 10
   }
 
-  async function copyResult(result: EnrichedResult) {
-    const command = result.symbol?.command ?? result.id
+  async function copyResult(result: EnrichedResult, unicode: boolean) {
+    const text = (unicode? result.symbol?.unicode : result.symbol?.command) ?? result.id
     const native = (window as typeof window & { webkit?: { messageHandlers?: { detexifyNative?: { postMessage: (message: unknown) => void } } } }).webkit?.messageHandlers?.detexifyNative
     try {
-      if (native) native.postMessage({ type: 'copy', text: command })
-      else await navigator.clipboard.writeText(command)
+      if (native) native.postMessage({ type: 'copy', text })
+      else await navigator.clipboard.writeText(text)
       copyError = ''
-      copied = command
+      copied = text
+      copiedId = result.id
       copiedPulse += 1
       const pulse = copiedPulse
       setTimeout(() => {
-        if (copiedPulse === pulse) copied = ''
+        if (copiedPulse === pulse) {
+          copied = ''
+          copiedId = ''
+        }
       }, 1900)
     } catch (error) {
       copied = ''
+      copiedId = ''
       copyError = error instanceof Error ? error.message : 'Could not copy to clipboard'
       setTimeout(() => {
         copyError = ''
@@ -228,10 +235,10 @@
       <div class="panel-header">
         <div>
           <h2>Results</h2>
-          <p>{copied ? `Copied ${copied}` : 'Best matches first'}</p>
+          <p>{copiedId ? `Copied ${copied}` : 'Best matches first'}</p>
         </div>
       </div>
-      <ResultsList results={visibleResults} copiedCommand={copied} native={isNativeShell} onCopy={copyResult} />
+      <ResultsList results={visibleResults} {copiedId} native={isNativeShell} onCopy={copyResult} />
       {#if canShowMore}
         <button class="show-more" type="button" onclick={() => resultLimit += 10}>Show more</button>
       {/if}

@@ -11,6 +11,7 @@ export type SourceSymbol = {
   package?: string
   fontenc?: string
   mode: 'math' | 'text' | 'both'
+  unicode?: string
   render: {
     command: string
     package?: string

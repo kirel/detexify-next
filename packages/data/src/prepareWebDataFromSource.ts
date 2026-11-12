@@ -37,6 +37,7 @@ const webSymbols = symbolsFile.symbols.map((symbol) => {
     id: symbol.id,
     legacyId: symbol.id,
     command: symbol.command,
+    ...(symbol.unicode ? { unicode: symbol.unicode } : {}),
     ...(symbol.package ? { package: symbol.package } : {}),
     ...(symbol.fontenc ? { fontenc: symbol.fontenc } : {}),
     mathmode: symbol.mode === 'math' || symbol.mode === 'both',

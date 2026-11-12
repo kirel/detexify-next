@@ -6,6 +6,8 @@ export type SymbolMetadata = Readonly<{
   /** Original Detexify id, e.g. `amssymb-OT1-\\triangleq`. */
   legacyId: string
   command: string
+  /** Direct Unicode character representation when available. */
+  unicode?: string
   package?: string
   fontenc?: string
   mathmode: boolean

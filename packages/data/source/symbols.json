@@ -118,7 +118,8 @@
       "samples": {
         "path": "samples/latex/amsmath/iiiint-wioclo.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "⨌"
     },
     {
       "id": "latex:amsmath:iiint",
@@ -135,7 +136,8 @@
       "samples": {
         "path": "samples/latex/amsmath/iiint-1vy28ft.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∭"
     },
     {
       "id": "latex:amsmath:iint",
@@ -152,7 +154,8 @@
       "samples": {
         "path": "samples/latex/amsmath/iint-1jw67b6.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∬"
     },
     {
       "id": "latex:amssymb:angle",
@@ -169,7 +172,8 @@
       "samples": {
         "path": "samples/latex/amssymb/angle-l8lw0o.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∠"
     },
     {
       "id": "latex:amssymb:approxeq",
@@ -186,7 +190,8 @@
       "samples": {
         "path": "samples/latex/amssymb/approxeq-gxrgfn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≊"
     },
     {
       "id": "latex:amssymb:backepsilon",
@@ -203,7 +208,8 @@
       "samples": {
         "path": "samples/latex/amssymb/backepsilon-1c4znlo.jsonl",
         "count": 33
-      }
+      },
+      "unicode": "∍"
     },
     {
       "id": "latex:amssymb:backprime",
@@ -220,7 +226,8 @@
       "samples": {
         "path": "samples/latex/amssymb/backprime-pofaeh.jsonl",
         "count": 28
-      }
+      },
+      "unicode": "‵"
     },
     {
       "id": "latex:amssymb:backsim",
@@ -237,7 +244,8 @@
       "samples": {
         "path": "samples/latex/amssymb/backsim-38jsi1.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∽"
     },
     {
       "id": "latex:amssymb:backsimeq",
@@ -254,7 +262,8 @@
       "samples": {
         "path": "samples/latex/amssymb/backsimeq-1p5yl9r.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋍"
     },
     {
       "id": "latex:amssymb:barwedge",
@@ -271,7 +280,8 @@
       "samples": {
         "path": "samples/latex/amssymb/barwedge-e57m5u.jsonl",
         "count": 39
-      }
+      },
+      "unicode": "⊼"
     },
     {
       "id": "latex:amssymb:Bbbk",
@@ -288,7 +298,8 @@
       "samples": {
         "path": "samples/latex/amssymb/bbbk-wa5qcq.jsonl",
         "count": 43
-      }
+      },
+      "unicode": "𝕜"
     },
     {
       "id": "latex:amssymb:because",
@@ -305,7 +316,8 @@
       "samples": {
         "path": "samples/latex/amssymb/because-onnwrf.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∵"
     },
     {
       "id": "latex:amssymb:between",
@@ -322,7 +334,8 @@
       "samples": {
         "path": "samples/latex/amssymb/between-1n47ve7.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≬"
     },
     {
       "id": "latex:amssymb:bigstar",
@@ -339,7 +352,8 @@
       "samples": {
         "path": "samples/latex/amssymb/bigstar-19nl1v1.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "★"
     },
     {
       "id": "latex:amssymb:blacklozenge",
@@ -356,7 +370,8 @@
       "samples": {
         "path": "samples/latex/amssymb/blacklozenge-1my4yf2.jsonl",
         "count": 47
-      }
+      },
+      "unicode": ""
     },
     {
       "id": "latex:amssymb:blacksquare",
@@ -373,7 +388,8 @@
       "samples": {
         "path": "samples/latex/amssymb/blacksquare-1qoxqeb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▪"
     },
     {
       "id": "latex:amssymb:blacktriangle",
@@ -390,7 +406,8 @@
       "samples": {
         "path": "samples/latex/amssymb/blacktriangle-xqv34w.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▴"
     },
     {
       "id": "latex:amssymb:blacktriangledown",
@@ -407,7 +424,8 @@
       "samples": {
         "path": "samples/latex/amssymb/blacktriangledown-1b1ywjw.jsonl",
         "count": 27
-      }
+      },
+      "unicode": "▾"
     },
     {
       "id": "latex:amssymb:blacktriangleleft",
@@ -424,7 +442,8 @@
       "samples": {
         "path": "samples/latex/amssymb/blacktriangleleft-1t5n5a9.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "◀"
     },
     {
       "id": "latex:amssymb:blacktriangleright",
@@ -441,7 +460,8 @@
       "samples": {
         "path": "samples/latex/amssymb/blacktriangleright-tph5wi.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▶"
     },
     {
       "id": "latex:amssymb:boxdot",
@@ -458,7 +478,8 @@
       "samples": {
         "path": "samples/latex/amssymb/boxdot-1whbeux.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊡"
     },
     {
       "id": "latex:amssymb:boxminus",
@@ -475,7 +496,8 @@
       "samples": {
         "path": "samples/latex/amssymb/boxminus-1jflo8e.jsonl",
         "count": 33
-      }
+      },
+      "unicode": "⊟"
     },
     {
       "id": "latex:amssymb:boxplus",
@@ -492,7 +514,8 @@
       "samples": {
         "path": "samples/latex/amssymb/boxplus-y98y2u.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊞"
     },
     {
       "id": "latex:amssymb:boxtimes",
@@ -509,7 +532,8 @@
       "samples": {
         "path": "samples/latex/amssymb/boxtimes-1ofl9kw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊠"
     },
     {
       "id": "latex:amssymb:bumpeq",
@@ -526,7 +550,8 @@
       "samples": {
         "path": "samples/latex/amssymb/bumpeq-hg9237.jsonl",
         "count": 38
-      }
+      },
+      "unicode": "≏"
     },
     {
       "id": "latex:amssymb:Bumpeq",
@@ -543,7 +568,8 @@
       "samples": {
         "path": "samples/latex/amssymb/bumpeq-1duxuk3.jsonl",
         "count": 47
-      }
+      },
+      "unicode": "≎"
     },
     {
       "id": "latex:amssymb:Cap",
@@ -560,7 +586,8 @@
       "samples": {
         "path": "samples/latex/amssymb/cap-168vd7f.jsonl",
         "count": 36
-      }
+      },
+      "unicode": "⋒"
     },
     {
       "id": "latex:amssymb:centerdot",
@@ -577,7 +604,8 @@
       "samples": {
         "path": "samples/latex/amssymb/centerdot-e05i6j.jsonl",
         "count": 49
-      }
+      },
+      "unicode": "⬝"
     },
     {
       "id": "latex:amssymb:checkmark",
@@ -594,7 +622,8 @@
       "samples": {
         "path": "samples/latex/amssymb/checkmark-j1n2tu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "✓"
     },
     {
       "id": "latex:amssymb:circeq",
@@ -611,7 +640,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circeq-5n4gg.jsonl",
         "count": 30
-      }
+      },
+      "unicode": "≗"
     },
     {
       "id": "latex:amssymb:circlearrowleft",
@@ -628,7 +658,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circlearrowleft-1e18kn3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↺"
     },
     {
       "id": "latex:amssymb:circlearrowright",
@@ -645,7 +676,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circlearrowright-1lcnhv4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↻"
     },
     {
       "id": "latex:amssymb:circledast",
@@ -662,7 +694,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circledast-wn4791.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊛"
     },
     {
       "id": "latex:amssymb:circledcirc",
@@ -679,7 +712,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circledcirc-19t43kc.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊚"
     },
     {
       "id": "latex:amssymb:circleddash",
@@ -696,7 +730,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circleddash-15wzk1n.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊝"
     },
     {
       "id": "latex:amssymb:circledR",
@@ -713,7 +748,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circledr-4lc7of.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xae"
     },
     {
       "id": "latex:amssymb:circledS",
@@ -730,7 +766,8 @@
       "samples": {
         "path": "samples/latex/amssymb/circleds-4bclzg.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "Ⓢ"
     },
     {
       "id": "latex:amssymb:complement",
@@ -747,7 +784,8 @@
       "samples": {
         "path": "samples/latex/amssymb/complement-1yks50d.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∁"
     },
     {
       "id": "latex:amssymb:Cup",
@@ -764,7 +802,8 @@
       "samples": {
         "path": "samples/latex/amssymb/cup-13zsagf.jsonl",
         "count": 23
-      }
+      },
+      "unicode": "⋓"
     },
     {
       "id": "latex:amssymb:curlyeqprec",
@@ -781,7 +820,8 @@
       "samples": {
         "path": "samples/latex/amssymb/curlyeqprec-2vwa3q.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⋞"
     },
     {
       "id": "latex:amssymb:curlyeqsucc",
@@ -798,7 +838,8 @@
       "samples": {
         "path": "samples/latex/amssymb/curlyeqsucc-tqail6.jsonl",
         "count": 21
-      }
+      },
+      "unicode": "⋟"
     },
     {
       "id": "latex:amssymb:curlyvee",
@@ -815,7 +856,8 @@
       "samples": {
         "path": "samples/latex/amssymb/curlyvee-byg0u6.jsonl",
         "count": 36
-      }
+      },
+      "unicode": "⋎"
     },
     {
       "id": "latex:amssymb:curlywedge",
@@ -832,7 +874,8 @@
       "samples": {
         "path": "samples/latex/amssymb/curlywedge-jzrw26.jsonl",
         "count": 43
-      }
+      },
+      "unicode": "⋏"
     },
     {
       "id": "latex:amssymb:curvearrowleft",
@@ -849,7 +892,8 @@
       "samples": {
         "path": "samples/latex/amssymb/curvearrowleft-wzh7gg.jsonl",
         "count": 35
-      }
+      },
+      "unicode": "↶"
     },
     {
       "id": "latex:amssymb:curvearrowright",
@@ -866,7 +910,8 @@
       "samples": {
         "path": "samples/latex/amssymb/curvearrowright-16l0cad.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↷"
     },
     {
       "id": "latex:amssymb:dashleftarrow",
@@ -883,7 +928,8 @@
       "samples": {
         "path": "samples/latex/amssymb/dashleftarrow-1n6p5nd.jsonl",
         "count": 8
-      }
+      },
+      "unicode": "⇠"
     },
     {
       "id": "latex:amssymb:dashrightarrow",
@@ -900,7 +946,8 @@
       "samples": {
         "path": "samples/latex/amssymb/dashrightarrow-8smfue.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇢"
     },
     {
       "id": "latex:amssymb:diagdown",
@@ -917,7 +964,8 @@
       "samples": {
         "path": "samples/latex/amssymb/diagdown-75livq.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟍"
     },
     {
       "id": "latex:amssymb:diagup",
@@ -934,7 +982,8 @@
       "samples": {
         "path": "samples/latex/amssymb/diagup-1w2c8cj.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟋"
     },
     {
       "id": "latex:amssymb:Diamond",
@@ -951,7 +1000,8 @@
       "samples": {
         "path": "samples/latex/amssymb/diamond-1fgyw07.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "◇"
     },
     {
       "id": "latex:amssymb:digamma",
@@ -968,7 +1018,8 @@
       "samples": {
         "path": "samples/latex/amssymb/digamma-wd4bh3.jsonl",
         "count": 44
-      }
+      },
+      "unicode": "Ϝ"
     },
     {
       "id": "latex:amssymb:divideontimes",
@@ -985,7 +1036,8 @@
       "samples": {
         "path": "samples/latex/amssymb/divideontimes-df8puh.jsonl",
         "count": 21
-      }
+      },
+      "unicode": "⋇"
     },
     {
       "id": "latex:amssymb:doteqdot",
@@ -1002,7 +1054,8 @@
       "samples": {
         "path": "samples/latex/amssymb/doteqdot-skyjip.jsonl",
         "count": 34
-      }
+      },
+      "unicode": "≑"
     },
     {
       "id": "latex:amssymb:dotplus",
@@ -1019,7 +1072,8 @@
       "samples": {
         "path": "samples/latex/amssymb/dotplus-dhfrb4.jsonl",
         "count": 32
-      }
+      },
+      "unicode": "∔"
     },
     {
       "id": "latex:amssymb:doublebarwedge",
@@ -1036,7 +1090,8 @@
       "samples": {
         "path": "samples/latex/amssymb/doublebarwedge-rsy78n.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "⩞"
     },
     {
       "id": "latex:amssymb:downdownarrows",
@@ -1053,7 +1108,8 @@
       "samples": {
         "path": "samples/latex/amssymb/downdownarrows-12orkxb.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "⇊"
     },
     {
       "id": "latex:amssymb:downharpoonleft",
@@ -1070,7 +1126,8 @@
       "samples": {
         "path": "samples/latex/amssymb/downharpoonleft-1waed6x.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "⇃"
     },
     {
       "id": "latex:amssymb:downharpoonright",
@@ -1087,7 +1144,8 @@
       "samples": {
         "path": "samples/latex/amssymb/downharpoonright-1sxkfze.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "⇂"
     },
     {
       "id": "latex:amssymb:eqcirc",
@@ -1104,7 +1162,8 @@
       "samples": {
         "path": "samples/latex/amssymb/eqcirc-1bjm7c.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "≖"
     },
     {
       "id": "latex:amssymb:eqslantgtr",
@@ -1121,7 +1180,8 @@
       "samples": {
         "path": "samples/latex/amssymb/eqslantgtr-1ntjrd8.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⪖"
     },
     {
       "id": "latex:amssymb:eqslantless",
@@ -1138,7 +1198,8 @@
       "samples": {
         "path": "samples/latex/amssymb/eqslantless-1qm81bs.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "⪕"
     },
     {
       "id": "latex:amssymb:eth",
@@ -1155,7 +1216,8 @@
       "samples": {
         "path": "samples/latex/amssymb/eth-1egobwc.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "\\xf0"
     },
     {
       "id": "latex:amssymb:fallingdotseq",
@@ -1172,7 +1234,8 @@
       "samples": {
         "path": "samples/latex/amssymb/fallingdotseq-1sqjgli.jsonl",
         "count": 17
-      }
+      },
+      "unicode": "≒"
     },
     {
       "id": "latex:amssymb:Finv",
@@ -1189,7 +1252,8 @@
       "samples": {
         "path": "samples/latex/amssymb/finv-1f63k2s.jsonl",
         "count": 21
-      }
+      },
+      "unicode": "Ⅎ"
     },
     {
       "id": "latex:amssymb:Game",
@@ -1206,7 +1270,8 @@
       "samples": {
         "path": "samples/latex/amssymb/game-luufdz.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⅁"
     },
     {
       "id": "latex:amssymb:geq",
@@ -1223,7 +1288,8 @@
       "samples": {
         "path": "samples/latex/amssymb/geq-zgwek8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≥"
     },
     {
       "id": "latex:amssymb:geqq",
@@ -1240,7 +1306,8 @@
       "samples": {
         "path": "samples/latex/amssymb/geqq-1pqgkr.jsonl",
         "count": 39
-      }
+      },
+      "unicode": "≧"
     },
     {
       "id": "latex:amssymb:geqslant",
@@ -1257,7 +1324,8 @@
       "samples": {
         "path": "samples/latex/amssymb/geqslant-16rkmf4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⩾"
     },
     {
       "id": "latex:amssymb:gg",
@@ -1274,7 +1342,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gg-14j1jar.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≫"
     },
     {
       "id": "latex:amssymb:ggg",
@@ -1291,7 +1360,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ggg-114li4c.jsonl",
         "count": 39
-      }
+      },
+      "unicode": "⋙"
     },
     {
       "id": "latex:amssymb:gnapprox",
@@ -1308,7 +1378,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gnapprox-1jf5lz8.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "⪊"
     },
     {
       "id": "latex:amssymb:gneq",
@@ -1325,7 +1396,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gneq-961hlu.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "⪈"
     },
     {
       "id": "latex:amssymb:gneqq",
@@ -1342,7 +1414,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gneqq-6akueh.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "≩"
     },
     {
       "id": "latex:amssymb:gnsim",
@@ -1359,7 +1432,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gnsim-s8j5en.jsonl",
         "count": 8
-      }
+      },
+      "unicode": "⋧"
     },
     {
       "id": "latex:amssymb:gtrapprox",
@@ -1376,7 +1450,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gtrapprox-y8zwlc.jsonl",
         "count": 25
-      }
+      },
+      "unicode": "⪆"
     },
     {
       "id": "latex:amssymb:gtrdot",
@@ -1393,7 +1468,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gtrdot-e2ugib.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "⋗"
     },
     {
       "id": "latex:amssymb:gtreqless",
@@ -1410,7 +1486,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gtreqless-904hsn.jsonl",
         "count": 26
-      }
+      },
+      "unicode": "⋛"
     },
     {
       "id": "latex:amssymb:gtreqqless",
@@ -1427,7 +1504,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gtreqqless-bly2wg.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "⪌"
     },
     {
       "id": "latex:amssymb:gtrless",
@@ -1444,7 +1522,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gtrless-1whdg5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≷"
     },
     {
       "id": "latex:amssymb:gtrsim",
@@ -1461,7 +1540,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gtrsim-1uwtjhv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≳"
     },
     {
       "id": "latex:amssymb:gvertneqq",
@@ -1478,7 +1558,8 @@
       "samples": {
         "path": "samples/latex/amssymb/gvertneqq-o4b9iu.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "≩"
     },
     {
       "id": "latex:amssymb:hbar",
@@ -1495,7 +1576,8 @@
       "samples": {
         "path": "samples/latex/amssymb/hbar-1s22ko8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℏ"
     },
     {
       "id": "latex:amssymb:hslash",
@@ -1512,7 +1594,8 @@
       "samples": {
         "path": "samples/latex/amssymb/hslash-10x63qw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℏ"
     },
     {
       "id": "latex:amssymb:intercal",
@@ -1529,7 +1612,8 @@
       "samples": {
         "path": "samples/latex/amssymb/intercal-3j4ws3.jsonl",
         "count": 41
-      }
+      },
+      "unicode": "⊺"
     },
     {
       "id": "latex:amssymb:leftarrowtail",
@@ -1546,7 +1630,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leftarrowtail-3a7e47.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "↢"
     },
     {
       "id": "latex:amssymb:leftleftarrows",
@@ -1563,7 +1648,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leftleftarrows-9b7re3.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⇇"
     },
     {
       "id": "latex:amssymb:leftrightarrows",
@@ -1580,7 +1666,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leftrightarrows-1nkz4sk.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "⇆"
     },
     {
       "id": "latex:amssymb:leftrightharpoons",
@@ -1597,7 +1684,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leftrightharpoons-g85xeu.jsonl",
         "count": 41
-      }
+      },
+      "unicode": "⇋"
     },
     {
       "id": "latex:amssymb:leftrightsquigarrow",
@@ -1614,7 +1702,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leftrightsquigarrow-l8ijqe.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↭"
     },
     {
       "id": "latex:amssymb:leftthreetimes",
@@ -1631,7 +1720,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leftthreetimes-xv6pxi.jsonl",
         "count": 28
-      }
+      },
+      "unicode": "⋋"
     },
     {
       "id": "latex:amssymb:leq",
@@ -1648,7 +1738,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leq-z0jkht.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≤"
     },
     {
       "id": "latex:amssymb:leqq",
@@ -1665,7 +1756,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leqq-16iz0ls.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≦"
     },
     {
       "id": "latex:amssymb:leqslant",
@@ -1682,7 +1774,8 @@
       "samples": {
         "path": "samples/latex/amssymb/leqslant-1atsjlz.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⩽"
     },
     {
       "id": "latex:amssymb:lessapprox",
@@ -1699,7 +1792,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lessapprox-dh1ojo.jsonl",
         "count": 25
-      }
+      },
+      "unicode": "⪅"
     },
     {
       "id": "latex:amssymb:lessdot",
@@ -1716,7 +1810,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lessdot-hjrv3.jsonl",
         "count": 37
-      }
+      },
+      "unicode": "⋖"
     },
     {
       "id": "latex:amssymb:lesseqgtr",
@@ -1733,7 +1828,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lesseqgtr-1jykz21.jsonl",
         "count": 21
-      }
+      },
+      "unicode": "⋚"
     },
     {
       "id": "latex:amssymb:lesseqqgtr",
@@ -1750,7 +1846,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lesseqqgtr-91d8qg.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "⪋"
     },
     {
       "id": "latex:amssymb:lessgtr",
@@ -1767,7 +1864,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lessgtr-nnq5pn.jsonl",
         "count": 48
-      }
+      },
+      "unicode": "≶"
     },
     {
       "id": "latex:amssymb:lesssim",
@@ -1784,7 +1882,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lesssim-1g7umfz.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≲"
     },
     {
       "id": "latex:amssymb:ll",
@@ -1801,7 +1900,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ll-17llg11.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≪"
     },
     {
       "id": "latex:amssymb:llcorner",
@@ -1818,7 +1918,8 @@
       "samples": {
         "path": "samples/latex/amssymb/llcorner-fixhww.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⌞"
     },
     {
       "id": "latex:amssymb:Lleftarrow",
@@ -1835,7 +1936,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lleftarrow-gc4b0f.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "⇚"
     },
     {
       "id": "latex:amssymb:lll",
@@ -1852,7 +1954,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lll-sm4ffv.jsonl",
         "count": 24
-      }
+      },
+      "unicode": "⋘"
     },
     {
       "id": "latex:amssymb:lnapprox",
@@ -1869,7 +1972,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lnapprox-gzd9tz.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "⪉"
     },
     {
       "id": "latex:amssymb:lneq",
@@ -1886,7 +1990,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lneq-1qrah3h.jsonl",
         "count": 41
-      }
+      },
+      "unicode": "⪇"
     },
     {
       "id": "latex:amssymb:lneqq",
@@ -1903,7 +2008,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lneqq-12wsgms.jsonl",
         "count": 19
-      }
+      },
+      "unicode": "≨"
     },
     {
       "id": "latex:amssymb:lnsim",
@@ -1920,7 +2026,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lnsim-189m69a.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⋦"
     },
     {
       "id": "latex:amssymb:looparrowleft",
@@ -1937,7 +2044,8 @@
       "samples": {
         "path": "samples/latex/amssymb/looparrowleft-1prrspt.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "↫"
     },
     {
       "id": "latex:amssymb:looparrowright",
@@ -1954,7 +2062,8 @@
       "samples": {
         "path": "samples/latex/amssymb/looparrowright-xy6gqq.jsonl",
         "count": 41
-      }
+      },
+      "unicode": "↬"
     },
     {
       "id": "latex:amssymb:lozenge",
@@ -1971,7 +2080,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lozenge-qkzsud.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "◊"
     },
     {
       "id": "latex:amssymb:lrcorner",
@@ -1988,7 +2098,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lrcorner-iwd9h6.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⌟"
     },
     {
       "id": "latex:amssymb:Lsh",
@@ -2005,7 +2116,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lsh-1ic5xeo.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "↰"
     },
     {
       "id": "latex:amssymb:ltimes",
@@ -2022,7 +2134,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ltimes-9log1v.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋉"
     },
     {
       "id": "latex:amssymb:lvertneqq",
@@ -2039,7 +2152,8 @@
       "samples": {
         "path": "samples/latex/amssymb/lvertneqq-d8um3b.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "≨"
     },
     {
       "id": "latex:amssymb:maltese",
@@ -2056,7 +2170,8 @@
       "samples": {
         "path": "samples/latex/amssymb/maltese-1wzxmz6.jsonl",
         "count": 25
-      }
+      },
+      "unicode": "✠"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-A-rbrace",
@@ -2073,7 +2188,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-a-rbrace-12qsqjx.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d49c"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-B-rbrace",
@@ -2090,7 +2206,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-b-rbrace-1y6hu3e.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℬ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-C-rbrace",
@@ -2107,7 +2224,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-c-rbrace-1sj9wdf.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d49e"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-D-rbrace",
@@ -2124,7 +2242,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-d-rbrace-sily5c.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d49f"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-E-rbrace",
@@ -2141,7 +2260,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-e-rbrace-188q2lt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℰ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-F-rbrace",
@@ -2158,7 +2278,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-f-rbrace-1iyuoou.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℱ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-G-rbrace",
@@ -2175,7 +2296,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-g-rbrace-16jcj3r.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4a2"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-H-rbrace",
@@ -2192,7 +2314,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-h-rbrace-1yegbn8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℋ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-I-rbrace",
@@ -2209,7 +2332,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-i-rbrace-1duueg5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℑ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-J-rbrace",
@@ -2226,7 +2350,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-j-rbrace-y4xu7m.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4a5"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-K-rbrace",
@@ -2243,7 +2368,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-k-rbrace-1tskfjv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4a6"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-L-rbrace",
@@ -2260,7 +2386,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-l-rbrace-18jyg8o.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℒ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-M-rbrace",
@@ -2277,7 +2404,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-m-rbrace-1ozeeax.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℳ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-N-rbrace",
@@ -2294,7 +2422,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-n-rbrace-qk9rzq.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4a9"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-O-rbrace",
@@ -2311,7 +2440,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-o-rbrace-1ce2jwv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4aA"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-P-rbrace",
@@ -2328,7 +2458,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-p-rbrace-b5ymz0.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4ab"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-Q-rbrace",
@@ -2345,7 +2476,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-q-rbrace-1es17h.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4ac"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-R-rbrace",
@@ -2362,7 +2494,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-r-rbrace-1fxfaq2.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℛ"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-S-rbrace",
@@ -2379,7 +2512,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-s-rbrace-1i1mdub.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4ae"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-T-rbrace",
@@ -2396,7 +2530,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-t-rbrace-1ekayxc.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4af"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-U-rbrace",
@@ -2413,7 +2548,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-u-rbrace-1ufeun5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4b0"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-V-rbrace",
@@ -2430,7 +2566,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-v-rbrace-1hsbkxa.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4b1"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-W-rbrace",
@@ -2447,7 +2584,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-w-rbrace-owewyv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4b2"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-X-rbrace",
@@ -2464,7 +2602,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-x-rbrace-1ddwl0k.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4b3"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-Y-rbrace",
@@ -2481,7 +2620,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-y-rbrace-t6rkt1.jsonl",
         "count": 28
-      }
+      },
+      "unicode": "\\U0001d4b4"
     },
     {
       "id": "latex:amssymb:mathcal-lbrace-Z-rbrace",
@@ -2498,7 +2638,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathcal-lbrace-z-rbrace-ve7wrm.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d4b5"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-a-rbrace",
@@ -2515,7 +2656,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-a-rbrace-uw5x4n.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "\\U0001d51e"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-A-rbrace",
@@ -2532,7 +2674,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-a-rbrace-7sv49j.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d504"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-b-rbrace",
@@ -2549,7 +2692,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-b-rbrace-4lgm74.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "\\U0001d51f"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-B-rbrace",
@@ -2566,7 +2710,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-b-rbrace-6b7ps0.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "\\U0001d505"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-c-rbrace",
@@ -2583,7 +2728,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-c-rbrace-12uu0hd.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d520"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-C-rbrace",
@@ -2600,7 +2746,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-c-rbrace-sdaaxd.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "ℭ"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-d-rbrace",
@@ -2617,7 +2764,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-d-rbrace-14xvyze.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "\\U0001d521"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-D-rbrace",
@@ -2634,7 +2782,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-d-rbrace-1izt77e.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "\\U0001d507"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-e-rbrace",
@@ -2651,7 +2800,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-e-rbrace-1g7ed7n.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "\\U0001d522"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-E-rbrace",
@@ -2668,7 +2818,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-e-rbrace-10ti30j.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "\\U0001d508"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-f-rbrace",
@@ -2685,7 +2836,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-f-rbrace-h627oc.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "\\U0001d523"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-F-rbrace",
@@ -2702,7 +2854,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-f-rbrace-e26v24.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d509"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-g-rbrace",
@@ -2719,7 +2872,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-g-rbrace-1w99zu5.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "\\U0001d524"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-G-rbrace",
@@ -2736,7 +2890,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-g-rbrace-mvcyvh.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "\\U0001d50a"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-h-rbrace",
@@ -2753,7 +2908,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-h-rbrace-1jdzwhi.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "\\U0001d525"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-H-rbrace",
@@ -2770,7 +2926,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-h-rbrace-199eydy.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "ℌ"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-i-rbrace",
@@ -2787,7 +2944,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-i-rbrace-ogx7yn.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d526"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-I-rbrace",
@@ -2804,7 +2962,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-i-rbrace-x7dx0v.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "ℑ"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-j-rbrace",
@@ -2821,7 +2980,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-j-rbrace-emj8qg.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "\\U0001d527"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-J-rbrace",
@@ -2838,7 +2998,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-j-rbrace-14yhejc.jsonl",
         "count": 36
-      }
+      },
+      "unicode": "\\U0001d50d"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-k-rbrace",
@@ -2855,7 +3016,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-k-rbrace-17e9qnd.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "\\U0001d528"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-K-rbrace",
@@ -2872,7 +3034,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-k-rbrace-x9osjt.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "\\U0001d50e"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-l-rbrace",
@@ -2889,7 +3052,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-l-rbrace-9gb90y.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "\\U0001d529"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-L-rbrace",
@@ -2906,7 +3070,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-l-rbrace-5norma.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "\\U0001d50f"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-m-rbrace",
@@ -2923,7 +3088,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-m-rbrace-6z1s6z.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "\\U0001d52a"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-M-rbrace",
@@ -2940,7 +3106,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-m-rbrace-1ecrc63.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d510"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-n-rbrace",
@@ -2957,7 +3124,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-n-rbrace-1lb3j90.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "\\U0001d52b"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-N-rbrace",
@@ -2974,7 +3142,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-n-rbrace-bwphw.jsonl",
         "count": 24
-      }
+      },
+      "unicode": "\\U0001d511"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-o-rbrace",
@@ -2991,7 +3160,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-o-rbrace-1kt4gyt.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "\\U0001d52c"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-O-rbrace",
@@ -3008,7 +3178,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-o-rbrace-m52l39.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "\\U0001d512"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-p-rbrace",
@@ -3025,7 +3196,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-p-rbrace-c9os8e.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "\\U0001d52d"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-P-rbrace",
@@ -3042,7 +3214,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-p-rbrace-q2jrke.jsonl",
         "count": 48
-      }
+      },
+      "unicode": "\\U0001d513"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-q-rbrace",
@@ -3059,7 +3232,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-q-rbrace-bszwyv.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "\\U0001d52e"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-Q-rbrace",
@@ -3076,7 +3250,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-q-rbrace-xbbmkn.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d514"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-r-rbrace",
@@ -3093,7 +3268,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-r-rbrace-91o68g.jsonl",
         "count": 20
-      }
+      },
+      "unicode": "\\U0001d52f"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-R-rbrace",
@@ -3110,7 +3286,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-r-rbrace-a2o50w.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℜ"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-s-rbrace",
@@ -3127,7 +3304,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-s-rbrace-7ltzoh.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d530"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-S-rbrace",
@@ -3144,7 +3322,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-s-rbrace-1qkcu9t.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d516"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-t-rbrace",
@@ -3161,7 +3340,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-t-rbrace-1ygz616.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "\\U0001d531"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-T-rbrace",
@@ -3178,7 +3358,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-t-rbrace-10hoey2.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "\\U0001d517"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-u-rbrace",
@@ -3195,7 +3376,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-u-rbrace-u4j9hv.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "\\U0001d532"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-U-rbrace",
@@ -3212,7 +3394,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-u-rbrace-r0nwvn.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "\\U0001d518"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-v-rbrace",
@@ -3229,7 +3412,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-v-rbrace-i4ax3g.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "\\U0001d533"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-V-rbrace",
@@ -3246,7 +3430,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-v-rbrace-1ubp4vg.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "\\U0001d519"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-w-rbrace",
@@ -3263,7 +3448,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-w-rbrace-1cepul.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "\\U0001d534"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-W-rbrace",
@@ -3280,7 +3466,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-w-rbrace-2deon1.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "\\U0001d51a"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-x-rbrace",
@@ -3297,7 +3484,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-x-rbrace-1cmrvmu.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d535"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-X-rbrace",
@@ -3314,7 +3502,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-x-rbrace-3xlzgm.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d51b"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-y-rbrace",
@@ -3331,7 +3520,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-y-rbrace-1oe8wsf.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d536"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-Y-rbrace",
@@ -3348,7 +3538,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-y-rbrace-mpqehr.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d51c"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-z-rbrace",
@@ -3365,7 +3556,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-z-rbrace-1qlo4yw.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "\\U0001d537"
     },
     {
       "id": "latex:amssymb:mathfrak-lbrace-Z-rbrace",
@@ -3382,7 +3574,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mathfrak-lbrace-z-rbrace-1gh36vc.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "ℨ"
     },
     {
       "id": "latex:amssymb:measuredangle",
@@ -3399,7 +3592,8 @@
       "samples": {
         "path": "samples/latex/amssymb/measuredangle-khnhm4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∡"
     },
     {
       "id": "latex:amssymb:mho",
@@ -3416,7 +3610,8 @@
       "samples": {
         "path": "samples/latex/amssymb/mho-7prs25.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "℧"
     },
     {
       "id": "latex:amssymb:multimap",
@@ -3433,7 +3628,8 @@
       "samples": {
         "path": "samples/latex/amssymb/multimap-4jxx3w.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊸"
     },
     {
       "id": "latex:amssymb:ncong",
@@ -3450,7 +3646,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ncong-yoled4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≇"
     },
     {
       "id": "latex:amssymb:neq",
@@ -3467,7 +3664,8 @@
       "samples": {
         "path": "samples/latex/amssymb/neq-pcr8mv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≠"
     },
     {
       "id": "latex:amssymb:nexists",
@@ -3484,7 +3682,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nexists-1gbkjw9.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∄"
     },
     {
       "id": "latex:amssymb:ngeq",
@@ -3501,7 +3700,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ngeq-1eqkee4.jsonl",
         "count": 34
-      }
+      },
+      "unicode": "≱"
     },
     {
       "id": "latex:amssymb:ngeqq",
@@ -3535,7 +3735,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ngeqslant-h9kopw.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "≱"
     },
     {
       "id": "latex:amssymb:ngtr",
@@ -3552,7 +3753,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ngtr-1cu2w8g.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≯"
     },
     {
       "id": "latex:amssymb:nleftarrow",
@@ -3569,7 +3771,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nleftarrow-zjobr1.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "↚"
     },
     {
       "id": "latex:amssymb:nLeftarrow",
@@ -3586,7 +3789,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nleftarrow-q61o7x.jsonl",
         "count": 8
-      }
+      },
+      "unicode": "⇍"
     },
     {
       "id": "latex:amssymb:nleftrightarrow",
@@ -3603,7 +3807,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nleftrightarrow-cyh7bf.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "↮"
     },
     {
       "id": "latex:amssymb:nLeftrightarrow",
@@ -3620,7 +3825,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nleftrightarrow-bhvyuj.jsonl",
         "count": 43
-      }
+      },
+      "unicode": "⇎"
     },
     {
       "id": "latex:amssymb:nleq",
@@ -3637,7 +3843,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nleq-1e8op4l.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≰"
     },
     {
       "id": "latex:amssymb:nleqq",
@@ -3671,7 +3878,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nleqslant-1pt460b.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "≰"
     },
     {
       "id": "latex:amssymb:nless",
@@ -3688,7 +3896,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nless-ra8pis.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≮"
     },
     {
       "id": "latex:amssymb:nmid",
@@ -3705,7 +3914,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nmid-eyo3h5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∤"
     },
     {
       "id": "latex:amssymb:nparallel",
@@ -3722,7 +3932,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nparallel-y5ju1a.jsonl",
         "count": 31
-      }
+      },
+      "unicode": "∦"
     },
     {
       "id": "latex:amssymb:nprec",
@@ -3739,7 +3950,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nprec-1443qtv.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "⊀"
     },
     {
       "id": "latex:amssymb:npreceq",
@@ -3756,7 +3968,8 @@
       "samples": {
         "path": "samples/latex/amssymb/npreceq-nsoua1.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "⋠"
     },
     {
       "id": "latex:amssymb:nrightarrow",
@@ -3773,7 +3986,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nrightarrow-517n76.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↛"
     },
     {
       "id": "latex:amssymb:nRightarrow",
@@ -3790,7 +4004,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nrightarrow-1xr7wgi.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇏"
     },
     {
       "id": "latex:amssymb:nshortmid",
@@ -3841,7 +4056,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nsim-k7yb2o.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≁"
     },
     {
       "id": "latex:amssymb:nsubseteq",
@@ -3858,7 +4074,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nsubseteq-1crbymd.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊈"
     },
     {
       "id": "latex:amssymb:nsucc",
@@ -3875,7 +4092,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nsucc-xkimuf.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "⊁"
     },
     {
       "id": "latex:amssymb:nsucceq",
@@ -3892,7 +4110,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nsucceq-19x2lkl.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "⋡"
     },
     {
       "id": "latex:amssymb:nsupseteq",
@@ -3909,7 +4128,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nsupseteq-whjd3j.jsonl",
         "count": 27
-      }
+      },
+      "unicode": "⊉"
     },
     {
       "id": "latex:amssymb:nsupseteqq",
@@ -3926,7 +4146,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nsupseteqq-1llnbru.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "⊉"
     },
     {
       "id": "latex:amssymb:ntriangleleft",
@@ -3943,7 +4164,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ntriangleleft-q4i2b8.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "⋪"
     },
     {
       "id": "latex:amssymb:ntrianglelefteq",
@@ -3960,7 +4182,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ntrianglelefteq-fjjuuu.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⋬"
     },
     {
       "id": "latex:amssymb:ntriangleright",
@@ -3977,7 +4200,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ntriangleright-1d5tbs1.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⋫"
     },
     {
       "id": "latex:amssymb:ntrianglerighteq",
@@ -3994,7 +4218,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ntrianglerighteq-an34av.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "⋭"
     },
     {
       "id": "latex:amssymb:nvdash",
@@ -4011,7 +4236,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nvdash-1vap1kl.jsonl",
         "count": 42
-      }
+      },
+      "unicode": "⊬"
     },
     {
       "id": "latex:amssymb:nvDash",
@@ -4028,7 +4254,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nvdash-vtxg7p.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊭"
     },
     {
       "id": "latex:amssymb:nVDash",
@@ -4045,7 +4272,8 @@
       "samples": {
         "path": "samples/latex/amssymb/nvdash-1eu2agl.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⊯"
     },
     {
       "id": "latex:amssymb:pitchfork",
@@ -4062,7 +4290,8 @@
       "samples": {
         "path": "samples/latex/amssymb/pitchfork-3173ql.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋔"
     },
     {
       "id": "latex:amssymb:precapprox",
@@ -4079,7 +4308,8 @@
       "samples": {
         "path": "samples/latex/amssymb/precapprox-q42fdz.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "⪷"
     },
     {
       "id": "latex:amssymb:preccurlyeq",
@@ -4096,7 +4326,8 @@
       "samples": {
         "path": "samples/latex/amssymb/preccurlyeq-1gylon2.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≼"
     },
     {
       "id": "latex:amssymb:precnapprox",
@@ -4113,7 +4344,8 @@
       "samples": {
         "path": "samples/latex/amssymb/precnapprox-m7ck5v.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "⪹"
     },
     {
       "id": "latex:amssymb:precnsim",
@@ -4130,7 +4362,8 @@
       "samples": {
         "path": "samples/latex/amssymb/precnsim-1eq6j0i.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "⋨"
     },
     {
       "id": "latex:amssymb:precsim",
@@ -4147,7 +4380,8 @@
       "samples": {
         "path": "samples/latex/amssymb/precsim-1382r66.jsonl",
         "count": 25
-      }
+      },
+      "unicode": "≾"
     },
     {
       "id": "latex:amssymb:rightarrowtail",
@@ -4164,7 +4398,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rightarrowtail-1ogjcaw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↣"
     },
     {
       "id": "latex:amssymb:rightleftarrows",
@@ -4181,7 +4416,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rightleftarrows-4hc4fi.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇄"
     },
     {
       "id": "latex:amssymb:rightleftharpoons",
@@ -4198,7 +4434,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rightleftharpoons-1ut964g.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇌"
     },
     {
       "id": "latex:amssymb:rightrightarrows",
@@ -4215,7 +4452,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rightrightarrows-12urjcf.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇉"
     },
     {
       "id": "latex:amssymb:rightsquigarrow",
@@ -4232,7 +4470,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rightsquigarrow-srpj95.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇝"
     },
     {
       "id": "latex:amssymb:rightthreetimes",
@@ -4249,7 +4488,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rightthreetimes-1m3rraj.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "⋌"
     },
     {
       "id": "latex:amssymb:risingdotseq",
@@ -4266,7 +4506,8 @@
       "samples": {
         "path": "samples/latex/amssymb/risingdotseq-1jzq3cd.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "≓"
     },
     {
       "id": "latex:amssymb:Rrightarrow",
@@ -4283,7 +4524,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rrightarrow-7b4igm.jsonl",
         "count": 39
-      }
+      },
+      "unicode": "⇛"
     },
     {
       "id": "latex:amssymb:Rsh",
@@ -4300,7 +4542,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rsh-1p3bypa.jsonl",
         "count": 21
-      }
+      },
+      "unicode": "↱"
     },
     {
       "id": "latex:amssymb:rtimes",
@@ -4317,7 +4560,8 @@
       "samples": {
         "path": "samples/latex/amssymb/rtimes-1jpmdet.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋊"
     },
     {
       "id": "latex:amssymb:shortmid",
@@ -4368,7 +4612,8 @@
       "samples": {
         "path": "samples/latex/amssymb/smallfrown-mbcwwk.jsonl",
         "count": 38
-      }
+      },
+      "unicode": "⌢"
     },
     {
       "id": "latex:amssymb:smallsetminus",
@@ -4385,7 +4630,8 @@
       "samples": {
         "path": "samples/latex/amssymb/smallsetminus-1rdvgzw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "﹨"
     },
     {
       "id": "latex:amssymb:smallsmile",
@@ -4402,7 +4648,8 @@
       "samples": {
         "path": "samples/latex/amssymb/smallsmile-1azf03k.jsonl",
         "count": 35
-      }
+      },
+      "unicode": "⌣"
     },
     {
       "id": "latex:amssymb:sphericalangle",
@@ -4419,7 +4666,8 @@
       "samples": {
         "path": "samples/latex/amssymb/sphericalangle-2xn51n.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∢"
     },
     {
       "id": "latex:amssymb:sqsubset",
@@ -4436,7 +4684,8 @@
       "samples": {
         "path": "samples/latex/amssymb/sqsubset-o965v3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊏"
     },
     {
       "id": "latex:amssymb:sqsupset",
@@ -4453,7 +4702,8 @@
       "samples": {
         "path": "samples/latex/amssymb/sqsupset-kwfbr5.jsonl",
         "count": 41
-      }
+      },
+      "unicode": "⊐"
     },
     {
       "id": "latex:amssymb:square",
@@ -4470,7 +4720,8 @@
       "samples": {
         "path": "samples/latex/amssymb/square-1tudshy.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "■"
     },
     {
       "id": "latex:amssymb:Subset",
@@ -4487,7 +4738,8 @@
       "samples": {
         "path": "samples/latex/amssymb/subset-1wacyc3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋐"
     },
     {
       "id": "latex:amssymb:subseteqq",
@@ -4504,7 +4756,8 @@
       "samples": {
         "path": "samples/latex/amssymb/subseteqq-qyo0js.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "⫅"
     },
     {
       "id": "latex:amssymb:subsetneq",
@@ -4521,7 +4774,8 @@
       "samples": {
         "path": "samples/latex/amssymb/subsetneq-o7rg51.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊊"
     },
     {
       "id": "latex:amssymb:subsetneqq",
@@ -4538,7 +4792,8 @@
       "samples": {
         "path": "samples/latex/amssymb/subsetneqq-srrk24.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⫋"
     },
     {
       "id": "latex:amssymb:succapprox",
@@ -4555,7 +4810,8 @@
       "samples": {
         "path": "samples/latex/amssymb/succapprox-1mxqixv.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "⪸"
     },
     {
       "id": "latex:amssymb:succcurlyeq",
@@ -4572,7 +4828,8 @@
       "samples": {
         "path": "samples/latex/amssymb/succcurlyeq-1btt76.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≽"
     },
     {
       "id": "latex:amssymb:succnapprox",
@@ -4589,7 +4846,8 @@
       "samples": {
         "path": "samples/latex/amssymb/succnapprox-temn73.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "⪺"
     },
     {
       "id": "latex:amssymb:succnsim",
@@ -4606,7 +4864,8 @@
       "samples": {
         "path": "samples/latex/amssymb/succnsim-1p1rjwm.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "⋩"
     },
     {
       "id": "latex:amssymb:succsim",
@@ -4623,7 +4882,8 @@
       "samples": {
         "path": "samples/latex/amssymb/succsim-x959zm.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≿"
     },
     {
       "id": "latex:amssymb:Supset",
@@ -4640,7 +4900,8 @@
       "samples": {
         "path": "samples/latex/amssymb/supset-1pnjdmt.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "⋑"
     },
     {
       "id": "latex:amssymb:supseteqq",
@@ -4657,7 +4918,8 @@
       "samples": {
         "path": "samples/latex/amssymb/supseteqq-ofvlli.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⫆"
     },
     {
       "id": "latex:amssymb:supsetneq",
@@ -4674,7 +4936,8 @@
       "samples": {
         "path": "samples/latex/amssymb/supsetneq-7iqkyf.jsonl",
         "count": 46
-      }
+      },
+      "unicode": "⊋"
     },
     {
       "id": "latex:amssymb:supsetneqq",
@@ -4691,7 +4954,8 @@
       "samples": {
         "path": "samples/latex/amssymb/supsetneqq-1495ixe.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "⫌"
     },
     {
       "id": "latex:amssymb:therefore",
@@ -4708,7 +4972,8 @@
       "samples": {
         "path": "samples/latex/amssymb/therefore-17nqnjr.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∴"
     },
     {
       "id": "latex:amssymb:thickapprox",
@@ -4759,7 +5024,8 @@
       "samples": {
         "path": "samples/latex/amssymb/triangledown-ihx1xx.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▿"
     },
     {
       "id": "latex:amssymb:trianglelefteq",
@@ -4776,7 +5042,8 @@
       "samples": {
         "path": "samples/latex/amssymb/trianglelefteq-13p5r2y.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊴"
     },
     {
       "id": "latex:amssymb:triangleq",
@@ -4793,7 +5060,8 @@
       "samples": {
         "path": "samples/latex/amssymb/triangleq-1spc4f0.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≜"
     },
     {
       "id": "latex:amssymb:trianglerighteq",
@@ -4810,7 +5078,8 @@
       "samples": {
         "path": "samples/latex/amssymb/trianglerighteq-1lqdt9f.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "⊵"
     },
     {
       "id": "latex:amssymb:twoheadleftarrow",
@@ -4827,7 +5096,8 @@
       "samples": {
         "path": "samples/latex/amssymb/twoheadleftarrow-eec58z.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "↞"
     },
     {
       "id": "latex:amssymb:twoheadrightarrow",
@@ -4844,7 +5114,8 @@
       "samples": {
         "path": "samples/latex/amssymb/twoheadrightarrow-djm0oo.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↠"
     },
     {
       "id": "latex:amssymb:ulcorner",
@@ -4861,7 +5132,8 @@
       "samples": {
         "path": "samples/latex/amssymb/ulcorner-7700e1.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⌜"
     },
     {
       "id": "latex:amssymb:upharpoonleft",
@@ -4878,7 +5150,8 @@
       "samples": {
         "path": "samples/latex/amssymb/upharpoonleft-3slxy2.jsonl",
         "count": 49
-      }
+      },
+      "unicode": "↿"
     },
     {
       "id": "latex:amssymb:upharpoonright",
@@ -4895,7 +5168,8 @@
       "samples": {
         "path": "samples/latex/amssymb/upharpoonright-ai18pz.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↾"
     },
     {
       "id": "latex:amssymb:upuparrows",
@@ -4912,7 +5186,8 @@
       "samples": {
         "path": "samples/latex/amssymb/upuparrows-1pcv2br.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⇈"
     },
     {
       "id": "latex:amssymb:urcorner",
@@ -4929,7 +5204,8 @@
       "samples": {
         "path": "samples/latex/amssymb/urcorner-1mifa3z.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "⌝"
     },
     {
       "id": "latex:amssymb:varkappa",
@@ -4946,7 +5222,8 @@
       "samples": {
         "path": "samples/latex/amssymb/varkappa-ntn1tt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϰ"
     },
     {
       "id": "latex:amssymb:varnothing",
@@ -4963,7 +5240,8 @@
       "samples": {
         "path": "samples/latex/amssymb/varnothing-1k4sb7b.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∅"
     },
     {
       "id": "latex:amssymb:varpropto",
@@ -4980,7 +5258,8 @@
       "samples": {
         "path": "samples/latex/amssymb/varpropto-kcks4q.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∝"
     },
     {
       "id": "latex:amssymb:varsubsetneq",
@@ -4997,7 +5276,8 @@
       "samples": {
         "path": "samples/latex/amssymb/varsubsetneq-k62pww.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊊"
     },
     {
       "id": "latex:amssymb:varsubsetneqq",
@@ -5065,7 +5345,8 @@
       "samples": {
         "path": "samples/latex/amssymb/vartriangle-quefq6.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▵"
     },
     {
       "id": "latex:amssymb:vartriangleleft",
@@ -5082,7 +5363,8 @@
       "samples": {
         "path": "samples/latex/amssymb/vartriangleleft-c5jm17.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊲"
     },
     {
       "id": "latex:amssymb:vartriangleright",
@@ -5099,7 +5381,8 @@
       "samples": {
         "path": "samples/latex/amssymb/vartriangleright-1m63kgk.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊳"
     },
     {
       "id": "latex:amssymb:vDash",
@@ -5116,7 +5399,8 @@
       "samples": {
         "path": "samples/latex/amssymb/vdash-1aqgchd.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊨"
     },
     {
       "id": "latex:amssymb:Vdash",
@@ -5133,7 +5417,8 @@
       "samples": {
         "path": "samples/latex/amssymb/vdash-1l5me9d.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊩"
     },
     {
       "id": "latex:amssymb:veebar",
@@ -5150,7 +5435,8 @@
       "samples": {
         "path": "samples/latex/amssymb/veebar-dhl0ik.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊻"
     },
     {
       "id": "latex:amssymb:Vvdash",
@@ -5167,7 +5453,8 @@
       "samples": {
         "path": "samples/latex/amssymb/vvdash-124359p.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "⊪"
     },
     {
       "id": "latex:bbold:mathbb-lbrace-1-rbrace",
@@ -5184,7 +5471,8 @@
       "samples": {
         "path": "samples/latex/bbold/mathbb-lbrace-1-rbrace-120xb4g.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d7d9"
     },
     {
       "id": "latex:cmll:parr",
@@ -5235,7 +5523,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-1-rbrace-qez6fw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d7d9"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-A-rbrace",
@@ -5252,7 +5541,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-a-rbrace-16r1ygc.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d538"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-B-rbrace",
@@ -5269,7 +5559,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-b-rbrace-pbgsfn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d539"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-C-rbrace",
@@ -5286,7 +5577,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-c-rbrace-1i2p3sa.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℂ"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-D-rbrace",
@@ -5303,7 +5595,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-d-rbrace-1pjwum9.jsonl",
         "count": 34
-      }
+      },
+      "unicode": "\\U0001d53b"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-E-rbrace",
@@ -5320,7 +5613,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-e-rbrace-leghm8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d53c"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-F-rbrace",
@@ -5337,7 +5631,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-f-rbrace-jc7zrb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d53d"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-G-rbrace",
@@ -5354,7 +5649,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-g-rbrace-1jxldzi.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "\\U0001d53e"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-h-rbrace",
@@ -5388,7 +5684,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-h-rbrace-obbsdx.jsonl",
         "count": 34
-      }
+      },
+      "unicode": "ℍ"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-I-rbrace",
@@ -5405,7 +5702,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-i-rbrace-9xvuis.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\U0001d540"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-J-rbrace",
@@ -5422,7 +5720,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-j-rbrace-194nj4b.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "\\U0001d541"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-k-rbrace",
@@ -5456,7 +5755,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-k-rbrace-l9izuq.jsonl",
         "count": 27
-      }
+      },
+      "unicode": "\\U0001d542"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-L-rbrace",
@@ -5473,7 +5773,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-l-rbrace-16pg1kp.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "\\U0001d543"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-M-rbrace",
@@ -5490,7 +5791,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-m-rbrace-19imxxk.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "\\U0001d544"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-N-rbrace",
@@ -5507,7 +5809,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-n-rbrace-xa3pgf.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℕ"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-O-rbrace",
@@ -5524,7 +5827,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-o-rbrace-9xvlae.jsonl",
         "count": 30
-      }
+      },
+      "unicode": "\\U0001d546"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-P-rbrace",
@@ -5541,7 +5845,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-p-rbrace-luwz7x.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℙ"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-Q-rbrace",
@@ -5558,7 +5863,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-q-rbrace-omhyf0.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℚ"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-R-rbrace",
@@ -5575,7 +5881,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-r-rbrace-d8x477.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℝ"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-S-rbrace",
@@ -5592,7 +5899,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-s-rbrace-64a1dm.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "\\U0001d54a"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-T-rbrace",
@@ -5609,7 +5917,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-t-rbrace-1m8bxch.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "\\U0001d54b"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-U-rbrace",
@@ -5626,7 +5935,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-u-rbrace-1ydvitc.jsonl",
         "count": 8
-      }
+      },
+      "unicode": "\\U0001d54c"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-V-rbrace",
@@ -5643,7 +5953,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-v-rbrace-12fdzx3.jsonl",
         "count": 18
-      }
+      },
+      "unicode": "\\U0001d54d"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-W-rbrace",
@@ -5660,7 +5971,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-w-rbrace-p4ba72.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "\\U0001d54e"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-X-rbrace",
@@ -5677,7 +5989,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-x-rbrace-5l505h.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "\\U0001d54f"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-Y-rbrace",
@@ -5694,7 +6007,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-y-rbrace-5nhe50.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "\\U0001d550"
     },
     {
       "id": "latex:dsfont:mathds-lbrace-Z-rbrace",
@@ -5711,7 +6025,8 @@
       "samples": {
         "path": "samples/latex/dsfont/mathds-lbrace-z-rbrace-ei7ndn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℤ"
     },
     {
       "id": "latex:esint:dotsint",
@@ -5745,7 +6060,8 @@
       "samples": {
         "path": "samples/latex/esint/fint-1c2tx.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⨏"
     },
     {
       "id": "latex:esint:iiiint",
@@ -5762,7 +6078,8 @@
       "samples": {
         "path": "samples/latex/esint/iiiint-18b6dq4.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "⨌"
     },
     {
       "id": "latex:esint:iiint",
@@ -5779,7 +6096,8 @@
       "samples": {
         "path": "samples/latex/esint/iiint-10b16dl.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∭"
     },
     {
       "id": "latex:esint:iint",
@@ -5796,7 +6114,8 @@
       "samples": {
         "path": "samples/latex/esint/iint-2smhte.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∬"
     },
     {
       "id": "latex:esint:landdownint",
@@ -5847,7 +6166,8 @@
       "samples": {
         "path": "samples/latex/esint/oiint-h39pk3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∯"
     },
     {
       "id": "latex:esint:ointclockwise",
@@ -5881,7 +6201,8 @@
       "samples": {
         "path": "samples/latex/esint/ointctrclockwise-19d2eg3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∳"
     },
     {
       "id": "latex:esint:sqiint",
@@ -5915,7 +6236,8 @@
       "samples": {
         "path": "samples/latex/esint/sqint-380lsn.jsonl",
         "count": 13
-      }
+      },
+      "unicode": "⨖"
     },
     {
       "id": "latex:esint:varoiint",
@@ -5949,7 +6271,8 @@
       "samples": {
         "path": "samples/latex/esint/varointclockwise-f78mpl.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "∲"
     },
     {
       "id": "latex:esint:varointctrclockwise",
@@ -6000,7 +6323,8 @@
       "samples": {
         "path": "samples/latex/gensymb/degree-31ie6a.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xb0"
     },
     {
       "id": "latex:gensymb:ohm",
@@ -6032,7 +6356,8 @@
       "samples": {
         "path": "samples/latex/latex2e/aa-zzb5o4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xe5"
     },
     {
       "id": "latex:latex2e:AA",
@@ -6047,7 +6372,8 @@
       "samples": {
         "path": "samples/latex/latex2e/aa-18y2dv8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xc5"
     },
     {
       "id": "latex:latex2e:ae",
@@ -6062,7 +6388,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ae-yvcqw8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xe6"
     },
     {
       "id": "latex:latex2e:AE",
@@ -6077,7 +6404,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ae-17u3z3c.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xc6"
     },
     {
       "id": "latex:latex2e:aleph",
@@ -6092,7 +6420,8 @@
       "samples": {
         "path": "samples/latex/latex2e/aleph-b60n7u.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℵ"
     },
     {
       "id": "latex:latex2e:alpha",
@@ -6107,7 +6436,8 @@
       "samples": {
         "path": "samples/latex/latex2e/alpha-1hk8g8m.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "α"
     },
     {
       "id": "latex:latex2e:amalg",
@@ -6122,7 +6452,8 @@
       "samples": {
         "path": "samples/latex/latex2e/amalg-1ul4l1q.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⨿"
     },
     {
       "id": "latex:latex2e:ampersand",
@@ -6137,7 +6468,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ampersand-1f6iv1p.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "&"
     },
     {
       "id": "latex:latex2e:angle",
@@ -6152,7 +6484,8 @@
       "samples": {
         "path": "samples/latex/latex2e/angle-md28mt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∠"
     },
     {
       "id": "latex:latex2e:approx",
@@ -6167,7 +6500,8 @@
       "samples": {
         "path": "samples/latex/latex2e/approx-tqd2ea.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≈"
     },
     {
       "id": "latex:latex2e:ast",
@@ -6182,7 +6516,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ast-fhbrju.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∗"
     },
     {
       "id": "latex:latex2e:asymp",
@@ -6197,7 +6532,8 @@
       "samples": {
         "path": "samples/latex/latex2e/asymp-aq3zec.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≍"
     },
     {
       "id": "latex:latex2e:backslash",
@@ -6212,7 +6548,8 @@
       "samples": {
         "path": "samples/latex/latex2e/backslash-ght8si.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\"
     },
     {
       "id": "latex:latex2e:bar:16socis",
@@ -6242,7 +6579,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bar/1sa4fqg-106x7xo.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "‖"
     },
     {
       "id": "latex:latex2e:beta",
@@ -6257,7 +6595,8 @@
       "samples": {
         "path": "samples/latex/latex2e/beta-bwm2to.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "β"
     },
     {
       "id": "latex:latex2e:bigcap",
@@ -6272,7 +6611,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigcap-wrrb94.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋂"
     },
     {
       "id": "latex:latex2e:bigcirc",
@@ -6287,7 +6627,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigcirc-ozr4wf.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "◯"
     },
     {
       "id": "latex:latex2e:bigcup",
@@ -6302,7 +6643,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigcup-uls6i4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋃"
     },
     {
       "id": "latex:latex2e:bigodot",
@@ -6317,7 +6659,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigodot-slqn60.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⨀"
     },
     {
       "id": "latex:latex2e:bigoplus",
@@ -6332,7 +6675,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigoplus-jabuzx.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⨁"
     },
     {
       "id": "latex:latex2e:bigotimes",
@@ -6347,7 +6691,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigotimes-44h8q5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⨂"
     },
     {
       "id": "latex:latex2e:bigsqcup",
@@ -6362,7 +6707,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigsqcup-1tdmsbo.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⨆"
     },
     {
       "id": "latex:latex2e:bigtriangledown",
@@ -6377,7 +6723,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigtriangledown-1o6mnf4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▽"
     },
     {
       "id": "latex:latex2e:bigtriangleup",
@@ -6392,7 +6739,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigtriangleup-yb85yh.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "△"
     },
     {
       "id": "latex:latex2e:biguplus",
@@ -6407,7 +6755,8 @@
       "samples": {
         "path": "samples/latex/latex2e/biguplus-1e2rasj.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⨄"
     },
     {
       "id": "latex:latex2e:bigvee",
@@ -6422,7 +6771,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigvee-1vjrdo0.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋁"
     },
     {
       "id": "latex:latex2e:bigwedge",
@@ -6437,7 +6787,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bigwedge-t10scc.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋀"
     },
     {
       "id": "latex:latex2e:bot",
@@ -6452,7 +6803,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bot-1q4rben.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊥"
     },
     {
       "id": "latex:latex2e:bowtie",
@@ -6467,7 +6819,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bowtie-gbqq4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋈"
     },
     {
       "id": "latex:latex2e:bullet",
@@ -6482,7 +6835,8 @@
       "samples": {
         "path": "samples/latex/latex2e/bullet-vaplw2.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "•"
     },
     {
       "id": "latex:latex2e:c-lbrace-c-rbrace",
@@ -6499,7 +6853,8 @@
       "samples": {
         "path": "samples/latex/latex2e/c-lbrace-c-rbrace-11bikvd.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "\\xe7"
     },
     {
       "id": "latex:latex2e:cap",
@@ -6514,7 +6869,8 @@
       "samples": {
         "path": "samples/latex/latex2e/cap-kqn0ie.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∩"
     },
     {
       "id": "latex:latex2e:cdot",
@@ -6529,7 +6885,8 @@
       "samples": {
         "path": "samples/latex/latex2e/cdot-11pdj8y.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋅"
     },
     {
       "id": "latex:latex2e:cdotp",
@@ -6544,7 +6901,8 @@
       "samples": {
         "path": "samples/latex/latex2e/cdotp-1ca83mu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "·"
     },
     {
       "id": "latex:latex2e:cdots",
@@ -6559,7 +6917,8 @@
       "samples": {
         "path": "samples/latex/latex2e/cdots-1c08hxv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋯"
     },
     {
       "id": "latex:latex2e:chi",
@@ -6574,7 +6933,8 @@
       "samples": {
         "path": "samples/latex/latex2e/chi-jxl04s.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "χ"
     },
     {
       "id": "latex:latex2e:circ",
@@ -6589,7 +6949,8 @@
       "samples": {
         "path": "samples/latex/latex2e/circ-m1bg69.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∘"
     },
     {
       "id": "latex:latex2e:clubsuit",
@@ -6604,7 +6965,8 @@
       "samples": {
         "path": "samples/latex/latex2e/clubsuit-8olpvr.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♣"
     },
     {
       "id": "latex:latex2e:colon",
@@ -6619,7 +6981,8 @@
       "samples": {
         "path": "samples/latex/latex2e/colon-fnu29h.jsonl",
         "count": 50
-      }
+      },
+      "unicode": ":"
     },
     {
       "id": "latex:latex2e:cong",
@@ -6634,7 +6997,8 @@
       "samples": {
         "path": "samples/latex/latex2e/cong-1f27ay7.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≅"
     },
     {
       "id": "latex:latex2e:coprod",
@@ -6649,7 +7013,8 @@
       "samples": {
         "path": "samples/latex/latex2e/coprod-x77mmt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∐"
     },
     {
       "id": "latex:latex2e:copyright",
@@ -6664,7 +7029,8 @@
       "samples": {
         "path": "samples/latex/latex2e/copyright-v6t1fr.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xa9"
     },
     {
       "id": "latex:latex2e:cup",
@@ -6679,7 +7045,8 @@
       "samples": {
         "path": "samples/latex/latex2e/cup-mwm59e.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∪"
     },
     {
       "id": "latex:latex2e:dag",
@@ -6709,7 +7076,8 @@
       "samples": {
         "path": "samples/latex/latex2e/dagger-1eih048.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "†"
     },
     {
       "id": "latex:latex2e:dash-dash",
@@ -6769,7 +7137,8 @@
       "samples": {
         "path": "samples/latex/latex2e/dashv-6lrdhc.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊣"
     },
     {
       "id": "latex:latex2e:ddag",
@@ -6799,7 +7168,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ddagger-5k6q4o.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "‡"
     },
     {
       "id": "latex:latex2e:ddots",
@@ -6814,7 +7184,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ddots-yqiwde.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋱"
     },
     {
       "id": "latex:latex2e:delta",
@@ -6829,7 +7200,8 @@
       "samples": {
         "path": "samples/latex/latex2e/delta-17inc88.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "δ"
     },
     {
       "id": "latex:latex2e:Delta",
@@ -6844,7 +7216,8 @@
       "samples": {
         "path": "samples/latex/latex2e/delta-3v5i4o.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Δ"
     },
     {
       "id": "latex:latex2e:dh",
@@ -6874,7 +7247,8 @@
       "samples": {
         "path": "samples/latex/latex2e/dh-psbtwi.jsonl",
         "count": 37
-      }
+      },
+      "unicode": "\\xd0"
     },
     {
       "id": "latex:latex2e:diamond",
@@ -6889,7 +7263,8 @@
       "samples": {
         "path": "samples/latex/latex2e/diamond-tmvosu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋄"
     },
     {
       "id": "latex:latex2e:diamondsuit",
@@ -6904,7 +7279,8 @@
       "samples": {
         "path": "samples/latex/latex2e/diamondsuit-futx6j.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♢"
     },
     {
       "id": "latex:latex2e:div",
@@ -6919,7 +7295,8 @@
       "samples": {
         "path": "samples/latex/latex2e/div-1vf6ux.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "÷"
     },
     {
       "id": "latex:latex2e:dj",
@@ -6934,7 +7311,8 @@
       "samples": {
         "path": "samples/latex/latex2e/dj-y0vypo.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "đ"
     },
     {
       "id": "latex:latex2e:DJ",
@@ -6949,7 +7327,8 @@
       "samples": {
         "path": "samples/latex/latex2e/dj-p8cmik.jsonl",
         "count": 33
-      }
+      },
+      "unicode": "Đ"
     },
     {
       "id": "latex:latex2e:dollar",
@@ -6964,7 +7343,8 @@
       "samples": {
         "path": "samples/latex/latex2e/dollar-1u8rue4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "$"
     },
     {
       "id": "latex:latex2e:doteq",
@@ -6979,7 +7359,8 @@
       "samples": {
         "path": "samples/latex/latex2e/doteq-byorn7.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≐"
     },
     {
       "id": "latex:latex2e:dots",
@@ -7009,7 +7390,8 @@
       "samples": {
         "path": "samples/latex/latex2e/downarrow-1jfbsu3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↓"
     },
     {
       "id": "latex:latex2e:Downarrow",
@@ -7024,7 +7406,8 @@
       "samples": {
         "path": "samples/latex/latex2e/downarrow-1gaxhjv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇓"
     },
     {
       "id": "latex:latex2e:ell",
@@ -7039,7 +7422,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ell-uznygh.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℓ"
     },
     {
       "id": "latex:latex2e:emptyset",
@@ -7054,7 +7438,8 @@
       "samples": {
         "path": "samples/latex/latex2e/emptyset-17vlznl.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∅"
     },
     {
       "id": "latex:latex2e:epsilon",
@@ -7069,7 +7454,8 @@
       "samples": {
         "path": "samples/latex/latex2e/epsilon-8khdio.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ε"
     },
     {
       "id": "latex:latex2e:equiv",
@@ -7084,7 +7470,8 @@
       "samples": {
         "path": "samples/latex/latex2e/equiv-1djm3e4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≡"
     },
     {
       "id": "latex:latex2e:eta",
@@ -7099,7 +7486,8 @@
       "samples": {
         "path": "samples/latex/latex2e/eta-16uucvu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "η"
     },
     {
       "id": "latex:latex2e:exclamation-grave",
@@ -7129,7 +7517,8 @@
       "samples": {
         "path": "samples/latex/latex2e/exists-x3g8c6.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∃"
     },
     {
       "id": "latex:latex2e:flat",
@@ -7144,7 +7533,8 @@
       "samples": {
         "path": "samples/latex/latex2e/flat-1bxs32h.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♭"
     },
     {
       "id": "latex:latex2e:forall",
@@ -7159,7 +7549,8 @@
       "samples": {
         "path": "samples/latex/latex2e/forall-ah67ms.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∀"
     },
     {
       "id": "latex:latex2e:frown",
@@ -7174,7 +7565,8 @@
       "samples": {
         "path": "samples/latex/latex2e/frown-fg0bti.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⌢"
     },
     {
       "id": "latex:latex2e:gamma",
@@ -7189,7 +7581,8 @@
       "samples": {
         "path": "samples/latex/latex2e/gamma-1m68pp3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "γ"
     },
     {
       "id": "latex:latex2e:Gamma",
@@ -7204,7 +7597,8 @@
       "samples": {
         "path": "samples/latex/latex2e/gamma-c6q7av.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Γ"
     },
     {
       "id": "latex:latex2e:guillemotleft",
@@ -7219,7 +7613,8 @@
       "samples": {
         "path": "samples/latex/latex2e/guillemotleft-1rgughl.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xab"
     },
     {
       "id": "latex:latex2e:guillemotright",
@@ -7234,7 +7629,8 @@
       "samples": {
         "path": "samples/latex/latex2e/guillemotright-rnj2hm.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xbb"
     },
     {
       "id": "latex:latex2e:guilsinglleft",
@@ -7249,7 +7645,8 @@
       "samples": {
         "path": "samples/latex/latex2e/guilsinglleft-bmuzix.jsonl",
         "count": 14
-      }
+      },
+      "unicode": "‹"
     },
     {
       "id": "latex:latex2e:guilsinglright",
@@ -7264,7 +7661,8 @@
       "samples": {
         "path": "samples/latex/latex2e/guilsinglright-1i6qypm.jsonl",
         "count": 15
-      }
+      },
+      "unicode": "›"
     },
     {
       "id": "latex:latex2e:hash",
@@ -7279,7 +7677,8 @@
       "samples": {
         "path": "samples/latex/latex2e/hash-1387lma.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "#"
     },
     {
       "id": "latex:latex2e:hbar",
@@ -7294,7 +7693,8 @@
       "samples": {
         "path": "samples/latex/latex2e/hbar-j81ezn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℏ"
     },
     {
       "id": "latex:latex2e:heartsuit",
@@ -7309,7 +7709,8 @@
       "samples": {
         "path": "samples/latex/latex2e/heartsuit-gspfrb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♡"
     },
     {
       "id": "latex:latex2e:hookleftarrow",
@@ -7324,7 +7725,8 @@
       "samples": {
         "path": "samples/latex/latex2e/hookleftarrow-15fpl7p.jsonl",
         "count": 48
-      }
+      },
+      "unicode": "↩"
     },
     {
       "id": "latex:latex2e:hookrightarrow",
@@ -7339,7 +7741,8 @@
       "samples": {
         "path": "samples/latex/latex2e/hookrightarrow-ldexfe.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↪"
     },
     {
       "id": "latex:latex2e:Im",
@@ -7354,7 +7757,8 @@
       "samples": {
         "path": "samples/latex/latex2e/im-nu55js.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℑ"
     },
     {
       "id": "latex:latex2e:imath",
@@ -7369,7 +7773,8 @@
       "samples": {
         "path": "samples/latex/latex2e/imath-1g4nz4f.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "𝚤"
     },
     {
       "id": "latex:latex2e:in",
@@ -7384,7 +7789,8 @@
       "samples": {
         "path": "samples/latex/latex2e/in-ol00mp.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∈"
     },
     {
       "id": "latex:latex2e:infty",
@@ -7399,7 +7805,8 @@
       "samples": {
         "path": "samples/latex/latex2e/infty-t0fdum.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∞"
     },
     {
       "id": "latex:latex2e:int",
@@ -7414,7 +7821,8 @@
       "samples": {
         "path": "samples/latex/latex2e/int-1gxrl3z.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∫"
     },
     {
       "id": "latex:latex2e:iota",
@@ -7429,7 +7837,8 @@
       "samples": {
         "path": "samples/latex/latex2e/iota-1t4s6r1.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ι"
     },
     {
       "id": "latex:latex2e:jmath",
@@ -7444,7 +7853,8 @@
       "samples": {
         "path": "samples/latex/latex2e/jmath-1dhbhey.jsonl",
         "count": 31
-      }
+      },
+      "unicode": "𝚥"
     },
     {
       "id": "latex:latex2e:kappa",
@@ -7459,7 +7869,8 @@
       "samples": {
         "path": "samples/latex/latex2e/kappa-1085ea9.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "κ"
     },
     {
       "id": "latex:latex2e:l",
@@ -7474,7 +7885,8 @@
       "samples": {
         "path": "samples/latex/latex2e/l-lzx8ti.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ł"
     },
     {
       "id": "latex:latex2e:L",
@@ -7489,7 +7901,8 @@
       "samples": {
         "path": "samples/latex/latex2e/l-uvkj0m.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Ł"
     },
     {
       "id": "latex:latex2e:lambda",
@@ -7504,7 +7917,8 @@
       "samples": {
         "path": "samples/latex/latex2e/lambda-n4c9ql.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "λ"
     },
     {
       "id": "latex:latex2e:Lambda",
@@ -7519,7 +7933,8 @@
       "samples": {
         "path": "samples/latex/latex2e/lambda-1qfio19.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Λ"
     },
     {
       "id": "latex:latex2e:langle",
@@ -7534,7 +7949,8 @@
       "samples": {
         "path": "samples/latex/latex2e/langle-dp09z1.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟨"
     },
     {
       "id": "latex:latex2e:lbrace",
@@ -7549,7 +7965,8 @@
       "samples": {
         "path": "samples/latex/latex2e/lbrace-mdom9l.jsonl",
         "count": 51
-      }
+      },
+      "unicode": "{"
     },
     {
       "id": "latex:latex2e:lbracket",
@@ -7579,7 +7996,8 @@
       "samples": {
         "path": "samples/latex/latex2e/lceil-6zgtgr.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⌈"
     },
     {
       "id": "latex:latex2e:ldotp",
@@ -7594,7 +8012,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ldotp-1adymbr.jsonl",
         "count": 40
-      }
+      },
+      "unicode": "."
     },
     {
       "id": "latex:latex2e:ldots",
@@ -7609,7 +8028,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ldots-1any80q.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "…"
     },
     {
       "id": "latex:latex2e:leftarrow",
@@ -7624,7 +8044,8 @@
       "samples": {
         "path": "samples/latex/latex2e/leftarrow-1ydznv4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "←"
     },
     {
       "id": "latex:latex2e:Leftarrow",
@@ -7639,7 +8060,8 @@
       "samples": {
         "path": "samples/latex/latex2e/leftarrow-16q4esw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇐"
     },
     {
       "id": "latex:latex2e:leftharpoondown",
@@ -7654,7 +8076,8 @@
       "samples": {
         "path": "samples/latex/latex2e/leftharpoondown-13gjz4i.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "↽"
     },
     {
       "id": "latex:latex2e:leftharpoonup",
@@ -7669,7 +8092,8 @@
       "samples": {
         "path": "samples/latex/latex2e/leftharpoonup-1jhrtvb.jsonl",
         "count": 19
-      }
+      },
+      "unicode": "↼"
     },
     {
       "id": "latex:latex2e:leftrightarrow",
@@ -7684,7 +8108,8 @@
       "samples": {
         "path": "samples/latex/latex2e/leftrightarrow-wsbbnw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↔"
     },
     {
       "id": "latex:latex2e:Leftrightarrow",
@@ -7699,7 +8124,8 @@
       "samples": {
         "path": "samples/latex/latex2e/leftrightarrow-1x5qu24.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇔"
     },
     {
       "id": "latex:latex2e:lfloor",
@@ -7714,7 +8140,8 @@
       "samples": {
         "path": "samples/latex/latex2e/lfloor-7vv5js.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⌊"
     },
     {
       "id": "latex:latex2e:longleftarrow",
@@ -7729,7 +8156,8 @@
       "samples": {
         "path": "samples/latex/latex2e/longleftarrow-fwjtia.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "⟵"
     },
     {
       "id": "latex:latex2e:Longleftarrow",
@@ -7744,7 +8172,8 @@
       "samples": {
         "path": "samples/latex/latex2e/longleftarrow-180ng5e.jsonl",
         "count": 36
-      }
+      },
+      "unicode": "⟸"
     },
     {
       "id": "latex:latex2e:longleftrightarrow",
@@ -7759,7 +8188,8 @@
       "samples": {
         "path": "samples/latex/latex2e/longleftrightarrow-1somsh6.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟷"
     },
     {
       "id": "latex:latex2e:Longleftrightarrow",
@@ -7774,7 +8204,8 @@
       "samples": {
         "path": "samples/latex/latex2e/longleftrightarrow-8d7s7e.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟺"
     },
     {
       "id": "latex:latex2e:longmapsto",
@@ -7789,7 +8220,8 @@
       "samples": {
         "path": "samples/latex/latex2e/longmapsto-6ei2wy.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟼"
     },
     {
       "id": "latex:latex2e:longrightarrow",
@@ -7804,7 +8236,8 @@
       "samples": {
         "path": "samples/latex/latex2e/longrightarrow-1whr4uf.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟶"
     },
     {
       "id": "latex:latex2e:Longrightarrow",
@@ -7819,7 +8252,8 @@
       "samples": {
         "path": "samples/latex/latex2e/longrightarrow-ui28fb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟹"
     },
     {
       "id": "latex:latex2e:mapsto",
@@ -7834,7 +8268,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mapsto-1tbh474.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↦"
     },
     {
       "id": "latex:latex2e:mathdollar",
@@ -7849,7 +8284,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mathdollar-33g4ma.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "$"
     },
     {
       "id": "latex:latex2e:mathellipsis",
@@ -7879,7 +8315,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mathparagraph-s1ql5e.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "¶"
     },
     {
       "id": "latex:latex2e:mathsection",
@@ -7894,7 +8331,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mathsection-1pngro3.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "§"
     },
     {
       "id": "latex:latex2e:mathsterling",
@@ -7909,7 +8347,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mathsterling-l01ulw.jsonl",
         "count": 32
-      }
+      },
+      "unicode": "£"
     },
     {
       "id": "latex:latex2e:mathunderscore",
@@ -7939,7 +8378,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mid-6rya0s.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∣"
     },
     {
       "id": "latex:latex2e:models",
@@ -7954,7 +8394,8 @@
       "samples": {
         "path": "samples/latex/latex2e/models-14fee48.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊧"
     },
     {
       "id": "latex:latex2e:mp",
@@ -7969,7 +8410,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mp-tke1ij.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∓"
     },
     {
       "id": "latex:latex2e:mu",
@@ -7984,7 +8426,8 @@
       "samples": {
         "path": "samples/latex/latex2e/mu-ueculg.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "μ"
     },
     {
       "id": "latex:latex2e:nabla",
@@ -7999,7 +8442,8 @@
       "samples": {
         "path": "samples/latex/latex2e/nabla-22sjkk.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∇"
     },
     {
       "id": "latex:latex2e:natural",
@@ -8014,7 +8458,8 @@
       "samples": {
         "path": "samples/latex/latex2e/natural-oumzcb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♮"
     },
     {
       "id": "latex:latex2e:nearrow",
@@ -8029,7 +8474,8 @@
       "samples": {
         "path": "samples/latex/latex2e/nearrow-1p6nubg.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↗"
     },
     {
       "id": "latex:latex2e:neg",
@@ -8044,7 +8490,8 @@
       "samples": {
         "path": "samples/latex/latex2e/neg-1ro5hc8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "¬"
     },
     {
       "id": "latex:latex2e:ng",
@@ -8059,7 +8506,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ng-m2fbad.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ŋ"
     },
     {
       "id": "latex:latex2e:NG",
@@ -8074,7 +8522,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ng-v16jhh.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "Ŋ"
     },
     {
       "id": "latex:latex2e:ni",
@@ -8089,7 +8538,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ni-mmeiob.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∋"
     },
     {
       "id": "latex:latex2e:not-approx",
@@ -8164,7 +8614,8 @@
       "samples": {
         "path": "samples/latex/latex2e/notin-rhwpw8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∉"
     },
     {
       "id": "latex:latex2e:nu",
@@ -8179,7 +8630,8 @@
       "samples": {
         "path": "samples/latex/latex2e/nu-py9qzz.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ν"
     },
     {
       "id": "latex:latex2e:nwarrow",
@@ -8194,7 +8646,8 @@
       "samples": {
         "path": "samples/latex/latex2e/nwarrow-14u0zdi.jsonl",
         "count": 27
-      }
+      },
+      "unicode": "↖"
     },
     {
       "id": "latex:latex2e:o",
@@ -8209,7 +8662,8 @@
       "samples": {
         "path": "samples/latex/latex2e/o-lpxn4j.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xf8"
     },
     {
       "id": "latex:latex2e:O",
@@ -8224,7 +8678,8 @@
       "samples": {
         "path": "samples/latex/latex2e/o-ulkxbn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xd8"
     },
     {
       "id": "latex:latex2e:odot",
@@ -8239,7 +8694,8 @@
       "samples": {
         "path": "samples/latex/latex2e/odot-3cd6ku.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊙"
     },
     {
       "id": "latex:latex2e:oe",
@@ -8254,7 +8710,8 @@
       "samples": {
         "path": "samples/latex/latex2e/oe-vi4yde.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "œ"
     },
     {
       "id": "latex:latex2e:OE",
@@ -8269,7 +8726,8 @@
       "samples": {
         "path": "samples/latex/latex2e/oe-14gw6ki.jsonl",
         "count": 26
-      }
+      },
+      "unicode": "Œ"
     },
     {
       "id": "latex:latex2e:oint",
@@ -8284,7 +8742,8 @@
       "samples": {
         "path": "samples/latex/latex2e/oint-h0kkfw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∮"
     },
     {
       "id": "latex:latex2e:omega",
@@ -8299,7 +8758,8 @@
       "samples": {
         "path": "samples/latex/latex2e/omega-7w3cwd.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ω"
     },
     {
       "id": "latex:latex2e:Omega",
@@ -8314,7 +8774,8 @@
       "samples": {
         "path": "samples/latex/latex2e/omega-13ygpkd.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Ω"
     },
     {
       "id": "latex:latex2e:ominus",
@@ -8329,7 +8790,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ominus-12srbnd.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊖"
     },
     {
       "id": "latex:latex2e:oplus",
@@ -8344,7 +8806,8 @@
       "samples": {
         "path": "samples/latex/latex2e/oplus-15cpl9j.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊕"
     },
     {
       "id": "latex:latex2e:oslash",
@@ -8359,7 +8822,8 @@
       "samples": {
         "path": "samples/latex/latex2e/oslash-1oxhz8.jsonl",
         "count": 33
-      }
+      },
+      "unicode": "⊘"
     },
     {
       "id": "latex:latex2e:otimes",
@@ -8374,7 +8838,8 @@
       "samples": {
         "path": "samples/latex/latex2e/otimes-bzzfej.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊗"
     },
     {
       "id": "latex:latex2e:P",
@@ -8389,7 +8854,8 @@
       "samples": {
         "path": "samples/latex/latex2e/p-12n9efu.jsonl",
         "count": 40
-      }
+      },
+      "unicode": "\\xb6"
     },
     {
       "id": "latex:latex2e:parallel",
@@ -8404,7 +8870,8 @@
       "samples": {
         "path": "samples/latex/latex2e/parallel-108ez89.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∥"
     },
     {
       "id": "latex:latex2e:partial",
@@ -8419,7 +8886,8 @@
       "samples": {
         "path": "samples/latex/latex2e/partial-1texsw7.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∂"
     },
     {
       "id": "latex:latex2e:percent",
@@ -8434,7 +8902,8 @@
       "samples": {
         "path": "samples/latex/latex2e/percent-e7ht7r.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "%"
     },
     {
       "id": "latex:latex2e:perp",
@@ -8449,7 +8918,8 @@
       "samples": {
         "path": "samples/latex/latex2e/perp-o6r7fr.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟂"
     },
     {
       "id": "latex:latex2e:phi",
@@ -8464,7 +8934,8 @@
       "samples": {
         "path": "samples/latex/latex2e/phi-19zr9nx.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϕ"
     },
     {
       "id": "latex:latex2e:Phi",
@@ -8479,7 +8950,8 @@
       "samples": {
         "path": "samples/latex/latex2e/phi-ingdu5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Φ"
     },
     {
       "id": "latex:latex2e:pi",
@@ -8494,7 +8966,8 @@
       "samples": {
         "path": "samples/latex/latex2e/pi-wovn1l.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "π"
     },
     {
       "id": "latex:latex2e:Pi",
@@ -8509,7 +8982,8 @@
       "samples": {
         "path": "samples/latex/latex2e/pi-wrzl1l.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Π"
     },
     {
       "id": "latex:latex2e:pm",
@@ -8524,7 +8998,8 @@
       "samples": {
         "path": "samples/latex/latex2e/pm-xsu1th.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "±"
     },
     {
       "id": "latex:latex2e:pounds",
@@ -8539,7 +9014,8 @@
       "samples": {
         "path": "samples/latex/latex2e/pounds-14xnj3h.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xa3"
     },
     {
       "id": "latex:latex2e:prec",
@@ -8554,7 +9030,8 @@
       "samples": {
         "path": "samples/latex/latex2e/prec-v8b8do.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≺"
     },
     {
       "id": "latex:latex2e:preceq",
@@ -8569,7 +9046,8 @@
       "samples": {
         "path": "samples/latex/latex2e/preceq-13janam.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⪯"
     },
     {
       "id": "latex:latex2e:prime",
@@ -8584,7 +9062,8 @@
       "samples": {
         "path": "samples/latex/latex2e/prime-rdagxp.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "′"
     },
     {
       "id": "latex:latex2e:prod",
@@ -8599,7 +9078,8 @@
       "samples": {
         "path": "samples/latex/latex2e/prod-12pfdib.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∏"
     },
     {
       "id": "latex:latex2e:propto",
@@ -8614,7 +9094,8 @@
       "samples": {
         "path": "samples/latex/latex2e/propto-1dtr61m.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∝"
     },
     {
       "id": "latex:latex2e:psi",
@@ -8629,7 +9110,8 @@
       "samples": {
         "path": "samples/latex/latex2e/psi-yvckti.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ψ"
     },
     {
       "id": "latex:latex2e:Psi",
@@ -8644,7 +9126,8 @@
       "samples": {
         "path": "samples/latex/latex2e/psi-7j1ozq.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Ψ"
     },
     {
       "id": "latex:latex2e:quotedblbase",
@@ -8689,7 +9172,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rangle-fu3gmn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟩"
     },
     {
       "id": "latex:latex2e:rbrace",
@@ -8704,7 +9188,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rbrace-1jgfp6n.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "}"
     },
     {
       "id": "latex:latex2e:rbracket",
@@ -8734,7 +9219,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rceil-1pfr8mt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⌉"
     },
     {
       "id": "latex:latex2e:Re",
@@ -8749,7 +9235,8 @@
       "samples": {
         "path": "samples/latex/latex2e/re-ujwghv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ℜ"
     },
     {
       "id": "latex:latex2e:rfloor",
@@ -8764,7 +9251,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rfloor-1gq1joy.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⌋"
     },
     {
       "id": "latex:latex2e:rho",
@@ -8779,7 +9267,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rho-1j539c1.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ρ"
     },
     {
       "id": "latex:latex2e:rightarrow",
@@ -8794,7 +9283,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rightarrow-1v3cig5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "→"
     },
     {
       "id": "latex:latex2e:Rightarrow",
@@ -8809,7 +9299,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rightarrow-19cu2bp.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇒"
     },
     {
       "id": "latex:latex2e:rightharpoondown",
@@ -8824,7 +9315,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rightharpoondown-1tx7kwz.jsonl",
         "count": 30
-      }
+      },
+      "unicode": "⇁"
     },
     {
       "id": "latex:latex2e:rightharpoonup",
@@ -8839,7 +9331,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rightharpoonup-1xof74y.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇀"
     },
     {
       "id": "latex:latex2e:rightleftharpoons",
@@ -8854,7 +9347,8 @@
       "samples": {
         "path": "samples/latex/latex2e/rightleftharpoons-byssg1.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇌"
     },
     {
       "id": "latex:latex2e:S",
@@ -8869,7 +9363,8 @@
       "samples": {
         "path": "samples/latex/latex2e/s-12d9sqv.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xa7"
     },
     {
       "id": "latex:latex2e:searrow",
@@ -8884,7 +9379,8 @@
       "samples": {
         "path": "samples/latex/latex2e/searrow-hefyuj.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↘"
     },
     {
       "id": "latex:latex2e:setminus",
@@ -8899,7 +9395,8 @@
       "samples": {
         "path": "samples/latex/latex2e/setminus-8uc4lu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∖"
     },
     {
       "id": "latex:latex2e:sharp",
@@ -8914,7 +9411,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sharp-1csudeu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♯"
     },
     {
       "id": "latex:latex2e:sigma",
@@ -8929,7 +9427,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sigma-1dozigt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "σ"
     },
     {
       "id": "latex:latex2e:Sigma",
@@ -8944,7 +9443,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sigma-a1fgrh.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Σ"
     },
     {
       "id": "latex:latex2e:sim",
@@ -8959,7 +9459,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sim-5tuwbp.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∼"
     },
     {
       "id": "latex:latex2e:simeq",
@@ -8974,7 +9475,8 @@
       "samples": {
         "path": "samples/latex/latex2e/simeq-6xno2r.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≃"
     },
     {
       "id": "latex:latex2e:slash",
@@ -9004,7 +9506,8 @@
       "samples": {
         "path": "samples/latex/latex2e/smile-tdie8q.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⌣"
     },
     {
       "id": "latex:latex2e:spadesuit",
@@ -9019,7 +9522,8 @@
       "samples": {
         "path": "samples/latex/latex2e/spadesuit-eqmicm.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♠"
     },
     {
       "id": "latex:latex2e:sqcap",
@@ -9034,7 +9538,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sqcap-15bk3si.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊓"
     },
     {
       "id": "latex:latex2e:sqcup",
@@ -9049,7 +9554,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sqcup-132h11i.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊔"
     },
     {
       "id": "latex:latex2e:sqrt-lbrace-rbrace",
@@ -9079,7 +9585,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sqsubseteq-1riyk62.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊑"
     },
     {
       "id": "latex:latex2e:sqsupseteq",
@@ -9094,7 +9601,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sqsupseteq-1iilvuo.jsonl",
         "count": 31
-      }
+      },
+      "unicode": "⊒"
     },
     {
       "id": "latex:latex2e:ss",
@@ -9109,7 +9617,8 @@
       "samples": {
         "path": "samples/latex/latex2e/ss-rozn24.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xdf"
     },
     {
       "id": "latex:latex2e:SS",
@@ -9139,7 +9648,8 @@
       "samples": {
         "path": "samples/latex/latex2e/star-13jgiqm.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋆"
     },
     {
       "id": "latex:latex2e:subset",
@@ -9154,7 +9664,8 @@
       "samples": {
         "path": "samples/latex/latex2e/subset-1lap3p0.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊂"
     },
     {
       "id": "latex:latex2e:subseteq",
@@ -9169,7 +9680,8 @@
       "samples": {
         "path": "samples/latex/latex2e/subseteq-1ml3e0m.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊆"
     },
     {
       "id": "latex:latex2e:succ",
@@ -9184,7 +9696,8 @@
       "samples": {
         "path": "samples/latex/latex2e/succ-7jwdlw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≻"
     },
     {
       "id": "latex:latex2e:succeq",
@@ -9199,7 +9712,8 @@
       "samples": {
         "path": "samples/latex/latex2e/succeq-zsvq6e.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⪰"
     },
     {
       "id": "latex:latex2e:sum",
@@ -9214,7 +9728,8 @@
       "samples": {
         "path": "samples/latex/latex2e/sum-epusip.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∑"
     },
     {
       "id": "latex:latex2e:supset",
@@ -9229,7 +9744,8 @@
       "samples": {
         "path": "samples/latex/latex2e/supset-1qb1exu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊃"
     },
     {
       "id": "latex:latex2e:supseteq",
@@ -9244,7 +9760,8 @@
       "samples": {
         "path": "samples/latex/latex2e/supseteq-1nna61o.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊇"
     },
     {
       "id": "latex:latex2e:surd",
@@ -9259,7 +9776,8 @@
       "samples": {
         "path": "samples/latex/latex2e/surd-5kd520.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "√"
     },
     {
       "id": "latex:latex2e:swarrow",
@@ -9274,7 +9792,8 @@
       "samples": {
         "path": "samples/latex/latex2e/swarrow-4kl7ex.jsonl",
         "count": 32
-      }
+      },
+      "unicode": "↙"
     },
     {
       "id": "latex:latex2e:symbol-epr69x",
@@ -9304,7 +9823,8 @@
       "samples": {
         "path": "samples/latex/latex2e/tau-1r49oxk.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "τ"
     },
     {
       "id": "latex:latex2e:textasciicircum",
@@ -9589,7 +10109,8 @@
       "samples": {
         "path": "samples/latex/latex2e/textordfeminine-11x5pvn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xaa"
     },
     {
       "id": "latex:latex2e:textordmasculine",
@@ -9604,7 +10125,8 @@
       "samples": {
         "path": "samples/latex/latex2e/textordmasculine-383vxh.jsonl",
         "count": 9
-      }
+      },
+      "unicode": "\\xba"
     },
     {
       "id": "latex:latex2e:textparagraph",
@@ -9784,7 +10306,8 @@
       "samples": {
         "path": "samples/latex/latex2e/texttrademark-15jimhw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "™"
     },
     {
       "id": "latex:latex2e:textunderscore",
@@ -9814,7 +10337,8 @@
       "samples": {
         "path": "samples/latex/latex2e/textvisiblespace-9us7y1.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "␣"
     },
     {
       "id": "latex:latex2e:th",
@@ -9829,7 +10353,8 @@
       "samples": {
         "path": "samples/latex/latex2e/th-pqsype.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xfe"
     },
     {
       "id": "latex:latex2e:TH",
@@ -9844,7 +10369,8 @@
       "samples": {
         "path": "samples/latex/latex2e/th-gy9mia.jsonl",
         "count": 42
-      }
+      },
+      "unicode": "\\xde"
     },
     {
       "id": "latex:latex2e:theta",
@@ -9859,7 +10385,8 @@
       "samples": {
         "path": "samples/latex/latex2e/theta-6uw1km.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "θ"
     },
     {
       "id": "latex:latex2e:Theta",
@@ -9874,7 +10401,8 @@
       "samples": {
         "path": "samples/latex/latex2e/theta-vwhl5i.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Θ"
     },
     {
       "id": "latex:latex2e:times",
@@ -9889,7 +10417,8 @@
       "samples": {
         "path": "samples/latex/latex2e/times-1eehcu4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "×"
     },
     {
       "id": "latex:latex2e:top",
@@ -9904,7 +10433,8 @@
       "samples": {
         "path": "samples/latex/latex2e/top-1mx33bt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊤"
     },
     {
       "id": "latex:latex2e:triangle",
@@ -9919,7 +10449,8 @@
       "samples": {
         "path": "samples/latex/latex2e/triangle-1b2bmha.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "△"
     },
     {
       "id": "latex:latex2e:triangleleft",
@@ -9934,7 +10465,8 @@
       "samples": {
         "path": "samples/latex/latex2e/triangleleft-1g0jntn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "◁"
     },
     {
       "id": "latex:latex2e:triangleright",
@@ -9949,7 +10481,8 @@
       "samples": {
         "path": "samples/latex/latex2e/triangleright-4q2204.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▷"
     },
     {
       "id": "latex:latex2e:underscore",
@@ -9964,7 +10497,8 @@
       "samples": {
         "path": "samples/latex/latex2e/underscore-3wty5m.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "_"
     },
     {
       "id": "latex:latex2e:uparrow",
@@ -9979,7 +10513,8 @@
       "samples": {
         "path": "samples/latex/latex2e/uparrow-170jvko.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↑"
     },
     {
       "id": "latex:latex2e:Uparrow",
@@ -9994,7 +10529,8 @@
       "samples": {
         "path": "samples/latex/latex2e/uparrow-str1mg.jsonl",
         "count": 44
-      }
+      },
+      "unicode": "⇑"
     },
     {
       "id": "latex:latex2e:updownarrow",
@@ -10009,7 +10545,8 @@
       "samples": {
         "path": "samples/latex/latex2e/updownarrow-8ccy0s.jsonl",
         "count": 35
-      }
+      },
+      "unicode": "↕"
     },
     {
       "id": "latex:latex2e:Updownarrow",
@@ -10024,7 +10561,8 @@
       "samples": {
         "path": "samples/latex/latex2e/updownarrow-1priil8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇕"
     },
     {
       "id": "latex:latex2e:uplus",
@@ -10039,7 +10577,8 @@
       "samples": {
         "path": "samples/latex/latex2e/uplus-8pcgr5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊎"
     },
     {
       "id": "latex:latex2e:upsilon",
@@ -10054,7 +10593,8 @@
       "samples": {
         "path": "samples/latex/latex2e/upsilon-p9zwgw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "υ"
     },
     {
       "id": "latex:latex2e:Upsilon",
@@ -10069,7 +10609,8 @@
       "samples": {
         "path": "samples/latex/latex2e/upsilon-b34uww.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϒ"
     },
     {
       "id": "latex:latex2e:varepsilon",
@@ -10084,7 +10625,8 @@
       "samples": {
         "path": "samples/latex/latex2e/varepsilon-hpylgb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ε"
     },
     {
       "id": "latex:latex2e:varphi",
@@ -10099,7 +10641,8 @@
       "samples": {
         "path": "samples/latex/latex2e/varphi-cw5u1i.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "φ"
     },
     {
       "id": "latex:latex2e:varpi",
@@ -10114,7 +10657,8 @@
       "samples": {
         "path": "samples/latex/latex2e/varpi-113wb8o.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϖ"
     },
     {
       "id": "latex:latex2e:varrho",
@@ -10129,7 +10673,8 @@
       "samples": {
         "path": "samples/latex/latex2e/varrho-nhls2q.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϱ"
     },
     {
       "id": "latex:latex2e:varsigma",
@@ -10144,7 +10689,8 @@
       "samples": {
         "path": "samples/latex/latex2e/varsigma-1wls786.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ς"
     },
     {
       "id": "latex:latex2e:vartheta",
@@ -10159,7 +10705,8 @@
       "samples": {
         "path": "samples/latex/latex2e/vartheta-ncyrm5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϑ"
     },
     {
       "id": "latex:latex2e:vdash",
@@ -10174,7 +10721,8 @@
       "samples": {
         "path": "samples/latex/latex2e/vdash-112pf8k.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊢"
     },
     {
       "id": "latex:latex2e:vdots",
@@ -10189,7 +10737,8 @@
       "samples": {
         "path": "samples/latex/latex2e/vdots-csg7k4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋮"
     },
     {
       "id": "latex:latex2e:vee",
@@ -10204,7 +10753,8 @@
       "samples": {
         "path": "samples/latex/latex2e/vee-3z9lyu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∨"
     },
     {
       "id": "latex:latex2e:wedge",
@@ -10219,7 +10769,8 @@
       "samples": {
         "path": "samples/latex/latex2e/wedge-1gv4qyu.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "∧"
     },
     {
       "id": "latex:latex2e:wp",
@@ -10234,7 +10785,8 @@
       "samples": {
         "path": "samples/latex/latex2e/wp-uqinox.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "℘"
     },
     {
       "id": "latex:latex2e:wr",
@@ -10249,7 +10801,8 @@
       "samples": {
         "path": "samples/latex/latex2e/wr-u6jgaz.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "≀"
     },
     {
       "id": "latex:latex2e:xi",
@@ -10264,7 +10817,8 @@
       "samples": {
         "path": "samples/latex/latex2e/xi-nsgx8x.jsonl",
         "count": 51
-      }
+      },
+      "unicode": "ξ"
     },
     {
       "id": "latex:latex2e:Xi",
@@ -10279,7 +10833,8 @@
       "samples": {
         "path": "samples/latex/latex2e/xi-nvkv8x.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "Ξ"
     },
     {
       "id": "latex:latex2e:zeta",
@@ -10294,7 +10849,8 @@
       "samples": {
         "path": "samples/latex/latex2e/zeta-cmtyl0.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ζ"
     },
     {
       "id": "latex:latexsym:leadsto",
@@ -10311,7 +10867,8 @@
       "samples": {
         "path": "samples/latex/latexsym/leadsto-13b1wow.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⤳"
     },
     {
       "id": "latex:marvosym:Ankh",
@@ -10362,7 +10919,8 @@
       "samples": {
         "path": "samples/latex/marvosym/aries-1fn8t3p.jsonl",
         "count": 43
-      }
+      },
+      "unicode": "♈"
     },
     {
       "id": "latex:marvosym:Bat",
@@ -10736,7 +11294,8 @@
       "samples": {
         "path": "samples/latex/marvosym/gemini-pmx9ri.jsonl",
         "count": 34
-      }
+      },
+      "unicode": "♊"
     },
     {
       "id": "latex:marvosym:Heart",
@@ -10770,7 +11329,8 @@
       "samples": {
         "path": "samples/latex/marvosym/jupiter-queciu.jsonl",
         "count": 39
-      }
+      },
+      "unicode": "♃"
     },
     {
       "id": "latex:marvosym:Leo",
@@ -10787,7 +11347,8 @@
       "samples": {
         "path": "samples/latex/marvosym/leo-14l5oan.jsonl",
         "count": 33
-      }
+      },
+      "unicode": "♌"
     },
     {
       "id": "latex:marvosym:Letter",
@@ -10821,7 +11382,8 @@
       "samples": {
         "path": "samples/latex/marvosym/libra-1rv8d9d.jsonl",
         "count": 41
-      }
+      },
+      "unicode": "♎"
     },
     {
       "id": "latex:marvosym:Lightning",
@@ -10838,7 +11400,8 @@
       "samples": {
         "path": "samples/latex/marvosym/lightning-1wj8zhh.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↯"
     },
     {
       "id": "latex:marvosym:Mars",
@@ -10855,7 +11418,8 @@
       "samples": {
         "path": "samples/latex/marvosym/mars-dcfq88.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♂"
     },
     {
       "id": "latex:marvosym:Mercury",
@@ -10872,7 +11436,8 @@
       "samples": {
         "path": "samples/latex/marvosym/mercury-1dl16b2.jsonl",
         "count": 25
-      }
+      },
+      "unicode": "☿"
     },
     {
       "id": "latex:marvosym:Mobilefone",
@@ -10974,7 +11539,8 @@
       "samples": {
         "path": "samples/latex/marvosym/neptune-1tndmj6.jsonl",
         "count": 27
-      }
+      },
+      "unicode": "♆"
     },
     {
       "id": "latex:marvosym:Pfund",
@@ -11042,7 +11608,8 @@
       "samples": {
         "path": "samples/latex/marvosym/pluto-zl9pil.jsonl",
         "count": 20
-      }
+      },
+      "unicode": "♇"
     },
     {
       "id": "latex:marvosym:Sagittarius",
@@ -11076,7 +11643,8 @@
       "samples": {
         "path": "samples/latex/marvosym/saturn-9l4idy.jsonl",
         "count": 24
-      }
+      },
+      "unicode": "♄"
     },
     {
       "id": "latex:marvosym:Scorpio",
@@ -11093,7 +11661,8 @@
       "samples": {
         "path": "samples/latex/marvosym/scorpio-1y8gw52.jsonl",
         "count": 42
-      }
+      },
+      "unicode": "♏"
     },
     {
       "id": "latex:marvosym:Shilling",
@@ -11144,7 +11713,8 @@
       "samples": {
         "path": "samples/latex/marvosym/sun-gf0t1d.jsonl",
         "count": 45
-      }
+      },
+      "unicode": "☉"
     },
     {
       "id": "latex:marvosym:Taurus",
@@ -11161,7 +11731,8 @@
       "samples": {
         "path": "samples/latex/marvosym/taurus-v7fpzx.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "♉"
     },
     {
       "id": "latex:marvosym:Telefon",
@@ -11195,7 +11766,8 @@
       "samples": {
         "path": "samples/latex/marvosym/uranus-1lo14x9.jsonl",
         "count": 24
-      }
+      },
+      "unicode": "♅"
     },
     {
       "id": "latex:marvosym:Venus",
@@ -11212,7 +11784,8 @@
       "samples": {
         "path": "samples/latex/marvosym/venus-h8omkm.jsonl",
         "count": 36
-      }
+      },
+      "unicode": "♀"
     },
     {
       "id": "latex:marvosym:Virgo",
@@ -11263,7 +11836,8 @@
       "samples": {
         "path": "samples/latex/mathdots/iddots-7dtfsw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⋰"
     },
     {
       "id": "latex:mathrsfs:mathscr-lbrace-A-rbrace",
@@ -11756,7 +12330,8 @@
       "samples": {
         "path": "samples/latex/mathtools/coloneq-1mg4p1j.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "≔"
     },
     {
       "id": "latex:mathtools:coloneqq",
@@ -11773,7 +12348,8 @@
       "samples": {
         "path": "samples/latex/mathtools/coloneqq-mt42o2.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "≔"
     },
     {
       "id": "latex:mathtools:Coloneqq",
@@ -11790,7 +12366,8 @@
       "samples": {
         "path": "samples/latex/mathtools/coloneqq-l3cz36.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⩴"
     },
     {
       "id": "latex:mathtools:colonsim",
@@ -11858,7 +12435,8 @@
       "samples": {
         "path": "samples/latex/mathtools/eqcolon-1jknpdz.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "≕"
     },
     {
       "id": "latex:mathtools:Eqcolon",
@@ -11892,7 +12470,8 @@
       "samples": {
         "path": "samples/latex/mathtools/eqqcolon-98q9t6.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "≕"
     },
     {
       "id": "latex:mathtools:Eqqcolon",
@@ -11926,7 +12505,8 @@
       "samples": {
         "path": "samples/latex/skull/skull-nl4swf.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☠"
     },
     {
       "id": "latex:stmaryrd:bigsqcap",
@@ -11943,7 +12523,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/bigsqcap-1cpprlb.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⨅"
     },
     {
       "id": "latex:stmaryrd:boxbar",
@@ -11960,7 +12541,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/boxbar-lqpbzz.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "◫"
     },
     {
       "id": "latex:stmaryrd:inplus",
@@ -11994,7 +12576,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/lbag-1bw9ci7.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "⟅"
     },
     {
       "id": "latex:stmaryrd:Lbag",
@@ -12011,7 +12594,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/lbag-d48vxr.jsonl",
         "count": 42
-      }
+      },
+      "unicode": "⟅"
     },
     {
       "id": "latex:stmaryrd:leftarrowtriangle",
@@ -12028,7 +12612,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/leftarrowtriangle-kf5l0l.jsonl",
         "count": 10
-      }
+      },
+      "unicode": "⇽"
     },
     {
       "id": "latex:stmaryrd:leftrightarroweq",
@@ -12062,7 +12647,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/leftrightarrowtriangle-q2su4f.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⇿"
     },
     {
       "id": "latex:stmaryrd:lightning",
@@ -12079,7 +12665,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/lightning-1omc6dt.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↯"
     },
     {
       "id": "latex:stmaryrd:llbracket",
@@ -12096,7 +12683,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/llbracket-1iok867.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "〚"
     },
     {
       "id": "latex:stmaryrd:llceil",
@@ -12147,7 +12735,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/llparenthesis-bib6vb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⦇"
     },
     {
       "id": "latex:stmaryrd:longmapsfrom",
@@ -12164,7 +12753,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/longmapsfrom-17dhwuc.jsonl",
         "count": 19
-      }
+      },
+      "unicode": "⟻"
     },
     {
       "id": "latex:stmaryrd:Longmapsfrom",
@@ -12181,7 +12771,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/longmapsfrom-irqxt0.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "⟽"
     },
     {
       "id": "latex:stmaryrd:Longmapsto",
@@ -12198,7 +12789,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/longmapsto-1oja6s5.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "⟾"
     },
     {
       "id": "latex:stmaryrd:mapsfrom",
@@ -12215,7 +12807,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/mapsfrom-1ql6eti.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↤"
     },
     {
       "id": "latex:stmaryrd:Mapsfrom",
@@ -12232,7 +12825,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/mapsfrom-1huppra.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "⤆"
     },
     {
       "id": "latex:stmaryrd:Mapsto",
@@ -12249,7 +12843,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/mapsto-nystmf.jsonl",
         "count": 26
-      }
+      },
+      "unicode": "⤇"
     },
     {
       "id": "latex:stmaryrd:niplus",
@@ -12317,7 +12912,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/rbag-1pkpl8d.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⟆"
     },
     {
       "id": "latex:stmaryrd:Rbag",
@@ -12334,7 +12930,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/rbag-j366sd.jsonl",
         "count": 26
-      }
+      },
+      "unicode": "⟆"
     },
     {
       "id": "latex:stmaryrd:rightarrowtriangle",
@@ -12351,7 +12948,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/rightarrowtriangle-1xxzxsi.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⇾"
     },
     {
       "id": "latex:stmaryrd:rrbracket",
@@ -12368,7 +12966,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/rrbracket-1n6ss2n.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "〛"
     },
     {
       "id": "latex:stmaryrd:rrceil",
@@ -12419,7 +13018,8 @@
       "samples": {
         "path": "samples/latex/stmaryrd/rrparenthesis-1tzk3t3.jsonl",
         "count": 16
-      }
+      },
+      "unicode": "⦈"
     },
     {
       "id": "latex:stmaryrd:shortdownarrow",
@@ -12623,7 +13223,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textbrokenbar-ijlfku.jsonl",
         "count": 11
-      }
+      },
+      "unicode": "\\xa6"
     },
     {
       "id": "latex:textcomp:textbullet",
@@ -12657,7 +13258,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textcent-prrkyi.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xa2"
     },
     {
       "id": "latex:textcomp:textcentoldstyle",
@@ -12691,7 +13293,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textcircledp-z24pfw.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "℗"
     },
     {
       "id": "latex:textcomp:textcolonmonetary",
@@ -12759,7 +13362,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textcurrency-1jjh18n.jsonl",
         "count": 25
-      }
+      },
+      "unicode": "\\xa4"
     },
     {
       "id": "latex:textcomp:textdagger",
@@ -12980,7 +13584,8 @@
       "samples": {
         "path": "samples/latex/textcomp/texteuro-zhygbh.jsonl",
         "count": 20
-      }
+      },
+      "unicode": "€"
     },
     {
       "id": "latex:textcomp:textflorin",
@@ -13014,7 +13619,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textfractionsolidus-en03x.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⁄"
     },
     {
       "id": "latex:textcomp:textguarani",
@@ -13201,7 +13807,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textmusicalnote-1056bm6.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♪"
     },
     {
       "id": "latex:textcomp:textnaira",
@@ -13320,7 +13927,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textordfeminine-11oh038.jsonl",
         "count": 27
-      }
+      },
+      "unicode": "\\xaa"
     },
     {
       "id": "latex:textcomp:textordmasculine",
@@ -13337,7 +13945,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textordmasculine-1abkpoo.jsonl",
         "count": 42
-      }
+      },
+      "unicode": "\\xba"
     },
     {
       "id": "latex:textcomp:textparagraph",
@@ -13388,7 +13997,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textpertenthousand-1acxhuc.jsonl",
         "count": 20
-      }
+      },
+      "unicode": "‱"
     },
     {
       "id": "latex:textcomp:textperthousand",
@@ -13405,7 +14015,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textperthousand-1ds7s3p.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "‰"
     },
     {
       "id": "latex:textcomp:textpeso",
@@ -13558,7 +14169,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textrecipe-1yxcob6.jsonl",
         "count": 33
-      }
+      },
+      "unicode": "℞"
     },
     {
       "id": "latex:textcomp:textreferencemark",
@@ -13575,7 +14187,8 @@
       "samples": {
         "path": "samples/latex/textcomp/textreferencemark-1b77ll8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "※"
     },
     {
       "id": "latex:textcomp:textregistered",
@@ -13796,7 +14409,8 @@
       "samples": {
         "path": "samples/latex/textcomp/texttrademark-r9jasb.jsonl",
         "count": 38
-      }
+      },
+      "unicode": "™"
     },
     {
       "id": "latex:textcomp:texttwelveudash",
@@ -16686,7 +17300,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upalpha-18ukjyr.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "α"
     },
     {
       "id": "latex:upgreek:upbeta",
@@ -16703,7 +17318,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upbeta-y70r1b.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "β"
     },
     {
       "id": "latex:upgreek:upchi",
@@ -16720,7 +17336,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upchi-1ptfhil.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "χ"
     },
     {
       "id": "latex:upgreek:updelta",
@@ -16737,7 +17354,8 @@
       "samples": {
         "path": "samples/latex/upgreek/updelta-14oy8ux.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "δ"
     },
     {
       "id": "latex:upgreek:Updelta",
@@ -16771,7 +17389,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upepsilon-1ymw551.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ε"
     },
     {
       "id": "latex:upgreek:upeta",
@@ -16788,7 +17407,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upeta-j5k74f.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "η"
     },
     {
       "id": "latex:upgreek:upgamma",
@@ -16805,7 +17425,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upgamma-1temhoy.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "γ"
     },
     {
       "id": "latex:upgreek:Upgamma",
@@ -16839,7 +17460,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upiota-14m2t2q.jsonl",
         "count": 17
-      }
+      },
+      "unicode": "ι"
     },
     {
       "id": "latex:upgreek:upkappa",
@@ -16856,7 +17478,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upkappa-v4a2qo.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "κ"
     },
     {
       "id": "latex:upgreek:uplambda",
@@ -16873,7 +17496,8 @@
       "samples": {
         "path": "samples/latex/upgreek/uplambda-wxx57m.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "λ"
     },
     {
       "id": "latex:upgreek:Uplambda",
@@ -16907,7 +17531,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upmu-1ascrvj.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "μ"
     },
     {
       "id": "latex:upgreek:upnu",
@@ -16924,7 +17549,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upnu-1f8fvh0.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ν"
     },
     {
       "id": "latex:upgreek:upomega",
@@ -16941,7 +17567,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upomega-uxueeo.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ω"
     },
     {
       "id": "latex:upgreek:Upomega",
@@ -16975,7 +17602,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upphi-z2fvl8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϕ"
     },
     {
       "id": "latex:upgreek:Upphi",
@@ -17009,7 +17637,8 @@
       "samples": {
         "path": "samples/latex/upgreek/uppi-1jnodyy.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "π"
     },
     {
       "id": "latex:upgreek:Uppi",
@@ -17043,7 +17672,8 @@
       "samples": {
         "path": "samples/latex/upgreek/uppsi-yztwov.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ψ"
     },
     {
       "id": "latex:upgreek:Uppsi",
@@ -17077,7 +17707,8 @@
       "samples": {
         "path": "samples/latex/upgreek/uprho-ody75s.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ρ"
     },
     {
       "id": "latex:upgreek:upsigma",
@@ -17094,7 +17725,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upsigma-nrg28s.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "σ"
     },
     {
       "id": "latex:upgreek:Upsigma",
@@ -17128,7 +17760,8 @@
       "samples": {
         "path": "samples/latex/upgreek/uptau-1r8r0sx.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "τ"
     },
     {
       "id": "latex:upgreek:uptheta",
@@ -17145,7 +17778,8 @@
       "samples": {
         "path": "samples/latex/upgreek/uptheta-86nq37.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "θ"
     },
     {
       "id": "latex:upgreek:Uptheta",
@@ -17179,7 +17813,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upupsilon-1ouoz85.jsonl",
         "count": 32
-      }
+      },
+      "unicode": "υ"
     },
     {
       "id": "latex:upgreek:Upupsilon",
@@ -17213,7 +17848,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upvarepsilon-v538k8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϵ"
     },
     {
       "id": "latex:upgreek:upvarphi",
@@ -17230,7 +17866,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upvarphi-6jwoph.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "φ"
     },
     {
       "id": "latex:upgreek:upvarpi",
@@ -17247,7 +17884,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upvarpi-v0g3n5.jsonl",
         "count": 25
-      }
+      },
+      "unicode": "ϖ"
     },
     {
       "id": "latex:upgreek:upvarrho",
@@ -17264,7 +17902,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upvarrho-f3lhl5.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϱ"
     },
     {
       "id": "latex:upgreek:upvarsigma",
@@ -17281,7 +17920,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upvarsigma-wqvtyd.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ς"
     },
     {
       "id": "latex:upgreek:upvartheta",
@@ -17298,7 +17938,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upvartheta-ydw9f2.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ϑ"
     },
     {
       "id": "latex:upgreek:upxi",
@@ -17315,7 +17956,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upxi-1jmwyde.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ξ"
     },
     {
       "id": "latex:upgreek:Upxi",
@@ -17349,7 +17991,8 @@
       "samples": {
         "path": "samples/latex/upgreek/upzeta-1bq0eef.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "ζ"
     },
     {
       "id": "latex:wasysym:aquarius",
@@ -17366,7 +18009,8 @@
       "samples": {
         "path": "samples/latex/wasysym/aquarius-1t7gqz9.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♒"
     },
     {
       "id": "latex:wasysym:aries",
@@ -17383,7 +18027,8 @@
       "samples": {
         "path": "samples/latex/wasysym/aries-or2nyq.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♈"
     },
     {
       "id": "latex:wasysym:ascnode",
@@ -17417,7 +18062,8 @@
       "samples": {
         "path": "samples/latex/wasysym/astrosun-12ftwgz.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☉"
     },
     {
       "id": "latex:wasysym:ataribox",
@@ -17468,7 +18114,8 @@
       "samples": {
         "path": "samples/latex/wasysym/blacksmiley-ps2bd4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☻"
     },
     {
       "id": "latex:wasysym:Bowtie",
@@ -17536,7 +18183,8 @@
       "samples": {
         "path": "samples/latex/wasysym/cancer-iyk8d8.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♋"
     },
     {
       "id": "latex:wasysym:capricornus",
@@ -17553,7 +18201,8 @@
       "samples": {
         "path": "samples/latex/wasysym/capricornus-1ahsc3j.jsonl",
         "count": 22
-      }
+      },
+      "unicode": "♑"
     },
     {
       "id": "latex:wasysym:cent",
@@ -17570,7 +18219,8 @@
       "samples": {
         "path": "samples/latex/wasysym/cent-82w8wy.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "\\xa2"
     },
     {
       "id": "latex:wasysym:checked",
@@ -17604,7 +18254,8 @@
       "samples": {
         "path": "samples/latex/wasysym/checkedbox-1797c4y.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "☑"
     },
     {
       "id": "latex:wasysym:clock",
@@ -17655,7 +18306,8 @@
       "samples": {
         "path": "samples/latex/wasysym/currency-gykkm7.jsonl",
         "count": 36
-      }
+      },
+      "unicode": "\\xa4"
     },
     {
       "id": "latex:wasysym:descnode",
@@ -17689,7 +18341,8 @@
       "samples": {
         "path": "samples/latex/wasysym/diameter-1b1c8yn.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⌀"
     },
     {
       "id": "latex:wasysym:DOWNarrow",
@@ -17723,7 +18376,8 @@
       "samples": {
         "path": "samples/latex/wasysym/earth-efxr08.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♁"
     },
     {
       "id": "latex:wasysym:female",
@@ -17740,7 +18394,8 @@
       "samples": {
         "path": "samples/latex/wasysym/female-mmq7xw.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♀"
     },
     {
       "id": "latex:wasysym:frownie",
@@ -17757,7 +18412,8 @@
       "samples": {
         "path": "samples/latex/wasysym/frownie-ggvqqe.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☹"
     },
     {
       "id": "latex:wasysym:fullmoon",
@@ -17791,7 +18447,8 @@
       "samples": {
         "path": "samples/latex/wasysym/gemini-6c719n.jsonl",
         "count": 29
-      }
+      },
+      "unicode": "♊"
     },
     {
       "id": "latex:wasysym:invdiameter",
@@ -17808,7 +18465,8 @@
       "samples": {
         "path": "samples/latex/wasysym/invdiameter-8jrrgg.jsonl",
         "count": 44
-      }
+      },
+      "unicode": "⍉"
     },
     {
       "id": "latex:wasysym:jupiter",
@@ -17825,7 +18483,8 @@
       "samples": {
         "path": "samples/latex/wasysym/jupiter-1tsaf05.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♃"
     },
     {
       "id": "latex:wasysym:kreuz",
@@ -17876,7 +18535,8 @@
       "samples": {
         "path": "samples/latex/wasysym/leftmoon-a8akh4.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☾"
     },
     {
       "id": "latex:wasysym:leo",
@@ -17893,7 +18553,8 @@
       "samples": {
         "path": "samples/latex/wasysym/leo-15hx63k.jsonl",
         "count": 45
-      }
+      },
+      "unicode": "♌"
     },
     {
       "id": "latex:wasysym:lhd",
@@ -17910,7 +18571,8 @@
       "samples": {
         "path": "samples/latex/wasysym/lhd-16w4n2c.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "◁"
     },
     {
       "id": "latex:wasysym:LHD",
@@ -17927,7 +18589,8 @@
       "samples": {
         "path": "samples/latex/wasysym/lhd-6l2j1g.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "◀"
     },
     {
       "id": "latex:wasysym:libra",
@@ -17944,7 +18607,8 @@
       "samples": {
         "path": "samples/latex/wasysym/libra-oymfge.jsonl",
         "count": 44
-      }
+      },
+      "unicode": "♎"
     },
     {
       "id": "latex:wasysym:lightning",
@@ -17961,7 +18625,8 @@
       "samples": {
         "path": "samples/latex/wasysym/lightning-w992ye.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "↯"
     },
     {
       "id": "latex:wasysym:male",
@@ -17978,7 +18643,8 @@
       "samples": {
         "path": "samples/latex/wasysym/male-1i1ax7l.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♂"
     },
     {
       "id": "latex:wasysym:mars",
@@ -18012,7 +18678,8 @@
       "samples": {
         "path": "samples/latex/wasysym/mercury-1otxfpd.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☿"
     },
     {
       "id": "latex:wasysym:neptune",
@@ -18029,7 +18696,8 @@
       "samples": {
         "path": "samples/latex/wasysym/neptune-tdzd6t.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "♆"
     },
     {
       "id": "latex:wasysym:newmoon",
@@ -18114,7 +18782,8 @@
       "samples": {
         "path": "samples/latex/wasysym/phone-dvl66w.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☎"
     },
     {
       "id": "latex:wasysym:pisces",
@@ -18131,7 +18800,8 @@
       "samples": {
         "path": "samples/latex/wasysym/pisces-f5m4yp.jsonl",
         "count": 44
-      }
+      },
+      "unicode": "♓"
     },
     {
       "id": "latex:wasysym:pluto",
@@ -18148,7 +18818,8 @@
       "samples": {
         "path": "samples/latex/wasysym/pluto-zh75tu.jsonl",
         "count": 27
-      }
+      },
+      "unicode": "♇"
     },
     {
       "id": "latex:wasysym:pointer",
@@ -18182,7 +18853,8 @@
       "samples": {
         "path": "samples/latex/wasysym/recorder-qgvm5u.jsonl",
         "count": 5
-      }
+      },
+      "unicode": "⌕"
     },
     {
       "id": "latex:wasysym:rhd",
@@ -18199,7 +18871,8 @@
       "samples": {
         "path": "samples/latex/wasysym/rhd-1eaha6e.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "▷"
     },
     {
       "id": "latex:wasysym:RHD",
@@ -18216,7 +18889,8 @@
       "samples": {
         "path": "samples/latex/wasysym/rhd-e5kujq.jsonl",
         "count": 7
-      }
+      },
+      "unicode": "▶"
     },
     {
       "id": "latex:wasysym:RIGHTarrow",
@@ -18250,7 +18924,8 @@
       "samples": {
         "path": "samples/latex/wasysym/rightmoon-7ngd77.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☽"
     },
     {
       "id": "latex:wasysym:sagittarius",
@@ -18267,7 +18942,8 @@
       "samples": {
         "path": "samples/latex/wasysym/sagittarius-1xaq3ke.jsonl",
         "count": 21
-      }
+      },
+      "unicode": "♐"
     },
     {
       "id": "latex:wasysym:saturn",
@@ -18284,7 +18960,8 @@
       "samples": {
         "path": "samples/latex/wasysym/saturn-1j1ka7f.jsonl",
         "count": 26
-      }
+      },
+      "unicode": "♄"
     },
     {
       "id": "latex:wasysym:scorpio",
@@ -18301,7 +18978,8 @@
       "samples": {
         "path": "samples/latex/wasysym/scorpio-10sa7a9.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "♏"
     },
     {
       "id": "latex:wasysym:smiley",
@@ -18318,7 +18996,8 @@
       "samples": {
         "path": "samples/latex/wasysym/smiley-ziizsb.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☺"
     },
     {
       "id": "latex:wasysym:Square",
@@ -18335,7 +19014,8 @@
       "samples": {
         "path": "samples/latex/wasysym/square-lvungb.jsonl",
         "count": 8
-      }
+      },
+      "unicode": "☐"
     },
     {
       "id": "latex:wasysym:sun",
@@ -18352,7 +19032,8 @@
       "samples": {
         "path": "samples/latex/wasysym/sun-jzf3xe.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "☼"
     },
     {
       "id": "latex:wasysym:taurus",
@@ -18369,7 +19050,8 @@
       "samples": {
         "path": "samples/latex/wasysym/taurus-17v08ak.jsonl",
         "count": 41
-      }
+      },
+      "unicode": "♉"
     },
     {
       "id": "latex:wasysym:unlhd",
@@ -18386,7 +19068,8 @@
       "samples": {
         "path": "samples/latex/wasysym/unlhd-ixuvxx.jsonl",
         "count": 50
-      }
+      },
+      "unicode": "⊴"
     },
     {
       "id": "latex:wasysym:unrhd",
@@ -18403,7 +19086,8 @@
       "samples": {
         "path": "samples/latex/wasysym/unrhd-198aodn.jsonl",
         "count": 38
-      }
+      },
+      "unicode": "⊵"
     },
     {
       "id": "latex:wasysym:UParrow",
@@ -18437,7 +19121,8 @@
       "samples": {
         "path": "samples/latex/wasysym/uranus-7o17as.jsonl",
         "count": 12
-      }
+      },
+      "unicode": "♅"
     },
     {
       "id": "latex:wasysym:venus",
@@ -18488,7 +19173,8 @@
       "samples": {
         "path": "samples/latex/wasysym/virgo-1vlxy2z.jsonl",
         "count": 26
-      }
+      },
+      "unicode": "♍"
     },
     {
       "id": "latex:wasysym:wasylozenge",
@@ -18505,7 +19191,8 @@
       "samples": {
         "path": "samples/latex/wasysym/wasylozenge-18wnq5u.jsonl",
         "count": 24
-      }
+      },
+      "unicode": "⌑"
     },
     {
       "id": "latex:wasysym:XBox",
@@ -18522,7 +19209,8 @@
       "samples": {
         "path": "samples/latex/wasysym/xbox-1eqbyp1.jsonl",
         "count": 6
-      }
+      },
+      "unicode": "☒"
     }
   ]
 }
