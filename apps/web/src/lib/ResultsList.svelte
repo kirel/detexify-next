@@ -3,12 +3,12 @@
 
   type Props = {
     results: EnrichedResult[]
-    copiedCommand?: string
+    copiedId?: string
     native?: boolean
-    onCopy: (result: EnrichedResult) => void
+    onCopy: (result: EnrichedResult, unicode: boolean) => void
   }
 
-  let { results, copiedCommand = '', native = false, onCopy }: Props = $props()
+  let { results, copiedId = '', native = false, onCopy }: Props = $props()
 
   function packageLine(result: EnrichedResult): string | undefined {
     if (!result.symbol?.package) return undefined
@@ -32,9 +32,10 @@
 {:else}
   <ol class="results">
     {#each results as result}
+      {@const copied = (copiedId == result.id)}
       <li>
-        <div class="result" class:copied={copiedCommand === (result.symbol?.command ?? result.id)}>
-          <button class="symbol-preview-button" type="button" onclick={() => onCopy(result)} title="Copy command">
+        <div class="result" class:copied>
+          <button class="symbol-preview-button" type="button" onclick={() => onCopy(result, false)} title="Copy command">
             <span class="symbol-preview" aria-hidden="true">
               {#if result.symbol?.imagePath}
                 <span class="symbol-image" style:background-image={`url(${result.symbol.imagePath})`}></span>
@@ -47,8 +48,13 @@
             <span class="result-topline">
               <span class="command">{result.symbol?.command ?? result.id}</span>
               <span class="result-meta">
-                <span class="score">{copiedCommand === (result.symbol?.command ?? result.id) ? 'copied' : result.score.toFixed(4)}</span>
-                <button class="copy-command" type="button" onclick={() => onCopy(result)}>Copy</button>
+                <span class="score">{copied ? 'copied' : result.score.toFixed(4)}</span>
+                <div class="copy-actions">
+                  <button class="copy-command" type="button" onclick={() => onCopy(result, false)} title="Copy command">Copy</button>
+                  {#if result.symbol?.unicode ?? false}
+                    <button class="copy-command copy-text" type="button" onclick={() => onCopy(result, true)} title="Copy text">Copy text</button>
+                  {/if}
+                </div>
               </span>
             </span>
             <span class="mode">{mode(result)}</span>
